@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/", "destination": "https://www.eureka.ceo", "permanent": false },
+    { "source": "/federico-gonzalez/:path*", "destination": "https://trolley.eureka.ceo", "permanent": false }
+  ],
+  "headers": [
+    { "source": "/(.*)", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] }
+  ]
+}

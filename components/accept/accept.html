@@ -1,0 +1,47 @@
+<div class="acc" id="accept" data-key="{{proposal_id}}" data-ref="{{payment_ref}}">
+  <div class="label">Start</div>
+  <h2>Ready to <em>start?</em></h2>
+  <div class="acc-card">
+    <div class="acc-sum">
+      <div>
+        <div class="k">You're accepting</div>
+        <h3>{{first_step_name}}</h3>
+        <div class="acc-amt">{{deposit_amount}}<small>{{deposit_label}}</small></div>
+        <p>{{first_step_detail}}</p>
+      </div>
+      <button type="button" class="acc-btn" data-acc-open>Accept proposal →</button>
+    </div>
+    <form class="acc-form" novalidate>
+      <div class="acc-grid">
+        <div class="acc-f"><label for="acc-name">Full name</label><input id="acc-name" name="name" autocomplete="name" required></div>
+        <div class="acc-f"><label for="acc-role">Role</label><input id="acc-role" name="role" autocomplete="organization-title" required></div>
+        <div class="acc-f"><label for="acc-email">Email</label><input id="acc-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <label class="acc-ck"><input type="checkbox" name="terms" required><span>I accept this proposal and the <a href="#acc-terms" data-acc-terms>terms and conditions</a>.</span></label>
+      <details class="acc-terms" id="acc-terms"><summary>Read the terms</summary>{{terms_html}}</details>
+      <div class="acc-row"><button type="submit" class="acc-btn">Accept and see payment details</button><span class="acc-err" role="alert"></span></div>
+    </form>
+  </div>
+  <div class="acc-done" aria-live="polite">
+    <div class="acc-ok"><i>✓</i><span></span></div>
+    <div class="acc-steps">
+      <div class="acc-step">
+        <div class="acc-step-h"><span class="n">1</span><h3>Send the deposit</h3>{{demo_badge}}</div>
+        <div class="acc-pay">
+          <div><div class="amt">{{deposit_amount}}</div><div class="k">{{deposit_label}}</div><div class="acc-ref">Reference: {{payment_ref}}</div></div>
+          <div>{{bank_html}}<p class="acc-note">Add the reference to the transfer memo so we can match your payment.</p></div>
+        </div>
+      </div>
+      <div class="acc-step">
+        <div class="acc-step-h"><span class="n">2</span><h3>Book your kickoff</h3>{{demo_badge}}</div>
+        <p>Pick a time for the kickoff. We use it to meet the team, confirm the interview schedule and open your Slack channel.</p>
+        <a class="acc-btn" href="{{kickoff_url}}" target="_blank" rel="noopener">Book the kickoff →</a>
+      </div>
+      <div class="acc-step">
+        <div class="acc-step-h"><span class="n">3</span><h3>We take it from there</h3></div>
+        <p>We confirm your deposit within one business day and send the client portal invite.</p>
+      </div>
+    </div>
+    <button type="button" class="acc-reset" data-acc-reset>Reset (test only)</button>
+  </div>
+</div>
