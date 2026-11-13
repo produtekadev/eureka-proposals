@@ -75,3 +75,4 @@
 .clc-meta b{font-size:.86rem;font-weight:600}
 .clc-meta span{font-size:.8rem;color:var(--muted)}
 @media (max-width:620px){.clcs{grid-template-columns:1fr 1fr}.clc:last-child:nth-child(odd){grid-column:span 2}}
+.clc-meta i{font-style:normal;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}

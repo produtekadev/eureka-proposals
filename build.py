@@ -37,7 +37,7 @@ UI = {
     'card_soon': 'We send you the card payment link by email.',
     'emailed': 'We also sent these details to', 'reset': 'Reset (test only)', 'demo': 'Demo data', 'copy': 'Copy',
     'err_name': 'Please add your full name.', 'err_email': 'Please add a valid email.', 'err_terms': 'Please accept the terms to continue.',
-    'scope_selected': 'Scope and investment', 'client_logo': 'Client logo', 'accepted_scope': 'Accepted scope',
+    'scope_selected': 'Scope and investment', 'client_logo': 'Client logo', 'we_did': 'What we did', 'accepted_scope': 'Accepted scope',
     'ready': 'Ready to', 'ready_em': 'start?',
   },
   'es': {
@@ -62,7 +62,7 @@ UI = {
     'card_soon': 'Te enviamos el enlace de pago con tarjeta por email.',
     'emailed': 'También enviamos estos datos a', 'reset': 'Reiniciar (solo prueba)', 'demo': 'Datos demo', 'copy': 'Copiar',
     'err_name': 'Agrega tu nombre completo.', 'err_email': 'Agrega un email válido.', 'err_terms': 'Acepta los términos para continuar.',
-    'scope_selected': 'Alcance e inversión', 'client_logo': 'Logo de cliente', 'accepted_scope': 'Alcance aceptado',
+    'scope_selected': 'Alcance e inversión', 'client_logo': 'Logo de cliente', 'we_did': 'Qué hicimos', 'accepted_scope': 'Alcance aceptado',
     'ready': '¿Listos para', 'ready_em': 'empezar?',
   },
 }
@@ -222,7 +222,7 @@ def sec_about(pg, P, team, company):
     lib = json.loads(read(os.path.join(ROOT, 'data', 'clients.json')))
     logos = ''.join(
       f'<a class="clc" href="{esc(c["url"])}" target="_blank" rel="noopener"><div class="clc-logo"><img src="{data_uri(os.path.join(T, "assets", c["logo"]))}" alt="{esc(c["name"])}"></div>'
-      f'<div class="clc-meta"><b>{esc(c["what"][pg.lang])}</b><span>{esc(c["where"][pg.lang])}</span></div></a>'
+      f'<div class="clc-meta"><i>{u["we_did"]}</i><b>{esc(c["what"][pg.lang])}</b><span>{esc(c["where"][pg.lang])}</span></div></a>'
       for c in (lib[k] for k in P['clients']))
     logos_cls = 'clcs'
   else:

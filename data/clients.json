@@ -4,7 +4,7 @@
     "logo": "clients/bid.png",
     "url": "https://www.iadb.org",
     "what": {
-      "en": "Product consultancy",
+      "en": "Product consulting",
       "es": "Consultoría de producto"
     },
     "where": {
@@ -21,8 +21,8 @@
       "es": "Onboarding en Notion"
     },
     "where": {
-      "en": "New York City",
-      "es": "Nueva York"
+      "en": "USA",
+      "es": "EE. UU."
     }
   },
   "toggl-hire": {
@@ -43,8 +43,8 @@
     "logo": "clients/daughters-for-earth.png",
     "url": "https://www.daughtersforearth.org",
     "what": {
-      "en": "Grants and donor hubs",
-      "es": "Hubs de grants y donantes"
+      "en": "Notion implementation",
+      "es": "Implementación en Notion"
     },
     "where": {
       "en": "Global",
@@ -56,12 +56,12 @@
     "logo": "clients/foton.png",
     "url": "https://foton.pictures",
     "what": {
-      "en": "Notion consultancy",
+      "en": "Notion consulting",
       "es": "Consultoría en Notion"
     },
     "where": {
-      "en": "USA and Latam",
-      "es": "EE. UU. y Latam"
+      "en": "USA",
+      "es": "EE. UU."
     }
   }
 }
