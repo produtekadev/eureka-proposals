@@ -87,7 +87,7 @@ Show the user screenshots of the cover and the proposal section.
 
 ### 6. Preview, then publish
 
-- Create a branch `proposal/<slug>`, commit, push. Vercel builds a preview of the `eureka-proposals` project; share that link for review.
+- For review, publish the built page as a private claude.ai artifact (review copy) so the team can comment section by section. Don't use Vercel branch previews: they spend the daily deploy budget.
 - Apply the user's feedback in `proposal.json` and rebuild. Never hand-edit the generated `index.html`.
 - When the user approves, merge to `main` and push. The proposal is live at `https://proposals.eureka.ceo/<slug>`. Open it and confirm it loads.
 
