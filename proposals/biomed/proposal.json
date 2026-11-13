@@ -102,7 +102,7 @@
     "why": "Recruiterflow's metrics aren't reliable yet, so a dashboard built now would show the wrong numbers. Agents built on an organized Notion will need less rework later."
   },
   "proposal": {
-    "title": "Three phases,<br><em>one price.</em>",
+    "title": "What we'll build<br><em>and what it costs.</em>",
     "intro": "Each phase has its own price and they add up to one fixed total. The tags show what the project needs and what we advise.",
     "currency": "USD",
     "phases": [
