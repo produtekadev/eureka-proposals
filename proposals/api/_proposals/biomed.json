@@ -57,6 +57,6 @@
     }
   ],
   "card_fee_pct": 4,
-  "stripe_url": null,
+  "stripe_url": "https://buy.stripe.com/00w8wO725aBK8Os1xT6Ri1e",
   "url": "https://proposals.eureka.ceo/biomed"
 }
