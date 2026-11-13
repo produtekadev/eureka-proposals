@@ -17,12 +17,12 @@
   "cover": {
     "tag": "Implementation proposal",
     "headline": "One Notion your team<br><em>and your agents</em> <span class=\"hl\">trust.</span>",
-    "lede": "A three-phase plan to organize Biomed's Notion so you, Chris, Elizabeth and your Grok bots all work from the same place, done before the end of the year. Based on our conversations on October 29 and November 10.",
+    "lede": "A three-phase plan to organize Biomed's Notion so you, Chris, Elizabeth and your Grok agents all work from the same place, done before the end of the year. Based on our conversations on October 29 and November 10.",
     "glance": [
       {
         "k": "Focus",
         "h": "Notion first, then Grok",
-        "p": "The structure your bots will read from and write to."
+        "p": "The structure your agents will read from and write to."
       },
       {
         "k": "Total · USD 1,500",
@@ -38,7 +38,7 @@
   },
   "context": {
     "title": "What we<br><em>heard.</em>",
-    "lede": "Biomed is a three-person recruitment agency moving to Grok as its central AI. Recruiterflow stays as the ATS, but <b>everything else is spread across Planner, SharePoint, OneDrive, OneNote and a new Notion workspace</b>, and the bots can only be as good as the place they read from.",
+    "lede": "Biomed is a three-person recruitment agency moving to Grok as its central AI. Recruiterflow stays as the ATS, but <b>everything else is spread across Planner, SharePoint, OneDrive, OneNote and a new Notion workspace</b>, and the agents can only be as good as the place they read from.",
     "stats": [
       {
         "n": "3",
@@ -78,11 +78,11 @@
       "text": "I do like how Grok can just pull things without me going into Notion, but I also wanna keep Notion organized and clean, too.",
       "who": "Ian Cooper, Founder"
     },
-    "opportunity": "You're about to build bots for recruiting, metrics and sales. If Notion is organized first, <b>every bot starts with the right context</b> instead of each one needing its own fix later."
+    "opportunity": "You're about to build agents for recruiting, metrics and sales. If Notion is organized first, <b>every agent starts with the right context</b> instead of each one needing its own fix later."
   },
   "focus": {
     "title": "Where we'd<br><em>start.</em>",
-    "statement": "<b>One organized Notion that both your team and your Grok bots work from: every task, document and decision in one known place.</b> You mentioned a lot of good ideas. We'd start with the foundation they all depend on.",
+    "statement": "<b>One organized Notion that both your team and your Grok agents work from: every task, document and decision in one known place.</b> You mentioned a lot of good ideas. We'd start with the foundation they all depend on.",
     "asked": [
       "Organize Notion, with personal and private space",
       "Notion as the brain for Grok",
@@ -90,17 +90,17 @@
       "Centralize meeting recordings",
       "Daily metrics snapshot from Recruiterflow",
       "Clean up OneNote, SharePoint and OneDrive",
-      "Bots for recruiting, sales and finance"
+      "Agents for recruiting, sales and finance"
     ],
     "recommend": [
       "Clean architecture, with personal and team spaces",
-      "Context layer the Grok bots point to",
+      "Context layer the Grok agents point to",
       "Task workflow for new jobs, plus team training",
       "Notion and Loom meetings in one place",
       "A clear map of what moves from Microsoft and what stays",
-      "Metrics and bots next, once the foundation is in place"
+      "Metrics and agents next, once the foundation is in place"
     ],
-    "why": "Recruiterflow's metrics aren't reliable yet, so a dashboard built now would show the wrong numbers. Bots built on an organized Notion will need less rework later."
+    "why": "Recruiterflow's metrics aren't reliable yet, so a dashboard built now would show the wrong numbers. Agents built on an organized Notion will need less rework later."
   },
   "proposal": {
     "title": "Three phases,<br><em>one price.</em>",
@@ -113,7 +113,7 @@
         "tag": "essential",
         "price": 500,
         "weeks": 1,
-        "summary": "We review what's there today and design a structure that's easy to navigate for people and for bots.",
+        "summary": "We review what's there today and design a structure that's easy to navigate for people and for agents.",
         "deliverables": [
           "Audit of the current workspace and the blueprint you received",
           "Teamspaces with separate personal and team sections",
@@ -128,11 +128,11 @@
         "tag": "essential",
         "price": 400,
         "weeks": 1,
-        "summary": "The databases and rules your Grok bots read from, so they know where to find and where to put things.",
+        "summary": "The databases and rules your Grok agents read from, so they know where to find and where to put things.",
         "deliverables": [
           "Agent operating guide adapted to Biomed (rules, approvals, archive instead of delete)",
           "Skills, memory and resources databases in their own teamspace",
-          "Database IDs and instructions ready to paste into each bot"
+          "Database IDs and instructions ready to paste into each agent"
         ]
       },
       {
@@ -158,7 +158,7 @@
       "Moving what's worth keeping into the new workspace"
     ],
     "excluded": [
-      "Building or configuring Grok bots",
+      "Building or configuring Grok agents",
       "Recruiterflow metrics dashboard",
       "n8n automations and other integrations (defined in the roadmap, subject to technical feasibility)",
       "Bulk migration of OneNote, SharePoint or OneDrive files",
