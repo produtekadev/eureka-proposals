@@ -97,7 +97,6 @@
       "Context layer the Grok agents point to",
       "Task workflow for new jobs, plus team training",
       "Notion and Loom meetings in one place",
-      "A clear map of what moves from Microsoft and what stays",
       "Metrics and agents next, once the foundation is in place"
     ],
     "why": "Recruiterflow's metrics aren't reliable yet, so a dashboard built now would show the wrong numbers. Agents built on an organized Notion will need less rework later."
@@ -115,11 +114,10 @@
         "weeks": 1,
         "summary": "We review what's there today and design a structure that's easy to navigate for people and for agents.",
         "deliverables": [
-          "Audit of the current workspace and the blueprint you received",
-          "Teamspaces with separate personal and team sections",
-          "Privacy for your personal space",
-          "Archive of what won't be used",
-          "Map of what moves from OneNote, SharePoint and OneDrive, and what stays"
+          "Audit report of your current workspace and the blueprint you received: what to keep, change or archive",
+          "New workspace with teamspaces, with separate personal and team sections",
+          "Your current Notion content moved into the new workspace, and unused pages and databases archived",
+          "Migration guide for OneNote, SharePoint and OneDrive: what moves to Notion, what stays, and how to move it"
         ]
       },
       {
@@ -132,7 +130,7 @@
         "deliverables": [
           "Agent operating guide adapted to Biomed (rules, approvals, archive instead of delete)",
           "Skills, memory and resources databases in their own teamspace",
-          "Database IDs and instructions ready to paste into each agent"
+          "Setup sheet for each agent with the database IDs and instructions to paste in"
         ]
       },
       {
@@ -144,24 +142,23 @@
         "summary": "Your Planner workflow moved to Notion, meetings in one place, and Chris and Elizabeth trained to use it.",
         "deliverables": [
           "Task board with a template for each new job that assigns tasks to Chris and Elizabeth",
-          "A personal portal for each team member",
-          "Notion and Loom meetings in one database",
-          "Team training session",
-          "Short documentation for the team"
+          "Personal portal for each team member",
+          "Meetings database with your Notion and Loom recordings",
+          "Training session for the team",
+          "Team guide: how to use the workspace day to day"
         ]
       }
     ],
     "included": [
       "Weekly working sessions during the build",
       "Shared channel for questions",
-      "3 months of Notion Business on a new workspace, at no cost",
-      "Moving what's worth keeping into the new workspace"
+      "3 months of Notion Business on a new workspace, at no cost"
     ],
     "excluded": [
       "Building or configuring Grok agents",
       "Recruiterflow metrics dashboard",
       "n8n automations and other integrations (defined in the roadmap, subject to technical feasibility)",
-      "Bulk migration of OneNote, SharePoint or OneDrive files",
+      "Moving files from OneNote, SharePoint or OneDrive (the migration guide shows you how)",
       "Notion licenses after the bonus period"
     ],
     "guarantee": "One month after delivery to fix issues within the delivered scope, at no extra cost."
