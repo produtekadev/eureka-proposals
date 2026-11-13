@@ -32,7 +32,9 @@ UI = {
     'submit': 'Accept and see payment details', 'accepted_by': 'Accepted by', 'on': 'on',
     'send_deposit': 'Send the deposit', 'reference': 'Reference', 'memo': 'Add the reference to the transfer memo so we can match your payment.',
     'book': 'Book your kickoff', 'book_text': 'Pick a time for the kickoff. We use it to meet the team, confirm the plan and open your Slack channel.',
-    'book_btn': 'Book the kickoff →', 'from_there': 'We take it from there', 'from_there_text': 'We confirm your deposit within one business day and send the client portal invite.',
+    'book_btn': 'Book the kickoff →', 'from_there': 'We take it from there', 'from_there_text': 'As soon as we receive your payment, we email you the next steps, including the link to book your kickoff.',
+    'pay_card': 'Pay with card →', 'card_amount': 'Amount with the {pct}% card fee', 'card_text': 'Secure payment through Stripe. The card fee is added to the deposit.',
+    'card_soon': 'We send you the card payment link by email.',
     'emailed': 'We also sent these details to', 'reset': 'Reset (test only)', 'demo': 'Demo data', 'copy': 'Copy',
     'err_name': 'Please add your full name.', 'err_email': 'Please add a valid email.', 'err_terms': 'Please accept the terms to continue.',
     'scope_selected': 'Scope and investment', 'client_logo': 'Client logo', 'accepted_scope': 'Accepted scope',
@@ -55,7 +57,9 @@ UI = {
     'submit': 'Aceptar y ver datos de pago', 'accepted_by': 'Aceptada por', 'on': 'el',
     'send_deposit': 'Envía el anticipo', 'reference': 'Referencia', 'memo': 'Incluye la referencia en el concepto de la transferencia para identificar tu pago.',
     'book': 'Agenda el kickoff', 'book_text': 'Elige un horario para el kickoff. Lo usamos para conocer al equipo, confirmar el plan y abrir tu canal de Slack.',
-    'book_btn': 'Agendar kickoff →', 'from_there': 'Nosotros nos encargamos', 'from_there_text': 'Confirmamos tu anticipo en un día hábil y te enviamos la invitación al portal de cliente.',
+    'book_btn': 'Agendar kickoff →', 'from_there': 'Nosotros nos encargamos', 'from_there_text': 'Apenas recibamos tu pago, te enviamos por email los próximos pasos, incluido el enlace para agendar el kickoff.',
+    'pay_card': 'Pagar con tarjeta →', 'card_amount': 'Monto con el recargo del {pct}% por tarjeta', 'card_text': 'Pago seguro a través de Stripe. El recargo por tarjeta se suma al anticipo.',
+    'card_soon': 'Te enviamos el enlace de pago con tarjeta por email.',
     'emailed': 'También enviamos estos datos a', 'reset': 'Reiniciar (solo prueba)', 'demo': 'Datos demo', 'copy': 'Copiar',
     'err_name': 'Agrega tu nombre completo.', 'err_email': 'Agrega un email válido.', 'err_terms': 'Acepta los términos para continuar.',
     'scope_selected': 'Alcance e inversión', 'client_logo': 'Logo de cliente', 'accepted_scope': 'Alcance aceptado',
@@ -227,7 +231,14 @@ def sec_start(pg, P, company):
   row = lambda k, v: f'<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd><button type="button" class="acc-copy">{u["copy"]}</button></div>'
   accts = company['bank_accounts']
   tabs = ''.join(f'<button type="button" class="{"on" if i == 0 else ""}" data-bank="{a["id"]}">{esc(a["label"][pg.lang])}</button>' for i, a in enumerate(accts))
-  banks = ''.join(f'<dl class="acc-bank" data-bank="{a["id"]}" style="margin:0"{"" if i == 0 else " hidden"}>' + ''.join(row(k, v) for k, v in a['rows']) + '</dl>' for i, a in enumerate(accts))
+  banks = ''.join(f'<div class="acc-panel" data-bank="{a["id"]}"{"" if i == 0 else " hidden"}><dl class="acc-bank" style="margin:0">' + ''.join(row(k, v) for k, v in a['rows']) + f'</dl><p class="acc-note">{u["memo"]}</p></div>' for i, a in enumerate(accts))
+  card = company.get('card')
+  if card:
+    tabs += f'<button type="button" data-bank="card">{esc(card["label"][pg.lang])}</button>'
+    btn = (f'<a class="acc-btn" href="{esc(pay["stripe_url"])}" target="_blank" rel="noopener">{u["pay_card"]}</a>' if pay.get('stripe_url')
+           else f'<p>{u["card_soon"]}</p>')
+    banks += (f'<div class="acc-panel acc-stripe" data-bank="card" hidden><div class="k">{u["card_amount"].format(pct=card["fee_pct"])}</div>'
+              f'<div class="amt2" data-acc-card></div><p>{u["card_text"]}</p>{btn}</div>')
   terms = '<ul>' + ''.join(f'<li><b>{esc(k)}.</b> {esc(v)}</li>' for k, v in company['terms'][pg.lang]) + (f'<li><b>{"Payment schedule" if pg.lang == "en" else "Calendario de pago"}.</b> {rich(pay.get("schedule", ""))}</li>') + '</ul>'
   demo = f'<span class="demo">{u["demo"]}</span>' if company.get('demo') else ''
   ref = pay['ref']
@@ -237,7 +248,7 @@ def sec_start(pg, P, company):
     'deposit_amount': '<span data-acc-dep></span>', 'deposit_label': f'<span data-acc-dlabel></span>',
     'first_step_detail': f'<ul class="acc-items" data-acc-items></ul>', 'terms_html': terms,
     'accepted_scope_html': f'<div class="acc-step acc-scope-card"><h3>{u["accepted_scope"]}</h3><ul class="acc-items" data-acc-items></ul></div>',
-    'bank_html': f'<div class="acc-tabs">{tabs}</div>{banks}', 'demo_badge': demo, 'kickoff_url': esc(company['kickoff_url']),
+    'bank_html': f'<div class="acc-tabs">{tabs}</div>{banks}', 'demo_badge': demo,
   }
   for k, v in fill.items():
     acc = acc.replace('{{' + k + '}}', v)
@@ -245,10 +256,8 @@ def sec_start(pg, P, company):
   for en_s, key in [('Accept proposal →', 'accept_btn'), ("You're accepting", 'accepting'), ('Full name', 'name'),
                     ('>Email<', 'email'), ('I accept this proposal and the', 'i_accept'), ('terms and conditions', 'terms'),
                     ('Read the terms', 'read_terms'), ('Accept and see payment details', 'submit'), ('Send the deposit', 'send_deposit'),
-                    ('Add the reference to the transfer memo so we can match your payment.', 'memo'), ('Book your kickoff', 'book'),
-                    ('Pick a time for the kickoff. We use it to meet the team, confirm the interview schedule and open your Slack channel.', 'book_text'),
-                    ('Book the kickoff →', 'book_btn'), ('We take it from there', 'from_there'),
-                    ('We confirm your deposit within one business day and send the client portal invite.', 'from_there_text'),
+                    ('We take it from there', 'from_there'),
+                    ('As soon as we receive your payment, we email you the next steps, including the link to book your kickoff.', 'from_there_text'),
                     ('Reset (test only)', 'reset'), ('Reference:', 'reference')]:
     v = u[key]
     if en_s.startswith('>'):
@@ -258,7 +267,7 @@ def sec_start(pg, P, company):
     else:
       acc = acc.replace(en_s, v)
   acc = acc.replace('<div class="label">Start</div>\n  <h2>Ready to <em>start?</em></h2>\n', '')
-  acc = acc.replace('<div class="acc"', f'<div class="acc" data-api="{esc(P.get("accept_api", "/api/accept"))}" data-lang="{pg.lang}"', 1)
+  acc = acc.replace('<div class="acc"', f'<div class="acc" data-fee="{(company.get("card") or {}).get("fee_pct", 0)}" data-api="{esc(P.get("accept_api", "/api/accept"))}" data-lang="{pg.lang}"', 1)
   body = f'''  <h1>{rich(P.get('closing', 'Ready to build <em>your Eureka moment?</em>' if pg.lang == 'en' else '¿Listos para construir <em>tu momento Eureka?</em>'))}</h1>
   <p class="lede">{u['valid']} <b>{esc(fmt_date(P['valid_until'], pg.lang))}</b>. {u['starts']}: <b>{esc(P.get('start', ''))}</b>.</p>
   {f'<div class="sec-sm"><div class="label">{u["next"]}</div><ul class="next">{nx}</ul></div>' if nx else ''}
@@ -339,7 +348,7 @@ window.EUREKA_UI = {json.dumps(strings, ensure_ascii=False)};
     'phases': [{'id': ph['id'], 'name': ph['name'], 'price': ph['price'], 'tag': ph.get('tag', 'essential'),
 } for ph in P['proposal']['phases']],
     'bank_accounts': [{'label': a['label'][lang], 'rows': a['rows']} for a in company['bank_accounts']],
-    'kickoff_url': company['kickoff_url'], 'url': f'https://proposals.eureka.ceo/{slug}',
+    'card_fee_pct': (company.get('card') or {}).get('fee_pct'), 'stripe_url': P['payment'].get('stripe_url'), 'url': f'https://proposals.eureka.ceo/{slug}',
   }
   with open(os.path.join(api_dir, f'{slug}.json'), 'w', encoding='utf-8') as f:
     json.dump(server, f, ensure_ascii=False, indent=2)

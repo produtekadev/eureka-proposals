@@ -34,7 +34,7 @@
       {
         "k": "Payment",
         "h": "50% now, 50% on delivery",
-        "p": "By bank transfer, no card fees."
+        "p": "Bank transfer, or card with a 4% fee."
       }
     ]
   },
@@ -181,7 +181,7 @@
   },
   "payment": {
     "deposit_pct": 50,
-    "schedule": "50% when you accept, 50% on delivery. By bank transfer, no card fees.",
+    "schedule": "50% when you accept, 50% on delivery. By bank transfer, or by card through Stripe with a 4% card fee.",
     "ref": "ACME-2611"
   },
   "next_steps": [
@@ -191,9 +191,9 @@
       "p": "Right here, below."
     },
     {
-      "when": "Within 2 days",
-      "h": "Kickoff",
-      "p": "We meet the team and open Slack and the client portal."
+      "when": "Once we receive it",
+      "h": "Next steps by email",
+      "p": "We send you the link to book the kickoff."
     },
     {
       "when": "Week of November 30",

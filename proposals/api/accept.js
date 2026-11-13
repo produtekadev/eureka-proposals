@@ -1,7 +1,7 @@
 // POST /api/accept
 // Called by the "Accept proposal" block. Recomputes the accepted scope from the
 // proposal's own data (never trusts prices from the browser), then:
-//   1. emails the client the payment details and kickoff link (copy to the team)
+//   1. emails the client the payment details: bank transfer or card through Stripe (copy to the team)
 //   2. posts a Slack message, if SLACK_WEBHOOK_URL is set
 //
 // Environment variables (Vercel project settings):
@@ -19,8 +19,9 @@ const T = {
     thanks: (c) => `Thank you for accepting the proposal for ${c}. Here's everything you need to get started.`,
     scope: 'Accepted scope', total: 'Total', deposit: 'Deposit to send now', ref: 'Payment reference',
     memo: 'Please add the reference to the transfer memo so we can match your payment.',
-    bank: 'Bank details', kickoff: 'Book your kickoff', kickoffText: 'Pick a time for the kickoff:',
-    after: 'We confirm your deposit within one business day and send you the client portal invite.',
+    bank: 'Option 1: bank transfer', card: (p) => `Option 2: card through Stripe (+${p}% fee)`, cardAmt: 'Amount with the card fee',
+    cardPay: 'Pay with card', cardSoon: 'We will send you the card payment link shortly.',
+    after: 'As soon as we receive your payment, we will email you the next steps, including the link to book your kickoff.',
     bye: 'The Eureka team', view: 'View the proposal',
   },
   es: {
@@ -29,8 +30,9 @@ const T = {
     thanks: (c) => `Gracias por aceptar la propuesta para ${c}. Aquí tienes todo lo necesario para empezar.`,
     scope: 'Alcance aceptado', total: 'Total', deposit: 'Anticipo a enviar', ref: 'Referencia de pago',
     memo: 'Incluye la referencia en el concepto de la transferencia para identificar tu pago.',
-    bank: 'Datos bancarios', kickoff: 'Agenda el kickoff', kickoffText: 'Elige un horario para el kickoff:',
-    after: 'Confirmamos tu anticipo en un día hábil y te enviamos la invitación al portal de cliente.',
+    bank: 'Opción 1: transferencia bancaria', card: (p) => `Opción 2: tarjeta a través de Stripe (+${p}% de recargo)`, cardAmt: 'Monto con el recargo',
+    cardPay: 'Pagar con tarjeta', cardSoon: 'Te enviaremos el enlace de pago con tarjeta en breve.',
+    after: 'Apenas recibamos tu pago, te enviaremos por email los próximos pasos, incluido el enlace para agendar el kickoff.',
     bye: 'El equipo de Eureka', view: 'Ver la propuesta',
   },
 };
@@ -47,6 +49,10 @@ function loadProposal(slug) {
 function emailHtml(P, a, scope, t) {
   const rows = (r) => r.map(([k, v]) => `<tr><td style="padding:6px 12px 6px 0;color:#555">${esc(k)}</td><td style="padding:6px 0;font-weight:600">${esc(v)}</td></tr>`).join('');
   const banks = P.bank_accounts.map((b) => `<p style="margin:16px 0 4px;font-weight:700">${esc(b.label)}</p><table style="border-collapse:collapse;font-size:14px">${rows(b.rows)}</table>`).join('');
+  const fee = P.card_fee_pct;
+  const card = fee ? `<h3 style="color:#750FB4;margin:24px 0 6px">${esc(t.card(fee))}</h3>
+  <p style="margin:0">${t.cardAmt}: <b>${money(P.currency, scope.deposit * (1 + fee / 100))}</b></p>
+  <p style="margin:6px 0 0">${P.stripe_url ? `<a href="${esc(P.stripe_url)}" style="color:#750FB4;font-weight:700">${t.cardPay}</a>` : esc(t.cardSoon)}</p>` : '';
   return `<div style="font-family:Helvetica,Arial,sans-serif;color:#111;max-width:560px;line-height:1.5">
   <p>${esc(t.hi(a.name.split(' ')[0]))}</p>
   <p>${esc(t.thanks(P.company))}</p>
@@ -56,8 +62,7 @@ function emailHtml(P, a, scope, t) {
   <h3 style="color:#750FB4;margin:24px 0 6px">${t.deposit}: ${money(P.currency, scope.deposit)}</h3>
   <p style="margin:0">${t.ref}: <b>${esc(P.ref)}</b><br><span style="color:#555">${t.memo}</span></p>
   <h3 style="color:#750FB4;margin:24px 0 6px">${t.bank}</h3>${banks}
-  <h3 style="color:#750FB4;margin:24px 0 6px">${t.kickoff}</h3>
-  <p style="margin:0">${t.kickoffText} <a href="${esc(P.kickoff_url)}" style="color:#750FB4;font-weight:700">${esc(P.kickoff_url)}</a></p>
+${card}
   <p style="margin:24px 0 0">${t.after}</p>
   <p style="margin:24px 0 0">${t.bye}<br><a href="${esc(P.url)}" style="color:#555">${t.view}</a></p>
 </div>`;

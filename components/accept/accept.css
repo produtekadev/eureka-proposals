@@ -58,3 +58,6 @@
 .acc-step .acc-btn{margin-top:14px}
 .acc-reset{margin-top:14px;font-size:.8rem;color:var(--muted);text-decoration:underline}
 @media (max-width:760px){.acc-sum{grid-template-columns:1fr}.acc-grid{grid-template-columns:1fr}.acc-pay{grid-template-columns:1fr;gap:14px}.acc-bank dt{width:96px}.acc-sum,.acc-form{padding-left:18px;padding-right:18px}.acc-step{padding:18px}}
+.acc-stripe{border:1px solid var(--line);border-radius:10px;padding:14px}
+.acc-stripe .amt2{font-size:1.4rem;font-weight:700;font-variant-numeric:tabular-nums}
+.acc-stripe p{font-size:.85rem;color:var(--muted);margin:4px 0 12px}

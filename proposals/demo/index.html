@@ -602,6 +602,9 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 .acc-step .acc-btn{margin-top:14px}
 .acc-reset{margin-top:14px;font-size:.8rem;color:var(--muted);text-decoration:underline}
 @media (max-width:760px){.acc-sum{grid-template-columns:1fr}.acc-grid{grid-template-columns:1fr}.acc-pay{grid-template-columns:1fr;gap:14px}.acc-bank dt{width:96px}.acc-sum,.acc-form{padding-left:18px;padding-right:18px}.acc-step{padding:18px}}
+.acc-stripe{border:1px solid var(--line);border-radius:10px;padding:14px}
+.acc-stripe .amt2{font-size:1.4rem;font-weight:700;font-variant-numeric:tabular-nums}
+.acc-stripe p{font-size:.85rem;color:var(--muted);margin:4px 0 12px}
 
 </style>
 </head>
@@ -655,7 +658,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
     <div><div class="k">Duration</div><div class="v"><em>4</em> weeks</div><div class="d">Week of November 30</div></div>
     <div><div class="k">Date</div><div class="v">November 13, 2026</div><div class="d">Proposal valid until November 27, 2026</div></div>
   </div>
-  <div class="sec-sm"><div class="glance"><div><div class="n">Focus</div><h3>Structure before hiring</h3><p>A system the next two hires can learn in a week.</p></div><div><div class="n">Total · USD 2,800</div><h3>Discovery, build, AI and migration</h3><p>Four phases in about five weeks.</p></div><div><div class="n">Payment</div><h3>50% now, 50% on delivery</h3><p>By bank transfer, no card fees.</p></div></div></div>
+  <div class="sec-sm"><div class="glance"><div><div class="n">Focus</div><h3>Structure before hiring</h3><p>A system the next two hires can learn in a week.</p></div><div><div class="n">Total · USD 2,800</div><h3>Discovery, build, AI and migration</h3><p>Four phases in about five weeks.</p></div><div><div class="n">Payment</div><h3>50% now, 50% on delivery</h3><p>Bank transfer, or card with a 4% fee.</p></div></div></div>
   <div class="pager"></div>
 </section>
 <section class="page" id="context" data-n="01" data-name="Context">
@@ -722,7 +725,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
       <div><div class="k">Total</div><div class="v" data-sp-total></div></div>
       <div><div class="k">Duration</div><div class="v" data-sp-weeks></div></div>
       <div><div class="k">Deposit when you accept</div><div class="v" data-sp-dep></div></div>
-      <p>50% when you accept, 50% on delivery. By bank transfer, no card fees.</p>
+      <p>50% when you accept, 50% on delivery. By bank transfer, or by card through Stripe with a 4% card fee.</p>
     </div>
   </div>
   <div class="sec"><div class="ie">
@@ -744,8 +747,8 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 <div class="label">Section 05</div>
   <h1>We're ready to build<br><em>your Eureka moment.</em></h1>
   <p class="lede">Proposal valid until <b>November 27, 2026</b>. Projected start: <b>Week of November 30</b>.</p>
-  <div class="sec-sm"><div class="label">Next steps</div><ul class="next"><li><div class="when">Today</div><div><h3>Accept and send the deposit</h3><p>Right here, below.</p></div></li><li><div class="when">Within 2 days</div><div><h3>Kickoff</h3><p>We meet the team and open Slack and the client portal.</p></div></li><li><div class="when">Week of November 30</div><div><h3>Discovery starts</h3><p>Interviews and audit.</p></div></li></ul></div>
-  <div class="acc" data-api="/api/accept" data-lang="en" id="accept" data-key="demo" data-ref="ACME-2611">
+  <div class="sec-sm"><div class="label">Next steps</div><ul class="next"><li><div class="when">Today</div><div><h3>Accept and send the deposit</h3><p>Right here, below.</p></div></li><li><div class="when">Once we receive it</div><div><h3>Next steps by email</h3><p>We send you the link to book the kickoff.</p></div></li><li><div class="when">Week of November 30</div><div><h3>Discovery starts</h3><p>Interviews and audit.</p></div></li></ul></div>
+  <div class="acc" data-fee="4" data-api="/api/accept" data-lang="en" id="accept" data-key="demo" data-ref="ACME-2611">
     <div class="acc-card">
     <div class="acc-sum">
       <div>
@@ -762,7 +765,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
         <div class="acc-f"><label for="acc-email">Email</label><input id="acc-email" name="email" type="email" autocomplete="email" required></div>
       </div>
       <label class="acc-ck"><input type="checkbox" name="terms" required><span>I accept this proposal and the <a href="#acc-terms" data-acc-terms>terms and conditions</a>.</span></label>
-      <details class="acc-terms" id="acc-terms"><summary>Read the terms</summary><ul><li><b>Scope.</b> We deliver what this proposal describes. Anything new is quoted separately before we start it.</li><li><b>Payment.</b> By bank transfer, on the schedule shown in this proposal.</li><li><b>Start.</b> Work starts once the deposit is received and the kickoff is held.</li><li><b>Confidentiality.</b> Everything we see in your workspace and tools stays confidential. We can sign your NDA.</li><li><b>Ownership.</b> Everything we build lives in your Notion workspace and belongs to you.</li><li><b>Notion licenses.</b> Paid directly to Notion. Not included in our price.</li><li><b>Payment schedule.</b> 50% when you accept, 50% on delivery. By bank transfer, no card fees.</li></ul></details>
+      <details class="acc-terms" id="acc-terms"><summary>Read the terms</summary><ul><li><b>Scope.</b> We deliver what this proposal describes. Anything new is quoted separately before we start it.</li><li><b>Payment.</b> By bank transfer, or by card through Stripe with a 4% card fee, on the schedule shown in this proposal.</li><li><b>Start.</b> Work starts once we receive the deposit. We then email you the next steps and the link to book the kickoff.</li><li><b>Confidentiality.</b> Everything we see in your workspace and tools stays confidential. We can sign your NDA.</li><li><b>Ownership.</b> Everything we build lives in your Notion workspace and belongs to you.</li><li><b>Notion licenses.</b> Paid directly to Notion. Not included in our price.</li><li><b>Payment schedule.</b> 50% when you accept, 50% on delivery. By bank transfer, or by card through Stripe with a 4% card fee.</li></ul></details>
       <div class="acc-row"><button type="button" class="acc-btn" data-acc-submit>Accept and see payment details</button><span class="acc-err" role="alert"></span></div>
     </form>
   </div>
@@ -775,17 +778,12 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
         <div class="acc-step-h"><span class="n">1</span><h3>Send the deposit</h3><span class="demo">Demo data</span></div>
         <div class="acc-pay">
           <div><div class="amt"><span data-acc-dep></span></div><div class="k"><span data-acc-dlabel></span></div><div class="acc-ref">Reference: ACME-2611</div></div>
-          <div><div class="acc-tabs"><button type="button" class="on" data-bank="usd">USD · ACH or wire</button><button type="button" class="" data-bank="cop">COP · Colombia</button></div><dl class="acc-bank" data-bank="usd" style="margin:0"><div><dt>Account holder</dt><dd>Produteka LLC</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Bank</dt><dd>Demo Bank, N.A.</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Routing (ACH)</dt><dd>000000000</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Account number</dt><dd>0000000000</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>SWIFT (wire)</dt><dd>DEMOUS33XXX</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Bank address</dt><dd>123 Demo Street, San Francisco, CA 94105</dd><button type="button" class="acc-copy">Copy</button></div></dl><dl class="acc-bank" data-bank="cop" style="margin:0" hidden><div><dt>Account holder</dt><dd>Produteka S.A.S.</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Bank</dt><dd>Banco Demo</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Account type</dt><dd>Savings</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Account number</dt><dd>000-000000-00</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>NIT</dt><dd>900.000.000-0</dd><button type="button" class="acc-copy">Copy</button></div></dl><p class="acc-note">Add the reference to the transfer memo so we can match your payment.</p></div>
+          <div><div class="acc-tabs"><button type="button" class="on" data-bank="usd">Bank transfer · USD</button><button type="button" data-bank="card">Card · Stripe (+4%)</button></div><div class="acc-panel" data-bank="usd"><dl class="acc-bank" style="margin:0"><div><dt>Account holder</dt><dd>Produteka LLC</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Bank</dt><dd>Demo Bank, N.A.</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Routing (ACH)</dt><dd>000000000</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Account number</dt><dd>0000000000</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>SWIFT (wire)</dt><dd>DEMOUS33XXX</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Bank address</dt><dd>123 Demo Street, San Francisco, CA 94105</dd><button type="button" class="acc-copy">Copy</button></div></dl><p class="acc-note">Add the reference to the transfer memo so we can match your payment.</p></div><div class="acc-panel acc-stripe" data-bank="card" hidden><div class="k">Amount with the 4% card fee</div><div class="amt2" data-acc-card></div><p>Secure payment through Stripe. The card fee is added to the deposit.</p><p>We send you the card payment link by email.</p></div></div>
         </div>
       </div>
       <div class="acc-step">
-        <div class="acc-step-h"><span class="n">2</span><h3>Book your kickoff</h3><span class="demo">Demo data</span></div>
-        <p>Pick a time for the kickoff. We use it to meet the team, confirm the plan and open your Slack channel.</p>
-        <a class="acc-btn" href="https://cal.com/eureka-demo/kickoff" target="_blank" rel="noopener">Book the kickoff →</a>
-      </div>
-      <div class="acc-step">
-        <div class="acc-step-h"><span class="n">3</span><h3>We take it from there</h3></div>
-        <p>We confirm your deposit within one business day and send the client portal invite.</p>
+        <div class="acc-step-h"><span class="n">2</span><h3>We take it from there</h3></div>
+        <p>As soon as we receive your payment, we email you the next steps, including the link to book your kickoff.</p>
       </div>
     </div>
     <button type="button" class="acc-reset" data-acc-reset>Reset (test only)</button>
@@ -918,6 +916,8 @@ window.EUREKA_UI = {"total": "Total", "accepted_by": "Accepted by", "on": "on", 
     if(!s) return;
     var dep=money(s.currency,s.deposit);
     [].forEach.call(el.querySelectorAll('[data-acc-dep]'),function(x){x.textContent=dep});
+    var fee=+(el.dataset.fee||0);
+    [].forEach.call(el.querySelectorAll('[data-acc-card]'),function(x){x.textContent=money(s.currency,s.deposit*(1+fee/100))});
     [].forEach.call(el.querySelectorAll('[data-acc-dlabel]'),function(x){x.textContent=s.pct+'% '+t('on_accept','when you accept')+' · '+t('total','Total')+' '+money(s.currency,s.total)});
     var li=function(i,cls,extra){return '<li class="'+cls+'"><span class="n">'+(i.n||'')+'</span><span class="nm">'+esc(i.name)+(extra||'')+'</span><span class="pr">'+money(s.currency,i.price)+'</span></li>'};
     var rows=s.items.map(function(i){return li(i,'')}).join('')
@@ -963,7 +963,7 @@ window.EUREKA_UI = {"total": "Total", "accepted_by": "Accepted by", "on": "on", 
   [].forEach.call(el.querySelectorAll('.acc-tabs button'),function(b){
     b.addEventListener('click',function(){
       [].forEach.call(el.querySelectorAll('.acc-tabs button'),function(x){x.classList.toggle('on',x===b)});
-      [].forEach.call(el.querySelectorAll('.acc-bank'),function(x){x.hidden=x.dataset.bank!==b.dataset.bank});
+      [].forEach.call(el.querySelectorAll('.acc-panel'),function(x){x.hidden=x.dataset.bank!==b.dataset.bank});
     });
   });
   el.addEventListener('click',function(e){

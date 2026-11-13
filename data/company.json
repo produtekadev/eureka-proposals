@@ -1,17 +1,16 @@
 {
-  "_note": "DEMO DATA. Replace bank accounts, kickoff_url and terms with the real ones before sending a real proposal.",
+  "_note": "DEMO DATA. Replace the bank account and terms with the real ones before sending a real proposal. Each proposal sets its own Stripe link in payment.stripe_url.",
   "demo": true,
   "legal_name": "Produteka LLC",
   "brand": "Eureka",
   "site": "eureka.ceo",
   "team_email": "team@eureka.ceo",
-  "kickoff_url": "https://cal.com/eureka-demo/kickoff",
   "bank_accounts": [
     {
       "id": "usd",
       "label": {
-        "en": "USD · ACH or wire",
-        "es": "USD · ACH o wire"
+        "en": "Bank transfer · USD",
+        "es": "Transferencia · USD"
       },
       "rows": [
         [
@@ -39,35 +38,6 @@
           "123 Demo Street, San Francisco, CA 94105"
         ]
       ]
-    },
-    {
-      "id": "cop",
-      "label": {
-        "en": "COP · Colombia",
-        "es": "COP · Colombia"
-      },
-      "rows": [
-        [
-          "Account holder",
-          "Produteka S.A.S."
-        ],
-        [
-          "Bank",
-          "Banco Demo"
-        ],
-        [
-          "Account type",
-          "Savings"
-        ],
-        [
-          "Account number",
-          "000-000000-00"
-        ],
-        [
-          "NIT",
-          "900.000.000-0"
-        ]
-      ]
     }
   ],
   "terms": {
@@ -78,11 +48,11 @@
       ],
       [
         "Payment",
-        "By bank transfer, on the schedule shown in this proposal."
+        "By bank transfer, or by card through Stripe with a 4% card fee, on the schedule shown in this proposal."
       ],
       [
         "Start",
-        "Work starts once the deposit is received and the kickoff is held."
+        "Work starts once we receive the deposit. We then email you the next steps and the link to book the kickoff."
       ],
       [
         "Confidentiality",
@@ -104,11 +74,11 @@
       ],
       [
         "Pago",
-        "Por transferencia bancaria, según el calendario de esta propuesta."
+        "Por transferencia bancaria, o con tarjeta a través de Stripe con un recargo del 4%, según el calendario de esta propuesta."
       ],
       [
         "Inicio",
-        "El trabajo empieza al recibir el anticipo y tener el kickoff."
+        "El trabajo empieza al recibir el anticipo. Luego te enviamos por email los próximos pasos y el enlace para agendar el kickoff."
       ],
       [
         "Confidencialidad",
@@ -157,5 +127,12 @@
       "name": "Client logo",
       "note": "Placeholder"
     }
-  ]
+  ],
+  "card": {
+    "fee_pct": 4,
+    "label": {
+      "en": "Card · Stripe (+4%)",
+      "es": "Tarjeta · Stripe (+4%)"
+    }
+  }
 }

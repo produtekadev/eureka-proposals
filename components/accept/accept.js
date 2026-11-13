@@ -18,6 +18,8 @@
     if(!s) return;
     var dep=money(s.currency,s.deposit);
     [].forEach.call(el.querySelectorAll('[data-acc-dep]'),function(x){x.textContent=dep});
+    var fee=+(el.dataset.fee||0);
+    [].forEach.call(el.querySelectorAll('[data-acc-card]'),function(x){x.textContent=money(s.currency,s.deposit*(1+fee/100))});
     [].forEach.call(el.querySelectorAll('[data-acc-dlabel]'),function(x){x.textContent=s.pct+'% '+t('on_accept','when you accept')+' · '+t('total','Total')+' '+money(s.currency,s.total)});
     var li=function(i,cls,extra){return '<li class="'+cls+'"><span class="n">'+(i.n||'')+'</span><span class="nm">'+esc(i.name)+(extra||'')+'</span><span class="pr">'+money(s.currency,i.price)+'</span></li>'};
     var rows=s.items.map(function(i){return li(i,'')}).join('')
@@ -63,7 +65,7 @@
   [].forEach.call(el.querySelectorAll('.acc-tabs button'),function(b){
     b.addEventListener('click',function(){
       [].forEach.call(el.querySelectorAll('.acc-tabs button'),function(x){x.classList.toggle('on',x===b)});
-      [].forEach.call(el.querySelectorAll('.acc-bank'),function(x){x.hidden=x.dataset.bank!==b.dataset.bank});
+      [].forEach.call(el.querySelectorAll('.acc-panel'),function(x){x.hidden=x.dataset.bank!==b.dataset.bank});
     });
   });
   el.addEventListener('click',function(e){

@@ -33,7 +33,7 @@
   ],
   "bank_accounts": [
     {
-      "label": "USD · ACH or wire",
+      "label": "Bank transfer · USD",
       "rows": [
         [
           "Account holder",
@@ -60,33 +60,9 @@
           "123 Demo Street, San Francisco, CA 94105"
         ]
       ]
-    },
-    {
-      "label": "COP · Colombia",
-      "rows": [
-        [
-          "Account holder",
-          "Produteka S.A.S."
-        ],
-        [
-          "Bank",
-          "Banco Demo"
-        ],
-        [
-          "Account type",
-          "Savings"
-        ],
-        [
-          "Account number",
-          "000-000000-00"
-        ],
-        [
-          "NIT",
-          "900.000.000-0"
-        ]
-      ]
     }
   ],
-  "kickoff_url": "https://cal.com/eureka-demo/kickoff",
+  "card_fee_pct": 4,
+  "stripe_url": null,
   "url": "https://proposals.eureka.ceo/demo"
 }
