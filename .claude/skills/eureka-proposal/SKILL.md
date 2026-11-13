@@ -69,6 +69,7 @@ Do not continue until the user confirms. Then confirm the details: projected sta
   - Plain, specific, human. Nothing that sounds generated: no "seamless", "leverage", "unlock", "robust", "streamline", "elevate".
   - Never mention other clients by name in the body (the client grid handles that).
   - Integrations are "defined in the roadmap, subject to technical feasibility", never "included" by default.
+  - Deliverables are concrete things the client receives (a report, a database, a template, a guide, a training session), never qualities or goals ("privacy for your space", "a clear structure"). If something is advice or a plan, make it a deliverable document, e.g. a migration guide.
 
 ### 5. Build and check
 
