@@ -3,7 +3,6 @@
   "lang": "en",
   "company": "Acme Studio",
   "currency": "USD",
-  "ref": "ACME-2611",
   "deposit_pct": 50,
   "phases": [
     {

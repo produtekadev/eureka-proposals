@@ -60,7 +60,6 @@ function emailHtml(P, a, scope, t) {
   <ul style="padding-left:18px;margin:0">${scope.items.map((i) => `<li>${esc(i.name)}: ${money(P.currency, i.price)}</li>`).join('')}</ul>
   <p style="margin:10px 0 0">${t.total}: <b>${money(P.currency, scope.total)}</b></p>
   <h3 style="color:#750FB4;margin:24px 0 6px">${t.deposit}: ${money(P.currency, scope.deposit)}</h3>
-  <p style="margin:0">${t.ref}: <b>${esc(P.ref)}</b><br><span style="color:#555">${t.memo}</span></p>
   <h3 style="color:#750FB4;margin:24px 0 6px">${t.bank}</h3>${banks}
 ${card}
   <p style="margin:24px 0 0">${t.after}</p>
@@ -104,7 +103,7 @@ module.exports = async (req, res) => {
     await fetch(process.env.SLACK_WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: `✅ ${P.company} accepted the proposal. ${name} (${email}). Scope: ${items.map((i) => i.name).join(', ')}. Total ${money(P.currency, total)}, deposit ${money(P.currency, scope.deposit)} pending. Ref ${P.ref}. ${P.url}` }),
+      body: JSON.stringify({ text: `✅ ${P.company} accepted the proposal. ${name} (${email}). Scope: ${items.map((i) => i.name).join(', ')}. Total ${money(P.currency, total)}, deposit ${money(P.currency, scope.deposit)} pending. ${P.url}` }),
     }).catch(() => null);
   }
 

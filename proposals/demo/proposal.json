@@ -181,8 +181,7 @@
   },
   "payment": {
     "deposit_pct": 50,
-    "schedule": "50% when you accept, 50% on delivery. By bank transfer, or by card through Stripe with a 4% card fee.",
-    "ref": "ACME-2611"
+    "schedule": "50% when you accept, 50% on delivery. By bank transfer, or by card through Stripe with a 4% card fee."
   },
   "next_steps": [
     {

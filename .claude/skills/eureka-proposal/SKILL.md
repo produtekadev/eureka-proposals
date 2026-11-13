@@ -55,7 +55,7 @@ Using `references/playbook.md`, propose phases. For each one give the name, tag 
 > **Total USD X** · deposit 50% = USD Z
 > Should we adjust anything?
 
-Do not continue until the user confirms. Then confirm the details: projected start, valid-until date (default: two weeks from today), deposit % (default 50), payment reference (default `CLIENT-DDMM`), and who prepares it (team ids from `data/team.json`).
+Do not continue until the user confirms. Then confirm the details: projected start, valid-until date (default: two weeks from today), deposit % (default 50) and who prepares it (team ids from `data/team.json`).
 
 ### 4. Write the content file
 

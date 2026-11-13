@@ -66,7 +66,6 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
   "payment": {
     "deposit_pct": 50,
     "schedule": "50% when you accept, 50% on delivery. By bank transfer, or by card through Stripe with a 4% card fee.",
-    "ref": "ACME-2611",                 // payment reference shown after acceptance
     "stripe_url": "https://buy.stripe.com/..."  // Stripe payment link for the deposit + 4% card fee (fee % lives in data/company.json "card")
   },
 

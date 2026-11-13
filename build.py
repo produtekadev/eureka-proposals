@@ -231,7 +231,7 @@ def sec_start(pg, P, company):
   row = lambda k, v: f'<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd><button type="button" class="acc-copy">{u["copy"]}</button></div>'
   accts = company['bank_accounts']
   tabs = ''.join(f'<button type="button" class="{"on" if i == 0 else ""}" data-bank="{a["id"]}">{esc(a["label"][pg.lang])}</button>' for i, a in enumerate(accts))
-  banks = ''.join(f'<div class="acc-panel" data-bank="{a["id"]}"{"" if i == 0 else " hidden"}><dl class="acc-bank" style="margin:0">' + ''.join(row(k, v) for k, v in a['rows']) + f'</dl><p class="acc-note">{u["memo"]}</p></div>' for i, a in enumerate(accts))
+  banks = ''.join(f'<div class="acc-panel" data-bank="{a["id"]}"{"" if i == 0 else " hidden"}><dl class="acc-bank" style="margin:0">' + ''.join(row(k, v) for k, v in a['rows']) + '</dl></div>' for i, a in enumerate(accts))
   card = company.get('card')
   if card:
     tabs += f'<button type="button" data-bank="card">{esc(card["label"][pg.lang])}</button>'
@@ -241,10 +241,9 @@ def sec_start(pg, P, company):
               f'<div class="amt2" data-acc-card></div><p>{u["card_text"]}</p>{btn}</div>')
   terms = '<ul>' + ''.join(f'<li><b>{esc(k)}.</b> {esc(v)}</li>' for k, v in company['terms'][pg.lang]) + (f'<li><b>{"Payment schedule" if pg.lang == "en" else "Calendario de pago"}.</b> {rich(pay.get("schedule", ""))}</li>') + '</ul>'
   demo = f'<span class="demo">{u["demo"]}</span>' if company.get('demo') else ''
-  ref = pay['ref']
   acc = read(os.path.join(ROOT, 'components', 'accept', 'accept.html'))
   fill = {
-    'proposal_id': P['slug'], 'payment_ref': ref, 'first_step_name': u['scope_selected'],
+    'proposal_id': P['slug'], 'first_step_name': u['scope_selected'],
     'deposit_amount': '<span data-acc-dep></span>', 'deposit_label': f'<span data-acc-dlabel></span>',
     'first_step_detail': f'<ul class="acc-items" data-acc-items></ul>', 'terms_html': terms,
     'accepted_scope_html': f'<div class="acc-step acc-scope-card"><h3>{u["accepted_scope"]}</h3><ul class="acc-items" data-acc-items></ul></div>',
@@ -258,12 +257,10 @@ def sec_start(pg, P, company):
                     ('Read the terms', 'read_terms'), ('Accept and see payment details', 'submit'), ('Send the deposit', 'send_deposit'),
                     ('We take it from there', 'from_there'),
                     ('As soon as we receive your payment, we email you the next steps, including the link to book your kickoff.', 'from_there_text'),
-                    ('Reset (test only)', 'reset'), ('Reference:', 'reference')]:
+                    ('Reset (test only)', 'reset')]:
     v = u[key]
     if en_s.startswith('>'):
       acc = acc.replace(en_s, f'>{v}<')
-    elif en_s == 'Reference:':
-      acc = acc.replace(en_s, v + ':')
     else:
       acc = acc.replace(en_s, v)
   acc = acc.replace('<div class="label">Start</div>\n  <h2>Ready to <em>start?</em></h2>\n', '')
@@ -344,7 +341,7 @@ window.EUREKA_UI = {json.dumps(strings, ensure_ascii=False)};
   os.makedirs(api_dir, exist_ok=True)
   server = {
     'slug': slug, 'lang': lang, 'company': P['client']['company'], 'currency': P['proposal'].get('currency', 'USD'),
-    'ref': P['payment']['ref'], 'deposit_pct': P['payment'].get('deposit_pct', 50),
+    'deposit_pct': P['payment'].get('deposit_pct', 50),
     'phases': [{'id': ph['id'], 'name': ph['name'], 'price': ph['price'], 'tag': ph.get('tag', 'essential'),
 } for ph in P['proposal']['phases']],
     'bank_accounts': [{'label': a['label'][lang], 'rows': a['rows']} for a in company['bank_accounts']],
