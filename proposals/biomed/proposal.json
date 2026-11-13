@@ -185,5 +185,12 @@
       "p": "Done before the end of the year."
     }
   ],
-  "closing": "We're ready to build<br><em>your Eureka moment.</em>"
+  "closing": "We're ready to build<br><em>your Eureka moment.</em>",
+  "clients": [
+    "henkel",
+    "toggl-hire",
+    "bid",
+    "foton",
+    "daughters-for-earth"
+  ]
 }

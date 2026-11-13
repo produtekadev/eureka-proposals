@@ -10,6 +10,7 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
   "client": { "company": "", "contact": "", "role": "", "location": "" },
   "prepared_by": ["paula", "mateo"],    // ids from data/team.json, shown on the cover
   "team": ["abel"],                     // extra team members shown in About us
+  "clients": ["henkel", "toggl-hire"],  // client ids from data/clients.json, most relevant to this client first (logo, service, location)
   "date": "2026-11-13",                 // proposal date (YYYY-MM-DD)
   "valid_until": "2026-11-27",
   "start": "Week of November 30",       // free text

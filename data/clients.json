@@ -1,0 +1,67 @@
+{
+  "bid": {
+    "name": "Inter-American Development Bank",
+    "logo": "clients/bid.png",
+    "url": "https://www.iadb.org",
+    "what": {
+      "en": "Product consultancy",
+      "es": "Consultoría de producto"
+    },
+    "where": {
+      "en": "USA",
+      "es": "EE. UU."
+    }
+  },
+  "henkel": {
+    "name": "Henkel Search Partners",
+    "logo": "clients/henkel.png",
+    "url": "https://www.henkelsp.com",
+    "what": {
+      "en": "Notion onboarding",
+      "es": "Onboarding en Notion"
+    },
+    "where": {
+      "en": "New York City",
+      "es": "Nueva York"
+    }
+  },
+  "toggl-hire": {
+    "name": "Toggl Hire",
+    "logo": "clients/toggl-hire.png",
+    "url": "https://toggl.com/hire/",
+    "what": {
+      "en": "Notion consulting",
+      "es": "Consultoría en Notion"
+    },
+    "where": {
+      "en": "Estonia",
+      "es": "Estonia"
+    }
+  },
+  "daughters-for-earth": {
+    "name": "Daughters for Earth",
+    "logo": "clients/daughters-for-earth.png",
+    "url": "https://www.daughtersforearth.org",
+    "what": {
+      "en": "Grants and donor hubs",
+      "es": "Hubs de grants y donantes"
+    },
+    "where": {
+      "en": "Global",
+      "es": "Global"
+    }
+  },
+  "foton": {
+    "name": "Foton Pictures",
+    "logo": "clients/foton.png",
+    "url": "https://foton.pictures",
+    "what": {
+      "en": "Notion consultancy",
+      "es": "Consultoría en Notion"
+    },
+    "where": {
+      "en": "USA and Latam",
+      "es": "EE. UU. y Latam"
+    }
+  }
+}

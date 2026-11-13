@@ -66,3 +66,12 @@
 .acc-scope-card h3{margin:0;font-size:1.1rem;font-weight:800;letter-spacing:-.02em}
 .acc.done .acc-scope-card{margin-top:16px}
 .acc-mail{margin-top:10px;font-size:.88rem;color:#14583C}
+.clcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+.clc{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 14px;color:var(--ink);text-decoration:none;transition:border-color .15s}
+.clc:hover{border-color:#cfcfcf}
+.clc-logo{height:64px;display:flex;align-items:center}
+.clc-logo img{max-height:46px;max-width:100%;object-fit:contain;display:block}
+.clc-meta{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.clc-meta b{font-size:.86rem;font-weight:600}
+.clc-meta span{font-size:.8rem;color:var(--muted)}
+@media (max-width:620px){.clcs{grid-template-columns:1fr 1fr}.clc:last-child:nth-child(odd){grid-column:span 2}}

@@ -217,12 +217,21 @@ def sec_about(pg, P, team, company):
   for t in P['prepared_by'] + [x for x in P.get('team', []) if x not in P['prepared_by']]:
     m = team[t]
     tm += (f'<div class="tm"><div class="av" style="background:var(--{m["color"]})"><img src="{data_uri(os.path.join(T, "assets", m["photo"]))}" alt="{esc(m["name"])}" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block"></div>'
-           f'<h3>{esc(m["name"])}</h3><div class="role">{esc(m["role"][pg.lang])}</div><p>{esc(m["bio"][pg.lang])}</p></div>')
-  logos = ''.join(f'<div class="cl"><span>{esc(u["client_logo"] if c["name"] == "Client logo" else c["name"])}</span></div>' for c in company['clients'])
+           f'<h3>{esc(m["name"])}</h3><div class="role">{esc(m["role"][pg.lang])}</div></div>')
+  if P.get('clients'):
+    lib = json.loads(read(os.path.join(ROOT, 'data', 'clients.json')))
+    logos = ''.join(
+      f'<a class="clc" href="{esc(c["url"])}" target="_blank" rel="noopener"><div class="clc-logo"><img src="{data_uri(os.path.join(T, "assets", c["logo"]))}" alt="{esc(c["name"])}"></div>'
+      f'<div class="clc-meta"><b>{esc(c["what"][pg.lang])}</b><span>{esc(c["where"][pg.lang])}</span></div></a>'
+      for c in (lib[k] for k in P['clients']))
+    logos_cls = 'clcs'
+  else:
+    logos = ''.join(f'<div class="cl"><span>{esc(u["client_logo"] if c["name"] == "Client logo" else c["name"])}</span></div>' for c in company['clients'])
+    logos_cls = 'cls'
   body = f'''  <h1>{rich(P.get('about_title', 'Assigned team<br><em>for this project.</em>' if pg.lang == 'en' else 'Equipo asignado<br><em>para este proyecto.</em>'))}</h1>
   <div class="team">{tm}</div>
   <div class="ncpc"><span class="ncp" role="img" aria-label="{u['partner']}"></span><div><h3>{u['partner']}</h3><p>{u['partner_text']}</p></div></div>
-  <div class="sec"><div class="label">{u['clients']}</div><div class="cls">{logos}</div></div>'''
+  <div class="sec"><div class="label">{u['clients']}</div><div class="{logos_cls}">{logos}</div></div>'''
   pg.add('about', u['about'], body)
 
 def sec_start(pg, P, company):
