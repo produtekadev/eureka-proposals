@@ -5,12 +5,12 @@
     "color": "purple",
     "photo": "team/paula.jpg",
     "role": {
-      "en": "Consulting and systems design",
-      "es": "Consultoría y diseño de sistemas"
+      "en": "Implementation and training",
+      "es": "Implementación y capacitación"
     },
     "bio": {
-      "en": "Your point of contact on Slack, in meetings and for deliverables. Leads interviews and design.",
-      "es": "Tu punto de contacto en Slack, reuniones y entregables. Lidera las entrevistas y el diseño."
+      "en": "Builds the workspace, trains your team and is your day-to-day contact.",
+      "es": "Construye el workspace, capacita a tu equipo y es tu contacto del día a día."
     },
     "linkedin": "https://www.linkedin.com/in/paula-andrea-gonzalez/"
   },
@@ -20,12 +20,12 @@
     "color": "magenta",
     "photo": "team/mateo.jpg",
     "role": {
-      "en": "Strategy and business",
-      "es": "Estrategia y negocio"
+      "en": "Strategy and architecture",
+      "es": "Estrategia y arquitectura"
     },
     "bio": {
-      "en": "Roadmap, prioritization and follow-up with leadership.",
-      "es": "Roadmap, priorización y seguimiento con la dirección."
+      "en": "Designs the system with you, sets the priorities and follows up on progress.",
+      "es": "Diseña el sistema contigo, define las prioridades y hace seguimiento al avance."
     },
     "linkedin": "https://www.linkedin.com/in/mbermudezv/"
   },

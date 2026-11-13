@@ -10,9 +10,6 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
   "client": { "company": "", "contact": "", "role": "", "location": "" },
   "prepared_by": ["paula", "mateo"],    // ids from data/team.json, shown on the cover
   "team": ["abel"],                     // extra team members shown in About us
-  "team_roles": {                       // optional, but write one per person: what each does in THIS project
-    "paula": { "role": "Workflows and team training", "bio": "One or two lines tied to this proposal's phases." }
-  },
   "date": "2026-11-13",                 // proposal date (YYYY-MM-DD)
   "valid_until": "2026-11-27",
   "start": "Week of November 30",       // free text
