@@ -248,7 +248,7 @@ def sec_start(pg, P, company):
            else f'<p>{u["card_soon"]}</p>')
     banks += (f'<div class="acc-panel acc-stripe" data-bank="card" hidden><div class="k">{u["card_amount"].format(pct=card["fee_pct"])}</div>'
               f'<div class="amt2" data-acc-card></div><p>{u["card_text"]}</p>{btn}</div>')
-  terms = '<ul>' + ''.join(f'<li><b>{esc(k)}.</b> {esc(v)}</li>' for k, v in company['terms'][pg.lang]) + (f'<li><b>{"Payment schedule" if pg.lang == "en" else "Calendario de pago"}.</b> {rich(pay.get("schedule", ""))}</li>') + '</ul>'
+  terms = '<ul>' + ''.join(f'<li><b>{esc(k)}.</b> {esc(v)}</li>' for k, v in company['terms'][pg.lang]) + (f'<li><b>{"Payment" if pg.lang == "en" else "Pago"}.</b> {rich(pay.get("schedule", ""))}</li>') + '</ul>'
   demo = f'<span class="demo">{u["demo"]}</span>' if company.get('demo') else ''
   acc = read(os.path.join(ROOT, 'components', 'accept', 'accept.html'))
   fill = {
