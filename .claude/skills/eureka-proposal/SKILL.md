@@ -101,6 +101,14 @@ The proposal lives in GitHub; its Notion row holds the metadata and is what the 
 
 Then offer to draft the send email (from the team, in the client's language): one personal line from the call, one or two lines on what the proposal covers, the link, and "accept directly on the page when you're ready".
 
+## Deploy budget (read before pushing)
+
+Vercel's free plan allows 100 deployments a day for the whole team, counted over a rolling 24 hours. On 2026-11-13 a review session hit it in one hour: one push per comment, pushed to two branches, with two Vercel projects building from this repo (4 deploys per edit).
+
+- Group changes. During a review, apply every comment locally, rebuild, and update the review copy as you go; push to `main` once per review round (or when the user asks to see it live), not once per comment.
+- Push only to `main` to publish. Pushes to `claude/*` branches don't build (see `proposals/vercel.json`).
+- If a push doesn't show up live, check the Vercel deployments list before assuming the code is wrong: a 402 "api-deployments-free-per-day" means the limit, not a bug.
+
 ## Before every publish
 
 - `data/company.json` has `"demo": true` while bank accounts, kickoff link and terms are placeholders. If it's still true, tell the user the page shows demo payment data and don't publish to a real client until they confirm.
