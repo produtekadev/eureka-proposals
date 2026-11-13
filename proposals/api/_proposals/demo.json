@@ -1,0 +1,96 @@
+{
+  "slug": "demo",
+  "lang": "en",
+  "company": "Acme Studio",
+  "currency": "USD",
+  "ref": "ACME-2611",
+  "deposit_pct": 50,
+  "phases": [
+    {
+      "id": "discovery",
+      "name": "Discovery and architecture",
+      "price": 500,
+      "tag": "essential",
+      "default_on": false
+    },
+    {
+      "id": "build",
+      "name": "Build and training",
+      "price": 1500,
+      "tag": "essential",
+      "default_on": false
+    },
+    {
+      "id": "ai",
+      "name": "Notion AI setup",
+      "price": 300,
+      "tag": "recommended",
+      "default_on": true
+    },
+    {
+      "id": "migration",
+      "name": "Data migration",
+      "price": 500,
+      "tag": "optional",
+      "default_on": false
+    }
+  ],
+  "bank_accounts": [
+    {
+      "label": "USD · ACH or wire",
+      "rows": [
+        [
+          "Account holder",
+          "Produteka LLC"
+        ],
+        [
+          "Bank",
+          "Demo Bank, N.A."
+        ],
+        [
+          "Routing (ACH)",
+          "000000000"
+        ],
+        [
+          "Account number",
+          "0000000000"
+        ],
+        [
+          "SWIFT (wire)",
+          "DEMOUS33XXX"
+        ],
+        [
+          "Bank address",
+          "123 Demo Street, San Francisco, CA 94105"
+        ]
+      ]
+    },
+    {
+      "label": "COP · Colombia",
+      "rows": [
+        [
+          "Account holder",
+          "Produteka S.A.S."
+        ],
+        [
+          "Bank",
+          "Banco Demo"
+        ],
+        [
+          "Account type",
+          "Savings"
+        ],
+        [
+          "Account number",
+          "000-000000-00"
+        ],
+        [
+          "NIT",
+          "900.000.000-0"
+        ]
+      ]
+    }
+  ],
+  "kickoff_url": "https://cal.com/eureka-demo/kickoff",
+  "url": "https://proposals.eureka.ceo/demo"
+}

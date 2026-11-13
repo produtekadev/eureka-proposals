@@ -7,7 +7,7 @@
         <div class="k">You're accepting</div>
         <h3>{{first_step_name}}</h3>
         <div class="acc-amt">{{deposit_amount}}<small>{{deposit_label}}</small></div>
-        <p>{{first_step_detail}}</p>
+        <p class="acc-scope">{{first_step_detail}}</p>
       </div>
       <button type="button" class="acc-btn" data-acc-open>Accept proposal →</button>
     </div>
@@ -24,6 +24,7 @@
   </div>
   <div class="acc-done" aria-live="polite">
     <div class="acc-ok"><i>✓</i><span></span></div>
+    <p class="acc-mail" hidden></p>
     <div class="acc-steps">
       <div class="acc-step">
         <div class="acc-step-h"><span class="n">1</span><h3>Send the deposit</h3>{{demo_badge}}</div>

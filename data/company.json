@@ -1,0 +1,161 @@
+{
+  "_note": "DEMO DATA. Replace bank accounts, kickoff_url and terms with the real ones before sending a real proposal.",
+  "demo": true,
+  "legal_name": "Produteka LLC",
+  "brand": "Eureka",
+  "site": "eureka.ceo",
+  "team_email": "team@eureka.ceo",
+  "kickoff_url": "https://cal.com/eureka-demo/kickoff",
+  "bank_accounts": [
+    {
+      "id": "usd",
+      "label": {
+        "en": "USD · ACH or wire",
+        "es": "USD · ACH o wire"
+      },
+      "rows": [
+        [
+          "Account holder",
+          "Produteka LLC"
+        ],
+        [
+          "Bank",
+          "Demo Bank, N.A."
+        ],
+        [
+          "Routing (ACH)",
+          "000000000"
+        ],
+        [
+          "Account number",
+          "0000000000"
+        ],
+        [
+          "SWIFT (wire)",
+          "DEMOUS33XXX"
+        ],
+        [
+          "Bank address",
+          "123 Demo Street, San Francisco, CA 94105"
+        ]
+      ]
+    },
+    {
+      "id": "cop",
+      "label": {
+        "en": "COP · Colombia",
+        "es": "COP · Colombia"
+      },
+      "rows": [
+        [
+          "Account holder",
+          "Produteka S.A.S."
+        ],
+        [
+          "Bank",
+          "Banco Demo"
+        ],
+        [
+          "Account type",
+          "Savings"
+        ],
+        [
+          "Account number",
+          "000-000000-00"
+        ],
+        [
+          "NIT",
+          "900.000.000-0"
+        ]
+      ]
+    }
+  ],
+  "terms": {
+    "en": [
+      [
+        "Scope",
+        "We deliver what this proposal describes. Anything new is quoted separately before we start it."
+      ],
+      [
+        "Payment",
+        "By bank transfer, on the schedule shown in this proposal."
+      ],
+      [
+        "Start",
+        "Work starts once the deposit is received and the kickoff is held."
+      ],
+      [
+        "Confidentiality",
+        "Everything we see in your workspace and tools stays confidential. We can sign your NDA."
+      ],
+      [
+        "Ownership",
+        "Everything we build lives in your Notion workspace and belongs to you."
+      ],
+      [
+        "Notion licenses",
+        "Paid directly to Notion. Not included in our price."
+      ]
+    ],
+    "es": [
+      [
+        "Alcance",
+        "Entregamos lo que describe esta propuesta. Cualquier cosa nueva se cotiza aparte antes de empezarla."
+      ],
+      [
+        "Pago",
+        "Por transferencia bancaria, según el calendario de esta propuesta."
+      ],
+      [
+        "Inicio",
+        "El trabajo empieza al recibir el anticipo y tener el kickoff."
+      ],
+      [
+        "Confidencialidad",
+        "Todo lo que veamos en tu workspace y herramientas es confidencial. Podemos firmar tu NDA."
+      ],
+      [
+        "Propiedad",
+        "Todo lo que construimos vive en tu workspace de Notion y es tuyo."
+      ],
+      [
+        "Licencias de Notion",
+        "Se pagan directamente a Notion. No están incluidas en nuestro precio."
+      ]
+    ]
+  },
+  "clients": [
+    {
+      "name": "Client logo",
+      "note": "Placeholder"
+    },
+    {
+      "name": "Client logo",
+      "note": "Placeholder"
+    },
+    {
+      "name": "Client logo",
+      "note": "Placeholder"
+    },
+    {
+      "name": "Client logo",
+      "note": "Placeholder"
+    },
+    {
+      "name": "Client logo",
+      "note": "Placeholder"
+    },
+    {
+      "name": "Client logo",
+      "note": "Placeholder"
+    },
+    {
+      "name": "Client logo",
+      "note": "Placeholder"
+    },
+    {
+      "name": "Client logo",
+      "note": "Placeholder"
+    }
+  ]
+}

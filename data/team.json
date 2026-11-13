@@ -1,0 +1,47 @@
+{
+  "paula": {
+    "id": "paula",
+    "name": "Paula González",
+    "color": "purple",
+    "photo": "team/paula.jpg",
+    "role": {
+      "en": "Consulting and systems design",
+      "es": "Consultoría y diseño de sistemas"
+    },
+    "bio": {
+      "en": "Your point of contact on Slack, in meetings and for deliverables. Leads interviews and design.",
+      "es": "Tu punto de contacto en Slack, reuniones y entregables. Lidera las entrevistas y el diseño."
+    },
+    "linkedin": "https://www.linkedin.com/in/paula-andrea-gonzalez/"
+  },
+  "mateo": {
+    "id": "mateo",
+    "name": "Mateo Bermúdez",
+    "color": "magenta",
+    "photo": "team/mateo.jpg",
+    "role": {
+      "en": "Strategy and business",
+      "es": "Estrategia y negocio"
+    },
+    "bio": {
+      "en": "Roadmap, prioritization and follow-up with leadership.",
+      "es": "Roadmap, priorización y seguimiento con la dirección."
+    },
+    "linkedin": "https://www.linkedin.com/in/mbermudezv/"
+  },
+  "abel": {
+    "id": "abel",
+    "name": "Abel Cortés",
+    "color": "orange",
+    "photo": "team/abel.jpg",
+    "role": {
+      "en": "Systems engineering",
+      "es": "Ingeniería de sistemas"
+    },
+    "bio": {
+      "en": "Data, migrations and integrations with external tools.",
+      "es": "Datos, migraciones e integraciones con herramientas externas."
+    },
+    "linkedin": "https://www.linkedin.com/in/abel-santiago-cortes/"
+  }
+}
