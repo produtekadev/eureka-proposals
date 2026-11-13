@@ -30,28 +30,40 @@
       "label": "Bank transfer · USD",
       "rows": [
         [
-          "Account holder",
+          "Beneficiary",
           "Produteka LLC"
         ],
         [
-          "Bank",
-          "Demo Bank, N.A."
-        ],
-        [
-          "Routing (ACH)",
-          "000000000"
+          "Beneficiary address",
+          "30 North Gould Street, Sheridan, WY 82801, USA"
         ],
         [
           "Account number",
-          "0000000000"
+          "783562254976660"
         ],
         [
-          "SWIFT (wire)",
-          "DEMOUS33XXX"
+          "Account type",
+          "Checking"
+        ],
+        [
+          "Routing (ACH and wire)",
+          "121145433"
+        ],
+        [
+          "Bank",
+          "Column N.A. (Mercury's banking partner)"
         ],
         [
           "Bank address",
-          "123 Demo Street, San Francisco, CA 94105"
+          "1 Letterman Drive, Building A, Suite A4-700, San Francisco, CA 94129, USA"
+        ],
+        [
+          "SWIFT (international wire)",
+          "CLNOUS66MER"
+        ],
+        [
+          "Intermediary SWIFT (international, required)",
+          "CHASUS33XXX"
         ]
       ]
     }
