@@ -332,7 +332,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 @media (max-width:620px){.excl{grid-template-columns:1fr}}
 
 /* Team */
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:28px}
 @media (max-width:760px){.team{grid-template-columns:1fr}}
 .tm{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
 .av{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:1.05rem;letter-spacing:-.02em}
