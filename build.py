@@ -354,6 +354,7 @@ window.EUREKA_UI = {json.dumps(strings, ensure_ascii=False)};
     'phases': [{'id': ph['id'], 'name': ph['name'], 'price': ph['price'], 'tag': ph.get('tag', 'essential'),
 } for ph in P['proposal']['phases']],
     'bank_accounts': [{'label': a['label'][lang], 'rows': a['rows']} for a in company['bank_accounts']],
+    'notion_page_id': P.get('notion_page_id'),
     'card_fee_pct': (company.get('card') or {}).get('fee_pct'), 'stripe_url': P['payment'].get('stripe_url'), 'url': f'https://proposals.eureka.ceo/{slug}',
   }
   with open(os.path.join(api_dir, f'{slug}.json'), 'w', encoding='utf-8') as f:

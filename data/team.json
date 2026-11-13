@@ -12,7 +12,8 @@
       "en": "Builds the workspace, trains your team and is your day-to-day contact.",
       "es": "Construye el workspace, capacita a tu equipo y es tu contacto del día a día."
     },
-    "linkedin": "https://www.linkedin.com/in/paula-andrea-gonzalez/"
+    "linkedin": "https://www.linkedin.com/in/paula-andrea-gonzalez/",
+    "notion_user_id": "19ea2425-3e07-43f6-be8d-6c06027760d0"
   },
   "mateo": {
     "id": "mateo",
@@ -27,7 +28,8 @@
       "en": "Designs the system with you, sets the priorities and follows up on progress.",
       "es": "Diseña el sistema contigo, define las prioridades y hace seguimiento al avance."
     },
-    "linkedin": "https://www.linkedin.com/in/mbermudezv/"
+    "linkedin": "https://www.linkedin.com/in/mbermudezv/",
+    "notion_user_id": "ea4dcbac-43fb-43b7-b042-cc3fb6fdf7d8"
   },
   "abel": {
     "id": "abel",
@@ -42,6 +44,7 @@
       "en": "Data, migrations and integrations with external tools.",
       "es": "Datos, migraciones e integraciones con herramientas externas."
     },
-    "linkedin": "https://www.linkedin.com/in/abel-santiago-cortes/"
+    "linkedin": "https://www.linkedin.com/in/abel-santiago-cortes/",
+    "notion_user_id": "36fd872b-594c-81d3-a42f-00021b8aaf1c"
   }
 }

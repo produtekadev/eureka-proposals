@@ -9,6 +9,9 @@
 //   EMAIL_FROM         e.g. "Eureka <proposals@eureka.ceo>"
 //   TEAM_EMAIL         copy of every acceptance, e.g. team@eureka.ceo
 //   SLACK_WEBHOOK_URL  optional
+//   NOTION_TOKEN       Notion internal integration secret, connected to the Proposals [d] database.
+//                      When set and the proposal has notion_page_id, the row's Status changes to
+//                      Accepted, with "Accepted on" and "Accepted by" filled in.
 const fs = require('fs');
 const path = require('path');
 
@@ -67,6 +70,34 @@ ${card}
 </div>`;
 }
 
+// Statuses a proposal can be accepted from. Anything else (already Accepted, Rejected, Discarded...)
+// is left alone, so a stray or repeated POST can't overwrite a decision made in Notion.
+const OPEN_STATUSES = ['Sent', 'Follow Up Sent', 'Follow Up Required'];
+
+async function syncNotion(P, name, email, at) {
+  const token = process.env.NOTION_TOKEN;
+  if (!token || !P.notion_page_id) return 'skipped';
+  const url = `https://api.notion.com/v1/pages/${P.notion_page_id}`;
+  const headers = { Authorization: `Bearer ${token}`, 'Notion-Version': '2022-06-28', 'Content-Type': 'application/json' };
+  const g = await fetch(url, { headers }).catch(() => null);
+  if (!g || !g.ok) return 'error';
+  const page = await g.json();
+  const status = page.properties && page.properties.Status && page.properties.Status.status && page.properties.Status.status.name;
+  if (!OPEN_STATUSES.includes(status)) return `unchanged (${status})`;
+  const r = await fetch(url, {
+    method: 'PATCH',
+    headers,
+    body: JSON.stringify({
+      properties: {
+        Status: { status: { name: 'Accepted' } },
+        'Accepted on': { date: { start: at } },
+        'Accepted by': { rich_text: [{ text: { content: `${name} (${email})` } }] },
+      },
+    }),
+  }).catch(() => null);
+  return r && r.ok ? 'accepted' : 'error';
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
   const b = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
@@ -98,6 +129,8 @@ module.exports = async (req, res) => {
     }).catch(() => null);
     out.emailed = !!(r && r.ok);
   }
+
+  out.notion = await syncNotion(P, name, email, new Date().toISOString());
 
   if (process.env.SLACK_WEBHOOK_URL) {
     await fetch(process.env.SLACK_WEBHOOK_URL, {

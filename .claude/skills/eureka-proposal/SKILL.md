@@ -91,9 +91,13 @@ Show the user screenshots of the cover and the proposal section.
 - Apply the user's feedback in `proposal.json` and rebuild. Never hand-edit the generated `index.html`.
 - When the user approves, merge to `main` and push. The proposal is live at `https://proposals.eureka.ceo/<slug>`. Open it and confirm it loads.
 
-### 7. Log it
+### 7. Log it in Notion (before sharing the link)
 
-In the Notion Proposals database (data source `65eab1f5-f843-4819-a6b8-7bbfbb5a7d4d`) create or update the row: `Name` = "Proposal <Company> + Eureka", `Status` = `Sent`, `Budget` = total with recommended pieces on. Put the live link in the page body.
+The proposal lives in GitHub; its Notion row holds the metadata and is what the team's workflows run on.
+
+- In the Proposals database (data source `65eab1f5-f843-4819-a6b8-7bbfbb5a7d4d`) create the row, or update it if one exists for this client: `Name` = "Proposal <Company> + Eureka", `Status` = `Sent`, `Budget` = total, `Person` = the assigned team (`notion_user_id` from `data/team.json`), `Proposal URL` = `https://proposals.eureka.ceo/<slug>`.
+- Copy the row's page id into `proposal.json` as `notion_page_id`, rebuild and push. Without it, accepting on the page can't update Notion.
+- When the client accepts, `api/accept.js` sets `Status` = `Accepted`, `Accepted on` and `Accepted by` (needs `NOTION_TOKEN` in Vercel, with the integration connected to the database). It only changes rows that are `Sent`, `Follow Up Sent` or `Follow Up Required`.
 
 Then offer to draft the send email (from the team, in the client's language): one personal line from the call, one or two lines on what the proposal covers, the link, and "accept directly on the page when you're ready".
 
