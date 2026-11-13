@@ -1,0 +1,168 @@
+{
+  "lang": "en",
+  "client": {
+    "company": "Biomed Recruitment",
+    "contact": "Ian Cooper",
+    "role": "Founder",
+    "location": "San Diego"
+  },
+  "prepared_by": ["mateo", "paula"],
+  "team": [],
+  "date": "2026-11-13",
+  "valid_until": "2026-11-27",
+  "start": "Week of November 16",
+  "cover": {
+    "tag": "Implementation proposal",
+    "headline": "One Notion your team<br><em>and your bots</em> <span class=\"hl\">trust.</span>",
+    "lede": "A three-phase plan to organize Biomed's Notion so you, Chris, Elizabeth and your Grok bots all work from the same place, done before the end of the year. Based on our conversations on October 29 and November 10.",
+    "glance": [
+      {
+        "k": "Focus",
+        "h": "Notion first, then Grok",
+        "p": "The structure your bots will read from and write to."
+      },
+      {
+        "k": "Total · USD 1,500",
+        "h": "Architecture, context layer, tasks and team",
+        "p": "Three phases in about four weeks."
+      },
+      {
+        "k": "Bonus",
+        "h": "3 months of Notion Business",
+        "p": "On a new workspace, at no cost."
+      }
+    ]
+  },
+  "context": {
+    "title": "What we<br><em>heard.</em>",
+    "lede": "Biomed is a three-person recruitment agency moving to Grok as its central AI. Recruiterflow stays as the ATS, but <b>everything else is spread across Planner, SharePoint, OneDrive, OneNote and a new Notion workspace</b>, and the bots can only be as good as the place they read from.",
+    "stats": [
+      { "n": "3", "t": "people: Ian, Chris and Elizabeth" },
+      { "n": "10k+", "t": "candidates in Recruiterflow" },
+      { "n": "5", "t": "tools holding tasks, files and notes today" }
+    ],
+    "pains_title": "Three things <em>holding back</em> the setup.",
+    "pains": [
+      {
+        "k": "Files and notes",
+        "h": "All over the place",
+        "it": "\"OneNote is out of control.\"",
+        "p": "Ten years of notes, plus SharePoint and OneDrive, with no clear rule for what lives where. Grok can't find what nobody can find."
+      },
+      {
+        "k": "Tasks",
+        "h": "Every new job starts in Planner",
+        "it": "\"It's a lot of manual stuff.\"",
+        "p": "Assigning tasks to Chris and Elizabeth for each new role is done by hand, and Planner doesn't talk to Grok."
+      },
+      {
+        "k": "Team",
+        "h": "Only Ian is in",
+        "it": "\"They're not even using Grok yet.\"",
+        "p": "Chris and Elizabeth aren't on Notion yet, so the system only works for one person."
+      }
+    ],
+    "quote": {
+      "text": "I do like how Grok can just pull things without me going into Notion, but I also wanna keep Notion organized and clean, too.",
+      "who": "Ian Cooper, Founder"
+    },
+    "opportunity": "You're about to build bots for recruiting, metrics and sales. If Notion is organized first, <b>every bot starts with the right context</b> instead of each one needing its own fix later."
+  },
+  "focus": {
+    "title": "Where we'd<br><em>start.</em>",
+    "statement": "<b>One organized Notion that both your team and your Grok bots work from: every task, document and decision in one known place.</b> You mentioned a lot of good ideas. We'd start with the foundation they all depend on.",
+    "asked": [
+      "Organize Notion, with personal and private space",
+      "Notion as the brain for Grok",
+      "Task assignment for every new job",
+      "Centralize meeting recordings",
+      "Daily metrics snapshot from Recruiterflow",
+      "Clean up OneNote, SharePoint and OneDrive",
+      "Bots for recruiting, sales and finance"
+    ],
+    "recommend": [
+      "Clean architecture, with personal and team spaces",
+      "Context layer the Grok bots point to",
+      "Task workflow for new jobs, plus team training",
+      "Notion and Loom meetings in one place",
+      "A clear map of what moves from Microsoft and what stays",
+      "Metrics and bots next, once the foundation is in place"
+    ],
+    "why": "Recruiterflow's metrics aren't reliable yet, so a dashboard built now would show the wrong numbers. Bots built on an organized Notion will need less rework later."
+  },
+  "proposal": {
+    "title": "Three phases,<br><em>one price.</em>",
+    "intro": "Each phase has its own price and they add up to one fixed total. The tags show what the project needs and what we advise.",
+    "currency": "USD",
+    "phases": [
+      {
+        "id": "architecture",
+        "name": "Audit and architecture",
+        "tag": "essential",
+        "price": 500,
+        "weeks": 1,
+        "summary": "We review what's there today and design a structure that's easy to navigate for people and for bots.",
+        "deliverables": [
+          "Audit of the current workspace and the blueprint you received",
+          "Teamspaces with separate personal and team sections",
+          "Privacy for your personal space",
+          "Archive of what won't be used",
+          "Map of what moves from OneNote, SharePoint and OneDrive, and what stays"
+        ]
+      },
+      {
+        "id": "grok",
+        "name": "Context layer for Grok",
+        "tag": "essential",
+        "price": 400,
+        "weeks": 1,
+        "summary": "The databases and rules your Grok bots read from, so they know where to find and where to put things.",
+        "deliverables": [
+          "Agent operating guide adapted to Biomed (rules, approvals, archive instead of delete)",
+          "Skills, memory and resources databases in their own teamspace",
+          "Database IDs and instructions ready to paste into each bot"
+        ]
+      },
+      {
+        "id": "team",
+        "name": "Tasks, meetings and team",
+        "tag": "recommended",
+        "price": 600,
+        "weeks": 2,
+        "summary": "Your Planner workflow moved to Notion, meetings in one place, and Chris and Elizabeth trained to use it.",
+        "deliverables": [
+          "Task board with a template for each new job that assigns tasks to Chris and Elizabeth",
+          "A personal portal for each team member",
+          "Notion and Loom meetings in one database",
+          "Team training session",
+          "Short documentation for the team"
+        ]
+      }
+    ],
+    "included": [
+      "Weekly working sessions during the build",
+      "Shared channel for questions",
+      "3 months of Notion Business on a new workspace, at no cost",
+      "Moving what's worth keeping into the new workspace"
+    ],
+    "excluded": [
+      "Building or configuring Grok bots",
+      "Recruiterflow metrics dashboard",
+      "n8n automations and other integrations (defined in the roadmap, subject to technical feasibility)",
+      "Bulk migration of OneNote, SharePoint or OneDrive files",
+      "Notion licenses after the bonus period"
+    ],
+    "guarantee": "One month after delivery to fix issues within the delivered scope, at no extra cost."
+  },
+  "payment": {
+    "deposit_pct": 50,
+    "schedule": "50% when you accept, 50% on delivery. By bank transfer, no card fees.",
+    "ref": "BIOMED-1311"
+  },
+  "next_steps": [
+    { "when": "Today", "h": "Accept and send the deposit", "p": "Right here, below." },
+    { "when": "Within 2 days", "h": "Kickoff", "p": "We set up the new workspace and walk through what you have today." },
+    { "when": "Week of November 16", "h": "Audit starts", "p": "Done before the end of the year." }
+  ],
+  "closing": "We're ready to build<br><em>your Eureka moment.</em>"
+}
