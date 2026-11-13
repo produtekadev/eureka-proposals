@@ -64,6 +64,18 @@
 .cl span{font-size:.78rem;color:#9A9A9A}
 @media (max-width:620px){.cls{grid-template-columns:repeat(2,1fr)}}
 
-/* Accepted scope summary inside the accept block */
-.acc-scope{margin-top:8px;font-size:.9rem;color:var(--muted)}
+/* Scope summary inside the accept block */
+.acc-items{margin-top:14px;border-top:1px solid var(--ink)}
+.acc-items li{display:flex;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.acc-items li .n{font-style:italic;font-weight:300;color:var(--purple);min-width:24px}
+.acc-items li .nm{flex:1;min-width:0;font-weight:600}
+.acc-items li .pr{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.acc-items li.off .nm,.acc-items li.off .pr{color:#9A9A9A;font-weight:400}
+.acc-items li.off .pr{text-decoration:line-through}
+.acc-items li.tot{border-bottom:0;padding-top:12px}
+.acc-items li.tot .nm,.acc-items li.tot .pr{font-weight:800;font-size:1.05rem}
+.acc-items .ch{font-size:.72rem;color:var(--muted);font-weight:500;margin-left:6px}
+.acc-change{display:inline-block;margin-top:10px;font-size:.85rem;font-weight:600;color:var(--purple)}
+.acc-scope-card h3{margin:0;font-size:1.1rem;font-weight:800;letter-spacing:-.02em}
+.acc.done .acc-scope-card{margin-top:16px}
 .acc-mail{margin-top:10px;font-size:.88rem;color:#14583C}

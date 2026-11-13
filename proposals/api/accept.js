@@ -69,9 +69,8 @@ module.exports = async (req, res) => {
   const P = loadProposal(String(b.proposal || ''));
   if (!P) return res.status(404).json({ error: 'Unknown proposal' });
   const name = String(b.name || '').trim().slice(0, 120);
-  const role = String(b.role || '').trim().slice(0, 120);
   const email = String(b.email || '').trim().slice(0, 200);
-  if (!name || !role || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return res.status(400).json({ error: 'Invalid fields' });
+  if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return res.status(400).json({ error: 'Invalid fields' });
 
   // Scope: essential phases always count; others only if the client kept them on.
   const chosen = Array.isArray(b.items) ? b.items.map(String) : null;
@@ -91,7 +90,7 @@ module.exports = async (req, res) => {
         bcc: process.env.TEAM_EMAIL ? [process.env.TEAM_EMAIL] : undefined,
         reply_to: process.env.TEAM_EMAIL || undefined,
         subject: t.subject(P.company),
-        html: emailHtml(P, { name, role, email }, scope, t),
+        html: emailHtml(P, { name, email }, scope, t),
       }),
     }).catch(() => null);
     out.emailed = !!(r && r.ok);
@@ -101,7 +100,7 @@ module.exports = async (req, res) => {
     await fetch(process.env.SLACK_WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: `✅ ${P.company} accepted the proposal. ${name} (${role}, ${email}). Scope: ${items.map((i) => i.name).join(', ')}. Total ${money(P.currency, total)}, deposit ${money(P.currency, scope.deposit)} pending. Ref ${P.ref}. ${P.url}` }),
+      body: JSON.stringify({ text: `✅ ${P.company} accepted the proposal. ${name} (${email}). Scope: ${items.map((i) => i.name).join(', ')}. Total ${money(P.currency, total)}, deposit ${money(P.currency, scope.deposit)} pending. Ref ${P.ref}. ${P.url}` }),
     }).catch(() => null);
   }
 

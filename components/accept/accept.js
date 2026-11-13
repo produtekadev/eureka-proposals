@@ -12,17 +12,22 @@
   function save(v){try{localStorage.setItem(key,JSON.stringify(v))}catch(e){}}
   function clear(){try{localStorage.removeItem(key)}catch(e){}}
   function money(c,n){return c+' '+Math.round(n).toLocaleString('en-US')}
+  function esc(v){return String(v).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function scope(){return window.EUREKA_SCOPE?window.EUREKA_SCOPE():null}
   function paint(s){
     if(!s) return;
     var dep=money(s.currency,s.deposit);
     [].forEach.call(el.querySelectorAll('[data-acc-dep]'),function(x){x.textContent=dep});
     [].forEach.call(el.querySelectorAll('[data-acc-dlabel]'),function(x){x.textContent=s.pct+'% '+t('on_accept','when you accept')+' · '+t('total','Total')+' '+money(s.currency,s.total)});
-    [].forEach.call(el.querySelectorAll('[data-acc-scope]'),function(x){x.textContent=s.items.map(function(i){return i.name}).join(' · ')});
+    var li=function(i,cls,extra){return '<li class="'+cls+'"><span class="n">'+(i.n||'')+'</span><span class="nm">'+esc(i.name)+(extra||'')+'</span><span class="pr">'+money(s.currency,i.price)+'</span></li>'};
+    var all=s.items.map(function(i){return [i,1]}).concat((s.off||[]).map(function(i){return [i,0]})).sort(function(x,y){return String(x[0].n).localeCompare(String(y[0].n))});
+    var rows=all.map(function(x){return x[1]?li(x[0],''):li(x[0],'off','<span class="ch">'+t('not_selected','not selected')+'</span>')}).join('')
+      +'<li class="tot"><span class="n"></span><span class="nm">'+t('total','Total')+'</span><span class="pr">'+money(s.currency,s.total)+'</span></li>';
+    [].forEach.call(el.querySelectorAll('[data-acc-items]'),function(x){x.innerHTML=rows});
   }
   function done(a){
     var d=new Date(a.at);
-    el.querySelector('.acc-ok span').textContent=t('accepted_by','Accepted by')+' '+a.name+', '+a.role+', '+t('on','on')+' '+d.toLocaleDateString(lang==='es'?'es-CO':'en-US',{month:'long',day:'numeric',year:'numeric'})+'.';
+    el.querySelector('.acc-ok span').textContent=t('accepted_by','Accepted by')+' '+a.name+' '+t('on','on')+' '+d.toLocaleDateString(lang==='es'?'es-CO':'en-US',{month:'long',day:'numeric',year:'numeric'})+'.';
     if(a.scope){paint(a.scope); if(window.EUREKA_SCOPE_LOCK) window.EUREKA_SCOPE_LOCK(a.scope.items.map(function(i){return i.id}))}
     var m=el.querySelector('.acc-mail');
     if(m){m.hidden=!a.emailed; m.textContent=t('emailed','We also sent these details to')+' '+a.email+'.'}
@@ -37,19 +42,19 @@
   el.querySelector('[data-acc-submit]').addEventListener('click',accept);
   form.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.tagName==='INPUT'){e.preventDefault();accept()}});
   function accept(){
-    var f=form.elements, name=f.name.value.trim(), role=f.role.value.trim(), email=f.email.value.trim();
-    if(!name||!role) return err.textContent=t('err_name','Please add your name and role.');
+    var f=form.elements, name=f.name.value.trim(), email=f.email.value.trim();
+    if(!name) return err.textContent=t('err_name','Please add your full name.');
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return err.textContent=t('err_email','Please add a valid email.');
     if(!f.terms.checked) return err.textContent=t('err_terms','Please accept the terms to continue.');
     err.textContent='';
-    var a={name:name,role:role,email:email,at:new Date().toISOString(),scope:scope(),emailed:false};
+    var a={name:name,email:email,at:new Date().toISOString(),scope:scope(),emailed:false};
     save(a); done(a);
     el.scrollIntoView({behavior:'smooth',block:'start'});
     send(a);
   }
   function send(a){
     var api=el.dataset.api; if(!api||location.protocol==='file:') return;
-    var body={proposal:el.dataset.key,name:a.name,role:a.role,email:a.email,at:a.at,items:a.scope?a.scope.items.map(function(i){return i.id}):null};
+    var body={proposal:el.dataset.key,name:a.name,email:a.email,at:a.at,items:a.scope?a.scope.items.map(function(i){return i.id}):null};
     try{
       fetch(api,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
         .then(function(r){return r.ok?r.json():null})

@@ -27,15 +27,15 @@ UI = {
     'partner_text': 'Certified by Notion to design and implement workspaces.',
     'asked': 'What you asked for', 'recommend': 'What we recommend', 'next': 'Next steps',
     'valid': 'Proposal valid until', 'starts': 'Projected start',
-    'accepting': "You're accepting", 'accept_btn': 'Accept proposal →', 'name': 'Full name', 'role': 'Role', 'email': 'Email',
+    'accepting': "You're accepting", 'accept_btn': 'Accept proposal →', 'name': 'Full name', 'email': 'Email',
     'i_accept': 'I accept this proposal and the', 'terms': 'terms and conditions', 'read_terms': 'Read the terms',
     'submit': 'Accept and see payment details', 'accepted_by': 'Accepted by', 'on': 'on',
     'send_deposit': 'Send the deposit', 'reference': 'Reference', 'memo': 'Add the reference to the transfer memo so we can match your payment.',
     'book': 'Book your kickoff', 'book_text': 'Pick a time for the kickoff. We use it to meet the team, confirm the plan and open your Slack channel.',
     'book_btn': 'Book the kickoff →', 'from_there': 'We take it from there', 'from_there_text': 'We confirm your deposit within one business day and send the client portal invite.',
     'emailed': 'We also sent these details to', 'reset': 'Reset (test only)', 'demo': 'Demo data', 'copy': 'Copy',
-    'err_name': 'Please add your name and role.', 'err_email': 'Please add a valid email.', 'err_terms': 'Please accept the terms to continue.',
-    'scope_selected': 'Selected scope', 'client_logo': 'Client logo',
+    'err_name': 'Please add your full name.', 'err_email': 'Please add a valid email.', 'err_terms': 'Please accept the terms to continue.',
+    'scope_selected': 'Your selection', 'client_logo': 'Client logo', 'not_selected': 'not selected', 'change': 'Change selection', 'accepted_scope': 'Accepted scope',
     'ready': 'Ready to', 'ready_em': 'start?',
   },
   'es': {
@@ -50,15 +50,15 @@ UI = {
     'partner_text': 'Certificados por Notion para diseñar e implementar workspaces.',
     'asked': 'Lo que nos pidieron', 'recommend': 'Lo que recomendamos', 'next': 'Próximos pasos',
     'valid': 'Propuesta válida hasta', 'starts': 'Inicio proyectado',
-    'accepting': 'Estás aceptando', 'accept_btn': 'Aceptar propuesta →', 'name': 'Nombre completo', 'role': 'Cargo', 'email': 'Email',
+    'accepting': 'Estás aceptando', 'accept_btn': 'Aceptar propuesta →', 'name': 'Nombre completo', 'email': 'Email',
     'i_accept': 'Acepto esta propuesta y los', 'terms': 'términos y condiciones', 'read_terms': 'Leer los términos',
     'submit': 'Aceptar y ver datos de pago', 'accepted_by': 'Aceptada por', 'on': 'el',
     'send_deposit': 'Envía el anticipo', 'reference': 'Referencia', 'memo': 'Incluye la referencia en el concepto de la transferencia para identificar tu pago.',
     'book': 'Agenda el kickoff', 'book_text': 'Elige un horario para el kickoff. Lo usamos para conocer al equipo, confirmar el plan y abrir tu canal de Slack.',
     'book_btn': 'Agendar kickoff →', 'from_there': 'Nosotros nos encargamos', 'from_there_text': 'Confirmamos tu anticipo en un día hábil y te enviamos la invitación al portal de cliente.',
     'emailed': 'También enviamos estos datos a', 'reset': 'Reiniciar (solo prueba)', 'demo': 'Datos demo', 'copy': 'Copiar',
-    'err_name': 'Agrega tu nombre y cargo.', 'err_email': 'Agrega un email válido.', 'err_terms': 'Acepta los términos para continuar.',
-    'scope_selected': 'Alcance seleccionado', 'client_logo': 'Logo de cliente',
+    'err_name': 'Agrega tu nombre completo.', 'err_email': 'Agrega un email válido.', 'err_terms': 'Acepta los términos para continuar.',
+    'scope_selected': 'Tu selección', 'client_logo': 'Logo de cliente', 'not_selected': 'no seleccionado', 'change': 'Cambiar selección', 'accepted_scope': 'Alcance aceptado',
     'ready': '¿Listos para', 'ready_em': 'empezar?',
   },
 }
@@ -238,13 +238,14 @@ def sec_start(pg, P, company):
   fill = {
     'proposal_id': P['slug'], 'payment_ref': ref, 'first_step_name': u['scope_selected'],
     'deposit_amount': '<span data-acc-dep></span>', 'deposit_label': f'<span data-acc-dlabel></span>',
-    'first_step_detail': f'<span data-acc-scope></span>', 'terms_html': terms,
+    'first_step_detail': f'<ul class="acc-items" data-acc-items></ul><a class="acc-change" href="#proposal">← {u["change"]}</a>', 'terms_html': terms,
+    'accepted_scope_html': f'<div class="acc-step acc-scope-card"><h3>{u["accepted_scope"]}</h3><ul class="acc-items" data-acc-items></ul></div>',
     'bank_html': f'<div class="acc-tabs">{tabs}</div>{banks}', 'demo_badge': demo, 'kickoff_url': esc(company['kickoff_url']),
   }
   for k, v in fill.items():
     acc = acc.replace('{{' + k + '}}', v)
   # translate the fixed strings in the component
-  for en_s, key in [('Accept proposal →', 'accept_btn'), ("You're accepting", 'accepting'), ('Full name', 'name'), ('>Role<', 'role'),
+  for en_s, key in [('Accept proposal →', 'accept_btn'), ("You're accepting", 'accepting'), ('Full name', 'name'),
                     ('>Email<', 'email'), ('I accept this proposal and the', 'i_accept'), ('terms and conditions', 'terms'),
                     ('Read the terms', 'read_terms'), ('Accept and see payment details', 'submit'), ('Send the deposit', 'send_deposit'),
                     ('Add the reference to the transfer memo so we can match your payment.', 'memo'), ('Book your kickoff', 'book'),
@@ -286,7 +287,7 @@ def build(slug):
 
   css = read(os.path.join(T, 'design.css')) + '\n' + read(os.path.join(T, 'proposal.css')) + '\n' + read(os.path.join(ROOT, 'components', 'accept', 'accept.css'))
   logo = read(os.path.join(T, 'assets', 'logo.svg'))
-  strings = {k: UI[lang][k] for k in ('total', 'accepted_by', 'on', 'emailed', 'err_name', 'err_email', 'err_terms', 'weeks', 'week', 'on_accept', 'deposit')}
+  strings = {k: UI[lang][k] for k in ('total', 'not_selected', 'accepted_by', 'on', 'emailed', 'err_name', 'err_email', 'err_terms', 'weeks', 'week', 'on_accept', 'deposit')}
   title = f'{"Proposal" if lang == "en" else "Propuesta"} · Eureka × {P["client"]["company"]}'
   out = f'''<!DOCTYPE html>
 <html lang="{lang}">

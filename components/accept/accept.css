@@ -1,7 +1,7 @@
 /* Accept proposal: CTA, acceptance form, payment details, kickoff */
 .acc{margin-top:72px;scroll-margin-top:110px}
 .acc-card{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.acc-sum{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:24px 26px}
+.acc-sum{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding:24px 26px}
 .acc-sum .k{font-size:.82rem;color:var(--muted)}
 .acc-sum h3{margin:2px 0 0;font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
 .acc-amt{font-size:2.2rem;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:12px;font-variant-numeric:tabular-nums}
@@ -15,7 +15,7 @@
 .acc-form{border-top:1px solid var(--line);padding:22px 26px 26px;background:#FBFAFC;display:none}
 .acc.open .acc-form{display:block}
 .acc.open .acc-sum .acc-btn{display:none}
-.acc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.acc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .acc-f label{display:block;font-size:.8rem;font-weight:600;margin-bottom:5px}
 .acc-f input{width:100%;font:inherit;font-size:.95rem;padding:10px 12px;border:1px solid #D9D6DE;border-radius:8px;background:#fff;color:var(--ink)}
 .acc-f input:focus{outline:2px solid var(--purple);outline-offset:0;border-color:var(--purple)}

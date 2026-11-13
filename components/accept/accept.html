@@ -7,14 +7,13 @@
         <div class="k">You're accepting</div>
         <h3>{{first_step_name}}</h3>
         <div class="acc-amt">{{deposit_amount}}<small>{{deposit_label}}</small></div>
-        <p class="acc-scope">{{first_step_detail}}</p>
+        {{first_step_detail}}
       </div>
       <button type="button" class="acc-btn" data-acc-open>Accept proposal →</button>
     </div>
     <form class="acc-form" novalidate>
       <div class="acc-grid">
         <div class="acc-f"><label for="acc-name">Full name</label><input id="acc-name" name="name" autocomplete="name" required></div>
-        <div class="acc-f"><label for="acc-role">Role</label><input id="acc-role" name="role" autocomplete="organization-title" required></div>
         <div class="acc-f"><label for="acc-email">Email</label><input id="acc-email" name="email" type="email" autocomplete="email" required></div>
       </div>
       <label class="acc-ck"><input type="checkbox" name="terms" required><span>I accept this proposal and the <a href="#acc-terms" data-acc-terms>terms and conditions</a>.</span></label>
@@ -25,6 +24,7 @@
   <div class="acc-done" aria-live="polite">
     <div class="acc-ok"><i>✓</i><span></span></div>
     <p class="acc-mail" hidden></p>
+    {{accepted_scope_html}}
     <div class="acc-steps">
       <div class="acc-step">
         <div class="acc-step-h"><span class="n">1</span><h3>Send the deposit</h3>{{demo_badge}}</div>

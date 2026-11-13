@@ -539,14 +539,26 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 .cl span{font-size:.78rem;color:#9A9A9A}
 @media (max-width:620px){.cls{grid-template-columns:repeat(2,1fr)}}
 
-/* Accepted scope summary inside the accept block */
-.acc-scope{margin-top:8px;font-size:.9rem;color:var(--muted)}
+/* Scope summary inside the accept block */
+.acc-items{margin-top:14px;border-top:1px solid var(--ink)}
+.acc-items li{display:flex;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.acc-items li .n{font-style:italic;font-weight:300;color:var(--purple);min-width:24px}
+.acc-items li .nm{flex:1;min-width:0;font-weight:600}
+.acc-items li .pr{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.acc-items li.off .nm,.acc-items li.off .pr{color:#9A9A9A;font-weight:400}
+.acc-items li.off .pr{text-decoration:line-through}
+.acc-items li.tot{border-bottom:0;padding-top:12px}
+.acc-items li.tot .nm,.acc-items li.tot .pr{font-weight:800;font-size:1.05rem}
+.acc-items .ch{font-size:.72rem;color:var(--muted);font-weight:500;margin-left:6px}
+.acc-change{display:inline-block;margin-top:10px;font-size:.85rem;font-weight:600;color:var(--purple)}
+.acc-scope-card h3{margin:0;font-size:1.1rem;font-weight:800;letter-spacing:-.02em}
+.acc.done .acc-scope-card{margin-top:16px}
 .acc-mail{margin-top:10px;font-size:.88rem;color:#14583C}
 
 /* Accept proposal: CTA, acceptance form, payment details, kickoff */
 .acc{margin-top:72px;scroll-margin-top:110px}
 .acc-card{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.acc-sum{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:24px 26px}
+.acc-sum{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding:24px 26px}
 .acc-sum .k{font-size:.82rem;color:var(--muted)}
 .acc-sum h3{margin:2px 0 0;font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
 .acc-amt{font-size:2.2rem;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:12px;font-variant-numeric:tabular-nums}
@@ -560,7 +572,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 .acc-form{border-top:1px solid var(--line);padding:22px 26px 26px;background:#FBFAFC;display:none}
 .acc.open .acc-form{display:block}
 .acc.open .acc-sum .acc-btn{display:none}
-.acc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.acc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .acc-f label{display:block;font-size:.8rem;font-weight:600;margin-bottom:5px}
 .acc-f input{width:100%;font:inherit;font-size:.95rem;padding:10px 12px;border:1px solid #D9D6DE;border-radius:8px;background:#fff;color:var(--ink)}
 .acc-f input:focus{outline:2px solid var(--purple);outline-offset:0;border-color:var(--purple)}
@@ -752,16 +764,15 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
     <div class="acc-sum">
       <div>
         <div class="k">You're accepting</div>
-        <h3>Selected scope</h3>
+        <h3>Your selection</h3>
         <div class="acc-amt"><span data-acc-dep></span><small><span data-acc-dlabel></span></small></div>
-        <p class="acc-scope"><span data-acc-scope></span></p>
+        <ul class="acc-items" data-acc-items></ul><a class="acc-change" href="#proposal">← Change selection</a>
       </div>
       <button type="button" class="acc-btn" data-acc-open>Accept proposal →</button>
     </div>
     <form class="acc-form" novalidate>
       <div class="acc-grid">
         <div class="acc-f"><label for="acc-name">Full name</label><input id="acc-name" name="name" autocomplete="name" required></div>
-        <div class="acc-f"><label for="acc-role">Role</label><input id="acc-role" name="role" autocomplete="organization-title" required></div>
         <div class="acc-f"><label for="acc-email">Email</label><input id="acc-email" name="email" type="email" autocomplete="email" required></div>
       </div>
       <label class="acc-ck"><input type="checkbox" name="terms" required><span>I accept this proposal and the <a href="#acc-terms" data-acc-terms>terms and conditions</a>.</span></label>
@@ -772,6 +783,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
   <div class="acc-done" aria-live="polite">
     <div class="acc-ok"><i>✓</i><span></span></div>
     <p class="acc-mail" hidden></p>
+    <div class="acc-step acc-scope-card"><h3>Accepted scope</h3><ul class="acc-items" data-acc-items></ul></div>
     <div class="acc-steps">
       <div class="acc-step">
         <div class="acc-step-h"><span class="n">1</span><h3>Send the deposit</h3><span class="demo">Demo data</span></div>
@@ -876,7 +888,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 
 </script>
 <script>
-window.EUREKA_UI = {"total": "Total", "accepted_by": "Accepted by", "on": "on", "emailed": "We also sent these details to", "err_name": "Please add your name and role.", "err_email": "Please add a valid email.", "err_terms": "Please accept the terms to continue.", "weeks": "weeks", "week": "week", "on_accept": "when you accept", "deposit": "Deposit"};
+window.EUREKA_UI = {"total": "Total", "not_selected": "not selected", "accepted_by": "Accepted by", "on": "on", "emailed": "We also sent these details to", "err_name": "Please add your full name.", "err_email": "Please add a valid email.", "err_terms": "Please accept the terms to continue.", "weeks": "weeks", "week": "week", "on_accept": "when you accept", "deposit": "Deposit"};
 /* Scope builder: optional phases can be switched off; totals and deposit update.
    Exposes window.EUREKA_SCOPE() -> {items, total, weeks, deposit, currency, pct} for the accept block. */
 (function(){
@@ -884,13 +896,14 @@ window.EUREKA_UI = {"total": "Total", "accepted_by": "Accepted by", "on": "on", 
   var cur=sum.dataset.cur, pct=+sum.dataset.pct, U=window.EUREKA_UI||{};
   function money(n){return cur+' '+Math.round(n).toLocaleString('en-US')}
   function state(){
-    var items=[],total=0,weeks=0;
+    var items=[],off=[],total=0,weeks=0;
     [].forEach.call(document.querySelectorAll('.sp'),function(c){
       var cb=c.querySelector('input[data-sp]'), on=!cb||cb.checked;
       c.classList.toggle('off',!on);
-      if(on){items.push({id:c.dataset.id,name:c.dataset.name,price:+c.dataset.price});total+=+c.dataset.price;weeks+=+c.dataset.weeks}
+      var it={id:c.dataset.id,name:c.dataset.name,price:+c.dataset.price,n:c.querySelector('.sp-n').textContent};
+      if(on){items.push(it);total+=it.price;weeks+=+c.dataset.weeks}else off.push(it);
     });
-    return {items:items,total:total,weeks:weeks,deposit:total*pct/100,currency:cur,pct:pct};
+    return {items:items,off:off,total:total,weeks:weeks,deposit:total*pct/100,currency:cur,pct:pct};
   }
   function render(){
     var s=state();
@@ -928,17 +941,22 @@ window.EUREKA_UI = {"total": "Total", "accepted_by": "Accepted by", "on": "on", 
   function save(v){try{localStorage.setItem(key,JSON.stringify(v))}catch(e){}}
   function clear(){try{localStorage.removeItem(key)}catch(e){}}
   function money(c,n){return c+' '+Math.round(n).toLocaleString('en-US')}
+  function esc(v){return String(v).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function scope(){return window.EUREKA_SCOPE?window.EUREKA_SCOPE():null}
   function paint(s){
     if(!s) return;
     var dep=money(s.currency,s.deposit);
     [].forEach.call(el.querySelectorAll('[data-acc-dep]'),function(x){x.textContent=dep});
     [].forEach.call(el.querySelectorAll('[data-acc-dlabel]'),function(x){x.textContent=s.pct+'% '+t('on_accept','when you accept')+' · '+t('total','Total')+' '+money(s.currency,s.total)});
-    [].forEach.call(el.querySelectorAll('[data-acc-scope]'),function(x){x.textContent=s.items.map(function(i){return i.name}).join(' · ')});
+    var li=function(i,cls,extra){return '<li class="'+cls+'"><span class="n">'+(i.n||'')+'</span><span class="nm">'+esc(i.name)+(extra||'')+'</span><span class="pr">'+money(s.currency,i.price)+'</span></li>'};
+    var all=s.items.map(function(i){return [i,1]}).concat((s.off||[]).map(function(i){return [i,0]})).sort(function(x,y){return String(x[0].n).localeCompare(String(y[0].n))});
+    var rows=all.map(function(x){return x[1]?li(x[0],''):li(x[0],'off','<span class="ch">'+t('not_selected','not selected')+'</span>')}).join('')
+      +'<li class="tot"><span class="n"></span><span class="nm">'+t('total','Total')+'</span><span class="pr">'+money(s.currency,s.total)+'</span></li>';
+    [].forEach.call(el.querySelectorAll('[data-acc-items]'),function(x){x.innerHTML=rows});
   }
   function done(a){
     var d=new Date(a.at);
-    el.querySelector('.acc-ok span').textContent=t('accepted_by','Accepted by')+' '+a.name+', '+a.role+', '+t('on','on')+' '+d.toLocaleDateString(lang==='es'?'es-CO':'en-US',{month:'long',day:'numeric',year:'numeric'})+'.';
+    el.querySelector('.acc-ok span').textContent=t('accepted_by','Accepted by')+' '+a.name+' '+t('on','on')+' '+d.toLocaleDateString(lang==='es'?'es-CO':'en-US',{month:'long',day:'numeric',year:'numeric'})+'.';
     if(a.scope){paint(a.scope); if(window.EUREKA_SCOPE_LOCK) window.EUREKA_SCOPE_LOCK(a.scope.items.map(function(i){return i.id}))}
     var m=el.querySelector('.acc-mail');
     if(m){m.hidden=!a.emailed; m.textContent=t('emailed','We also sent these details to')+' '+a.email+'.'}
@@ -953,19 +971,19 @@ window.EUREKA_UI = {"total": "Total", "accepted_by": "Accepted by", "on": "on", 
   el.querySelector('[data-acc-submit]').addEventListener('click',accept);
   form.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.tagName==='INPUT'){e.preventDefault();accept()}});
   function accept(){
-    var f=form.elements, name=f.name.value.trim(), role=f.role.value.trim(), email=f.email.value.trim();
-    if(!name||!role) return err.textContent=t('err_name','Please add your name and role.');
+    var f=form.elements, name=f.name.value.trim(), email=f.email.value.trim();
+    if(!name) return err.textContent=t('err_name','Please add your full name.');
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return err.textContent=t('err_email','Please add a valid email.');
     if(!f.terms.checked) return err.textContent=t('err_terms','Please accept the terms to continue.');
     err.textContent='';
-    var a={name:name,role:role,email:email,at:new Date().toISOString(),scope:scope(),emailed:false};
+    var a={name:name,email:email,at:new Date().toISOString(),scope:scope(),emailed:false};
     save(a); done(a);
     el.scrollIntoView({behavior:'smooth',block:'start'});
     send(a);
   }
   function send(a){
     var api=el.dataset.api; if(!api||location.protocol==='file:') return;
-    var body={proposal:el.dataset.key,name:a.name,role:a.role,email:a.email,at:a.at,items:a.scope?a.scope.items.map(function(i){return i.id}):null};
+    var body={proposal:el.dataset.key,name:a.name,email:a.email,at:a.at,items:a.scope?a.scope.items.map(function(i){return i.id}):null};
     try{
       fetch(api,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
         .then(function(r){return r.ok?r.json():null})
