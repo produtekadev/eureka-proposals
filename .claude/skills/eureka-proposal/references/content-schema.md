@@ -71,8 +71,8 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
 
   "next_steps": [ { "when": "Today", "h": "Accept and send the deposit", "p": "Right here, below." } ],
   "closing": "We're ready to build<br><em>your Eureka moment.</em>",     // optional
-  "about_title": "The team <em>behind it.</em>"                          // optional
+  "about_title": "Assigned team<br><em>for this project.</em>"          // optional, this is the default
 }
 ```
 
-Section order is fixed: Cover, Context, Focus (if present), Proposal, About us, Start (next steps and accept).
+Section order is fixed: Cover, Context, Focus (if present), Proposal, Team (assigned team, partner badge, clients), Start (next steps and accept).

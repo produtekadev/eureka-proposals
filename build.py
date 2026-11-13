@@ -18,7 +18,7 @@ UI = {
   'en': {
     'section': 'Section', 'proposal_for': 'Proposal for', 'for': 'For', 'prepared_by': 'Prepared by',
     'duration': 'Duration', 'date': 'Date', 'investment': 'Investment', 'context': 'Context', 'focus': 'Focus',
-    'proposal': 'Proposal', 'about': 'About us', 'start': 'Start', 'cover': 'Cover',
+    'proposal': 'Proposal', 'about': 'Team', 'start': 'Start', 'cover': 'Cover',
     'essential': 'Essential', 'recommended': 'Recommended', 'optional': 'Optional', 'included_tag': 'Included',
     'build_scope': 'Scope and investment',
     'total': 'Total', 'weeks': 'weeks', 'week': 'week', 'deposit': 'Deposit', 'on_accept': 'when you accept',
@@ -41,7 +41,7 @@ UI = {
   'es': {
     'section': 'Sección', 'proposal_for': 'Propuesta para', 'for': 'Para', 'prepared_by': 'Preparado por',
     'duration': 'Duración', 'date': 'Fecha', 'investment': 'Inversión', 'context': 'Contexto', 'focus': 'Enfoque',
-    'proposal': 'Propuesta', 'about': 'Nosotros', 'start': 'Empezar', 'cover': 'Portada',
+    'proposal': 'Propuesta', 'about': 'Equipo', 'start': 'Empezar', 'cover': 'Portada',
     'essential': 'Indispensable', 'recommended': 'Recomendado', 'optional': 'Opcional', 'included_tag': 'Incluido',
     'build_scope': 'Alcance e inversión',
     'total': 'Total', 'weeks': 'semanas', 'week': 'semana', 'deposit': 'Anticipo', 'on_accept': 'al aceptar',
@@ -215,7 +215,7 @@ def sec_about(pg, P, team, company):
     tm += (f'<div class="tm"><div class="av" style="background:var(--{m["color"]})"><img src="{data_uri(os.path.join(T, "assets", m["photo"]))}" alt="{esc(m["name"])}" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block"></div>'
            f'<h3>{esc(m["name"])}</h3><div class="role">{esc(m["role"][pg.lang])}</div><p>{esc(m["bio"][pg.lang])}</p></div>')
   logos = ''.join(f'<div class="cl"><span>{esc(u["client_logo"] if c["name"] == "Client logo" else c["name"])}</span></div>' for c in company['clients'])
-  body = f'''  <h1>{rich(P.get('about_title', 'The team <em>behind it.</em>' if pg.lang == 'en' else 'El equipo <em>detrás.</em>'))}</h1>
+  body = f'''  <h1>{rich(P.get('about_title', 'Assigned team<br><em>for this project.</em>' if pg.lang == 'en' else 'Equipo asignado<br><em>para este proyecto.</em>'))}</h1>
   <div class="team">{tm}</div>
   <div class="ncpc"><span class="ncp" role="img" aria-label="{u['partner']}"></span><div><h3>{u['partner']}</h3><p>{u['partner_text']}</p></div></div>
   <div class="sec"><div class="label">{u['clients']}</div><div class="cls">{logos}</div></div>'''
