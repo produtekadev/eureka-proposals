@@ -1,0 +1,86 @@
+{
+  "slug": "biomed",
+  "lang": "en",
+  "company": "Biomed Recruitment",
+  "currency": "USD",
+  "ref": "BIOMED-1311",
+  "deposit_pct": 50,
+  "phases": [
+    {
+      "id": "architecture",
+      "name": "Audit and architecture",
+      "price": 500,
+      "tag": "essential"
+    },
+    {
+      "id": "grok",
+      "name": "Context layer for Grok",
+      "price": 400,
+      "tag": "essential"
+    },
+    {
+      "id": "team",
+      "name": "Tasks, meetings and team",
+      "price": 600,
+      "tag": "recommended"
+    }
+  ],
+  "bank_accounts": [
+    {
+      "label": "USD · ACH or wire",
+      "rows": [
+        [
+          "Account holder",
+          "Produteka LLC"
+        ],
+        [
+          "Bank",
+          "Demo Bank, N.A."
+        ],
+        [
+          "Routing (ACH)",
+          "000000000"
+        ],
+        [
+          "Account number",
+          "0000000000"
+        ],
+        [
+          "SWIFT (wire)",
+          "DEMOUS33XXX"
+        ],
+        [
+          "Bank address",
+          "123 Demo Street, San Francisco, CA 94105"
+        ]
+      ]
+    },
+    {
+      "label": "COP · Colombia",
+      "rows": [
+        [
+          "Account holder",
+          "Produteka S.A.S."
+        ],
+        [
+          "Bank",
+          "Banco Demo"
+        ],
+        [
+          "Account type",
+          "Savings"
+        ],
+        [
+          "Account number",
+          "000-000000-00"
+        ],
+        [
+          "NIT",
+          "900.000.000-0"
+        ]
+      ]
+    }
+  ],
+  "kickoff_url": "https://cal.com/eureka-demo/kickoff",
+  "url": "https://proposals.eureka.ceo/biomed"
+}
