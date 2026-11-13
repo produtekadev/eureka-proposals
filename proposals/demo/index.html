@@ -634,7 +634,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 <li><b>Guarantee.</b> One month after delivery to fix issues within the delivered scope, at no cost.</li>
 <li><i>Demo terms. Final terms to be reviewed.</i></li>
 </ul></details>
-      <div class="acc-row"><button type="submit" class="acc-btn">Accept and see payment details</button><span class="acc-err" role="alert"></span></div>
+      <div class="acc-row"><button type="button" class="acc-btn" data-acc-submit>Accept and see payment details</button><span class="acc-err" role="alert"></span></div>
     </form>
   </div>
   <div class="acc-done" aria-live="polite">
@@ -758,8 +758,11 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
   }
   el.querySelector('[data-acc-open]').addEventListener('click',function(){el.classList.add('open');el.querySelector('#acc-name').focus()});
   el.querySelector('[data-acc-terms]').addEventListener('click',function(e){e.preventDefault();el.querySelector('#acc-terms').open=true});
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
+  // No real form submit: some embedded viewers block it, so the button calls accept() directly.
+  form.addEventListener('submit',function(e){e.preventDefault();accept()});
+  el.querySelector('[data-acc-submit]').addEventListener('click',accept);
+  form.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.tagName==='INPUT'){e.preventDefault();accept()}});
+  function accept(){
     var f=form.elements, name=f.name.value.trim(), role=f.role.value.trim(), email=f.email.value.trim();
     if(!name||!role) return err.textContent='Please add your name and role.';
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return err.textContent='Please add a valid email.';
@@ -768,7 +771,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
     var a={name:name,role:role,email:email,at:new Date().toISOString()};
     save(a); done(a);
     el.scrollIntoView({behavior:'smooth',block:'start'});
-  });
+  }
   [].forEach.call(el.querySelectorAll('.acc-tabs button'),function(b){
     b.addEventListener('click',function(){
       [].forEach.call(el.querySelectorAll('.acc-tabs button'),function(x){x.classList.toggle('on',x===b)});

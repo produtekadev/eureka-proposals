@@ -13,8 +13,11 @@
   }
   el.querySelector('[data-acc-open]').addEventListener('click',function(){el.classList.add('open');el.querySelector('#acc-name').focus()});
   el.querySelector('[data-acc-terms]').addEventListener('click',function(e){e.preventDefault();el.querySelector('#acc-terms').open=true});
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
+  // No real form submit: some embedded viewers block it, so the button calls accept() directly.
+  form.addEventListener('submit',function(e){e.preventDefault();accept()});
+  el.querySelector('[data-acc-submit]').addEventListener('click',accept);
+  form.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.tagName==='INPUT'){e.preventDefault();accept()}});
+  function accept(){
     var f=form.elements, name=f.name.value.trim(), role=f.role.value.trim(), email=f.email.value.trim();
     if(!name||!role) return err.textContent='Please add your name and role.';
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return err.textContent='Please add a valid email.';
@@ -23,7 +26,7 @@
     var a={name:name,role:role,email:email,at:new Date().toISOString()};
     save(a); done(a);
     el.scrollIntoView({behavior:'smooth',block:'start'});
-  });
+  }
   [].forEach.call(el.querySelectorAll('.acc-tabs button'),function(b){
     b.addEventListener('click',function(){
       [].forEach.call(el.querySelectorAll('.acc-tabs button'),function(x){x.classList.toggle('on',x===b)});
