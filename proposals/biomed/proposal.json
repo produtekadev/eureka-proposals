@@ -170,7 +170,7 @@
     "deposit_pct": 50,
     "schedule": "50% when you accept, 50% on delivery. By bank transfer, or by card through Stripe with a 4% card fee.",
     "ref": "BIOMED-1311",
-    "stripe_url": "https://buy.stripe.com/00w8wO725aBK8Os1xT6Ri1e"
+    "stripe_url": "https://buy.stripe.com/5kQcN4dqtbFO8Os3G16Ri1f"
   },
   "next_steps": [
     {
