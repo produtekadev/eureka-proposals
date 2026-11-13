@@ -21,7 +21,7 @@
     "glance": [
       {
         "k": "Focus",
-        "h": "Notion first, then Grok",
+        "h": "Notion first, then agents",
         "p": "The structure your agents will read from and write to."
       },
       {
@@ -82,7 +82,7 @@
   },
   "focus": {
     "title": "Where we'd<br><em>start.</em>",
-    "statement": "<b>One organized Notion that both your team and your Grok agents work from: every task, document and decision in one known place.</b> You mentioned a lot of good ideas. We'd start with the foundation they all depend on.",
+    "statement": "<b>One organized Notion that both your team and your AI agents work from: every task, document and decision in one known place.</b> You mentioned a lot of good ideas. We'd start with the foundation they all depend on.",
     "asked": [
       "Organize Notion, with personal and private space",
       "Notion as the brain for Grok",
@@ -94,7 +94,7 @@
     ],
     "recommend": [
       "Clean architecture, with personal and team spaces",
-      "Context layer the Grok agents point to",
+      "Context layer any connected agent can use",
       "Task workflow for new jobs, plus team training",
       "Notion and Loom meetings in one place",
       "Metrics and agents next, once the foundation is in place"
@@ -122,11 +122,11 @@
       },
       {
         "id": "grok",
-        "name": "Context layer for Grok",
+        "name": "Context layer for AI agents",
         "tag": "essential",
         "price": 400,
         "weeks": 1,
-        "summary": "The databases and rules your Grok agents read from, so they know where to find and where to put things.",
+        "summary": "The databases and rules any connected AI agent reads from, starting with your Grok agents, so they know where to find and where to put things.",
         "deliverables": [
           "Agent operating guide adapted to Biomed (rules, approvals, archive instead of delete)",
           "Skills, memory and resources databases in their own teamspace",
@@ -155,7 +155,7 @@
       "3 months of Notion Business on a new workspace, at no cost"
     ],
     "excluded": [
-      "Building or configuring Grok agents",
+      "Building or configuring the agents themselves (Grok or others)",
       "Recruiterflow metrics dashboard",
       "n8n automations and other integrations (defined in the roadmap, subject to technical feasibility)",
       "Moving files from OneNote, SharePoint or OneDrive (the migration guide shows you how)",

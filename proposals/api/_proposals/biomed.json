@@ -14,7 +14,7 @@
     },
     {
       "id": "grok",
-      "name": "Context layer for Grok",
+      "name": "Context layer for AI agents",
       "price": 400,
       "tag": "essential"
     },
