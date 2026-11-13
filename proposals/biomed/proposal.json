@@ -95,8 +95,8 @@
     "recommend": [
       "Clean architecture, with personal and team spaces",
       "Context layer any connected agent can use",
-      "Task workflow for new jobs, plus team training",
-      "Notion and Loom meetings in one place",
+      "Automated tasks for each job type, plus team training",
+      "Meetings in one place, keeping the agents' memory current",
       "Metrics and agents next, once the foundation is in place"
     ],
     "why": "Recruiterflow's metrics aren't reliable yet, so a dashboard built now would show the wrong numbers. Agents built on an organized Notion will need less rework later."
@@ -126,26 +126,26 @@
         "tag": "essential",
         "price": 400,
         "weeks": 1,
-        "summary": "The databases and rules any connected AI agent reads from, starting with your Grok agents, so they know where to find and where to put things.",
+        "summary": "The databases and rules any connected AI agent reads from, starting with your Grok agents, plus your meetings in one place so the agents' memory stays current after every call.",
         "deliverables": [
           "Agent operating guide adapted to Biomed (rules, approvals, archive instead of delete)",
           "Skills, memory and resources databases in their own teamspace",
+          "Meetings database with your Notion and Loom recordings, feeding the agents' memory after every call",
           "Setup sheet for each agent with the database IDs and instructions to paste in"
         ]
       },
       {
         "id": "team",
-        "name": "Tasks, meetings and team",
+        "name": "Tasks, training and onboarding",
         "tag": "recommended",
         "price": 600,
         "weeks": 2,
-        "summary": "Your Planner workflow moved to Notion, meetings in one place, and Chris and Elizabeth trained to use it.",
+        "summary": "Your Planner workflow moved to Notion, with tasks created automatically for each job type, and Chris and Elizabeth trained to work from it.",
         "deliverables": [
-          "Task board with a template for each new job that assigns tasks to Chris and Elizabeth",
+          "Task board where each new job creates its tasks automatically by job type, already assigned to Chris and Elizabeth",
           "Personal portal for each team member",
-          "Meetings database with your Notion and Loom recordings",
           "Training session for the team",
-          "Team guide: how to use the workspace day to day"
+          "Onboarding guide: how the team uses the workspace day to day"
         ]
       }
     ],
