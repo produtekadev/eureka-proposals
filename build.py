@@ -212,8 +212,10 @@ def sec_about(pg, P, team, company):
   tm = ''
   for t in P['prepared_by'] + [x for x in P.get('team', []) if x not in P['prepared_by']]:
     m = team[t]
+    ov = P.get('team_roles', {}).get(t, {})
+    role, bio = ov.get('role', m['role'][pg.lang]), ov.get('bio', m['bio'][pg.lang])
     tm += (f'<div class="tm"><div class="av" style="background:var(--{m["color"]})"><img src="{data_uri(os.path.join(T, "assets", m["photo"]))}" alt="{esc(m["name"])}" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block"></div>'
-           f'<h3>{esc(m["name"])}</h3><div class="role">{esc(m["role"][pg.lang])}</div><p>{esc(m["bio"][pg.lang])}</p></div>')
+           f'<h3>{esc(m["name"])}</h3><div class="role">{esc(role)}</div><p>{esc(bio)}</p></div>')
   logos = ''.join(f'<div class="cl"><span>{esc(u["client_logo"] if c["name"] == "Client logo" else c["name"])}</span></div>' for c in company['clients'])
   body = f'''  <h1>{rich(P.get('about_title', 'Assigned team<br><em>for this project.</em>' if pg.lang == 'en' else 'Equipo asignado<br><em>para este proyecto.</em>'))}</h1>
   <div class="team">{tm}</div>

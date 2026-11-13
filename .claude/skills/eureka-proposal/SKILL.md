@@ -61,6 +61,7 @@ Do not continue until the user confirms. Then confirm the details: projected sta
 
 - `slug`: short, lowercase, no client-sensitive words (e.g. `acme`, `nickel-ai`). Ask if unsure.
 - Create `proposals/<slug>/proposal.json` following `references/content-schema.md`.
+- Write `team_roles` for every person shown: a role and a one or two line description of what they do in this project, tied to its phases. Never leave the generic bios from `data/team.json`.
 - Copy rules (always):
   - No em dashes. Use commas, periods or colons.
   - Price first, then the value explanation.

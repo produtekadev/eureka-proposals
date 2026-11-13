@@ -6,8 +6,21 @@
     "role": "Founder",
     "location": "San Diego"
   },
-  "prepared_by": ["mateo", "paula"],
+  "prepared_by": [
+    "mateo",
+    "paula"
+  ],
   "team": [],
+  "team_roles": {
+    "mateo": {
+      "role": "Architecture and Grok context layer",
+      "bio": "Leads the workspace audit, the new structure and the databases your Grok bots read from. Your contact for priorities and follow-up."
+    },
+    "paula": {
+      "role": "Workflows and team training",
+      "bio": "Builds the task workflow for each new job and the meetings database, and trains Chris and Elizabeth. Your contact for deliverables."
+    }
+  },
   "date": "2026-11-13",
   "valid_until": "2026-11-27",
   "start": "Week of November 16",
@@ -37,9 +50,18 @@
     "title": "What we<br><em>heard.</em>",
     "lede": "Biomed is a three-person recruitment agency moving to Grok as its central AI. Recruiterflow stays as the ATS, but <b>everything else is spread across Planner, SharePoint, OneDrive, OneNote and a new Notion workspace</b>, and the bots can only be as good as the place they read from.",
     "stats": [
-      { "n": "3", "t": "people: Ian, Chris and Elizabeth" },
-      { "n": "10k+", "t": "candidates in Recruiterflow" },
-      { "n": "5", "t": "tools holding tasks, files and notes today" }
+      {
+        "n": "3",
+        "t": "people: Ian, Chris and Elizabeth"
+      },
+      {
+        "n": "10k+",
+        "t": "candidates in Recruiterflow"
+      },
+      {
+        "n": "5",
+        "t": "tools holding tasks, files and notes today"
+      }
     ],
     "pains_title": "Three things <em>holding back</em> the setup.",
     "pains": [
@@ -160,9 +182,21 @@
     "ref": "BIOMED-1311"
   },
   "next_steps": [
-    { "when": "Today", "h": "Accept and send the deposit", "p": "Right here, below." },
-    { "when": "Within 2 days", "h": "Kickoff", "p": "We set up the new workspace and walk through what you have today." },
-    { "when": "Week of November 16", "h": "Audit starts", "p": "Done before the end of the year." }
+    {
+      "when": "Today",
+      "h": "Accept and send the deposit",
+      "p": "Right here, below."
+    },
+    {
+      "when": "Within 2 days",
+      "h": "Kickoff",
+      "p": "We set up the new workspace and walk through what you have today."
+    },
+    {
+      "when": "Week of November 16",
+      "h": "Audit starts",
+      "p": "Done before the end of the year."
+    }
   ],
   "closing": "We're ready to build<br><em>your Eureka moment.</em>"
 }
