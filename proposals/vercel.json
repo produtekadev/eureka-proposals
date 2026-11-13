@@ -27,5 +27,10 @@
     "api/accept.js": {
       "includeFiles": "api/_proposals/**"
     }
+  },
+  "git": {
+    "deploymentEnabled": {
+      "claude/*": false
+    }
   }
 }
