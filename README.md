@@ -6,6 +6,10 @@ Client proposals for Eureka, built as single-page websites.
 
 - `proposals/<client>/index.html`: one folder per client proposal, as published.
 
+## Deploys
+
+The Vercel project `eureka-propuesta-federico` is linked to this repo. Every push to `main` updates the live site from `proposals/federico-gonzalez/`.
+
 ## Proposals
 
 | Client | Live URL | Status |
