@@ -488,10 +488,9 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 .fx-c.on li{border-top-color:rgba(255,255,255,.25)}
 @media (max-width:760px){.fx{grid-template-columns:1fr}}
 
-/* Scope builder */
+/* Phases and totals */
 .sps{display:grid;gap:12px;margin-top:18px}
-.sp{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;transition:opacity .25s,border-color .2s,background .2s}
-.sp.off{opacity:.55;background:#FBFAFC;border-style:dashed}
+.sp{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
 .sp-h{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:start}
 .sp-n{font-style:italic;font-weight:300;font-size:1.5rem;color:var(--purple);line-height:1;min-width:28px}
 .sp-t h3{margin:6px 0 0;font-size:1.2rem;font-weight:800;letter-spacing:-.02em}
@@ -504,14 +503,6 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 .sp-amt{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .sp-wk{font-size:.82rem;color:var(--muted)}
 .sp-lock{font-size:.78rem;font-weight:600;color:var(--purple);margin-top:6px}
-.sp-sw{position:relative;display:inline-block;width:44px;height:26px;margin-top:6px;cursor:pointer}
-.sp-sw input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
-.sp-sw span{position:absolute;inset:0;background:#D9D6DE;border-radius:999px;transition:background .2s}
-.sp-sw span:after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .2s}
-.sp-sw input:checked+span{background:var(--purple)}
-.sp-sw input:checked+span:after{transform:translateX(18px)}
-.sp-sw input:focus-visible+span{outline:3px solid var(--purple);outline-offset:2px}
-.sp-sw input:disabled{cursor:not-allowed}
 .sp-dl{margin:14px 0 0 44px;display:grid;grid-template-columns:1fr 1fr;gap:6px 22px}
 .sp-dl li{font-size:.9rem;padding-left:16px;position:relative}
 .sp-dl li:before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:2px;background:var(--purple)}
@@ -545,12 +536,8 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 .acc-items li .n{font-style:italic;font-weight:300;color:var(--purple);min-width:24px}
 .acc-items li .nm{flex:1;min-width:0;font-weight:600}
 .acc-items li .pr{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
-.acc-items li.off .nm,.acc-items li.off .pr{color:#9A9A9A;font-weight:400}
-.acc-items li.off .pr{text-decoration:line-through}
 .acc-items li.tot{border-bottom:0;padding-top:12px}
 .acc-items li.tot .nm,.acc-items li.tot .pr{font-weight:800;font-size:1.05rem}
-.acc-items .ch{font-size:.72rem;color:var(--muted);font-weight:500;margin-left:6px}
-.acc-change{display:inline-block;margin-top:10px;font-size:.85rem;font-weight:600;color:var(--purple)}
 .acc-scope-card h3{margin:0;font-size:1.1rem;font-weight:800;letter-spacing:-.02em}
 .acc.done .acc-scope-card{margin-top:16px}
 .acc-mail{margin-top:10px;font-size:.88rem;color:#14583C}
@@ -668,7 +655,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
     <div><div class="k">Duration</div><div class="v"><em>4</em> weeks</div><div class="d">Week of November 30</div></div>
     <div><div class="k">Date</div><div class="v">November 13, 2026</div><div class="d">Proposal valid until November 27, 2026</div></div>
   </div>
-  <div class="sec-sm"><div class="glance"><div><div class="n">Focus</div><h3>Structure before hiring</h3><p>A system the next two hires can learn in a week.</p></div><div><div class="n">Phases 1 and 2 · USD 2,000</div><h3>Discovery and build</h3><p>Audit, architecture, CRM, projects and training.</p></div><div><div class="n">Optional</div><h3>Notion AI and migration</h3><p>Add them now or after launch.</p></div></div></div>
+  <div class="sec-sm"><div class="glance"><div><div class="n">Focus</div><h3>Structure before hiring</h3><p>A system the next two hires can learn in a week.</p></div><div><div class="n">Total · USD 2,800</div><h3>Discovery, build, AI and migration</h3><p>Four phases in about five weeks.</p></div><div><div class="n">Payment</div><h3>50% now, 50% on delivery</h3><p>By bank transfer, no card fees.</p></div></div></div>
   <div class="pager"></div>
 </section>
 <section class="page" id="context" data-n="01" data-name="Context">
@@ -698,11 +685,10 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 </section>
 <section class="page" id="proposal" data-n="03" data-name="Proposal">
 <div class="label">Section 03</div>
-  <h1>Two phases,<br><em>clear prices.</em></h1>
-  <p class="lede">Each phase has its own price. The essential phases make the project work; the rest you can add now or later.</p>
+  <h1>Four phases,<br><em>one price.</em></h1>
+  <p class="lede">Each phase has its own price and they add up to one fixed total. The tags show what the project needs, what we advise, and what could wait.</p>
   <div class="sec-sm">
-    <div class="label">Build your scope</div>
-    <p class="note" style="margin-top:8px">Working with a tighter budget? Switch off the optional pieces and the total updates. Essential pieces are what make the project work.</p>
+    <div class="label">Scope and investment</div>
     <div class="sps"><article class="sp" data-id="discovery" data-price="500" data-weeks="1" data-name="Discovery and architecture">
       <div class="sp-h">
         <div class="sp-n">01</div>
@@ -721,14 +707,14 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
       <div class="sp-h">
         <div class="sp-n">03</div>
         <div class="sp-t"><span class="sp-tag t-recommended">Recommended</span><h3>Notion AI setup</h3><p>Agents and prompts for briefs, meeting notes and client updates.</p></div>
-        <div class="sp-p"><div class="sp-amt">USD 300</div><div class="sp-wk">Runs in parallel</div><label class="sp-sw"><input type="checkbox" data-sp="ai" checked><span></span></label></div>
+        <div class="sp-p"><div class="sp-amt">USD 300</div><div class="sp-wk">Runs in parallel</div><span class="sp-lock">✓ Included</span></div>
       </div>
       <ul class="sp-dl"><li>Prompt library by role</li><li>Meeting notes agent</li><li>Training with real cases</li></ul>
-    </article><article class="sp off" data-id="migration" data-price="500" data-weeks="1" data-name="Data migration">
+    </article><article class="sp" data-id="migration" data-price="500" data-weeks="1" data-name="Data migration">
       <div class="sp-h">
         <div class="sp-n">04</div>
         <div class="sp-t"><span class="sp-tag t-optional">Optional</span><h3>Data migration</h3><p>We move active clients and projects from the spreadsheet into Notion.</p></div>
-        <div class="sp-p"><div class="sp-amt">USD 500</div><div class="sp-wk">1 week</div><label class="sp-sw"><input type="checkbox" data-sp="migration" ><span></span></label></div>
+        <div class="sp-p"><div class="sp-amt">USD 500</div><div class="sp-wk">1 week</div><span class="sp-lock">✓ Included</span></div>
       </div>
       <ul class="sp-dl"><li>Field mapping</li><li>Migration of active records</li><li>Data cleanup and validation</li></ul>
     </article></div>
@@ -764,9 +750,9 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
     <div class="acc-sum">
       <div>
         <div class="k">You're accepting</div>
-        <h3>Your selection</h3>
+        <h3>Scope and investment</h3>
         <div class="acc-amt"><span data-acc-dep></span><small><span data-acc-dlabel></span></small></div>
-        <ul class="acc-items" data-acc-items></ul><a class="acc-change" href="#proposal">← Change selection</a>
+        <ul class="acc-items" data-acc-items></ul>
       </div>
       <button type="button" class="acc-btn" data-acc-open>Accept proposal →</button>
     </div>
@@ -888,47 +874,32 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 
 </script>
 <script>
-window.EUREKA_UI = {"total": "Total", "not_selected": "not selected", "accepted_by": "Accepted by", "on": "on", "emailed": "We also sent these details to", "err_name": "Please add your full name.", "err_email": "Please add a valid email.", "err_terms": "Please accept the terms to continue.", "weeks": "weeks", "week": "week", "on_accept": "when you accept", "deposit": "Deposit"};
-/* Scope builder: optional phases can be switched off; totals and deposit update.
+window.EUREKA_UI = {"total": "Total", "accepted_by": "Accepted by", "on": "on", "emailed": "We also sent these details to", "err_name": "Please add your full name.", "err_email": "Please add a valid email.", "err_terms": "Please accept the terms to continue.", "weeks": "weeks", "week": "week", "on_accept": "when you accept", "deposit": "Deposit"};
+/* Scope summary: adds up every phase (all are part of the fixed price) and fills the totals box.
    Exposes window.EUREKA_SCOPE() -> {items, total, weeks, deposit, currency, pct} for the accept block. */
 (function(){
   var sum=document.querySelector('.sp-sum'); if(!sum) return;
   var cur=sum.dataset.cur, pct=+sum.dataset.pct, U=window.EUREKA_UI||{};
   function money(n){return cur+' '+Math.round(n).toLocaleString('en-US')}
   function state(){
-    var items=[],off=[],total=0,weeks=0;
+    var items=[],total=0,weeks=0;
     [].forEach.call(document.querySelectorAll('.sp'),function(c){
-      var cb=c.querySelector('input[data-sp]'), on=!cb||cb.checked;
-      c.classList.toggle('off',!on);
       var it={id:c.dataset.id,name:c.dataset.name,price:+c.dataset.price,n:c.querySelector('.sp-n').textContent};
-      if(on){items.push(it);total+=it.price;weeks+=+c.dataset.weeks}else off.push(it);
+      items.push(it);total+=it.price;weeks+=+c.dataset.weeks;
     });
-    return {items:items,off:off,total:total,weeks:weeks,deposit:total*pct/100,currency:cur,pct:pct};
+    return {items:items,total:total,weeks:weeks,deposit:total*pct/100,currency:cur,pct:pct};
   }
-  function render(){
-    var s=state();
-    sum.querySelector('[data-sp-total]').textContent=money(s.total);
-    sum.querySelector('[data-sp-weeks]').textContent=s.weeks?s.weeks+' '+(s.weeks===1?(U.week||'week'):(U.weeks||'weeks')):'–';
-    sum.querySelector('[data-sp-dep]').textContent=money(s.deposit);
-    document.dispatchEvent(new CustomEvent('scope:change',{detail:s}));
-  }
+  var s=state();
+  sum.querySelector('[data-sp-total]').textContent=money(s.total);
+  sum.querySelector('[data-sp-weeks]').textContent=s.weeks?s.weeks+' '+(s.weeks===1?(U.week||'week'):(U.weeks||'weeks')):'–';
+  sum.querySelector('[data-sp-dep]').textContent=money(s.deposit);
   window.EUREKA_SCOPE=state;
-  window.EUREKA_SCOPE_LOCK=function(ids){
-    [].forEach.call(document.querySelectorAll('input[data-sp]'),function(cb){
-      if(ids) cb.checked=ids.indexOf(cb.dataset.sp)>-1;
-      cb.disabled=true;
-    });
-    render();
-  };
-  window.EUREKA_SCOPE_UNLOCK=function(){[].forEach.call(document.querySelectorAll('input[data-sp]'),function(cb){cb.disabled=false})};
-  document.addEventListener('change',function(e){if(e.target.matches&&e.target.matches('input[data-sp]')) render()});
-  render();
 })();
 
 </script>
 <script>
 /* Accept proposal.
-   - Reads the chosen scope from the scope builder (window.EUREKA_SCOPE) when present.
+   - Reads the scope and totals from the proposal (window.EUREKA_SCOPE) when present.
    - Saves the acceptance in the browser, so a returning client sees the payment step.
    - Posts the acceptance to data-api (default /api/accept), which emails the client and the team.
      If the endpoint isn't there (local file, preview), the page still works. */
@@ -949,20 +920,18 @@ window.EUREKA_UI = {"total": "Total", "not_selected": "not selected", "accepted_
     [].forEach.call(el.querySelectorAll('[data-acc-dep]'),function(x){x.textContent=dep});
     [].forEach.call(el.querySelectorAll('[data-acc-dlabel]'),function(x){x.textContent=s.pct+'% '+t('on_accept','when you accept')+' · '+t('total','Total')+' '+money(s.currency,s.total)});
     var li=function(i,cls,extra){return '<li class="'+cls+'"><span class="n">'+(i.n||'')+'</span><span class="nm">'+esc(i.name)+(extra||'')+'</span><span class="pr">'+money(s.currency,i.price)+'</span></li>'};
-    var all=s.items.map(function(i){return [i,1]}).concat((s.off||[]).map(function(i){return [i,0]})).sort(function(x,y){return String(x[0].n).localeCompare(String(y[0].n))});
-    var rows=all.map(function(x){return x[1]?li(x[0],''):li(x[0],'off','<span class="ch">'+t('not_selected','not selected')+'</span>')}).join('')
+    var rows=s.items.map(function(i){return li(i,'')}).join('')
       +'<li class="tot"><span class="n"></span><span class="nm">'+t('total','Total')+'</span><span class="pr">'+money(s.currency,s.total)+'</span></li>';
     [].forEach.call(el.querySelectorAll('[data-acc-items]'),function(x){x.innerHTML=rows});
   }
   function done(a){
     var d=new Date(a.at);
     el.querySelector('.acc-ok span').textContent=t('accepted_by','Accepted by')+' '+a.name+' '+t('on','on')+' '+d.toLocaleDateString(lang==='es'?'es-CO':'en-US',{month:'long',day:'numeric',year:'numeric'})+'.';
-    if(a.scope){paint(a.scope); if(window.EUREKA_SCOPE_LOCK) window.EUREKA_SCOPE_LOCK(a.scope.items.map(function(i){return i.id}))}
+    paint(scope()||a.scope);
     var m=el.querySelector('.acc-mail');
     if(m){m.hidden=!a.emailed; m.textContent=t('emailed','We also sent these details to')+' '+a.email+'.'}
     el.classList.remove('open'); el.classList.add('done');
   }
-  document.addEventListener('scope:change',function(e){if(!el.classList.contains('done')) paint(e.detail)});
   paint(scope());
   el.querySelector('[data-acc-open]').addEventListener('click',function(){el.classList.add('open');el.querySelector('#acc-name').focus()});
   el.querySelector('[data-acc-terms]').addEventListener('click',function(e){e.preventDefault();el.querySelector('#acc-terms').open=true});
@@ -983,7 +952,7 @@ window.EUREKA_UI = {"total": "Total", "not_selected": "not selected", "accepted_
   }
   function send(a){
     var api=el.dataset.api; if(!api||location.protocol==='file:') return;
-    var body={proposal:el.dataset.key,name:a.name,email:a.email,at:a.at,items:a.scope?a.scope.items.map(function(i){return i.id}):null};
+    var body={proposal:el.dataset.key,name:a.name,email:a.email,at:a.at};
     try{
       fetch(api,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
         .then(function(r){return r.ok?r.json():null})
@@ -1004,7 +973,6 @@ window.EUREKA_UI = {"total": "Total", "not_selected": "not selected", "accepted_
   });
   el.querySelector('[data-acc-reset]').addEventListener('click',function(){
     clear();el.classList.remove('done');form.reset();
-    if(window.EUREKA_SCOPE_UNLOCK) window.EUREKA_SCOPE_UNLOCK();
     paint(scope());
   });
   var a=load(); if(a) done(a);

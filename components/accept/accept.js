@@ -1,5 +1,5 @@
 /* Accept proposal.
-   - Reads the chosen scope from the scope builder (window.EUREKA_SCOPE) when present.
+   - Reads the scope and totals from the proposal (window.EUREKA_SCOPE) when present.
    - Saves the acceptance in the browser, so a returning client sees the payment step.
    - Posts the acceptance to data-api (default /api/accept), which emails the client and the team.
      If the endpoint isn't there (local file, preview), the page still works. */
@@ -20,20 +20,18 @@
     [].forEach.call(el.querySelectorAll('[data-acc-dep]'),function(x){x.textContent=dep});
     [].forEach.call(el.querySelectorAll('[data-acc-dlabel]'),function(x){x.textContent=s.pct+'% '+t('on_accept','when you accept')+' · '+t('total','Total')+' '+money(s.currency,s.total)});
     var li=function(i,cls,extra){return '<li class="'+cls+'"><span class="n">'+(i.n||'')+'</span><span class="nm">'+esc(i.name)+(extra||'')+'</span><span class="pr">'+money(s.currency,i.price)+'</span></li>'};
-    var all=s.items.map(function(i){return [i,1]}).concat((s.off||[]).map(function(i){return [i,0]})).sort(function(x,y){return String(x[0].n).localeCompare(String(y[0].n))});
-    var rows=all.map(function(x){return x[1]?li(x[0],''):li(x[0],'off','<span class="ch">'+t('not_selected','not selected')+'</span>')}).join('')
+    var rows=s.items.map(function(i){return li(i,'')}).join('')
       +'<li class="tot"><span class="n"></span><span class="nm">'+t('total','Total')+'</span><span class="pr">'+money(s.currency,s.total)+'</span></li>';
     [].forEach.call(el.querySelectorAll('[data-acc-items]'),function(x){x.innerHTML=rows});
   }
   function done(a){
     var d=new Date(a.at);
     el.querySelector('.acc-ok span').textContent=t('accepted_by','Accepted by')+' '+a.name+' '+t('on','on')+' '+d.toLocaleDateString(lang==='es'?'es-CO':'en-US',{month:'long',day:'numeric',year:'numeric'})+'.';
-    if(a.scope){paint(a.scope); if(window.EUREKA_SCOPE_LOCK) window.EUREKA_SCOPE_LOCK(a.scope.items.map(function(i){return i.id}))}
+    paint(scope()||a.scope);
     var m=el.querySelector('.acc-mail');
     if(m){m.hidden=!a.emailed; m.textContent=t('emailed','We also sent these details to')+' '+a.email+'.'}
     el.classList.remove('open'); el.classList.add('done');
   }
-  document.addEventListener('scope:change',function(e){if(!el.classList.contains('done')) paint(e.detail)});
   paint(scope());
   el.querySelector('[data-acc-open]').addEventListener('click',function(){el.classList.add('open');el.querySelector('#acc-name').focus()});
   el.querySelector('[data-acc-terms]').addEventListener('click',function(e){e.preventDefault();el.querySelector('#acc-terms').open=true});
@@ -54,7 +52,7 @@
   }
   function send(a){
     var api=el.dataset.api; if(!api||location.protocol==='file:') return;
-    var body={proposal:el.dataset.key,name:a.name,email:a.email,at:a.at,items:a.scope?a.scope.items.map(function(i){return i.id}):null};
+    var body={proposal:el.dataset.key,name:a.name,email:a.email,at:a.at};
     try{
       fetch(api,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
         .then(function(r){return r.ok?r.json():null})
@@ -75,7 +73,6 @@
   });
   el.querySelector('[data-acc-reset]').addEventListener('click',function(){
     clear();el.classList.remove('done');form.reset();
-    if(window.EUREKA_SCOPE_UNLOCK) window.EUREKA_SCOPE_UNLOCK();
     paint(scope());
   });
   var a=load(); if(a) done(a);

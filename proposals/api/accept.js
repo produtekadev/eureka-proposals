@@ -72,9 +72,8 @@ module.exports = async (req, res) => {
   const email = String(b.email || '').trim().slice(0, 200);
   if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return res.status(400).json({ error: 'Invalid fields' });
 
-  // Scope: essential phases always count; others only if the client kept them on.
-  const chosen = Array.isArray(b.items) ? b.items.map(String) : null;
-  const items = P.phases.filter((ph) => ph.tag === 'essential' || (chosen ? chosen.includes(ph.id) : ph.default_on));
+  // Fixed scope: every phase in the proposal is part of the price.
+  const items = P.phases;
   const total = items.reduce((s, i) => s + i.price, 0);
   const scope = { items, total, deposit: (total * P.deposit_pct) / 100 };
   const t = T[P.lang] || T.en;

@@ -1,79 +1,205 @@
 {
   "lang": "en",
-  "client": { "company": "Acme Studio", "contact": "Jane Doe", "role": "Founder", "location": "Miami" },
-  "prepared_by": ["paula", "mateo"],
-  "team": ["abel"],
+  "client": {
+    "company": "Acme Studio",
+    "contact": "Jane Doe",
+    "role": "Founder",
+    "location": "Miami"
+  },
+  "prepared_by": [
+    "paula",
+    "mateo"
+  ],
+  "team": [
+    "abel"
+  ],
   "date": "2026-11-13",
   "valid_until": "2026-11-27",
   "start": "Week of November 30",
-
   "cover": {
     "tag": "Implementation proposal",
     "headline": "One place to run<br><em>the whole</em> <span class=\"hl\">studio.</span>",
     "lede": "A phased plan to move Acme's sales, projects and team into one Notion operating system, before the next hires arrive. Based on our conversation on November 10.",
     "glance": [
-      { "k": "Focus", "h": "Structure before hiring", "p": "A system the next two hires can learn in a week." },
-      { "k": "Phases 1 and 2 · USD 2,000", "h": "Discovery and build", "p": "Audit, architecture, CRM, projects and training." },
-      { "k": "Optional", "h": "Notion AI and migration", "p": "Add them now or after launch." }
+      {
+        "k": "Focus",
+        "h": "Structure before hiring",
+        "p": "A system the next two hires can learn in a week."
+      },
+      {
+        "k": "Total · USD 2,800",
+        "h": "Discovery, build, AI and migration",
+        "p": "Four phases in about five weeks."
+      },
+      {
+        "k": "Payment",
+        "h": "50% now, 50% on delivery",
+        "p": "By bank transfer, no card fees."
+      }
     ]
   },
-
   "context": {
     "title": "What we<br><em>heard.</em>",
     "lede": "Acme is a 9-person design studio with steady demand. The problem isn't clients, it's <b>the process behind them</b>: work lives in email, WhatsApp and a spreadsheet only Jane understands.",
     "stats": [
-      { "n": "9", "t": "people, plus 4 freelancers" },
-      { "n": "~40", "t": "active clients a year" },
-      { "n": "2", "t": "hires planned for Q1" }
+      {
+        "n": "9",
+        "t": "people, plus 4 freelancers"
+      },
+      {
+        "n": "~40",
+        "t": "active clients a year"
+      },
+      {
+        "n": "2",
+        "t": "hires planned for Q1"
+      }
     ],
     "pains_title": "Three things <em>slowing down</em> the studio.",
     "pains": [
-      { "k": "Sales", "h": "No pipeline", "it": "Leads live in Jane's inbox.", "p": "Follow-ups depend on memory, and there's no view of what's about to close." },
-      { "k": "Projects", "h": "Revisions without limits", "it": "Scope creep goes unnoticed.", "p": "Nobody can see how many rounds each project has used until it's too late." },
-      { "k": "Team", "h": "Freelancers work blind", "it": "Or see too much.", "p": "Access is all or nothing, so freelancers either miss context or see client finances." }
+      {
+        "k": "Sales",
+        "h": "No pipeline",
+        "it": "Leads live in Jane's inbox.",
+        "p": "Follow-ups depend on memory, and there's no view of what's about to close."
+      },
+      {
+        "k": "Projects",
+        "h": "Revisions without limits",
+        "it": "Scope creep goes unnoticed.",
+        "p": "Nobody can see how many rounds each project has used until it's too late."
+      },
+      {
+        "k": "Team",
+        "h": "Freelancers work blind",
+        "it": "Or see too much.",
+        "p": "Access is all or nothing, so freelancers either miss context or see client finances."
+      }
     ],
-    "quote": { "text": "I don't want to hire into chaos again. I want the system first.", "who": "Jane Doe, Founder" },
+    "quote": {
+      "text": "I don't want to hire into chaos again. I want the system first.",
+      "who": "Jane Doe, Founder"
+    },
     "opportunity": "Demand is proven and the services are defined. Building the operating system now means the Q1 hires join a studio that's <b>ready to scale</b>, instead of adding to the noise."
   },
-
   "focus": {
     "title": "Where we'd<br><em>start.</em>",
     "statement": "You asked for a lot, and all of it makes sense. Our recommendation is to <b>start with sales and projects</b>, because that's where the hires will work from day one.",
-    "asked": ["CRM and pipeline", "Project and revision tracking", "Freelancer access", "Automated proposals", "Finance dashboard", "AI everywhere"],
-    "recommend": ["CRM and pipeline", "Projects with revision limits", "Role-based access for freelancers", "Notion AI where it saves real time", "Finance later, once the data exists"],
+    "asked": [
+      "CRM and pipeline",
+      "Project and revision tracking",
+      "Freelancer access",
+      "Automated proposals",
+      "Finance dashboard",
+      "AI everywhere"
+    ],
+    "recommend": [
+      "CRM and pipeline",
+      "Projects with revision limits",
+      "Role-based access for freelancers",
+      "Notion AI where it saves real time",
+      "Finance later, once the data exists"
+    ],
     "why": "Finance depends on clean project and sales data, so building it first would mean building it twice."
   },
-
   "proposal": {
-    "title": "Two phases,<br><em>clear prices.</em>",
-    "intro": "Each phase has its own price. The essential phases make the project work; the rest you can add now or later.",
+    "title": "Four phases,<br><em>one price.</em>",
+    "intro": "Each phase has its own price and they add up to one fixed total. The tags show what the project needs, what we advise, and what could wait.",
     "currency": "USD",
     "phases": [
-      { "id": "discovery", "name": "Discovery and architecture", "tag": "essential", "price": 500, "weeks": 1,
+      {
+        "id": "discovery",
+        "name": "Discovery and architecture",
+        "tag": "essential",
+        "price": 500,
+        "weeks": 1,
         "summary": "We map how the studio works today and design the system before building it.",
-        "deliverables": ["Kickoff and 2 team interviews", "Audit of current tools", "System architecture", "Roadmap with dates"] },
-      { "id": "build", "name": "Build and training", "tag": "essential", "price": 1500, "weeks": 3,
+        "deliverables": [
+          "Kickoff and 2 team interviews",
+          "Audit of current tools",
+          "System architecture",
+          "Roadmap with dates"
+        ]
+      },
+      {
+        "id": "build",
+        "name": "Build and training",
+        "tag": "essential",
+        "price": 1500,
+        "weeks": 3,
         "summary": "The operating system, built with weekly co-creation sessions.",
-        "deliverables": ["CRM and sales pipeline", "Projects, tasks and revision tracking", "Personal hubs for each team member", "Role-based access for freelancers", "Team training and recordings", "Documentation"] },
-      { "id": "ai", "name": "Notion AI setup", "tag": "recommended", "price": 300, "weeks": 0, "duration": "Runs in parallel",
+        "deliverables": [
+          "CRM and sales pipeline",
+          "Projects, tasks and revision tracking",
+          "Personal hubs for each team member",
+          "Role-based access for freelancers",
+          "Team training and recordings",
+          "Documentation"
+        ]
+      },
+      {
+        "id": "ai",
+        "name": "Notion AI setup",
+        "tag": "recommended",
+        "price": 300,
+        "weeks": 0,
+        "duration": "Runs in parallel",
         "summary": "Agents and prompts for briefs, meeting notes and client updates.",
-        "deliverables": ["Prompt library by role", "Meeting notes agent", "Training with real cases"] },
-      { "id": "migration", "name": "Data migration", "tag": "optional", "price": 500, "weeks": 1, "default_on": false,
+        "deliverables": [
+          "Prompt library by role",
+          "Meeting notes agent",
+          "Training with real cases"
+        ]
+      },
+      {
+        "id": "migration",
+        "name": "Data migration",
+        "tag": "optional",
+        "price": 500,
+        "weeks": 1,
         "summary": "We move active clients and projects from the spreadsheet into Notion.",
-        "deliverables": ["Field mapping", "Migration of active records", "Data cleanup and validation"] }
+        "deliverables": [
+          "Field mapping",
+          "Migration of active records",
+          "Data cleanup and validation"
+        ]
+      }
     ],
-    "included": ["Weekly sessions during the build", "Shared Slack channel", "Client portal with timeline and deliverables", "NDA signed by Eureka"],
-    "excluded": ["Notion licenses (paid to Notion)", "External automations (Make, Zapier)", "Finance module", "Ongoing support after the guarantee"],
+    "included": [
+      "Weekly sessions during the build",
+      "Shared Slack channel",
+      "Client portal with timeline and deliverables",
+      "NDA signed by Eureka"
+    ],
+    "excluded": [
+      "Notion licenses (paid to Notion)",
+      "External automations (Make, Zapier)",
+      "Finance module",
+      "Ongoing support after the guarantee"
+    ],
     "guarantee": "One month after delivery to fix issues within the delivered scope, at no extra cost."
   },
-
-  "payment": { "deposit_pct": 50, "schedule": "50% when you accept, 50% on delivery. By bank transfer, no card fees.", "ref": "ACME-2611" },
-
+  "payment": {
+    "deposit_pct": 50,
+    "schedule": "50% when you accept, 50% on delivery. By bank transfer, no card fees.",
+    "ref": "ACME-2611"
+  },
   "next_steps": [
-    { "when": "Today", "h": "Accept and send the deposit", "p": "Right here, below." },
-    { "when": "Within 2 days", "h": "Kickoff", "p": "We meet the team and open Slack and the client portal." },
-    { "when": "Week of November 30", "h": "Discovery starts", "p": "Interviews and audit." }
+    {
+      "when": "Today",
+      "h": "Accept and send the deposit",
+      "p": "Right here, below."
+    },
+    {
+      "when": "Within 2 days",
+      "h": "Kickoff",
+      "p": "We meet the team and open Slack and the client portal."
+    },
+    {
+      "when": "Week of November 30",
+      "h": "Discovery starts",
+      "p": "Interviews and audit."
+    }
   ],
-
   "closing": "We're ready to build<br><em>your Eureka moment.</em>"
 }

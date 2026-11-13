@@ -10,29 +10,25 @@
       "id": "discovery",
       "name": "Discovery and architecture",
       "price": 500,
-      "tag": "essential",
-      "default_on": false
+      "tag": "essential"
     },
     {
       "id": "build",
       "name": "Build and training",
       "price": 1500,
-      "tag": "essential",
-      "default_on": false
+      "tag": "essential"
     },
     {
       "id": "ai",
       "name": "Notion AI setup",
       "price": 300,
-      "tag": "recommended",
-      "default_on": true
+      "tag": "recommended"
     },
     {
       "id": "migration",
       "name": "Data migration",
       "price": 500,
-      "tag": "optional",
-      "default_on": false
+      "tag": "optional"
     }
   ],
   "bank_accounts": [

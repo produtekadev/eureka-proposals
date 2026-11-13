@@ -20,7 +20,7 @@ UI = {
     'duration': 'Duration', 'date': 'Date', 'investment': 'Investment', 'context': 'Context', 'focus': 'Focus',
     'proposal': 'Proposal', 'about': 'About us', 'start': 'Start', 'cover': 'Cover',
     'essential': 'Essential', 'recommended': 'Recommended', 'optional': 'Optional', 'included_tag': 'Included',
-    'build_scope': 'Build your scope', 'budget_note': 'Working with a tighter budget? Switch off the optional pieces and the total updates. Essential pieces are what make the project work.',
+    'build_scope': 'Scope and investment',
     'total': 'Total', 'weeks': 'weeks', 'week': 'week', 'deposit': 'Deposit', 'on_accept': 'when you accept',
     'deliverables': 'What you get', 'included': 'Included in this proposal', 'excluded': 'Not included',
     'guarantee': 'Guarantee', 'team': 'Your team', 'clients': 'Some of our clients', 'partner': 'Notion Consulting Partner',
@@ -35,7 +35,7 @@ UI = {
     'book_btn': 'Book the kickoff →', 'from_there': 'We take it from there', 'from_there_text': 'We confirm your deposit within one business day and send the client portal invite.',
     'emailed': 'We also sent these details to', 'reset': 'Reset (test only)', 'demo': 'Demo data', 'copy': 'Copy',
     'err_name': 'Please add your full name.', 'err_email': 'Please add a valid email.', 'err_terms': 'Please accept the terms to continue.',
-    'scope_selected': 'Your selection', 'client_logo': 'Client logo', 'not_selected': 'not selected', 'change': 'Change selection', 'accepted_scope': 'Accepted scope',
+    'scope_selected': 'Scope and investment', 'client_logo': 'Client logo', 'accepted_scope': 'Accepted scope',
     'ready': 'Ready to', 'ready_em': 'start?',
   },
   'es': {
@@ -43,7 +43,7 @@ UI = {
     'duration': 'Duración', 'date': 'Fecha', 'investment': 'Inversión', 'context': 'Contexto', 'focus': 'Enfoque',
     'proposal': 'Propuesta', 'about': 'Nosotros', 'start': 'Empezar', 'cover': 'Portada',
     'essential': 'Indispensable', 'recommended': 'Recomendado', 'optional': 'Opcional', 'included_tag': 'Incluido',
-    'build_scope': 'Arma tu alcance', 'budget_note': '¿Presupuesto más ajustado? Desactiva las piezas opcionales y el total se actualiza. Las piezas indispensables son las que hacen funcionar el proyecto.',
+    'build_scope': 'Alcance e inversión',
     'total': 'Total', 'weeks': 'semanas', 'week': 'semana', 'deposit': 'Anticipo', 'on_accept': 'al aceptar',
     'deliverables': 'Lo que recibes', 'included': 'Incluido en esta propuesta', 'excluded': 'No incluido',
     'guarantee': 'Garantía', 'team': 'Tu equipo', 'clients': 'Algunos de nuestros clientes', 'partner': 'Notion Consulting Partner',
@@ -58,7 +58,7 @@ UI = {
     'book_btn': 'Agendar kickoff →', 'from_there': 'Nosotros nos encargamos', 'from_there_text': 'Confirmamos tu anticipo en un día hábil y te enviamos la invitación al portal de cliente.',
     'emailed': 'También enviamos estos datos a', 'reset': 'Reiniciar (solo prueba)', 'demo': 'Datos demo', 'copy': 'Copiar',
     'err_name': 'Agrega tu nombre completo.', 'err_email': 'Agrega un email válido.', 'err_terms': 'Acepta los términos para continuar.',
-    'scope_selected': 'Tu selección', 'client_logo': 'Logo de cliente', 'not_selected': 'no seleccionado', 'change': 'Cambiar selección', 'accepted_scope': 'Alcance aceptado',
+    'scope_selected': 'Alcance e inversión', 'client_logo': 'Logo de cliente', 'accepted_scope': 'Alcance aceptado',
     'ready': '¿Listos para', 'ready_em': 'empezar?',
   },
 }
@@ -168,13 +168,11 @@ def sec_proposal(pg, P):
   cards = []
   for i, ph in enumerate(pr['phases']):
     tag = ph.get('tag', 'essential')
-    locked = tag == 'essential'
-    on = locked or ph.get('default_on', tag == 'recommended')
-    toggle = (f'<span class="sp-lock">✓ {u["included_tag"]}</span>' if locked else
-              f'<label class="sp-sw"><input type="checkbox" data-sp="{esc(ph["id"])}" {"checked" if on else ""}><span></span></label>')
+    # Every phase is part of the fixed price. The tag only says how important it is.
+    toggle = f'<span class="sp-lock">✓ {u["included_tag"]}</span>'
     dl = ''.join(f'<li>{rich(d)}</li>' for d in ph.get('deliverables', []))
     wk = ph.get('weeks')
-    cards.append(f'''<article class="sp{'' if on else ' off'}" data-id="{esc(ph['id'])}" data-price="{ph['price']}" data-weeks="{wk or 0}" data-name="{esc(ph['name'])}">
+    cards.append(f'''<article class="sp" data-id="{esc(ph['id'])}" data-price="{ph['price']}" data-weeks="{wk or 0}" data-name="{esc(ph['name'])}">
       <div class="sp-h">
         <div class="sp-n">{i+1:02d}</div>
         <div class="sp-t"><span class="sp-tag t-{tag}">{tag_lbl[tag]}</span><h3>{esc(ph['name'])}</h3>{f'<p>{rich(ph["summary"])}</p>' if ph.get('summary') else ''}</div>
@@ -202,7 +200,6 @@ def sec_proposal(pg, P):
   <p class="lede">{rich(pr['intro'])}</p>
   <div class="sec-sm">
     <div class="label">{u['build_scope']}</div>
-    {f'<p class="note" style="margin-top:8px">{u["budget_note"]}</p>' if any(p.get('tag') != 'essential' for p in pr['phases']) else ''}
     <div class="sps">{''.join(cards)}</div>
     {summary}
   </div>
@@ -238,7 +235,7 @@ def sec_start(pg, P, company):
   fill = {
     'proposal_id': P['slug'], 'payment_ref': ref, 'first_step_name': u['scope_selected'],
     'deposit_amount': '<span data-acc-dep></span>', 'deposit_label': f'<span data-acc-dlabel></span>',
-    'first_step_detail': f'<ul class="acc-items" data-acc-items></ul><a class="acc-change" href="#proposal">← {u["change"]}</a>', 'terms_html': terms,
+    'first_step_detail': f'<ul class="acc-items" data-acc-items></ul>', 'terms_html': terms,
     'accepted_scope_html': f'<div class="acc-step acc-scope-card"><h3>{u["accepted_scope"]}</h3><ul class="acc-items" data-acc-items></ul></div>',
     'bank_html': f'<div class="acc-tabs">{tabs}</div>{banks}', 'demo_badge': demo, 'kickoff_url': esc(company['kickoff_url']),
   }
@@ -287,7 +284,7 @@ def build(slug):
 
   css = read(os.path.join(T, 'design.css')) + '\n' + read(os.path.join(T, 'proposal.css')) + '\n' + read(os.path.join(ROOT, 'components', 'accept', 'accept.css'))
   logo = read(os.path.join(T, 'assets', 'logo.svg'))
-  strings = {k: UI[lang][k] for k in ('total', 'not_selected', 'accepted_by', 'on', 'emailed', 'err_name', 'err_email', 'err_terms', 'weeks', 'week', 'on_accept', 'deposit')}
+  strings = {k: UI[lang][k] for k in ('total', 'accepted_by', 'on', 'emailed', 'err_name', 'err_email', 'err_terms', 'weeks', 'week', 'on_accept', 'deposit')}
   title = f'{"Proposal" if lang == "en" else "Propuesta"} · Eureka × {P["client"]["company"]}'
   out = f'''<!DOCTYPE html>
 <html lang="{lang}">
@@ -340,7 +337,7 @@ window.EUREKA_UI = {json.dumps(strings, ensure_ascii=False)};
     'slug': slug, 'lang': lang, 'company': P['client']['company'], 'currency': P['proposal'].get('currency', 'USD'),
     'ref': P['payment']['ref'], 'deposit_pct': P['payment'].get('deposit_pct', 50),
     'phases': [{'id': ph['id'], 'name': ph['name'], 'price': ph['price'], 'tag': ph.get('tag', 'essential'),
-                'default_on': ph.get('default_on', ph.get('tag') == 'recommended')} for ph in P['proposal']['phases']],
+} for ph in P['proposal']['phases']],
     'bank_accounts': [{'label': a['label'][lang], 'rows': a['rows']} for a in company['bank_accounts']],
     'kickoff_url': company['kickoff_url'], 'url': f'https://proposals.eureka.ceo/{slug}',
   }

@@ -7,7 +7,7 @@ From accepted proposals (Nickel AI, Ofiuko, Rojo Estudio Creativo, SISU, Trolley
 1. **Context in their words.** Who they are (size, team, tools), 3 pains with evidence, a quote, why now ("the opportunity"). Clients accepted when they recognized themselves in this section.
 2. **A clear focus.** Federico's proposal worked because it picked one North Star (the founder's cockpit) instead of promising all 12 departments at once.
 3. **Phases with separate prices.** Every accepted proposal split the work into phases or modules, each with its own price. Discovery or audit first, then build, then optional layers.
-4. **Essential vs. optional.** Mark what the project needs (`essential`), what we advise (`recommended`) and nice-to-haves (`optional`). Clients can switch optional pieces off on the page, which keeps the conversation going when the budget is tight.
+4. **One fixed price, with tags.** Every phase is included in the total. Tags still say what the project needs (`essential`), what we advise (`recommended`) and what could wait (`optional`). Clients can't remove phases on the page; if they ask to change the scope, we edit the proposal and republish it.
 5. **Included / not included.** Always both. The "not included" list prevents scope creep later (licenses, external automations, extra modules, ongoing support).
 6. **Guarantee.** 1 month (Rojo) to 3 months (SISU) of fixes within the delivered scope.
 7. **Team and clients.** The people assigned, then the client logo grid.

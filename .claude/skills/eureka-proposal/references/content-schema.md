@@ -50,8 +50,7 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
       {
         "id": "build",                  // unique, lowercase
         "name": "Build and training",
-        "tag": "essential",             // essential (always on) | recommended (on, can switch off) | optional (off unless default_on)
-        "default_on": false,            // optional, only for "optional"
+        "tag": "essential",             // essential | recommended | optional: a label only, every phase is in the total
         "price": 1500,
         "weeks": 3,                     // used for the total duration; 0 if it runs in parallel
         "duration": "Runs in parallel", // optional text that replaces "3 weeks"

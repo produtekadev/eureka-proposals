@@ -46,11 +46,13 @@ Propose **one focus sentence** (the North Star: what this project must achieve).
 
 ### 3. Scope, price and duration (stop and confirm)
 
-Using `references/playbook.md`, propose phases. For each one give the name, tag (`essential`, `recommended` or `optional`), price, weeks and 3 to 6 deliverables. Mark as optional anything that's nice to have, so a client with a tighter budget can switch it off on the page. Then show the total, the essential-only total, the deposit, and the payment schedule.
+Using `references/playbook.md`, propose phases. For each one give the name, tag (`essential`, `recommended` or `optional`), price, weeks and 3 to 6 deliverables. Then show the total, the deposit and the payment schedule.
+
+**Every proposal has one fixed price: all phases are included.** The tag only tells the client how important a phase is; they can't remove phases on the page. If the client later asks to change the scope, the team edits `proposal.json`, rebuilds and republishes.
 
 > **01 · Discovery** · Essential · 1 week · USD 500
 > → …
-> **Total USD X** (essential only: USD Y) · deposit 50% = USD Z
+> **Total USD X** · deposit 50% = USD Z
 > Should we adjust anything?
 
 Do not continue until the user confirms. Then confirm the details: projected start, valid-until date (default: two weeks from today), deposit % (default 50), payment reference (default `CLIENT-DDMM`), and who prepares it (team ids from `data/team.json`).
@@ -76,8 +78,9 @@ python3 build.py <slug>
 
 Then check it in a browser with Playwright (it is installed):
 - No JavaScript errors, no horizontal scroll at 390 px width.
-- Every section renders. Switching an optional phase off changes the total and the deposit.
-- The accept flow works: open the form, fill it, accept, payment details and kickoff link appear.
+- Every section renders.
+- The totals box matches the sum of the phases.
+- The accept flow works: the scope list shows every phase and the total; fill name and email, accept, payment details and kickoff link appear.
 
 Show the user screenshots of the cover and the proposal section.
 
