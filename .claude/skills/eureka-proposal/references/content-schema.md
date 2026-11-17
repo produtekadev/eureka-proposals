@@ -60,6 +60,12 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
         "deliverables": ["3 to 6 short items"]
       }
     ],
+    "examples": {                       // optional: screenshots of the deliverable, shown as tilted overlapping cards after the totals
+      "label": "What the report looks like",
+      "title": "",                      // optional
+      "images": [ { "src": "examples/audit-recommendations.webp", "alt": "" } ],  // 1 to 3, paths under template/assets/. No other client's names or data in them
+      "caption": "One or two sentences."                                           // optional
+    },
     "included": ["…"],
     "excluded": ["…"],
     "guarantee": "One month after delivery to fix issues within the delivered scope, at no extra cost."   // optional

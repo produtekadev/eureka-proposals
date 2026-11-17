@@ -1,0 +1,129 @@
+{
+  "lang": "en",
+  "client": {
+    "company": "The Merrittocracy",
+    "contact": "Marcus Wright",
+    "role": "Head of Projects",
+    "location": "Scotland"
+  },
+  "prepared_by": ["abel"],
+  "team": ["mateo"],
+  "notion_page_id": "7bcc9f5c-dca8-83b3-84a6-81f87920b493",
+  "clients": ["daughters-for-earth", "bid", "henkel", "toggl-hire", "foton"],
+  "date": "2026-11-17",
+  "valid_until": "2026-11-30",
+  "start": "Once we have workspace access",
+  "cover": {
+    "tag": "Workspace audit proposal",
+    "headline": "A workspace that stays<br><em>secure and clear</em> <span class=\"hl\">as you grow.</span>",
+    "lede": "A two-week audit of The Merrittocracy's Notion workspace, ending in a report of quick wins and prioritised recommendations. Based on our conversation on November 13.",
+    "glance": [
+      {
+        "k": "Focus",
+        "h": "Refine before adding more",
+        "p": "Structure, access and navigation come first."
+      },
+      {
+        "k": "Total · USD 1,500",
+        "h": "Workspace audit and full report",
+        "p": "Two weeks from workspace access."
+      },
+      {
+        "k": "After the report",
+        "h": "You choose who does what",
+        "p": "Do it yourselves, with AI, or with us."
+      }
+    ]
+  },
+  "context": {
+    "title": "What we<br><em>heard.</em>",
+    "lede": "The Merrittocracy is a social justice agency that brings strategy, research, creative work and implementation together. The team runs its core systems in Notion, with important files linked to Google Drive and Claude helping with meeting minutes and incoming emails. <b>As the team grows, you want the workspace to stay secure, efficient and easy to navigate.</b>",
+    "stats": [
+      { "n": "7", "t": "people on the team, and growing" },
+      { "n": "5", "t": "core systems in Notion: programmes, CRM, finances, capacity and information" },
+      { "n": "1", "t": "teamspace holding all of it" }
+    ],
+    "pains_title": "Three things to sort out <em>before the team grows.</em>",
+    "pains": [
+      {
+        "k": "Access",
+        "h": "One teamspace for everything",
+        "it": "\"I haven't properly used team spaces.\"",
+        "p": "Access is decided page by page. That gets harder to keep secure with every new person, especially around sensitive data."
+      },
+      {
+        "k": "Navigation",
+        "h": "Long dashboards that load slowly",
+        "it": "\"It's a big long list.\"",
+        "p": "Graphs, projects and several views on one page take time to load and are hard for a new team member to read."
+      },
+      {
+        "k": "AI and tools",
+        "h": "Updates that are hard to find",
+        "it": "\"Is there anything on the Business plan that we should be using that we're not?\"",
+        "p": "Claude's project updates land as comments, which get harder to find as they pile up. Meeting notes live in Gemini, outside the workspace."
+      }
+    ],
+    "quote": {
+      "text": "We've got everything we need. We just need to make it much more efficiently structured.",
+      "who": "Marcus Wright, Head of Projects"
+    },
+    "opportunity": "You already have the core systems and the information in place. Before adding more processes, an audit shows how to make what you have clearer, more secure and easier for a growing team to use, <b>without over-engineering the workspace.</b>"
+  },
+  "proposal": {
+    "title": "One audit,<br><em>one clear price.</em>",
+    "intro": "We review how the workspace is built and how the team uses it, then hand you a report you can act on. Implementation is a separate, optional step that we scope together once you have read the report.",
+    "currency": "USD",
+    "phases": [
+      {
+        "id": "audit",
+        "name": "Workspace audit and report",
+        "tag": "essential",
+        "price": 1500,
+        "weeks": 2,
+        "duration": "2 weeks from workspace access",
+        "summary": "We meet with you and the team, review the workspace from the inside and deliver a written report.",
+        "deliverables": [
+          "Two sessions with Marcus and the team to understand how the workspace is used",
+          "Review of structure, databases, teamspaces, permissions and dashboard navigation",
+          "Assessment of your Claude, Google Drive and meeting-note workflows",
+          "Audit report with quick wins and prioritised recommendations, marking what the team can do itself, where AI can help and where our support would be useful"
+        ]
+      }
+    ],
+    "examples": {
+      "label": "What the report looks like",
+      "images": [
+        { "src": "examples/audit-recommendations.webp", "alt": "Recommendations page of an audit report, with a numbered list of quick wins" },
+        { "src": "examples/audit-architecture.webp", "alt": "As-is architecture diagram from an audit report" },
+        { "src": "examples/audit-findings.webp", "alt": "Findings page of an audit report, with a severity scale" }
+      ],
+      "caption": "Pages from a recent audit report. Yours follows the same structure: a map of the workspace as it is today, findings ranked by severity and recommendations in the order we would tackle them."
+    },
+    "included": [
+      "Workspace structure and database review",
+      "Teamspace and permissions assessment",
+      "Dashboard and navigation review",
+      "Review of existing meeting-note and connection workflows",
+      "Two sessions with Marcus and the team",
+      "Written report with prioritised recommendations"
+    ],
+    "excluded": [
+      "Implementation of the recommendations (scope and price agreed separately, after the report)",
+      "Third-party integrations and external automations",
+      "Ongoing support or maintenance"
+    ]
+  },
+  "payment": {
+    "deposit_pct": 50,
+    "schedule": "50% when you accept (USD 750), 50% when we deliver the report (USD 750). By bank transfer, or by card through Stripe with a 4% card fee."
+  },
+  "next_steps": [
+    { "when": "Today", "h": "Accept and send the first payment", "p": "Right here, below. 50% by bank transfer or card." },
+    { "when": "Once we receive it", "h": "Kick-off meeting", "p": "We email you the link to book it." },
+    { "when": "Kick-off week", "h": "Workspace access and team sessions", "p": "We join your workspace as Notion consultants and meet with the team." },
+    { "when": "Two weeks later", "h": "Audit report delivered", "p": "We walk you through the findings and the quick wins." },
+    { "when": "After the report", "h": "Decide what comes next", "p": "You choose what to handle internally and what to hand to us. The optional implementation bundle is scoped and priced then." }
+  ],
+  "closing": "We're ready to build<br><em>your Eureka moment.</em>"
+}

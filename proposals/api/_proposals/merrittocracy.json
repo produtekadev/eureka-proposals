@@ -1,0 +1,62 @@
+{
+  "slug": "merrittocracy",
+  "lang": "en",
+  "company": "The Merrittocracy",
+  "currency": "USD",
+  "deposit_pct": 50,
+  "phases": [
+    {
+      "id": "audit",
+      "name": "Workspace audit and report",
+      "price": 1500,
+      "tag": "essential"
+    }
+  ],
+  "bank_accounts": [
+    {
+      "label": "Bank transfer · USD",
+      "rows": [
+        [
+          "Beneficiary",
+          "Produteka LLC"
+        ],
+        [
+          "Beneficiary address",
+          "30 North Gould Street, Sheridan, WY 82801, USA"
+        ],
+        [
+          "Account number",
+          "783562254976660"
+        ],
+        [
+          "Account type",
+          "Checking"
+        ],
+        [
+          "Routing (ACH and wire)",
+          "121145433"
+        ],
+        [
+          "Bank",
+          "Column N.A. (Mercury's banking partner)"
+        ],
+        [
+          "Bank address",
+          "1 Letterman Drive, Building A, Suite A4-700, San Francisco, CA 94129, USA"
+        ],
+        [
+          "SWIFT (international wire)",
+          "CLNOUS66MER"
+        ],
+        [
+          "Intermediary SWIFT (international, required)",
+          "CHASUS33XXX"
+        ]
+      ]
+    }
+  ],
+  "notion_page_id": "7bcc9f5c-dca8-83b3-84a6-81f87920b493",
+  "card_fee_pct": 4,
+  "stripe_url": null,
+  "url": "https://proposals.eureka.ceo/merrittocracy"
+}

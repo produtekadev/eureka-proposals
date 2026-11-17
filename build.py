@@ -199,6 +199,14 @@ def sec_proposal(pg, P):
       <div><div class="label">{u['included']}</div><ul class="check">{inc}</ul></div>
       <div><div class="label lx">{u['excluded']}</div><div class="excl">{exc}</div></div>
     </div></div>'''
+  ex = ''
+  if pr.get('examples'):
+    e = pr['examples']
+    shots = ''.join(f'<figure class="ex-c ex-{i+1}"><img src="{data_uri(os.path.join(T, "assets", im["src"]))}" alt="{esc(im.get("alt", ""))}" loading="lazy"></figure>' for i, im in enumerate(e['images'][:3]))
+    ex = f'''<div class="sec"><div class="label">{esc(e['label'])}</div>
+    {f'<h2>{rich(e["title"])}</h2>' if e.get('title') else ''}
+    <div class="ex ex-n{len(e['images'][:3])}"><div class="ex-stage">{shots}</div></div>
+    {f'<p class="ex-cap">{rich(e["caption"])}</p>' if e.get('caption') else ''}</div>'''
   gu = f'<div class="pp" style="margin-top:28px"><span class="ncp" role="img" aria-label="{u["partner"]}"></span><p><b>{u["guarantee"]}.</b> {rich(pr["guarantee"])}</p></div>' if pr.get('guarantee') else ''
   body = f'''  <h1>{rich(pr['title'])}</h1>
   <p class="lede">{rich(pr['intro'])}</p>
@@ -207,6 +215,7 @@ def sec_proposal(pg, P):
     <div class="sps">{''.join(cards)}</div>
     {summary}
   </div>
+  {ex}
   {ie}
   {gu}'''
   pg.add('proposal', u['proposal'], body)
