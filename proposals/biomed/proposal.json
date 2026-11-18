@@ -157,7 +157,7 @@
         "tag": "essential",
         "price": 600,
         "weeks": 2,
-        "summary": "The context any AI agent reads from, and your first two agents, built in Claude or Grok and tested in your real work.",
+        "summary": "The context any AI agent reads from, and your first two agents, built in Claude or Grok and tested in your real work. One of them can be your metrics agent.",
         "deliverables": [
           {
             "h": "Agent operating guide",
@@ -173,7 +173,7 @@
           },
           {
             "h": "Your first two agents",
-            "p": "The top two from the Phase 1 priority list, for example a metrics and finance agent and a recruiting agent, built in Claude or Grok and connected to Notion. You choose the final two."
+            "p": "The top two from the Phase 1 priority list, built in Claude or Grok and connected to Notion. For example, a metrics and finance agent that answers questions like your retention rate, time to fill or deal size from the data imported in Phase 1, and a recruiting agent. You choose the final two."
           },
           {
             "h": "A week of real use",
