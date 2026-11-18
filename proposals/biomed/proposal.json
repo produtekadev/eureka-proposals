@@ -128,6 +128,10 @@
             "p": "Where each metric comes from (Recruiterflow, QuickBooks, Reply.io or Notion) and what stays in each tool. It answers whether your placement data needs a Notion database or can all live in Recruiterflow."
           },
           {
+            "h": "Historical data import",
+            "p": "Your cleaned metrics Excel imported where the data sources map says it belongs: Recruiterflow (custom fields set up, open, close, start and end dates kept accurate) or Notion (a placements database). Anything Recruiterflow can't take goes into Notion, linked back. One import of one cleaned file."
+          },
+          {
             "h": "Process breakdown",
             "p": "Every step of your RF - Full Recruitment Process sorted into what Notion automates, what an agent drafts for your review, what stays in Recruiterflow and what stays with your team."
           },
@@ -142,6 +146,7 @@
         ],
         "you_do": [
           "Share access and sample files",
+          "Send your cleaned metrics Excel",
           "Approve what we keep",
           "Migrate your documents with the guide"
         ]
@@ -168,7 +173,7 @@
           },
           {
             "h": "Your first two agents",
-            "p": "The top two from the Phase 1 priority list, built in Claude or Grok and connected to Notion."
+            "p": "The top two from the Phase 1 priority list, for example a metrics and finance agent and a recruiting agent, built in Claude or Grok and connected to Notion. You choose the final two."
           },
           {
             "h": "A week of real use",
@@ -228,7 +233,7 @@
     "excluded": [
       "Agents beyond the two built in Phase 2 (your team builds the next ones after the training, or we scope them separately)",
       "Automations and integrations beyond the ones listed in each phase (subject to technical feasibility)",
-      "A metrics dashboard (Phase 1 tells you where each metric should come from)",
+      "Ongoing data entry and custom dashboards (keeping the data current happens in Recruiterflow or through your agents)",
       "Moving files from OneNote, SharePoint or OneDrive (the migration guide shows you how)",
       "Notion licenses after the bonus period"
     ],
