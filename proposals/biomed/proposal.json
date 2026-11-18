@@ -173,7 +173,7 @@
           },
           {
             "h": "Your first two agents",
-            "p": "The top two from the Phase 1 priority list, built in Claude or Grok and connected to Notion. For example, a metrics and finance agent that answers questions like your retention rate, time to fill or deal size from the data imported in Phase 1, and a recruiting agent. You choose the final two."
+            "p": "The top two from the Phase 1 priority list, for example a metrics agent and a recruiting agent, built in Claude or Grok and connected to Notion. You choose the final two."
           },
           {
             "h": "A week of real use",
@@ -192,26 +192,22 @@
         "callout": {
           "label": "Example",
           "title": "Your metrics agent",
-          "lede": "Ask in plain words and get the answer from your own data, instead of opening and updating the spreadsheet yourself.",
+          "lede": "Ask about your numbers in plain words.",
           "items": [
             {
-              "q": "What's our retention rate for people we placed in the last three years?",
-              "a": "Before a client meeting, so you can show your track record."
+              "q": "What's our retention rate for the last three years?",
+              "a": "Answers questions"
             },
             {
-              "q": "What's our average time to fill this year, and time to first submittal?",
-              "a": "Your numbers for 2027 goals and for prospective clients."
-            },
-            {
-              "q": "I just got paid for the Senior Scientist placement. Log it.",
-              "a": "Payments and invoices recorded where your data lives, without editing the Excel by hand."
+              "q": "Make a one-pager with our track record for a new client.",
+              "a": "Creates one-pagers"
             },
             {
               "q": "Give me this month's snapshot.",
-              "a": "Your last-Thursday-of-the-month check, ready in one message."
+              "a": "Sums up your month"
             }
           ],
-          "note": "If you choose it as one of your two agents. The exact questions depend on where Phase 1 places your data."
+          "note": "If you choose it as one of your two agents."
         }
       },
       {
