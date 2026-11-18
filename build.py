@@ -37,7 +37,7 @@ UI = {
     'card_soon': 'We send you the card payment link by email.',
     'emailed': 'We also sent these details to', 'reset': 'Reset (test only)', 'demo': 'Demo data', 'copy': 'Copy',
     'err_name': 'Please add your full name.', 'err_email': 'Please add a valid email.', 'err_terms': 'Please accept the terms to continue.',
-    'scope_selected': 'Scope and investment', 'client_logo': 'Client logo', 'we_did': 'What we did', 'your_part': 'Your part', 'illustrative': 'Illustrative view', 'see_details': 'See what each one includes', 'accepted_scope': 'Accepted scope',
+    'scope_selected': 'Scope and investment', 'client_logo': 'Client logo', 'we_did': 'What we did', 'your_part': 'Your part', 'illustrative': 'Illustrative view', 'see_details': 'See what each one includes', 'hover_hint': 'Hover or tap an item for details', 'accepted_scope': 'Accepted scope',
     'ready': 'Ready to', 'ready_em': 'start?',
   },
   'es': {
@@ -62,7 +62,7 @@ UI = {
     'card_soon': 'Te enviamos el enlace de pago con tarjeta por email.',
     'emailed': 'También enviamos estos datos a', 'reset': 'Reiniciar (solo prueba)', 'demo': 'Datos demo', 'copy': 'Copiar',
     'err_name': 'Agrega tu nombre completo.', 'err_email': 'Agrega un email válido.', 'err_terms': 'Acepta los términos para continuar.',
-    'scope_selected': 'Alcance e inversión', 'client_logo': 'Logo de cliente', 'we_did': 'Qué hicimos', 'your_part': 'Tu parte', 'illustrative': 'Vista ilustrativa', 'see_details': 'Ver qué incluye cada uno', 'accepted_scope': 'Alcance aceptado',
+    'scope_selected': 'Alcance e inversión', 'client_logo': 'Logo de cliente', 'we_did': 'Qué hicimos', 'your_part': 'Tu parte', 'illustrative': 'Vista ilustrativa', 'see_details': 'Ver qué incluye cada uno', 'hover_hint': 'Pasa el cursor o toca un ítem para ver el detalle', 'accepted_scope': 'Alcance aceptado',
     'ready': '¿Listos para', 'ready_em': 'empezar?',
   },
 }
@@ -176,11 +176,11 @@ def sp_body(u, ph, dl):
     svg = read(os.path.join(T, 'visuals', ph['visual'] + '.svg'))
     vis = f'<figure class="sp-vis">{svg}<figcaption>{u["illustrative"]}</figcaption></figure>'
   if items and all(isinstance(d, dict) for d in items):
-    gets = ''.join(f'<li><span class="sp-ck">✓</span><span>{rich(d["h"])}</span></li>' for d in items)
-    more = ''.join(f'<div><dt>{rich(d["h"])}</dt><dd>{rich(d.get("p", ""))}</dd></div>' for d in items)
+    gets = ''.join((f'<li tabindex="0"><span class="sp-ck">✓</span><span class="sp-h">{rich(d["h"])}</span><span class="tip" role="tooltip">{rich(d["p"])}</span></li>' if d.get('p')
+                    else f'<li><span class="sp-ck">✓</span><span class="sp-h">{rich(d["h"])}</span></li>') for d in items)
     youh = (f'<div class="sp-you2"><span class="sp-you-k">{u["your_part"]}</span>' + ''.join(f'<span class="yp">{rich(y)}</span>' for y in you) + '</div>') if you else ''
-    right = (f'<div class="sp-k">{u["deliverables"]}</div><ul class="sp-gets">{gets}</ul>{youh}'
-             f'<details class="sp-more"><summary>{u["see_details"]}</summary><dl>{more}</dl></details>')
+    hint = f'<span class="sp-hint">{u["hover_hint"]}</span>' if any(d.get('p') for d in items) else ''
+    right = f'<div class="sp-k">{u["deliverables"]}{hint}</div><ul class="sp-gets">{gets}</ul>{youh}'
     return f'<div class="sp-body sp-v2{" has-vis" if vis else ""}">{vis}<div>{right}</div></div>'
   youl = ''.join(f'<li>{rich(d)}</li>' for d in you)
   left = (f'<ul class="sp-dl">{dl}</ul>' if dl else '') + (f'<div class="sp-you"><div class="sp-you-k">{u["your_part"]}</div><ul>{youl}</ul></div>' if youl else '')
