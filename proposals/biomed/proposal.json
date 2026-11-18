@@ -129,7 +129,7 @@
           },
           {
             "h": "Historical data import",
-            "p": "Your cleaned metrics Excel imported where the data sources map says it belongs: Recruiterflow (custom fields set up, open, close, start and end dates kept accurate) or Notion (a placements database). Anything Recruiterflow can't take goes into Notion, linked back. One import of one cleaned file."
+            "p": "We import the cleaned metrics Excel your team prepares into the place the data sources map recommends: Recruiterflow, with custom fields that keep your original dates, or a placements database in Notion."
           },
           {
             "h": "Process breakdown",
