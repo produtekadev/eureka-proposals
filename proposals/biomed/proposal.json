@@ -114,19 +114,37 @@
         "price": 600,
         "weeks": 1,
         "visual": "process-map",
-        "summary": "We review your workspace, your tools and your <b>RF - Full Recruitment Process</b> document, then decide where everything should live and what is worth automating.",
+        "summary": "We review your workspace, your tools and your <b>RF - Full Recruitment Process</b>, then decide where everything lives and what is worth automating.",
         "deliverables": [
-          "Audit report of your current workspace and the blueprint you received: what to keep, change or archive",
-          "New workspace with teamspaces and separate personal and team sections, your current Notion content moved in and unused pages archived",
-          "Data sources map: where each metric comes from (Recruiterflow, QuickBooks, Reply.io or Notion) and what information stays in each tool. It answers whether your placement data needs a Notion database or can all live in Recruiterflow",
-          "Breakdown of your RF - Full Recruitment Process: every step sorted into what Notion automates, what an agent drafts for your review, what stays in Recruiterflow and what stays with your team",
-          "Prioritized list of agents and automations, ranked by how often each step happens and how much time it saves",
-          "Migration guide for OneNote, SharePoint and OneDrive: what moves to Notion, what stays (linked from Notion), and how to move it, by hand or with AI"
+          {
+            "h": "Workspace audit",
+            "p": "What to keep, change or archive in your current workspace and the blueprint you received."
+          },
+          {
+            "h": "New workspace",
+            "p": "Teamspaces with separate personal and team sections. Your current Notion content moved in, unused pages archived."
+          },
+          {
+            "h": "Data sources map",
+            "p": "Where each metric comes from (Recruiterflow, QuickBooks, Reply.io or Notion) and what stays in each tool. It answers whether your placement data needs a Notion database or can all live in Recruiterflow."
+          },
+          {
+            "h": "Process breakdown",
+            "p": "Every step of your RF - Full Recruitment Process sorted into what Notion automates, what an agent drafts for your review, what stays in Recruiterflow and what stays with your team."
+          },
+          {
+            "h": "Agent priority list",
+            "p": "The agents and automations worth building, ranked by how often each step happens and how much time it saves."
+          },
+          {
+            "h": "Migration guide",
+            "p": "What moves from OneNote, SharePoint and OneDrive, what stays (linked from Notion), and how to move it, by hand or with AI."
+          }
         ],
         "you_do": [
-          "Give us access to the workspace, a few sample files from each source, your metrics Excel and Recruiterflow",
-          "Approve what we keep and what we archive",
-          "Migrate your documents following the guide, once it tells you what goes where"
+          "Share access and sample files",
+          "Approve what we keep",
+          "Migrate your documents with the guide"
         ]
       },
       {
@@ -136,18 +154,37 @@
         "price": 600,
         "weeks": 2,
         "visual": "agents",
-        "summary": "The databases and rules any AI agent reads from, plus the two highest-priority agents from the Phase 1 list, built in Claude or Grok and tested in your real work for a week.",
+        "summary": "The context any AI agent reads from, and your first two agents, built in Claude or Grok and tested in your real work.",
         "deliverables": [
-          "Agent operating guide adapted to Biomed (rules, approvals, archive instead of delete)",
-          "Skills, memory and resources databases in their own teamspace",
-          "Meetings database with your Notion and Loom recordings, feeding the agents' memory after every call",
-          "The two highest-priority agents from the Phase 1 list, built in Claude or Grok and connected to Notion",
-          "One week of real use, a feedback session and adjustments",
-          "Setup sheet so your team can create the next agents"
+          {
+            "h": "Agent operating guide",
+            "p": "The rules your agents follow, adapted to Biomed: approval before sending, archive instead of delete."
+          },
+          {
+            "h": "Memory, skills and resources",
+            "p": "The databases your agents read from, in their own teamspace."
+          },
+          {
+            "h": "Meetings database",
+            "p": "Your Notion and Loom recordings in one place, feeding the agents' memory after every call."
+          },
+          {
+            "h": "Your first two agents",
+            "p": "The top two from the Phase 1 priority list, built in Claude or Grok and connected to Notion."
+          },
+          {
+            "h": "A week of real use",
+            "p": "You use both agents in your work for a week, then we meet, collect your feedback and adjust them."
+          },
+          {
+            "h": "Agent setup sheet",
+            "p": "Instructions your team copies to create the next agents from the list."
+          }
         ],
         "you_do": [
-          "Choose Claude or Grok for the two agents (we recommend one in Phase 1)",
-          "Use both agents in your real work for a week and tell us what to adjust"
+          "Choose Claude or Grok",
+          "Use both agents for a week",
+          "Share your feedback"
         ]
       },
       {
@@ -157,17 +194,32 @@
         "price": 500,
         "weeks": 2,
         "visual": "tasks",
-        "summary": "Your team's tasks and your personal tasks in one place, a task flow that builds itself for each new job, and a team that knows how to keep automating.",
+        "summary": "Team and personal tasks in one place, tasks that create themselves for each new job, and a team that knows how to keep automating.",
         "deliverables": [
-          "Planner tasks moved into Notion: one task system for the team and for your personal and day-to-day tasks, with your personal tasks private",
-          "Task board where each new job creates its tasks automatically by job type, already assigned to Chris and Elizabeth",
-          "Personal portal for each team member with their tasks for the day",
-          "90-minute training: using the workspace, building Notion automations, and building the next agents from the Phase 1 list",
-          "Onboarding guide: how the team uses the workspace day to day"
+          {
+            "h": "One task system",
+            "p": "Your Planner tasks moved into Notion, for the team and for your personal and day-to-day tasks. Your personal tasks stay private."
+          },
+          {
+            "h": "Automatic job tasks",
+            "p": "Each new job creates its tasks by job type, already assigned to Chris and Elizabeth."
+          },
+          {
+            "h": "Personal portals",
+            "p": "A page for each team member with their tasks for the day."
+          },
+          {
+            "h": "90-minute training",
+            "p": "Using the workspace, building Notion automations, and building the next agents from the Phase 1 list."
+          },
+          {
+            "h": "Onboarding guide",
+            "p": "How the team uses the workspace day to day."
+          }
         ],
         "you_do": [
-          "Confirm the list of tasks for each job type",
-          "Set aside 90 minutes for you, Chris and Elizabeth to attend the training"
+          "Confirm tasks per job type",
+          "Join the 90-minute training"
         ]
       }
     ],

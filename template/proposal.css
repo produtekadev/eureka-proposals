@@ -102,3 +102,23 @@
 .sp-vis svg{display:block;width:100%;height:auto}
 .sp-vis figcaption{font-size:.72rem;font-style:italic;color:var(--muted);margin-top:6px;text-align:right}
 @media (max-width:760px){.sp-body{margin-left:0}.sp-body.has-vis{grid-template-columns:1fr;gap:18px}.sp-vis{max-width:360px}}
+.sps.wide{width:min(1100px,calc(100vw - 48px));position:relative;left:50%;transform:translateX(-50%)}
+.sp-v2.has-vis{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:start;margin:18px 0 0}
+.sp-v2:not(.has-vis){margin-left:44px}
+.sp-v2 .sp-vis{background:var(--paper);border-radius:10px;padding:16px 16px 10px}
+.sp-k{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+.sp-gets{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sp-gets li{display:flex;gap:8px;align-items:flex-start;background:var(--paper);border-radius:8px;padding:10px 12px;font-size:.88rem;font-weight:600;line-height:1.3}
+.sp-gets .sp-ck{color:var(--purple);font-weight:800}
+.sp-you2{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:16px;padding-top:14px;border-top:1px dashed #D6D3CD}
+.sp-you2 .sp-you-k{margin:0 4px 0 0}
+.sp-you2 .yp{font-size:.82rem;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--ink);background:var(--card)}
+.sp-more{margin-top:14px}
+.sp-more summary{cursor:pointer;font-size:.85rem;font-weight:600;color:var(--purple);list-style:none;display:inline-flex;align-items:center;gap:6px}
+.sp-more summary::-webkit-details-marker{display:none}
+.sp-more summary:before{content:"+";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--purple);font-size:.8rem;line-height:1}
+.sp-more[open] summary:before{content:"−"}
+.sp-more dl{margin:12px 0 0;display:grid;gap:10px}
+.sp-more dt{font-size:.86rem;font-weight:700}
+.sp-more dd{margin:2px 0 0;font-size:.86rem;color:var(--muted)}
+@media (max-width:760px){.sps.wide{width:calc(100vw - 32px)}.sp-v2.has-vis{grid-template-columns:1fr;gap:18px}.sp-v2:not(.has-vis){margin-left:0}.sp-gets li{padding:9px 10px;font-size:.84rem}}
