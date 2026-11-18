@@ -8,7 +8,7 @@
     {
       "id": "architecture",
       "name": "Audit, process map and architecture",
-      "price": 500,
+      "price": 600,
       "tag": "essential"
     },
     {
@@ -20,8 +20,8 @@
     {
       "id": "team",
       "name": "Tasks, automations and training",
-      "price": 600,
-      "tag": "recommended"
+      "price": 500,
+      "tag": "essential"
     }
   ],
   "bank_accounts": [
