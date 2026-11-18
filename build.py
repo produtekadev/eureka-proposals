@@ -180,7 +180,14 @@ def sp_body(u, ph, dl):
                     else f'<li><span class="sp-ck">✓</span><span class="sp-h">{rich(d["h"])}</span></li>') for d in items)
     youh = (f'<div class="sp-you2"><span class="sp-you-k">{u["your_part"]}</span>' + ''.join(f'<span class="yp">{rich(y)}</span>' for y in you) + '</div>') if you else ''
     hint = f'<span class="sp-hint">{u["hover_hint"]}</span>' if any(d.get('p') for d in items) else ''
-    right = f'<div class="sp-k">{u["deliverables"]}{hint}</div><ul class="sp-gets">{gets}</ul>{youh}'
+    co = ph.get('callout')
+    coh = ''
+    if co:
+      asks = ''.join(f'<li><span class="q">{rich(x["q"])}</span><span class="a">{rich(x["a"])}</span></li>' for x in co.get('items', []))
+      coh = (f'<div class="sp-co"><div class="sp-co-k">{rich(co.get("label", ""))}</div><h4>{rich(co["title"])}</h4>'
+             + (f'<p>{rich(co["lede"])}</p>' if co.get('lede') else '') + f'<ul>{asks}</ul>'
+             + (f'<div class="sp-co-note">{rich(co["note"])}</div>' if co.get('note') else '') + '</div>')
+    right = f'<div class="sp-k">{u["deliverables"]}{hint}</div><ul class="sp-gets">{gets}</ul>{coh}{youh}'
     return f'<div class="sp-body sp-v2{" has-vis" if vis else ""}">{vis}<div>{right}</div></div>'
   youl = ''.join(f'<li>{rich(d)}</li>' for d in you)
   left = (f'<ul class="sp-dl">{dl}</ul>' if dl else '') + (f'<div class="sp-you"><div class="sp-you-k">{u["your_part"]}</div><ul>{youl}</ul></div>' if youl else '')

@@ -58,7 +58,8 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
         "duration": "Runs in parallel", // optional text that replaces "3 weeks"
         "summary": "One sentence.",
         "deliverables": ["3 to 6 short items"],   // or [{"h": "Short title", "p": "One or two sentences"}]: titles show as a grid, details behind a toggle (preferred with a visual)
-        "you_do": ["what the client does in this phase"],   // optional, shown under a divider as "Your part". Write it for every phase
+        "you_do": ["what the client does in this phase"],
+        "callout": { "label": "Example", "title": "", "lede": "", "items": [ { "q": "a question in the client's words", "a": "why it matters to them" } ], "note": "" },   // optional, shown under the deliverables   // optional, shown under a divider as "Your part". Write it for every phase
         "visual": "process-map"         // optional: illustrative SVG from template/visuals/ (process-map, agents, tasks), labelled "Illustrative view"
       }
     ],

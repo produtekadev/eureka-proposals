@@ -136,3 +136,14 @@
   .sp-gets li[tabindex]:hover:not(:focus) .tip{display:none}
   .sp-gets .tip{position:static;width:auto;grid-column:2;margin-top:6px;background:none;color:var(--muted);box-shadow:none;padding:0}
 }
+.sp-co{margin-top:18px;background:#F6EEFB;border:1px solid #E7D5F3;border-radius:12px;padding:18px 20px}
+.sp-co-k{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--purple)}
+.sp-co h4{margin:4px 0 0;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+.sp-co p{margin-top:4px;font-size:.9rem;color:var(--muted)}
+.sp-co ul{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.sp-co li{background:var(--card);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.sp-co .q{font-size:.9rem;font-weight:600;line-height:1.35}
+.sp-co .q:before{content:"“"}.sp-co .q:after{content:"”"}
+.sp-co .a{font-size:.8rem;color:var(--muted);line-height:1.4}
+.sp-co-note{margin-top:12px;font-size:.78rem;color:var(--muted);font-style:italic}
+@media (max-width:760px){.sp-co ul{grid-template-columns:1fr}.sp-co{padding:16px}}

@@ -188,7 +188,31 @@
           "Choose Claude or Grok",
           "Use both agents for a week",
           "Share your feedback"
-        ]
+        ],
+        "callout": {
+          "label": "Example",
+          "title": "Your metrics agent",
+          "lede": "Ask in plain words and get the answer from your own data, instead of opening and updating the spreadsheet yourself.",
+          "items": [
+            {
+              "q": "What's our retention rate for people we placed in the last three years?",
+              "a": "Before a client meeting, so you can show your track record."
+            },
+            {
+              "q": "What's our average time to fill this year, and time to first submittal?",
+              "a": "Your numbers for 2027 goals and for prospective clients."
+            },
+            {
+              "q": "I just got paid for the Senior Scientist placement. Log it.",
+              "a": "Payments and invoices recorded where your data lives, without editing the Excel by hand."
+            },
+            {
+              "q": "Give me this month's snapshot.",
+              "a": "Your last-Thursday-of-the-month check, ready in one message."
+            }
+          ],
+          "note": "If you choose it as one of your two agents. The exact questions depend on where Phase 1 places your data."
+        }
       },
       {
         "id": "team",
