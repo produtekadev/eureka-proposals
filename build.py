@@ -183,7 +183,8 @@ def sp_body(u, ph, dl):
     co = ph.get('callout')
     coh = ''
     if co:
-      asks = ''.join(f'<li><span class="co-q">{rich(x["q"])}</span><span class="co-a">{rich(x["a"])}</span></li>' for x in co.get('items', []))
+      ico = lambda x: f'<img class="co-i" src="{data_uri(os.path.join(T, "assets", "icons", x["icon"] + ".png"))}" alt="">' if x.get('icon') else ''
+      asks = ''.join(f'<li>{ico(x)}<span class="co-q">{rich(x["q"])}</span><span class="co-a">{rich(x["a"])}</span></li>' for x in co.get('items', []))
       coh = (f'<div class="sp-co"><div class="sp-co-k">{rich(co.get("label", ""))}</div><h4>{rich(co["title"])}</h4>'
              + (f'<p>{rich(co["lede"])}</p>' if co.get('lede') else '') + f'<ul>{asks}</ul>'
              + (f'<div class="sp-co-note">{rich(co["note"])}</div>' if co.get('note') else '') + '</div>')

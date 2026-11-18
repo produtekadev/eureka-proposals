@@ -196,15 +196,18 @@
           "items": [
             {
               "q": "What's our retention rate for the last three years?",
-              "a": "Answers questions"
+              "a": "Answers questions",
+              "icon": "purple-shape"
             },
             {
               "q": "Make a one-pager with our track record for a new client.",
-              "a": "Creates one-pagers"
+              "a": "Creates one-pagers",
+              "icon": "magenta-shape"
             },
             {
               "q": "Give me this month's snapshot.",
-              "a": "Sums up your month"
+              "a": "Sums up your month",
+              "icon": "orange-cross"
             }
           ],
           "note": "If you choose it as one of your two agents."

@@ -141,7 +141,9 @@
 .sp-co h4{margin:4px 0 0;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
 .sp-co p{margin-top:4px;font-size:.9rem;color:var(--muted)}
 .sp-co ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px}
-.sp-co li{background:var(--card);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:6px}
+.sp-co li{background:var(--card);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr;grid-template-areas:"i a" "i q";column-gap:12px;row-gap:4px;align-items:start;align-content:start}
+.sp-co .co-i{grid-area:i;width:30px;height:30px;object-fit:contain;margin-top:2px}
+.sp-co .co-a{grid-area:a}.sp-co .co-q{grid-area:q}
 .sp-co .co-q{font-size:.9rem;font-weight:600;line-height:1.35}
 .sp-co .co-q:before{content:"“"}.sp-co .co-q:after{content:"”"}
 .sp-co .co-a{font-size:.7rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--purple)}
