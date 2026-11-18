@@ -125,7 +125,7 @@
           },
           {
             "h": "Data sources map",
-            "p": "Where each metric comes from (Recruiterflow, QuickBooks, Reply.io or Notion) and what stays in each tool. It answers whether your placement data needs a Notion database or can all live in Recruiterflow."
+            "p": "Where each type of information should live across your whole tool stack: what stays in Recruiterflow, QuickBooks, Reply.io, SharePoint, OneDrive and OneNote, and what moves to Notion, with specific detail for each tool. It also covers your metrics: where each one comes from, and whether your placement data needs a Notion database or can all live in Recruiterflow."
           },
           {
             "h": "Historical data import",
