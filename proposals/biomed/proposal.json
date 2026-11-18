@@ -113,7 +113,6 @@
         "tag": "essential",
         "price": 600,
         "weeks": 1,
-        "visual": "process-map",
         "summary": "We review your workspace, your tools and your <b>RF - Full Recruitment Process</b>, then decide where everything lives and what is worth automating.",
         "deliverables": [
           {
@@ -153,7 +152,6 @@
         "tag": "essential",
         "price": 600,
         "weeks": 2,
-        "visual": "agents",
         "summary": "The context any AI agent reads from, and your first two agents, built in Claude or Grok and tested in your real work.",
         "deliverables": [
           {
@@ -193,7 +191,6 @@
         "tag": "essential",
         "price": 500,
         "weeks": 2,
-        "visual": "tasks",
         "summary": "Team and personal tasks in one place, tasks that create themselves for each new job, and a team that knows how to keep automating.",
         "deliverables": [
           {
