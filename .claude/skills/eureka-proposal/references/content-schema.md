@@ -57,7 +57,9 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
         "weeks": 3,                     // used for the total duration; 0 if it runs in parallel
         "duration": "Runs in parallel", // optional text that replaces "3 weeks"
         "summary": "One sentence.",
-        "deliverables": ["3 to 6 short items"]
+        "deliverables": ["3 to 6 short items"],
+        "you_do": ["what the client does in this phase"],   // optional, shown under a divider as "Your part". Write it for every phase
+        "visual": "process-map"         // optional: illustrative SVG from template/visuals/ (process-map, agents, tasks), labelled "Illustrative view"
       }
     ],
     "examples": {                       // optional: screenshots of the deliverable, shown as tilted overlapping cards after the totals

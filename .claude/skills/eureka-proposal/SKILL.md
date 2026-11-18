@@ -69,6 +69,8 @@ Do not continue until the user confirms. Then confirm the details: projected sta
   - Plain, specific, human. Nothing that sounds generated: no "seamless", "leverage", "unlock", "robust", "streamline", "elevate".
   - Never mention other clients by name in the body (the client grid handles that).
   - Integrations are "defined in the roadmap, subject to technical feasibility", never "included" by default.
+  - Every phase gets a `you_do` list ("Your part"): what the client must do or decide in that phase (access, approvals, testing, migrating their own files). Clients hesitate when they can't see their own commitment.
+  - Never promise to automate a client's whole process. Map it first (what Notion automates, what an agent drafts for review, what stays in their tools, what stays human), build the top items, and cap the number of agents.
   - Deliverables are concrete things the client receives (a report, a database, a template, a guide, a training session), never qualities or goals ("privacy for your space", "a clear structure"). If something is advice or a plan, make it a deliverable document, e.g. a migration guide.
 
 ### 5. Build and check

@@ -37,7 +37,7 @@ UI = {
     'card_soon': 'We send you the card payment link by email.',
     'emailed': 'We also sent these details to', 'reset': 'Reset (test only)', 'demo': 'Demo data', 'copy': 'Copy',
     'err_name': 'Please add your full name.', 'err_email': 'Please add a valid email.', 'err_terms': 'Please accept the terms to continue.',
-    'scope_selected': 'Scope and investment', 'client_logo': 'Client logo', 'we_did': 'What we did', 'accepted_scope': 'Accepted scope',
+    'scope_selected': 'Scope and investment', 'client_logo': 'Client logo', 'we_did': 'What we did', 'your_part': 'Your part', 'illustrative': 'Illustrative view', 'accepted_scope': 'Accepted scope',
     'ready': 'Ready to', 'ready_em': 'start?',
   },
   'es': {
@@ -62,7 +62,7 @@ UI = {
     'card_soon': 'Te enviamos el enlace de pago con tarjeta por email.',
     'emailed': 'También enviamos estos datos a', 'reset': 'Reiniciar (solo prueba)', 'demo': 'Datos demo', 'copy': 'Copiar',
     'err_name': 'Agrega tu nombre completo.', 'err_email': 'Agrega un email válido.', 'err_terms': 'Acepta los términos para continuar.',
-    'scope_selected': 'Alcance e inversión', 'client_logo': 'Logo de cliente', 'we_did': 'Qué hicimos', 'accepted_scope': 'Alcance aceptado',
+    'scope_selected': 'Alcance e inversión', 'client_logo': 'Logo de cliente', 'we_did': 'Qué hicimos', 'your_part': 'Tu parte', 'illustrative': 'Vista ilustrativa', 'accepted_scope': 'Alcance aceptado',
     'ready': '¿Listos para', 'ready_em': 'empezar?',
   },
 }
@@ -166,6 +166,15 @@ def sec_focus(pg, P):
   {f'<p class="note" style="margin-top:18px">{rich(f["why"])}</p>' if f.get('why') else ''}'''
   pg.add('focus', u['focus'], body)
 
+def sp_body(u, ph, dl):
+  # Deliverables, then what the client does in this phase, then an optional illustrative visual.
+  you = ''.join(f'<li>{rich(d)}</li>' for d in ph.get('you_do', []))
+  left = (f'<ul class="sp-dl">{dl}</ul>' if dl else '') + (f'<div class="sp-you"><div class="sp-you-k">{u["your_part"]}</div><ul>{you}</ul></div>' if you else '')
+  if not ph.get('visual'):
+    return f'<div class="sp-body">{left}</div>'
+  svg = read(os.path.join(T, 'visuals', ph['visual'] + '.svg'))
+  return f'<div class="sp-body has-vis"><div>{left}</div><figure class="sp-vis">{svg}<figcaption>{u["illustrative"]}</figcaption></figure></div>'
+
 def sec_proposal(pg, P):
   u, pr, cur = pg.u, P['proposal'], P['proposal'].get('currency', 'USD')
   tag_lbl = {'essential': u['essential'], 'recommended': u['recommended'], 'optional': u['optional']}
@@ -182,7 +191,7 @@ def sec_proposal(pg, P):
         <div class="sp-t"><span class="sp-tag t-{tag}">{tag_lbl[tag]}</span><h3>{esc(ph['name'])}</h3>{f'<p>{rich(ph["summary"])}</p>' if ph.get('summary') else ''}</div>
         <div class="sp-p"><div class="sp-amt">{fmt_money(ph['price'], cur)}</div><div class="sp-wk">{esc(ph.get('duration') or (f'{wk} {u["weeks"] if wk != 1 else u["week"]}' if wk else ''))}</div>{toggle}</div>
       </div>
-      {f'<ul class="sp-dl">{dl}</ul>' if dl else ''}
+      {sp_body(u, ph, dl)}
     </article>''')
   pay = P['payment']
   summary = f'''<div class="sp-sum" data-cur="{esc(cur)}" data-pct="{pay.get('deposit_pct', 50)}" data-wk="{esc(u['weeks'])}">

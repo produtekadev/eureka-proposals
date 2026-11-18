@@ -7,19 +7,19 @@
   "phases": [
     {
       "id": "architecture",
-      "name": "Audit and architecture",
+      "name": "Audit, process map and architecture",
       "price": 500,
       "tag": "essential"
     },
     {
-      "id": "grok",
-      "name": "Context layer for AI agents",
-      "price": 400,
+      "id": "agents",
+      "name": "Context layer and your first two agents",
+      "price": 600,
       "tag": "essential"
     },
     {
       "id": "team",
-      "name": "Tasks, training and onboarding",
+      "name": "Tasks, automations and training",
       "price": 600,
       "tag": "recommended"
     }
@@ -69,6 +69,6 @@
   ],
   "notion_page_id": "417c9f5c-dca8-8120-a5d9-cd174cd26a86",
   "card_fee_pct": 4,
-  "stripe_url": "https://buy.stripe.com/5kQcN4dqtbFO8Os3G16Ri1f",
+  "stripe_url": "https://buy.stripe.com/bJe5kC1HL9xG5Cg1xT6Ri1g",
   "url": "https://proposals.eureka.ceo/biomed"
 }

@@ -11,13 +11,13 @@
     "paula"
   ],
   "team": [],
-  "date": "2026-11-13",
-  "valid_until": "2026-11-27",
-  "start": "Week of November 16",
+  "date": "2026-11-18",
+  "valid_until": "2026-12-02",
+  "start": "Week of November 23",
   "cover": {
     "tag": "Implementation proposal",
     "headline": "One Notion your team<br><em>and your agents</em> <span class=\"hl\">trust.</span>",
-    "lede": "A three-phase plan to organize Biomed's Notion so you, Chris, Elizabeth and your Grok agents all work from the same place, done before the end of the year. Based on our conversations on October 29 and November 10.",
+    "lede": "A three-phase plan to organize Biomed's Notion so you, Chris, Elizabeth and your AI agents all work from the same place, with your first two agents built and tested. Based on our conversations on October 29, November 10 and November 13.",
     "glance": [
       {
         "k": "Focus",
@@ -25,9 +25,9 @@
         "p": "The structure your agents will read from and write to."
       },
       {
-        "k": "Total · USD 1,500",
-        "h": "Architecture, context layer, tasks and team",
-        "p": "Three phases in about four weeks."
+        "k": "Total · USD 1,700",
+        "h": "Audit, agents, tasks and training",
+        "p": "Three phases in about five weeks."
       },
       {
         "k": "Bonus",
@@ -82,82 +82,104 @@
   },
   "focus": {
     "title": "Where we'd<br><em>start.</em>",
-    "statement": "<b>One organized Notion that both your team and your AI agents work from: every task, document and decision in one known place.</b> You mentioned a lot of good ideas. We'd start with the foundation they all depend on.",
+    "statement": "<b>One organized Notion that your team and your AI agents work from, and a clear plan for what to automate next.</b> We start with the foundation and the two agents that save you the most time, then teach your team to build the rest.",
     "asked": [
-      "Organize Notion, with personal and private space",
-      "Notion as the brain for Grok",
-      "Task assignment for every new job",
+      "Organize Notion, with a private space for your personal tasks",
+      "Notion as the brain for your agents",
+      "Tasks assigned automatically for every new job",
       "Centralize meeting recordings",
-      "Daily metrics snapshot from Recruiterflow",
+      "Metrics from your Excel and Recruiterflow, ready for 2027",
       "Clean up OneNote, SharePoint and OneDrive",
-      "Agents for recruiting, sales and finance"
+      "Automate as much of your recruitment process as possible"
     ],
     "recommend": [
       "Clean architecture, with personal and team spaces",
-      "Context layer any connected agent can use",
-      "Automated tasks for each job type, plus team training",
-      "Meetings in one place, keeping the agents' memory current",
-      "Metrics and agents next, once the foundation is in place"
+      "One map of where each metric and file lives across your tools",
+      "Your recruitment process broken down: what to automate, what an agent drafts, what stays human",
+      "The two agents that save the most time, built and tested with you",
+      "Tasks that create themselves for each new job, for the team and for you",
+      "Training so your team builds the next agents"
     ],
-    "why": "Recruiterflow's metrics aren't reliable yet, so a dashboard built now would show the wrong numbers. Agents built on an organized Notion will need less rework later."
+    "why": "Your process has many steps. Some are already automated in Recruiterflow and some are conversations that should stay human. Mapping it first means we build the agents that actually save time, instead of automating everything at once."
   },
   "proposal": {
     "title": "What we'll build<br><em>and what it costs.</em>",
-    "intro": "Each phase has its own price and they add up to one fixed total. The tags show what the project needs and what we advise.",
+    "intro": "Each phase has its own price and they add up to one fixed total. Under each phase you'll see what we deliver and what we need from you.",
     "currency": "USD",
     "phases": [
       {
         "id": "architecture",
-        "name": "Audit and architecture",
+        "name": "Audit, process map and architecture",
         "tag": "essential",
         "price": 500,
         "weeks": 1,
-        "summary": "We review what's there today and design a structure that's easy to navigate for people and for agents.",
+        "visual": "process-map",
+        "summary": "We review your workspace, your tools and your <b>RF - Full Recruitment Process</b> document, then decide where everything should live and what is worth automating.",
         "deliverables": [
           "Audit report of your current workspace and the blueprint you received: what to keep, change or archive",
-          "New workspace with teamspaces, with separate personal and team sections",
-          "Your current Notion content moved into the new workspace, and unused pages and databases archived",
-          "Migration guide for OneNote, SharePoint and OneDrive: what moves to Notion, what stays, and how to move it"
+          "New workspace with teamspaces and separate personal and team sections, your current Notion content moved in and unused pages archived",
+          "Data sources map: where each metric comes from (Recruiterflow, QuickBooks, Reply.io or Notion) and what information stays in each tool. It answers whether your placement data needs a Notion database or can all live in Recruiterflow",
+          "Breakdown of your RF - Full Recruitment Process: every step sorted into what Notion automates, what an agent drafts for your review, what stays in Recruiterflow and what stays with your team",
+          "Prioritized list of agents and automations, ranked by how often each step happens and how much time it saves",
+          "Migration guide for OneNote, SharePoint and OneDrive: what moves to Notion, what stays (linked from Notion), and how to move it, by hand or with AI"
+        ],
+        "you_do": [
+          "Give us access to the workspace, a few sample files from each source, your metrics Excel and Recruiterflow",
+          "Approve what we keep and what we archive",
+          "Migrate your documents following the guide, once it tells you what goes where"
         ]
       },
       {
-        "id": "grok",
-        "name": "Context layer for AI agents",
+        "id": "agents",
+        "name": "Context layer and your first two agents",
         "tag": "essential",
-        "price": 400,
-        "weeks": 1,
-        "summary": "The databases and rules any connected AI agent reads from, starting with your Grok agents, plus your meetings in one place so the agents' memory stays current after every call.",
+        "price": 600,
+        "weeks": 2,
+        "visual": "agents",
+        "summary": "The databases and rules any AI agent reads from, plus the two highest-priority agents from the Phase 1 list, built in Claude or Grok and tested in your real work for a week.",
         "deliverables": [
           "Agent operating guide adapted to Biomed (rules, approvals, archive instead of delete)",
           "Skills, memory and resources databases in their own teamspace",
           "Meetings database with your Notion and Loom recordings, feeding the agents' memory after every call",
-          "Setup sheet for each agent with the database IDs and instructions to paste in"
+          "The two highest-priority agents from the Phase 1 list, built in Claude or Grok and connected to Notion",
+          "One week of real use, a feedback session and adjustments",
+          "Setup sheet so your team can create the next agents"
+        ],
+        "you_do": [
+          "Choose Claude or Grok for the two agents (we recommend one in Phase 1)",
+          "Use both agents in your real work for a week and tell us what to adjust"
         ]
       },
       {
         "id": "team",
-        "name": "Tasks, training and onboarding",
+        "name": "Tasks, automations and training",
         "tag": "recommended",
         "price": 600,
         "weeks": 2,
-        "summary": "Your Planner workflow moved to Notion, with tasks created automatically for each job type, and Chris and Elizabeth trained to work from it.",
+        "visual": "tasks",
+        "summary": "Your team's tasks and your personal tasks in one place, a task flow that builds itself for each new job, and a team that knows how to keep automating.",
         "deliverables": [
+          "Planner tasks moved into Notion: one task system for the team and for your personal and day-to-day tasks, with your personal tasks private",
           "Task board where each new job creates its tasks automatically by job type, already assigned to Chris and Elizabeth",
-          "Personal portal for each team member",
-          "90-minute training session for the team",
+          "Personal portal for each team member with their tasks for the day",
+          "90-minute training: using the workspace, building Notion automations, and building the next agents from the Phase 1 list",
           "Onboarding guide: how the team uses the workspace day to day"
+        ],
+        "you_do": [
+          "Confirm the list of tasks for each job type",
+          "Set aside 90 minutes for you, Chris and Elizabeth to attend the training"
         ]
       }
     ],
     "included": [
-      "Weekly working sessions during the build",
+      "One working session with you every week (five in total)",
       "Shared Slack channel for questions",
       "3 months of Notion Business on a new workspace, at no cost"
     ],
     "excluded": [
-      "Building or configuring the agents themselves (Grok or others)",
-      "Recruiterflow metrics dashboard",
-      "n8n automations and other integrations (defined in the roadmap, subject to technical feasibility)",
+      "Agents beyond the two built in Phase 2 (your team builds the next ones after the training, or we scope them separately)",
+      "Automations and integrations beyond the ones listed in each phase (subject to technical feasibility)",
+      "A metrics dashboard (Phase 1 tells you where each metric should come from)",
       "Moving files from OneNote, SharePoint or OneDrive (the migration guide shows you how)",
       "Notion licenses after the bonus period"
     ],
@@ -166,7 +188,7 @@
   "payment": {
     "deposit_pct": 50,
     "schedule": "50% when you accept, 50% on delivery. By bank transfer, or by card through Stripe with a 4% card fee.",
-    "stripe_url": "https://buy.stripe.com/5kQcN4dqtbFO8Os3G16Ri1f"
+    "stripe_url": "https://buy.stripe.com/bJe5kC1HL9xG5Cg1xT6Ri1g"
   },
   "next_steps": [
     {
@@ -180,9 +202,9 @@
       "p": "We send you the link to book the kickoff and set up the new workspace."
     },
     {
-      "when": "Week of November 16",
+      "when": "Week of November 23",
       "h": "Audit starts",
-      "p": "Done before the end of the year."
+      "p": "About five weeks from kickoff to the training."
     }
   ],
   "closing": "We're ready to build<br><em>your Eureka moment.</em>",

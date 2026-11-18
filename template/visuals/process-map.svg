@@ -1,0 +1,32 @@
+<svg viewBox="0 0 320 236" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recruitment process map, illustrative" font-family="inherit">
+  <rect x="1" y="1" width="318" height="234" rx="10" fill="#fff" stroke="#E5E5E5"/>
+  <path d="M1 11a10 10 0 0 1 10-10h298a10 10 0 0 1 10 10v13H1z" fill="#F7F6F4"/>
+  <circle cx="13" cy="12.5" r="3" fill="#D9D7D2"/><circle cx="23" cy="12.5" r="3" fill="#D9D7D2"/><circle cx="33" cy="12.5" r="3" fill="#D9D7D2"/>
+  <text x="16" y="46" font-size="12" font-weight="800" fill="#111">Recruitment process map</text>
+  <text x="16" y="60" font-size="8.5" fill="#555">From “RF - Full Recruitment Process”</text>
+  <text x="16" y="80" font-size="7.5" fill="#555" letter-spacing=".04em">STEP</text>
+  <text x="168" y="80" font-size="7.5" fill="#555" letter-spacing=".04em">WHO DOES IT</text>
+  <text x="250" y="80" font-size="7.5" fill="#555" letter-spacing=".04em">TIME SAVED</text>
+  <line x1="16" y1="86" x2="304" y2="86" stroke="#E5E5E5"/>
+  <g font-size="9" fill="#111">
+    <text x="16" y="103">Create the job's tasks</text>
+    <rect x="168" y="94" width="58" height="13" rx="3" fill="#F3E6FB"/><text x="173" y="103.5" font-size="7.5" fill="#750FB4">Automated</text>
+    <rect x="250" y="97" width="54" height="6" rx="3" fill="#EEE"/><rect x="250" y="97" width="50" height="6" rx="3" fill="#750FB4"/>
+    <line x1="16" y1="113" x2="304" y2="113" stroke="#F0EFEC"/>
+    <text x="16" y="129">Candidate summaries</text>
+    <rect x="168" y="120" width="58" height="13" rx="3" fill="#FDE8F9"/><text x="173" y="129.5" font-size="7.5" fill="#B0198F">Agent drafts</text>
+    <rect x="250" y="123" width="54" height="6" rx="3" fill="#EEE"/><rect x="250" y="123" width="44" height="6" rx="3" fill="#750FB4"/>
+    <line x1="16" y1="139" x2="304" y2="139" stroke="#F0EFEC"/>
+    <text x="16" y="155">Client kickoff email</text>
+    <rect x="168" y="146" width="58" height="13" rx="3" fill="#FDE8F9"/><text x="173" y="155.5" font-size="7.5" fill="#B0198F">Agent drafts</text>
+    <rect x="250" y="149" width="54" height="6" rx="3" fill="#EEE"/><rect x="250" y="149" width="30" height="6" rx="3" fill="#750FB4"/>
+    <line x1="16" y1="165" x2="304" y2="165" stroke="#F0EFEC"/>
+    <text x="16" y="181">Stage emails to candidates</text>
+    <rect x="168" y="172" width="64" height="13" rx="3" fill="#FFEDE6"/><text x="173" y="181.5" font-size="7.5" fill="#C2410C">Recruiterflow</text>
+    <text x="250" y="181" font-size="7.5" fill="#555">Already set</text>
+    <line x1="16" y1="191" x2="304" y2="191" stroke="#F0EFEC"/>
+    <text x="16" y="207">Screening calls</text>
+    <rect x="168" y="198" width="44" height="13" rx="3" fill="#EFEFEF"/><text x="173" y="207.5" font-size="7.5" fill="#555">Your team</text>
+    <text x="250" y="207" font-size="7.5" fill="#555">Stays human</text>
+  </g>
+</svg>

@@ -503,7 +503,9 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 .sp-amt{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .sp-wk{font-size:.82rem;color:var(--muted)}
 .sp-lock{font-size:.78rem;font-weight:600;color:var(--purple);margin-top:6px}
-.sp-dl{margin:14px 0 0 44px;display:grid;grid-template-columns:1fr;gap:8px;max-width:680px}
+.sp-body{margin:14px 0 0 44px}
+.sp-body.has-vis{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
+.sp-dl{display:grid;grid-template-columns:1fr;gap:8px;max-width:680px}
 .sp-dl li{font-size:.9rem;padding-left:16px;position:relative}
 .sp-dl li:before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:2px;background:var(--purple)}
 .sp-sum{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:14px;background:var(--purple);color:#fff;border-radius:12px;padding:26px 28px}
@@ -566,6 +568,15 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 .ex-n1 .ex-1{position:relative;left:auto;top:auto;width:78%;margin:0 auto;transform:rotateX(8deg) rotateY(-10deg) rotateZ(2deg)}
 .ex-cap{color:var(--muted);font-size:.93rem;max-width:62ch;margin-top:6px}
 @media (max-width:620px){.ex-stage{aspect-ratio:1/1.02}.ex-1{width:74%;left:1%}.ex-2{width:72%;top:33%;right:1%}.ex-3{width:66%;left:4%}}
+.sp-you{margin-top:16px;padding-top:14px;border-top:1px dashed #D6D3CD}
+.sp-you-k{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+.sp-you ul{display:grid;gap:6px}
+.sp-you li{font-size:.88rem;color:var(--muted);padding-left:18px;position:relative}
+.sp-you li:before{content:"";position:absolute;left:0;top:.42em;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink)}
+.sp-vis{margin:0}
+.sp-vis svg{display:block;width:100%;height:auto}
+.sp-vis figcaption{font-size:.72rem;font-style:italic;color:var(--muted);margin-top:6px;text-align:right}
+@media (max-width:760px){.sp-body{margin-left:0}.sp-body.has-vis{grid-template-columns:1fr;gap:18px}.sp-vis{max-width:360px}}
 
 /* Accept proposal: CTA, acceptance form, payment details, kickoff */
 .acc{margin-top:72px;scroll-margin-top:110px}
@@ -712,7 +723,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
         <div class="sp-t"><span class="sp-tag t-essential">Essential</span><h3>Workspace audit and report</h3><p>We meet with you and the team, review the workspace from the inside and deliver a written report.</p></div>
         <div class="sp-p"><div class="sp-amt">USD 1,500</div><div class="sp-wk">2 weeks from workspace access</div><span class="sp-lock">✓ Included</span></div>
       </div>
-      <ul class="sp-dl"><li>Two sessions with Marcus and the team to understand how the workspace is used</li><li>Review of structure, databases, teamspaces, permissions and dashboard navigation</li><li>Assessment of your Claude, Google Drive and meeting-note workflows</li><li>Audit report with quick wins and prioritised recommendations, marking what the team can do itself, where AI can help and where our support would be useful</li></ul>
+      <div class="sp-body"><ul class="sp-dl"><li>Two sessions with Marcus and the team to understand how the workspace is used</li><li>Review of structure, databases, teamspaces, permissions and dashboard navigation</li><li>Assessment of your Claude, Google Drive and meeting-note workflows</li><li>Audit report with quick wins and prioritised recommendations, marking what the team can do itself, where AI can help and where our support would be useful</li></ul></div>
     </article></div>
     <div class="sp-sum" data-cur="USD" data-pct="50" data-wk="weeks">
       <div><div class="k">Total</div><div class="v" data-sp-total></div></div>

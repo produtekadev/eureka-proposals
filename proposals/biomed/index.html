@@ -503,7 +503,9 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 .sp-amt{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .sp-wk{font-size:.82rem;color:var(--muted)}
 .sp-lock{font-size:.78rem;font-weight:600;color:var(--purple);margin-top:6px}
-.sp-dl{margin:14px 0 0 44px;display:grid;grid-template-columns:1fr;gap:8px;max-width:680px}
+.sp-body{margin:14px 0 0 44px}
+.sp-body.has-vis{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
+.sp-dl{display:grid;grid-template-columns:1fr;gap:8px;max-width:680px}
 .sp-dl li{font-size:.9rem;padding-left:16px;position:relative}
 .sp-dl li:before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:2px;background:var(--purple)}
 .sp-sum{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:14px;background:var(--purple);color:#fff;border-radius:12px;padding:26px 28px}
@@ -566,6 +568,15 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 .ex-n1 .ex-1{position:relative;left:auto;top:auto;width:78%;margin:0 auto;transform:rotateX(8deg) rotateY(-10deg) rotateZ(2deg)}
 .ex-cap{color:var(--muted);font-size:.93rem;max-width:62ch;margin-top:6px}
 @media (max-width:620px){.ex-stage{aspect-ratio:1/1.02}.ex-1{width:74%;left:1%}.ex-2{width:72%;top:33%;right:1%}.ex-3{width:66%;left:4%}}
+.sp-you{margin-top:16px;padding-top:14px;border-top:1px dashed #D6D3CD}
+.sp-you-k{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+.sp-you ul{display:grid;gap:6px}
+.sp-you li{font-size:.88rem;color:var(--muted);padding-left:18px;position:relative}
+.sp-you li:before{content:"";position:absolute;left:0;top:.42em;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink)}
+.sp-vis{margin:0}
+.sp-vis svg{display:block;width:100%;height:auto}
+.sp-vis figcaption{font-size:.72rem;font-style:italic;color:var(--muted);margin-top:6px;text-align:right}
+@media (max-width:760px){.sp-body{margin-left:0}.sp-body.has-vis{grid-template-columns:1fr;gap:18px}.sp-vis{max-width:360px}}
 
 /* Accept proposal: CTA, acceptance form, payment details, kickoff */
 .acc{margin-top:72px;scroll-margin-top:110px}
@@ -676,14 +687,14 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
   <span class="tag">Implementation proposal</span>
   <h1>One Notion your team<br><em>and your agents</em> <span class="hl">trust.</span></h1>
   </div>
-  <p class="lede">A three-phase plan to organize Biomed's Notion so you, Chris, Elizabeth and your Grok agents all work from the same place, done before the end of the year. Based on our conversations on October 29 and November 10.</p>
+  <p class="lede">A three-phase plan to organize Biomed's Notion so you, Chris, Elizabeth and your AI agents all work from the same place, with your first two agents built and tested. Based on our conversations on October 29, November 10 and November 13.</p>
   <div class="meta">
     <div><div class="k">For</div><div class="v">Biomed Recruitment</div><div class="d">Ian Cooper, Founder</div></div>
     <div><div class="k">Prepared by</div><div class="v">Mateo Bermúdez &amp; Paula González</div><div class="d">Eureka</div></div>
-    <div><div class="k">Duration</div><div class="v"><em>4</em> weeks</div><div class="d">Week of November 16</div></div>
-    <div><div class="k">Date</div><div class="v">November 13, 2026</div><div class="d">Proposal valid until November 27, 2026</div></div>
+    <div><div class="k">Duration</div><div class="v"><em>5</em> weeks</div><div class="d">Week of November 23</div></div>
+    <div><div class="k">Date</div><div class="v">November 18, 2026</div><div class="d">Proposal valid until December 2, 2026</div></div>
   </div>
-  <div class="sec-sm"><div class="glance"><div><div class="n">Focus</div><h3>Notion first, then agents</h3><p>The structure your agents will read from and write to.</p></div><div><div class="n">Total · USD 1,500</div><h3>Architecture, context layer, tasks and team</h3><p>Three phases in about four weeks.</p></div><div><div class="n">Bonus</div><h3>3 months of Notion Business</h3><p>On a new workspace, at no cost.</p></div></div></div>
+  <div class="sec-sm"><div class="glance"><div><div class="n">Focus</div><h3>Notion first, then agents</h3><p>The structure your agents will read from and write to.</p></div><div><div class="n">Total · USD 1,700</div><h3>Audit, agents, tasks and training</h3><p>Three phases in about five weeks.</p></div><div><div class="n">Bonus</div><h3>3 months of Notion Business</h3><p>On a new workspace, at no cost.</p></div></div></div>
   <div class="pager"></div>
 </section>
 <section class="page" id="context" data-n="01" data-name="Context">
@@ -703,41 +714,128 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 <section class="page" id="focus" data-n="02" data-name="Focus">
 <div class="label">Section 02</div>
   <h1>Where we'd<br><em>start.</em></h1>
-  <p class="lede"><b>One organized Notion that both your team and your AI agents work from: every task, document and decision in one known place.</b> You mentioned a lot of good ideas. We'd start with the foundation they all depend on.</p>
+  <p class="lede"><b>One organized Notion that your team and your AI agents work from, and a clear plan for what to automate next.</b> We start with the foundation and the two agents that save you the most time, then teach your team to build the rest.</p>
   <div class="fx">
-    <div class="fx-c"><div class="k">What you asked for</div><ul><li>Organize Notion, with personal and private space</li><li>Notion as the brain for Grok</li><li>Task assignment for every new job</li><li>Centralize meeting recordings</li><li>Daily metrics snapshot from Recruiterflow</li><li>Clean up OneNote, SharePoint and OneDrive</li><li>Agents for recruiting, sales and finance</li></ul></div>
-    <div class="fx-c on"><div class="k">What we recommend</div><ul><li>Clean architecture, with personal and team spaces</li><li>Context layer any connected agent can use</li><li>Automated tasks for each job type, plus team training</li><li>Meetings in one place, keeping the agents' memory current</li><li>Metrics and agents next, once the foundation is in place</li></ul></div>
+    <div class="fx-c"><div class="k">What you asked for</div><ul><li>Organize Notion, with a private space for your personal tasks</li><li>Notion as the brain for your agents</li><li>Tasks assigned automatically for every new job</li><li>Centralize meeting recordings</li><li>Metrics from your Excel and Recruiterflow, ready for 2027</li><li>Clean up OneNote, SharePoint and OneDrive</li><li>Automate as much of your recruitment process as possible</li></ul></div>
+    <div class="fx-c on"><div class="k">What we recommend</div><ul><li>Clean architecture, with personal and team spaces</li><li>One map of where each metric and file lives across your tools</li><li>Your recruitment process broken down: what to automate, what an agent drafts, what stays human</li><li>The two agents that save the most time, built and tested with you</li><li>Tasks that create themselves for each new job, for the team and for you</li><li>Training so your team builds the next agents</li></ul></div>
   </div>
-  <p class="note" style="margin-top:18px">Recruiterflow's metrics aren't reliable yet, so a dashboard built now would show the wrong numbers. Agents built on an organized Notion will need less rework later.</p>
+  <p class="note" style="margin-top:18px">Your process has many steps. Some are already automated in Recruiterflow and some are conversations that should stay human. Mapping it first means we build the agents that actually save time, instead of automating everything at once.</p>
   <div class="pager"></div>
 </section>
 <section class="page" id="proposal" data-n="03" data-name="Proposal">
 <div class="label">Section 03</div>
   <h1>What we'll build<br><em>and what it costs.</em></h1>
-  <p class="lede">Each phase has its own price and they add up to one fixed total. The tags show what the project needs and what we advise.</p>
+  <p class="lede">Each phase has its own price and they add up to one fixed total. Under each phase you'll see what we deliver and what we need from you.</p>
   <div class="sec-sm">
     <div class="label">Scope and investment</div>
-    <div class="sps"><article class="sp" data-id="architecture" data-price="500" data-weeks="1" data-name="Audit and architecture">
+    <div class="sps"><article class="sp" data-id="architecture" data-price="500" data-weeks="1" data-name="Audit, process map and architecture">
       <div class="sp-h">
         <div class="sp-n">01</div>
-        <div class="sp-t"><span class="sp-tag t-essential">Essential</span><h3>Audit and architecture</h3><p>We review what's there today and design a structure that's easy to navigate for people and for agents.</p></div>
+        <div class="sp-t"><span class="sp-tag t-essential">Essential</span><h3>Audit, process map and architecture</h3><p>We review your workspace, your tools and your <b>RF - Full Recruitment Process</b> document, then decide where everything should live and what is worth automating.</p></div>
         <div class="sp-p"><div class="sp-amt">USD 500</div><div class="sp-wk">1 week</div><span class="sp-lock">✓ Included</span></div>
       </div>
-      <ul class="sp-dl"><li>Audit report of your current workspace and the blueprint you received: what to keep, change or archive</li><li>New workspace with teamspaces, with separate personal and team sections</li><li>Your current Notion content moved into the new workspace, and unused pages and databases archived</li><li>Migration guide for OneNote, SharePoint and OneDrive: what moves to Notion, what stays, and how to move it</li></ul>
-    </article><article class="sp" data-id="grok" data-price="400" data-weeks="1" data-name="Context layer for AI agents">
+      <div class="sp-body has-vis"><div><ul class="sp-dl"><li>Audit report of your current workspace and the blueprint you received: what to keep, change or archive</li><li>New workspace with teamspaces and separate personal and team sections, your current Notion content moved in and unused pages archived</li><li>Data sources map: where each metric comes from (Recruiterflow, QuickBooks, Reply.io or Notion) and what information stays in each tool. It answers whether your placement data needs a Notion database or can all live in Recruiterflow</li><li>Breakdown of your RF - Full Recruitment Process: every step sorted into what Notion automates, what an agent drafts for your review, what stays in Recruiterflow and what stays with your team</li><li>Prioritized list of agents and automations, ranked by how often each step happens and how much time it saves</li><li>Migration guide for OneNote, SharePoint and OneDrive: what moves to Notion, what stays (linked from Notion), and how to move it, by hand or with AI</li></ul><div class="sp-you"><div class="sp-you-k">Your part</div><ul><li>Give us access to the workspace, a few sample files from each source, your metrics Excel and Recruiterflow</li><li>Approve what we keep and what we archive</li><li>Migrate your documents following the guide, once it tells you what goes where</li></ul></div></div><figure class="sp-vis"><svg viewBox="0 0 320 236" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recruitment process map, illustrative" font-family="inherit">
+  <rect x="1" y="1" width="318" height="234" rx="10" fill="#fff" stroke="#E5E5E5"/>
+  <path d="M1 11a10 10 0 0 1 10-10h298a10 10 0 0 1 10 10v13H1z" fill="#F7F6F4"/>
+  <circle cx="13" cy="12.5" r="3" fill="#D9D7D2"/><circle cx="23" cy="12.5" r="3" fill="#D9D7D2"/><circle cx="33" cy="12.5" r="3" fill="#D9D7D2"/>
+  <text x="16" y="46" font-size="12" font-weight="800" fill="#111">Recruitment process map</text>
+  <text x="16" y="60" font-size="8.5" fill="#555">From “RF - Full Recruitment Process”</text>
+  <text x="16" y="80" font-size="7.5" fill="#555" letter-spacing=".04em">STEP</text>
+  <text x="168" y="80" font-size="7.5" fill="#555" letter-spacing=".04em">WHO DOES IT</text>
+  <text x="250" y="80" font-size="7.5" fill="#555" letter-spacing=".04em">TIME SAVED</text>
+  <line x1="16" y1="86" x2="304" y2="86" stroke="#E5E5E5"/>
+  <g font-size="9" fill="#111">
+    <text x="16" y="103">Create the job's tasks</text>
+    <rect x="168" y="94" width="58" height="13" rx="3" fill="#F3E6FB"/><text x="173" y="103.5" font-size="7.5" fill="#750FB4">Automated</text>
+    <rect x="250" y="97" width="54" height="6" rx="3" fill="#EEE"/><rect x="250" y="97" width="50" height="6" rx="3" fill="#750FB4"/>
+    <line x1="16" y1="113" x2="304" y2="113" stroke="#F0EFEC"/>
+    <text x="16" y="129">Candidate summaries</text>
+    <rect x="168" y="120" width="58" height="13" rx="3" fill="#FDE8F9"/><text x="173" y="129.5" font-size="7.5" fill="#B0198F">Agent drafts</text>
+    <rect x="250" y="123" width="54" height="6" rx="3" fill="#EEE"/><rect x="250" y="123" width="44" height="6" rx="3" fill="#750FB4"/>
+    <line x1="16" y1="139" x2="304" y2="139" stroke="#F0EFEC"/>
+    <text x="16" y="155">Client kickoff email</text>
+    <rect x="168" y="146" width="58" height="13" rx="3" fill="#FDE8F9"/><text x="173" y="155.5" font-size="7.5" fill="#B0198F">Agent drafts</text>
+    <rect x="250" y="149" width="54" height="6" rx="3" fill="#EEE"/><rect x="250" y="149" width="30" height="6" rx="3" fill="#750FB4"/>
+    <line x1="16" y1="165" x2="304" y2="165" stroke="#F0EFEC"/>
+    <text x="16" y="181">Stage emails to candidates</text>
+    <rect x="168" y="172" width="64" height="13" rx="3" fill="#FFEDE6"/><text x="173" y="181.5" font-size="7.5" fill="#C2410C">Recruiterflow</text>
+    <text x="250" y="181" font-size="7.5" fill="#555">Already set</text>
+    <line x1="16" y1="191" x2="304" y2="191" stroke="#F0EFEC"/>
+    <text x="16" y="207">Screening calls</text>
+    <rect x="168" y="198" width="44" height="13" rx="3" fill="#EFEFEF"/><text x="173" y="207.5" font-size="7.5" fill="#555">Your team</text>
+    <text x="250" y="207" font-size="7.5" fill="#555">Stays human</text>
+  </g>
+</svg>
+<figcaption>Illustrative view</figcaption></figure></div>
+    </article><article class="sp" data-id="agents" data-price="600" data-weeks="2" data-name="Context layer and your first two agents">
       <div class="sp-h">
         <div class="sp-n">02</div>
-        <div class="sp-t"><span class="sp-tag t-essential">Essential</span><h3>Context layer for AI agents</h3><p>The databases and rules any connected AI agent reads from, starting with your Grok agents, plus your meetings in one place so the agents' memory stays current after every call.</p></div>
-        <div class="sp-p"><div class="sp-amt">USD 400</div><div class="sp-wk">1 week</div><span class="sp-lock">✓ Included</span></div>
-      </div>
-      <ul class="sp-dl"><li>Agent operating guide adapted to Biomed (rules, approvals, archive instead of delete)</li><li>Skills, memory and resources databases in their own teamspace</li><li>Meetings database with your Notion and Loom recordings, feeding the agents' memory after every call</li><li>Setup sheet for each agent with the database IDs and instructions to paste in</li></ul>
-    </article><article class="sp" data-id="team" data-price="600" data-weeks="2" data-name="Tasks, training and onboarding">
-      <div class="sp-h">
-        <div class="sp-n">03</div>
-        <div class="sp-t"><span class="sp-tag t-recommended">Recommended</span><h3>Tasks, training and onboarding</h3><p>Your Planner workflow moved to Notion, with tasks created automatically for each job type, and Chris and Elizabeth trained to work from it.</p></div>
+        <div class="sp-t"><span class="sp-tag t-essential">Essential</span><h3>Context layer and your first two agents</h3><p>The databases and rules any AI agent reads from, plus the two highest-priority agents from the Phase 1 list, built in Claude or Grok and tested in your real work for a week.</p></div>
         <div class="sp-p"><div class="sp-amt">USD 600</div><div class="sp-wk">2 weeks</div><span class="sp-lock">✓ Included</span></div>
       </div>
-      <ul class="sp-dl"><li>Task board where each new job creates its tasks automatically by job type, already assigned to Chris and Elizabeth</li><li>Personal portal for each team member</li><li>90-minute training session for the team</li><li>Onboarding guide: how the team uses the workspace day to day</li></ul>
+      <div class="sp-body has-vis"><div><ul class="sp-dl"><li>Agent operating guide adapted to Biomed (rules, approvals, archive instead of delete)</li><li>Skills, memory and resources databases in their own teamspace</li><li>Meetings database with your Notion and Loom recordings, feeding the agents' memory after every call</li><li>The two highest-priority agents from the Phase 1 list, built in Claude or Grok and connected to Notion</li><li>One week of real use, a feedback session and adjustments</li><li>Setup sheet so your team can create the next agents</li></ul><div class="sp-you"><div class="sp-you-k">Your part</div><ul><li>Choose Claude or Grok for the two agents (we recommend one in Phase 1)</li><li>Use both agents in your real work for a week and tell us what to adjust</li></ul></div></div><figure class="sp-vis"><svg viewBox="0 0 320 236" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agents connected to the Notion context layer, illustrative" font-family="inherit">
+  <defs><marker id="ah" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L6 3L0 6z" fill="#750FB4"/></marker></defs>
+  <g>
+    <rect x="1" y="34" width="96" height="58" rx="10" fill="#fff" stroke="#750FB4" stroke-width="1.5"/>
+    <circle cx="20" cy="54" r="8" fill="#750FB4"/><text x="20" y="57" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+    <text x="33" y="57" font-size="10" font-weight="800" fill="#111">Agent 1</text>
+    <text x="12" y="78" font-size="8" fill="#555">Claude or Grok</text>
+    <rect x="1" y="144" width="96" height="58" rx="10" fill="#fff" stroke="#750FB4" stroke-width="1.5"/>
+    <circle cx="20" cy="164" r="8" fill="#750FB4"/><text x="20" y="167" font-size="8" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+    <text x="33" y="167" font-size="10" font-weight="800" fill="#111">Agent 2</text>
+    <text x="12" y="188" font-size="8" fill="#555">Claude or Grok</text>
+  </g>
+  <path d="M97 63 C112 63 112 100 124 104" fill="none" stroke="#750FB4" stroke-width="1.5" marker-end="url(#ah)"/>
+  <path d="M97 173 C112 173 112 136 124 132" fill="none" stroke="#750FB4" stroke-width="1.5" marker-end="url(#ah)"/>
+  <rect x="126" y="56" width="104" height="124" rx="12" fill="#F7F6F4" stroke="#111" stroke-width="1.2"/>
+  <text x="178" y="76" font-size="10" font-weight="800" fill="#111" text-anchor="middle">Notion context</text>
+  <g font-size="8.5" fill="#111">
+    <rect x="138" y="86" width="80" height="18" rx="5" fill="#fff" stroke="#E5E5E5"/><text x="146" y="98">Operating guide</text>
+    <rect x="138" y="108" width="80" height="18" rx="5" fill="#fff" stroke="#E5E5E5"/><text x="146" y="120">Memory</text>
+    <rect x="138" y="130" width="80" height="18" rx="5" fill="#fff" stroke="#E5E5E5"/><text x="146" y="142">Skills · Resources</text>
+    <rect x="138" y="152" width="80" height="18" rx="5" fill="#F3E6FB" stroke="#E5D2F2"/><text x="146" y="164" fill="#750FB4">Meetings</text>
+  </g>
+  <path d="M220 161 C232 150 232 128 220 117" fill="none" stroke="#750FB4" stroke-width="1.2" stroke-dasharray="3 2" marker-end="url(#ah)"/>
+  <text x="236" y="142" font-size="7.5" fill="#750FB4">keeps</text><text x="236" y="151" font-size="7.5" fill="#750FB4">memory</text><text x="236" y="160" font-size="7.5" fill="#750FB4">current</text>
+  <g stroke="#B9B6B0" stroke-dasharray="4 3" fill="none">
+    <rect x="262" y="34" width="56" height="40" rx="8"/><rect x="262" y="88" width="56" height="40" rx="8"/>
+  </g>
+  <text x="290" y="58" font-size="8" fill="#555" text-anchor="middle">Next agent</text>
+  <text x="290" y="112" font-size="8" fill="#555" text-anchor="middle">Next agent</text>
+  <text x="290" y="144" font-size="7.5" fill="#555" text-anchor="middle">From the</text>
+  <text x="290" y="154" font-size="7.5" fill="#555" text-anchor="middle">Phase 1 list,</text>
+  <text x="290" y="164" font-size="7.5" fill="#555" text-anchor="middle">built by</text>
+  <text x="290" y="174" font-size="7.5" fill="#555" text-anchor="middle">your team</text>
+</svg>
+<figcaption>Illustrative view</figcaption></figure></div>
+    </article><article class="sp" data-id="team" data-price="600" data-weeks="2" data-name="Tasks, automations and training">
+      <div class="sp-h">
+        <div class="sp-n">03</div>
+        <div class="sp-t"><span class="sp-tag t-recommended">Recommended</span><h3>Tasks, automations and training</h3><p>Your team's tasks and your personal tasks in one place, a task flow that builds itself for each new job, and a team that knows how to keep automating.</p></div>
+        <div class="sp-p"><div class="sp-amt">USD 600</div><div class="sp-wk">2 weeks</div><span class="sp-lock">✓ Included</span></div>
+      </div>
+      <div class="sp-body has-vis"><div><ul class="sp-dl"><li>Planner tasks moved into Notion: one task system for the team and for your personal and day-to-day tasks, with your personal tasks private</li><li>Task board where each new job creates its tasks automatically by job type, already assigned to Chris and Elizabeth</li><li>Personal portal for each team member with their tasks for the day</li><li>90-minute training: using the workspace, building Notion automations, and building the next agents from the Phase 1 list</li><li>Onboarding guide: how the team uses the workspace day to day</li></ul><div class="sp-you"><div class="sp-you-k">Your part</div><ul><li>Confirm the list of tasks for each job type</li><li>Set aside 90 minutes for you, Chris and Elizabeth to attend the training</li></ul></div></div><figure class="sp-vis"><svg viewBox="0 0 320 236" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Task board created for a new job, illustrative" font-family="inherit">
+  <rect x="1" y="1" width="318" height="234" rx="10" fill="#fff" stroke="#E5E5E5"/>
+  <path d="M1 11a10 10 0 0 1 10-10h298a10 10 0 0 1 10 10v13H1z" fill="#F7F6F4"/>
+  <circle cx="13" cy="12.5" r="3" fill="#D9D7D2"/><circle cx="23" cy="12.5" r="3" fill="#D9D7D2"/><circle cx="33" cy="12.5" r="3" fill="#D9D7D2"/>
+  <text x="16" y="46" font-size="12" font-weight="800" fill="#111">New opening</text>
+  <rect x="98" y="36" width="100" height="14" rx="4" fill="#F3E6FB"/><text x="104" y="46" font-size="7.5" fill="#750FB4">Tasks created automatically</text>
+  <g font-size="7.5" fill="#555" letter-spacing=".04em"><text x="16" y="70">KICKOFF</text><text x="116" y="70">SOURCING</text><text x="216" y="70">INTERVIEWS</text></g>
+  <g font-size="8.5" fill="#111">
+    <rect x="12" y="76" width="94" height="30" rx="6" fill="#fff" stroke="#E5E5E5"/><text x="19" y="94">Kickoff email</text><circle cx="96" cy="91" r="6" fill="#750FB4"/><text x="96" y="93.5" font-size="6.5" fill="#fff" text-anchor="middle">I</text>
+    <rect x="12" y="112" width="94" height="30" rx="6" fill="#fff" stroke="#E5E5E5"/><text x="19" y="130">Opening in RF</text><circle cx="96" cy="127" r="6" fill="#FF673E"/><text x="96" y="129.5" font-size="6.5" fill="#fff" text-anchor="middle">E</text>
+    <rect x="112" y="76" width="96" height="30" rx="6" fill="#fff" stroke="#E5E5E5"/><text x="119" y="94">Campaign copy</text><circle cx="198" cy="91" r="6" fill="#EF53D4"/><text x="198" y="93.5" font-size="6.5" fill="#fff" text-anchor="middle">C</text>
+    <rect x="112" y="112" width="96" height="30" rx="6" fill="#fff" stroke="#E5E5E5"/><text x="119" y="130">LinkedIn post</text><circle cx="198" cy="127" r="6" fill="#FF673E"/><text x="198" y="129.5" font-size="6.5" fill="#fff" text-anchor="middle">E</text>
+    <rect x="214" y="76" width="94" height="30" rx="6" fill="#fff" stroke="#E5E5E5"/><text x="221" y="94">Candidate review</text><circle cx="298" cy="91" r="6" fill="#750FB4"/><text x="298" y="93.5" font-size="6.5" fill="#fff" text-anchor="middle">I</text>
+    <rect x="214" y="112" width="94" height="30" rx="6" fill="#fff" stroke="#E5E5E5"/><text x="221" y="130">Interview prep</text><circle cx="298" cy="127" r="6" fill="#EF53D4"/><text x="298" y="129.5" font-size="6.5" fill="#fff" text-anchor="middle">C</text>
+  </g>
+  <line x1="12" y1="160" x2="308" y2="160" stroke="#E5E5E5"/>
+  <rect x="12" y="172" width="296" height="48" rx="8" fill="#F7F6F4"/>
+  <g transform="translate(24 186)"><rect x="0" y="5" width="11" height="9" rx="2" fill="#111"/><path d="M2.5 5V3.5a3 3 0 0 1 6 0V5" fill="none" stroke="#111" stroke-width="1.4"/></g>
+  <text x="42" y="194" font-size="9.5" font-weight="800" fill="#111">My tasks</text>
+  <text x="42" y="207" font-size="8" fill="#555">Personal and day-to-day · only you see them</text>
+</svg>
+<figcaption>Illustrative view</figcaption></figure></div>
     </article></div>
     <div class="sp-sum" data-cur="USD" data-pct="50" data-wk="weeks">
       <div><div class="k">Total</div><div class="v" data-sp-total></div></div>
@@ -748,8 +846,8 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
   </div>
   
   <div class="sec"><div class="ie">
-      <div><div class="label">Included in this proposal</div><ul class="check"><li><span class="ok">✓</span><span>Weekly working sessions during the build</span></li><li><span class="ok">✓</span><span>Shared Slack channel for questions</span></li><li><span class="ok">✓</span><span>3 months of Notion Business on a new workspace, at no cost</span></li></ul></div>
-      <div><div class="label lx">Not included</div><div class="excl"><div>Building or configuring the agents themselves (Grok or others)</div><div>Recruiterflow metrics dashboard</div><div>n8n automations and other integrations (defined in the roadmap, subject to technical feasibility)</div><div>Moving files from OneNote, SharePoint or OneDrive (the migration guide shows you how)</div><div>Notion licenses after the bonus period</div></div></div>
+      <div><div class="label">Included in this proposal</div><ul class="check"><li><span class="ok">✓</span><span>One working session with you every week (five in total)</span></li><li><span class="ok">✓</span><span>Shared Slack channel for questions</span></li><li><span class="ok">✓</span><span>3 months of Notion Business on a new workspace, at no cost</span></li></ul></div>
+      <div><div class="label lx">Not included</div><div class="excl"><div>Agents beyond the two built in Phase 2 (your team builds the next ones after the training, or we scope them separately)</div><div>Automations and integrations beyond the ones listed in each phase (subject to technical feasibility)</div><div>A metrics dashboard (Phase 1 tells you where each metric should come from)</div><div>Moving files from OneNote, SharePoint or OneDrive (the migration guide shows you how)</div><div>Notion licenses after the bonus period</div></div></div>
     </div></div>
   <div class="pp" style="margin-top:28px"><span class="ncp" role="img" aria-label="Notion Consulting Partner"></span><p><b>Guarantee.</b> Two weeks of async support after the last delivery to fix issues within the delivered scope, at no extra cost.</p></div>
   <div class="pager"></div>
@@ -765,8 +863,8 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 <section class="page" id="start" data-n="05" data-name="Start">
 <div class="label">Section 05</div>
   <h1>We're ready to build<br><em>your Eureka moment.</em></h1>
-  <p class="lede">Proposal valid until <b>November 27, 2026</b>. Projected start: <b>Week of November 16</b>.</p>
-  <div class="sec-sm"><div class="label">Next steps</div><ul class="next"><li><div class="when">Today</div><div><h3>Accept and send the deposit</h3><p>Right here, below. By bank transfer or card.</p></div></li><li><div class="when">Once we receive it</div><div><h3>Next steps by email</h3><p>We send you the link to book the kickoff and set up the new workspace.</p></div></li><li><div class="when">Week of November 16</div><div><h3>Audit starts</h3><p>Done before the end of the year.</p></div></li></ul></div>
+  <p class="lede">Proposal valid until <b>December 2, 2026</b>. Projected start: <b>Week of November 23</b>.</p>
+  <div class="sec-sm"><div class="label">Next steps</div><ul class="next"><li><div class="when">Today</div><div><h3>Accept and send the deposit</h3><p>Right here, below. By bank transfer or card.</p></div></li><li><div class="when">Once we receive it</div><div><h3>Next steps by email</h3><p>We send you the link to book the kickoff and set up the new workspace.</p></div></li><li><div class="when">Week of November 23</div><div><h3>Audit starts</h3><p>About five weeks from kickoff to the training.</p></div></li></ul></div>
   <div class="acc" data-fee="4" data-api="/api/accept" data-lang="en" id="accept" data-key="biomed">
     <div class="acc-card">
     <div class="acc-sum">
@@ -797,7 +895,7 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
         <div class="acc-step-h"><span class="n">1</span><h3>Send the deposit</h3></div>
         <div class="acc-pay">
           <div><div class="amt"><span data-acc-dep></span></div><div class="k"><span data-acc-dlabel></span></div></div>
-          <div><div class="acc-tabs"><button type="button" class="on" data-bank="usd">Bank transfer · USD</button><button type="button" data-bank="card">Card · Stripe (+4%)</button></div><div class="acc-panel" data-bank="usd"><dl class="acc-bank" style="margin:0"><div><dt>Beneficiary</dt><dd>Produteka LLC</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Beneficiary address</dt><dd>30 North Gould Street, Sheridan, WY 82801, USA</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Account number</dt><dd>783562254976660</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Account type</dt><dd>Checking</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Routing (ACH and wire)</dt><dd>121145433</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Bank</dt><dd>Column N.A. (Mercury&#x27;s banking partner)</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Bank address</dt><dd>1 Letterman Drive, Building A, Suite A4-700, San Francisco, CA 94129, USA</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>SWIFT (international wire)</dt><dd>CLNOUS66MER</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Intermediary SWIFT (international, required)</dt><dd>CHASUS33XXX</dd><button type="button" class="acc-copy">Copy</button></div></dl></div><div class="acc-panel acc-stripe" data-bank="card" hidden><div class="k">Amount with the 4% card fee</div><div class="amt2" data-acc-card></div><p>Secure payment through Stripe. The card fee is added to the deposit.</p><a class="acc-btn" href="https://buy.stripe.com/5kQcN4dqtbFO8Os3G16Ri1f" target="_blank" rel="noopener">Pay with card →</a></div></div>
+          <div><div class="acc-tabs"><button type="button" class="on" data-bank="usd">Bank transfer · USD</button><button type="button" data-bank="card">Card · Stripe (+4%)</button></div><div class="acc-panel" data-bank="usd"><dl class="acc-bank" style="margin:0"><div><dt>Beneficiary</dt><dd>Produteka LLC</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Beneficiary address</dt><dd>30 North Gould Street, Sheridan, WY 82801, USA</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Account number</dt><dd>783562254976660</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Account type</dt><dd>Checking</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Routing (ACH and wire)</dt><dd>121145433</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Bank</dt><dd>Column N.A. (Mercury&#x27;s banking partner)</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Bank address</dt><dd>1 Letterman Drive, Building A, Suite A4-700, San Francisco, CA 94129, USA</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>SWIFT (international wire)</dt><dd>CLNOUS66MER</dd><button type="button" class="acc-copy">Copy</button></div><div><dt>Intermediary SWIFT (international, required)</dt><dd>CHASUS33XXX</dd><button type="button" class="acc-copy">Copy</button></div></dl></div><div class="acc-panel acc-stripe" data-bank="card" hidden><div class="k">Amount with the 4% card fee</div><div class="amt2" data-acc-card></div><p>Secure payment through Stripe. The card fee is added to the deposit.</p><a class="acc-btn" href="https://buy.stripe.com/bJe5kC1HL9xG5Cg1xT6Ri1g" target="_blank" rel="noopener">Pay with card →</a></div></div>
         </div>
       </div>
       <div class="acc-step">
