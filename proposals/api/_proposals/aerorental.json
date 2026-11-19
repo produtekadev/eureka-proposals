@@ -1,0 +1,74 @@
+{
+  "slug": "aerorental",
+  "lang": "es",
+  "company": "Aerorental",
+  "currency": "USD",
+  "deposit_pct": 50,
+  "phases": [
+    {
+      "id": "diagnostico",
+      "name": "Diagnóstico de procesos",
+      "price": 1000,
+      "tag": "essential"
+    },
+    {
+      "id": "base",
+      "name": "Base del sistema y primer flujo",
+      "price": 700,
+      "tag": "essential"
+    },
+    {
+      "id": "capacitacion",
+      "name": "Capacitación y hoja de ruta",
+      "price": 300,
+      "tag": "essential"
+    }
+  ],
+  "bank_accounts": [
+    {
+      "label": "Transferencia · USD",
+      "rows": [
+        [
+          "Beneficiary",
+          "Produteka LLC"
+        ],
+        [
+          "Beneficiary address",
+          "30 North Gould Street, Sheridan, WY 82801, USA"
+        ],
+        [
+          "Account number",
+          "783562254976660"
+        ],
+        [
+          "Account type",
+          "Checking"
+        ],
+        [
+          "Routing (ACH and wire)",
+          "121145433"
+        ],
+        [
+          "Bank",
+          "Column N.A. (Mercury's banking partner)"
+        ],
+        [
+          "Bank address",
+          "1 Letterman Drive, Building A, Suite A4-700, San Francisco, CA 94129, USA"
+        ],
+        [
+          "SWIFT (international wire)",
+          "CLNOUS66MER"
+        ],
+        [
+          "Intermediary SWIFT (international, required)",
+          "CHASUS33XXX"
+        ]
+      ]
+    }
+  ],
+  "notion_page_id": "41dc9f5c-dca8-8069-97a0-ee366dd5597e",
+  "card_fee_pct": 4,
+  "stripe_url": "https://buy.stripe.com/6oU28qeuxeS09SwekF6Ri1i",
+  "url": "https://proposals.eureka.ceo/aerorental"
+}

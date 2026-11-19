@@ -1,0 +1,272 @@
+{
+  "lang": "es",
+  "client": {
+    "company": "Aerorental",
+    "contact": "Andrea Castañeda",
+    "role": "",
+    "location": "Bogotá"
+  },
+  "prepared_by": [
+    "paula",
+    "abel"
+  ],
+  "team": [],
+  "notion_page_id": "41dc9f5c-dca8-8069-97a0-ee366dd5597e",
+  "clients": [
+    "bid",
+    "henkel",
+    "toggl-hire",
+    "foton",
+    "daughters-for-earth"
+  ],
+  "date": "2026-11-19",
+  "valid_until": "2026-12-03",
+  "start": "Semana del 30 de noviembre",
+  "cover": {
+    "tag": "Propuesta de diagnóstico e implementación",
+    "headline": "Procesos administrativos<br><em>más ligeros</em> <span class=\"hl\">y productivos.</span>",
+    "lede": "Un mes para entender a fondo los procesos administrativos que más tiempo le quitan a tu operación, dejar el primero funcionando en Notion y salir con un plan claro para los demás. Basada en nuestra conversación del 17 de noviembre.",
+    "glance": [
+      {
+        "k": "Enfoque",
+        "h": "Primero entender, después construir",
+        "p": "Un diagnóstico a fondo y un primer flujo funcionando."
+      },
+      {
+        "k": "Total · USD 2,000",
+        "h": "Diagnóstico, primer flujo y capacitación",
+        "p": "Tres fases en cuatro semanas."
+      },
+      {
+        "k": "Al final",
+        "h": "Hoja de ruta",
+        "p": "El resto de flujos con orden, fases y precios."
+      }
+    ]
+  },
+  "context": {
+    "title": "Lo que<br><em>escuchamos.</em>",
+    "lede": "Aerorental vende y alquila maquinaria para elevar personas y cargas. Tu equipo operativo es el que mueve el negocio, y <b>cada trámite administrativo que recae sobre un técnico o un operador es tiempo que no está donde el cliente.</b>",
+    "stats": [
+      {
+        "n": "20",
+        "t": "personas administrativas que usarían el sistema"
+      },
+      {
+        "n": "4",
+        "t": "software en uso: SAM, NetSuite, ABIO y Alegra"
+      },
+      {
+        "n": "5",
+        "t": "procesos manuales que estudiaremos a fondo"
+      }
+    ],
+    "pains_label": "El reto",
+    "pains_title": "Tres cosas que hoy <em>le quitan tiempo</em> a la operación.",
+    "pains": [
+      {
+        "k": "Gastos",
+        "h": "Legalizar un gasto pasa por tres pasos a mano",
+        "it": "\"Tomarle fotos al recibo, hacer una planilla en Excel, cargarla en un correo al área contable.\"",
+        "p": "Toda la empresa pasa por este proceso, y contabilidad lo necesita a tiempo para cerrar el mes."
+      },
+      {
+        "k": "Nómina",
+        "h": "Las horas extras viajan en Excel entre dos software",
+        "it": "\"Es una vaina supermanual mes a mes.\"",
+        "p": "Se descarga un archivo de un sistema, se modifica a mano y se carga en otro, todos los meses."
+      },
+      {
+        "k": "Procesos",
+        "h": "Los procesos existen, pero nadie los encuentra",
+        "it": "\"Tenemos procesos guardados en mil drives por ahí.\"",
+        "p": "Se invierte tiempo en estandarizar un proceso y, cuando llega alguien nuevo, no se usa porque no aparece."
+      }
+    ],
+    "quote": {
+      "text": "Cada máquina que está parada es una máquina que está perdiendo plata.",
+      "who": "Andrea Castañeda, Aerorental"
+    },
+    "opportunity_label": "La oportunidad",
+    "opportunity": "Quieres que el mismo equipo que tienes hoy sostenga el crecimiento. Para eso los procesos administrativos tienen que ser ligeros, y <b>el primer paso es saber con certeza cuáles vale la pena llevar a Notion y cuáles no.</b>"
+  },
+  "focus": {
+    "title": "Por dónde<br><em>empezaríamos.</em>",
+    "statement": "<b>Entender a fondo cómo funcionan hoy los procesos administrativos que más tiempo le quitan a la operación, y dejar funcionando en Notion el primero, sobre una base que sirva para todos los demás.</b>",
+    "asked": [
+      "Reducir el trabajo manual de nómina y gestión humana",
+      "Control de horas extras",
+      "Legalización de gastos",
+      "Control y mantenimiento de computadores",
+      "Información de desempeño y procesos disciplinarios",
+      "Seguridad industrial y administración de tecnología",
+      "Procesos centralizados y fáciles de consultar"
+    ],
+    "recommend": [
+      "Estudiar a fondo cinco flujos antes de construir",
+      "Elegir el primero con criterios claros y contigo",
+      "Construir la base del sistema y un flujo completo, sin integraciones",
+      "Capacitar al equipo sobre algo que ya funciona",
+      "Dejar la hoja de ruta de los demás flujos, con orden y precios"
+    ],
+    "why": "En la llamada dijiste que una respuesta válida es \"creemos que esto no va a funcionar\". Por eso empezamos con un diagnóstico: te decimos qué va a Notion, qué se queda en tus herramientas actuales y qué no vale la pena tocar, antes de construir todo a la vez."
+  },
+  "proposal": {
+    "title": "Lo que vamos a construir<br><em>y lo que cuesta.</em>",
+    "intro": "Cada fase tiene su precio y todas suman un total fijo. En cada una ves lo que entregamos y lo que necesitamos de ti.",
+    "currency": "USD",
+    "phases": [
+      {
+        "id": "diagnostico",
+        "name": "Diagnóstico de procesos",
+        "tag": "essential",
+        "price": 1000,
+        "weeks": 2,
+        "summary": "Estudiamos a fondo cómo funcionan hoy los cinco flujos que nos contaste, con las personas que los viven en nómina y gestión humana, contabilidad y tecnología.",
+        "deliverables": [
+          {
+            "h": "Entrevistas por área",
+            "p": "Conversaciones con las personas que manejan cada proceso en nómina y gestión humana, contabilidad y tecnología."
+          },
+          {
+            "h": "Mapa de cinco flujos",
+            "p": "Legalización de gastos, horas extras, control de computadores, desempeño y procesos disciplinarios, y documentación de procesos. Cada uno paso a paso: quién hace qué, en qué herramienta y dónde se pierde tiempo."
+          },
+          {
+            "h": "Mapa de herramientas",
+            "p": "Qué se queda en SAM, NetSuite, ABIO y Alegra, qué pasa a Notion y qué necesitaría una integración."
+          },
+          {
+            "h": "Reporte de diagnóstico",
+            "p": "Un documento con los hallazgos, lo que recomendamos llevar a Notion y lo que recomendamos no tocar."
+          },
+          {
+            "h": "Recomendación del primer flujo",
+            "p": "El flujo que proponemos construir primero y por qué. Tú lo apruebas antes de que empecemos."
+          }
+        ],
+        "callout": {
+          "label": "Criterios",
+          "title": "Cómo elegimos el primer flujo",
+          "lede": "Tres preguntas que le hacemos a cada proceso.",
+          "items": [
+            {
+              "q": "¿Le devuelve tiempo a la operación?",
+              "a": "Impacto",
+              "icon": "purple-shape"
+            },
+            {
+              "q": "¿Funciona completo dentro de Notion?",
+              "a": "Sin integraciones",
+              "icon": "magenta-shape"
+            },
+            {
+              "q": "¿Se puede construir y probar en una semana?",
+              "a": "Ganancia rápida",
+              "icon": "orange-cross"
+            }
+          ]
+        },
+        "you_do": [
+          "Definir a quién entrevistamos en cada área",
+          "Compartir los archivos de Excel y formatos actuales",
+          "Aprobar el primer flujo"
+        ]
+      },
+      {
+        "id": "base",
+        "name": "Base del sistema y primer flujo",
+        "tag": "essential",
+        "price": 700,
+        "weeks": 1,
+        "summary": "Montamos en Notion la base sobre la que vivirán los flujos operativos y dejamos el primero funcionando de principio a fin, sin depender de conexiones con otros software.",
+        "deliverables": [
+          {
+            "h": "Workspace de Aerorental",
+            "p": "El espacio de trabajo en Notion, con secciones por área y permisos definidos."
+          },
+          {
+            "h": "Bases de datos compartidas",
+            "p": "Las bases que usarán todos los flujos, como personas y áreas, para que cada flujo nuevo se conecte a lo que ya existe."
+          },
+          {
+            "h": "Primer flujo funcionando",
+            "p": "El proceso elegido en el diagnóstico, completo: cómo entra la información, quién aprueba y qué avisos se envían."
+          },
+          {
+            "h": "Demo intermedia",
+            "p": "Te mostramos el avance a mitad de semana y ajustamos con tus comentarios."
+          }
+        ],
+        "you_do": [
+          "Abrir el workspace de Notion",
+          "Probar el flujo con casos reales",
+          "Darnos tus comentarios en la demo"
+        ]
+      },
+      {
+        "id": "capacitacion",
+        "name": "Capacitación y hoja de ruta",
+        "tag": "essential",
+        "price": 300,
+        "weeks": 1,
+        "summary": "Tu equipo aprende a usar lo que construimos y tú recibes el plan para los demás flujos.",
+        "deliverables": [
+          {
+            "h": "Capacitación en vivo",
+            "p": "Una sesión con el equipo que usa el primer flujo. Queda grabada para quienes no puedan asistir y para las personas nuevas."
+          },
+          {
+            "h": "Guía de uso",
+            "p": "Cómo se usa el sistema en el día a día, escrita dentro de Notion."
+          },
+          {
+            "h": "Hoja de ruta",
+            "p": "Los demás flujos en el orden que recomendamos, por fases, con rangos de precio. Incluye las integraciones que valdría la pena hacer, sujetas a viabilidad técnica."
+          }
+        ],
+        "you_do": [
+          "Convocar al equipo a la capacitación",
+          "Revisar la hoja de ruta con nosotros"
+        ]
+      }
+    ],
+    "included": [
+      "Una sesión de trabajo contigo cada semana",
+      "Un canal directo para dudas durante el proyecto",
+      "Formularios para que técnicos y operadores envíen información sin necesitar una cuenta de Notion"
+    ],
+    "excluded": [
+      "Licencias de Notion",
+      "Flujos adicionales al primero (quedan ordenados y con precio en la hoja de ruta)",
+      "Integraciones con SAM, NetSuite, ABIO o Alegra (se definen en la hoja de ruta, sujetas a viabilidad técnica)",
+      "El cambio del software de mantenimiento",
+      "Migración de documentos y archivos históricos",
+      "Diagnóstico de seguridad industrial (entra en la hoja de ruta)"
+    ],
+    "guarantee": "Dos semanas de soporte después de la última entrega para corregir cualquier detalle dentro del alcance entregado, sin costo adicional."
+  },
+  "payment": {
+    "deposit_pct": 50,
+    "schedule": "50 % al aceptar, 50 % contra entrega. Por transferencia bancaria, o con tarjeta a través de Stripe con un cargo del 4 %.",
+    "stripe_url": "https://buy.stripe.com/6oU28qeuxeS09SwekF6Ri1i"
+  },
+  "next_steps": [
+    {
+      "when": "Hoy",
+      "h": "Acepta y envía el anticipo",
+      "p": "Aquí mismo, abajo."
+    },
+    {
+      "when": "Cuando lo recibamos",
+      "h": "Siguientes pasos por correo",
+      "p": "Te enviamos el enlace para agendar el inicio."
+    },
+    {
+      "when": "Semana del 30 de noviembre",
+      "h": "Empieza el diagnóstico",
+      "p": "Cuatro semanas desde el inicio hasta la capacitación."
+    }
+  ],
+  "closing": "Listos para construir<br><em>tu momento Eureka.</em>"
+}
