@@ -248,7 +248,8 @@
   },
   "payment": {
     "deposit_pct": 50,
-    "schedule": "50 % al aceptar, 50 % contra entrega. Por transferencia bancaria."
+    "schedule": "50 % al aceptar, 50 % contra entrega. Por transferencia bancaria, o con tarjeta a través de Stripe con un cargo del 4 %.",
+    "stripe_url": "https://buy.stripe.com/6oU28qeuxeS09SwekF6Ri1i"
   },
   "next_steps": [
     {

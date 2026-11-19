@@ -322,7 +322,8 @@
   },
   "payment": {
     "deposit_pct": 50,
-    "schedule": "50% when you accept, 50% on delivery. By bank transfer."
+    "schedule": "50% when you accept, 50% on delivery. By bank transfer, or by card through Stripe with a 4% card fee.",
+    "stripe_url": "https://buy.stripe.com/bJedR83PT4dmggUfoJ6Ri1j"
   },
   "next_steps": [
     {
