@@ -47,6 +47,7 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
     "nav": "Goal",                                                       // optional: renames the section in the menu (default "Focus")
     "asked_label": "Today",                                              // optional: left column label (default "What you asked for")
     "recommend_label": "After working with us",                          // optional: right column label (default "What we recommend")
+    "illustration": "too-many-apps",                                    // optional: wide drawing under the statement
     "benefits": [ { "icon": "purple-shape", "h": "Short benefit", "p": "One line on what changes for them." } ]   // optional: replaces the two columns with icon cards (icons: purple-shape, magenta-shape, orange-cross, heart). Use it to frame the section as the goal: what the business looks like after working with us
   },
 
@@ -66,7 +67,8 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
         "deliverables": ["3 to 6 short items"],   // or [{"h": "Short title", "p": "One or two sentences"}]: titles show as a grid, details behind a toggle (preferred with a visual)
         "you_do": ["what the client does in this phase"],
         "callout": { "label": "Example", "title": "", "lede": "", "items": [ { "q": "a question in the client's words", "a": "why it matters to them" } ], "note": "" },   // optional, shown under the deliverables   // optional, shown under a divider as "Your part". Write it for every phase
-        "visual": "process-map"         // optional: illustrative SVG from template/visuals/ (process-map, agents, tasks), labelled "Illustrative view"
+        "visual": "process-map",        // optional: illustrative SVG from template/visuals/ (process-map, agents, tasks), labelled "Illustrative view"
+        "illustration": "map"           // optional, preferred over visual: drawing on the left, deliverable ticks on the right. Files in template/assets/illustrations/ (map, build, scale, team-work, too-many-apps). Usual set: map / build / scale for audit / build / training
       }
     ],
     "examples": {                       // optional: screenshots of the deliverable, shown as tilted overlapping cards after the totals
@@ -88,6 +90,7 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
 
   "next_steps": [ { "when": "Today", "h": "Accept and send the deposit", "p": "Right here, below." } ],
   "closing": "We're ready to build<br><em>your Eureka moment.</em>",     // optional
+  "closing_illustration": "team-work",                                  // optional: drawing next to the closing headline
   "about_title": "Assigned team<br><em>for this project.</em>"          // optional, this is the default
 }
 ```

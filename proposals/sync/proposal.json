@@ -113,7 +113,8 @@
         "h": "Critical boards out of Monday",
         "p": "The boards that run the business live in Notion instead of Monday."
       }
-    ]
+    ],
+    "illustration": "too-many-apps"
   },
   "proposal": {
     "title": "What we'll build<br><em>and what it costs.</em>",
@@ -148,7 +149,8 @@
             "h": "Roadmap and migration guide",
             "p": "What comes next, and how to move the remaining boards."
           }
-        ]
+        ],
+        "illustration": "map"
       },
       {
         "id": "build",
@@ -182,7 +184,8 @@
             "h": "Optimized operating guide",
             "p": "One shared context for Claude and your other AI tools."
           }
-        ]
+        ],
+        "illustration": "build"
       },
       {
         "id": "training",
@@ -204,7 +207,8 @@
             "h": "Recordings and team guide",
             "p": "Both sessions recorded, plus a one-page guide."
           }
-        ]
+        ],
+        "illustration": "scale"
       }
     ],
     "included": [
@@ -248,5 +252,6 @@
       "p": "Build through December, training the week of January 4."
     }
   ],
-  "closing": "We're ready to build<br><em>your Eureka moment.</em>"
+  "closing": "We're ready to build<br><em>your Eureka moment.</em>",
+  "closing_illustration": "team-work"
 }

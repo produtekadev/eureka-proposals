@@ -178,8 +178,10 @@ def sec_focus(pg, P):
     <div class="fx-c"><div class="k">{rich(f.get('asked_label') or u['asked'])}</div><ul>{li(f['asked'])}</ul></div>
     <div class="fx-c on"><div class="k">{rich(f.get('recommend_label') or u['recommend'])}</div><ul>{li(f['recommend'])}</ul></div>
   </div>'''
+  ill = f'<figure class="fx-ill"><img src="{data_uri(os.path.join(T, "assets", "illustrations", f["illustration"] + ".webp"))}" alt=""></figure>' if f.get('illustration') else ''
   body = f'''  <h1>{rich(f['title'])}</h1>
   <p class="lede">{rich(f['statement'])}</p>
+  {ill}
   {grid}
   {f'<p class="note" style="margin-top:18px">{rich(f["why"])}</p>' if f.get('why') else ''}'''
   pg.add('focus', f.get('nav') or u['focus'], body)
@@ -193,6 +195,8 @@ def sp_body(u, ph, dl):
   if ph.get('visual'):
     svg = read(os.path.join(T, 'visuals', ph['visual'] + '.svg'))
     vis = f'<figure class="sp-vis">{svg}<figcaption>{u["illustrative"]}</figcaption></figure>'
+  elif ph.get('illustration'):
+    vis = f'<figure class="sp-ill"><img src="{data_uri(os.path.join(T, "assets", "illustrations", ph["illustration"] + ".webp"))}" alt=""></figure>'
   if items and all(isinstance(d, dict) for d in items):
     gets = ''.join((f'<li tabindex="0"><span class="sp-ck">✓</span><span class="sp-h">{rich(d["h"])}</span><span class="tip" role="tooltip">{rich(d["p"])}</span></li>' if d.get('p')
                     else f'<li><span class="sp-ck">✓</span><span class="sp-h">{rich(d["h"])}</span></li>') for d in items)
@@ -330,7 +334,10 @@ def sec_start(pg, P, company):
       acc = acc.replace(en_s, v)
   acc = acc.replace('<div class="label">Start</div>\n  <h2>Ready to <em>start?</em></h2>\n', '')
   acc = acc.replace('<div class="acc"', f'<div class="acc" data-fee="{(company.get("card") or {}).get("fee_pct", 0)}" data-api="{esc(P.get("accept_api", "/api/accept"))}" data-lang="{pg.lang}"', 1)
-  body = f'''  <h1>{rich(P.get('closing', 'Ready to build <em>your Eureka moment?</em>' if pg.lang == 'en' else '¿Listos para construir <em>tu momento Eureka?</em>'))}</h1>
+  h1 = f'''<h1>{rich(P.get('closing', 'Ready to build <em>your Eureka moment?</em>' if pg.lang == 'en' else '¿Listos para construir <em>tu momento Eureka?</em>'))}</h1>'''
+  if P.get('closing_illustration'):
+    h1 = f'<div class="st-close">{h1}<img src="{data_uri(os.path.join(T, "assets", "illustrations", P["closing_illustration"] + ".webp"))}" alt=""></div>'
+  body = f'''  {h1}
   <p class="lede">{u['valid']} <b>{esc(fmt_date(P['valid_until'], pg.lang))}</b>. {u['starts']}: <b>{esc(P.get('start', ''))}</b>.</p>
   {f'<div class="sec-sm"><div class="label">{u["next"]}</div><ul class="next">{nx}</ul></div>' if nx else ''}
   {acc}'''
