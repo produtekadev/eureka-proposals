@@ -45,7 +45,7 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
   },
 
   "proposal": {
-    "title": "Two phases,<br><em>clear prices.</em>",
+    "title": "What we'll build<br><em>and what it costs.</em>",
     "intro": "One or two sentences.",
     "currency": "USD",
     "phases": [

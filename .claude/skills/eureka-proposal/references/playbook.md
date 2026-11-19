@@ -39,7 +39,8 @@ From accepted proposals (Nickel AI, Ofiuko, Rojo Estudio Creativo, SISU, Trolley
 
 ## Wording that worked
 
-- Section titles: short, two lines, second line in italics (`What we<br><em>heard.</em>`, `Two phases,<br><em>clear prices.</em>`).
+- Section titles: short, two lines, second line in italics (`What we<br><em>heard.</em>`, `What we'll build<br><em>and what it costs.</em>`).
+- Proposal section title: use `What we'll build<br><em>and what it costs.</em>` (Spanish: `Lo que vamos a construir<br><em>y lo que cuesta.</em>`). The team prefers it to "N phases, clear prices", which sounds generated.
 - Pains: a bold short name, one line in their words, one line of consequence.
 - "Opportunity": why now (an upcoming hire, a growth moment, a failed tool), in 2 sentences.
 - Closing: "We're ready to build *your Eureka moment.*" / "Listos para construir *tu momento Eureka.*"
