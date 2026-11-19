@@ -244,18 +244,18 @@
       }
     ],
     "included": [
-      "A 30-minute check-in with you and Katie every week",
-      "Questions answered async during the project",
+      "A meeting with you and Katie every week",
+      "A designated Slack channel with our team for questions during the project",
       "Your current Notion work kept and built on"
     ],
     "excluded": [
-      "AI agents per department and the Slack connection (on the roadmap, quoted after the audit)",
+      "AI agents per department and connecting Notion to Slack (on the roadmap, quoted after the audit)",
       "Live syncs with Shopify, Missive or email (defined in the roadmap, subject to technical feasibility)",
       "Moving the \"move later\" boards (the migration guide and templates show your team how)",
       "Moving files out of Google Drive (they stay in Drive, linked from Notion)",
       "Notion licenses"
     ],
-    "guarantee": "One month after launch to fix issues within the delivered scope, at no extra cost."
+    "guarantee": "Two weeks after launch to fix issues within the delivered scope, at no extra cost."
   },
   "payment": {
     "deposit_pct": 50,
