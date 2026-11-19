@@ -1,0 +1,283 @@
+{
+  "lang": "en",
+  "client": {
+    "company": "SYNC Performance",
+    "contact": "Alex Leever and Katie Gilligan",
+    "role": "Leadership team",
+    "location": "United States"
+  },
+  "prepared_by": [
+    "mateo",
+    "paula"
+  ],
+  "team": [
+    "abel"
+  ],
+  "notion_page_id": "",
+  "clients": [
+    "henkel",
+    "toggl-hire",
+    "foton",
+    "bid",
+    "daughters-for-earth"
+  ],
+  "date": "2026-11-19",
+  "valid_until": "2026-12-03",
+  "start": "Week of November 30",
+  "cover": {
+    "tag": "Implementation proposal",
+    "headline": "Everything SYNC knows,<br><em>in one</em> <span class=\"hl\">place.</span>",
+    "lede": "A three-phase plan to move SYNC from Monday and scattered Drive folders into one Notion workspace that every department uses, ready for January. Based on our conversations on October 23 and November 17.",
+    "glance": [
+      {
+        "k": "Focus",
+        "h": "One source of truth",
+        "p": "Departments, OKRs, products and the Monday boards that can't stop."
+      },
+      {
+        "k": "Total · USD 3,100",
+        "h": "Audit, build and training",
+        "p": "Three phases in about five weeks."
+      },
+      {
+        "k": "Launch",
+        "h": "Week of January 4",
+        "p": "With training for the whole team."
+      }
+    ]
+  },
+  "context": {
+    "title": "What we<br><em>heard.</em>",
+    "lede": "SYNC Performance is an apparel company running ops, sales and product across Monday, Google Drive, Slack, Missive, Shopify and Granola. You and Katie started a Notion workspace and saw the benefit, but <b>peak season leaves no time to finish it while running the business.</b>",
+    "stats": [
+      {
+        "n": "~10",
+        "t": "people on the team by January"
+      },
+      {
+        "n": "30",
+        "t": "Monday boards actively maintained, by your estimate"
+      },
+      {
+        "n": "4",
+        "t": "people already testing Notion"
+      }
+    ],
+    "pains_title": "Three things <em>slowing down</em> the team.",
+    "pains": [
+      {
+        "k": "Context",
+        "h": "No central hub",
+        "it": "\"Every little instance of communication doesn't have a central database.\"",
+        "p": "Updates live in Slack threads and personal AI chats. When Katie is out, the all-hands recap doesn't go out, and nobody can ask their AI what the rest of the team did today."
+      },
+      {
+        "k": "Product",
+        "h": "Knowledge stuck in Drive",
+        "it": "\"Why is this jacket have this fabric this year and it had this other fabric last year?\"",
+        "p": "Tech packs sit in Drive folders, so answers depend on finding the right file or asking your VP of product directly."
+      },
+      {
+        "k": "Tools",
+        "h": "Monday is slow and costly",
+        "it": "\"The website is slow. It doesn't load, it blanks out.\"",
+        "p": "You pay for the CRM and work management separately, plus AI credits, and the team still asks each other on Slack for status."
+      }
+    ],
+    "quote": {
+      "text": "We don't want to deliver a new piece of software, say, 'Go figure it out,' and then people revert back to using things how they used to.",
+      "who": "Alex Leever"
+    },
+    "opportunity": "You and Katie already proved Notion works for your team. <b>Peak season is the right time for us to build the rest</b>, so everyone starts January with their department set up and the training to use it."
+  },
+  "focus": {
+    "title": "What success<br><em>looks like.</em>",
+    "statement": "In your words, success is launching in January with every department set up and ready to go, and a team that actually uses it. <b>Our focus: one shared place where your team and its AI tools find the same up-to-date answers, starting with the boards that can't stop, so Monday can be switched off without breaking anything.</b>",
+    "asked": [
+      "Every department with its weekly framework, OKRs and marketing boards, ready to go",
+      "Monday replaced, with the CRM kept running",
+      "Your Drive spreadsheets brought into one internal database",
+      "Product knowledge, like tech packs, that anyone can look up",
+      "An AI agent per department, up to speed and in Slack",
+      "Training so the team doesn't go back to old habits"
+    ],
+    "recommend": [
+      "A teamspace and weekly framework for every department, with OKRs and meetings in one place",
+      "The critical Monday boards migrated first, the CRM only once we confirm Notion is the right home for it",
+      "A Products database with your tech packs, for the team and for customer service",
+      "Key Drive sheets linked and searchable by AI, instead of copied over",
+      "Two training sessions: one for you and Katie, one for the whole team",
+      "Agents per department and Slack next, once every team's information is in place"
+    ],
+    "why": "Agents are only as good as the information they read. Getting every department into one clean structure first means the agents you add next start with the right context."
+  },
+  "proposal": {
+    "title": "Three phases,<br><em>clear prices.</em>",
+    "intro": "Each phase has its own price and they add up to one fixed total. Under each phase you'll see what we deliver and what we need from you.",
+    "currency": "USD",
+    "phases": [
+      {
+        "id": "audit",
+        "name": "Information audit and roadmap",
+        "tag": "essential",
+        "price": 600,
+        "weeks": 1,
+        "summary": "We talk to each team, find what information they need and where it lives today, and decide where it should live in Notion.",
+        "deliverables": [
+          {
+            "h": "Team interviews",
+            "p": "Up to 6 interviews of 30 minutes with your department leads, including Katie on the CRM. Scheduled around peak season."
+          },
+          {
+            "h": "Information audit",
+            "p": "For each team, the indicators it needs (sales, inventory, ads, OKRs), where that information lives today across Monday, Drive, Shopify and Slack, and where it should live."
+          },
+          {
+            "h": "Monday board inventory",
+            "p": "Every active board marked as migrate now, move later or archive only. You approve the list before we move anything."
+          },
+          {
+            "h": "Workspace architecture",
+            "p": "Teamspaces, core databases and how they connect, so people and AI find things the same way."
+          },
+          {
+            "h": "Roadmap and migration guide",
+            "p": "What comes next (agents per department, Slack, Shopify and other integrations, subject to technical feasibility) and the steps to move the remaining boards."
+          }
+        ],
+        "you_do": [
+          "Give us access to Monday, Drive and your current Notion",
+          "Book the interviews with your department leads",
+          "Approve the board list and the architecture"
+        ]
+      },
+      {
+        "id": "build",
+        "name": "Core workspace, products and migration",
+        "tag": "essential",
+        "price": 2000,
+        "weeks": 3,
+        "summary": "Every department set up in Notion, your product knowledge in one database, and the boards that can't stop moved from Monday.",
+        "deliverables": [
+          {
+            "h": "Department teamspaces",
+            "p": "One per department, with its weekly framework, marketing boards and the views each team uses."
+          },
+          {
+            "h": "OKRs and weekly meetings",
+            "p": "Objectives, key results and weekly meetings in one place, with Notion AI meeting notes, so a weekly topic list can become an SOP by the end of the quarter."
+          },
+          {
+            "h": "Products database",
+            "p": "One entry per product with its tech pack, supplier, fabrics and key specs, plus a field for why something changed from last season. The team and customer service look up answers here instead of asking your VP of product."
+          },
+          {
+            "h": "Critical boards migrated",
+            "p": "The boards marked \"migrate now\" in phase 01, up to 10, moved from Monday with their active records. The CRM is included if the audit confirms Notion is the right home for it."
+          },
+          {
+            "h": "The rest of Monday",
+            "p": "The history of every board exported to one archive linked from Notion, so you keep the record without old boards in the way. The \"move later\" boards get a ready template and steps in the migration guide, so your team moves them at its own pace."
+          },
+          {
+            "h": "Drive connected",
+            "p": "Key sheets like inventory and catalogs linked from the right databases, and Drive connected so Notion AI can search it."
+          },
+          {
+            "h": "What you've built, folded in",
+            "p": "Your memory database, agent operating guide, task tracker, OKR board and CRM reviewed and merged into the new structure."
+          }
+        ],
+        "you_do": [
+          "Check the migrated data on each board",
+          "Set a cutover date for each board",
+          "Your VP of product reviews the Products database and adds the reasons behind changes"
+        ],
+        "callout": {
+          "label": "Example",
+          "title": "Your Products database",
+          "lede": "Ask about any product in plain words.",
+          "items": [
+            {
+              "q": "Why does this jacket have a different fabric this year?",
+              "a": "The reason, right in the product",
+              "icon": "purple-shape"
+            },
+            {
+              "q": "A customer is asking what this product is made of.",
+              "a": "Answers for customer service",
+              "icon": "magenta-shape"
+            },
+            {
+              "q": "Which supplier makes this style, and where is the tech pack?",
+              "a": "Supplier and specs in one place",
+              "icon": "orange-cross"
+            }
+          ],
+          "note": "Illustrative. We define the fields with your VP of product."
+        }
+      },
+      {
+        "id": "training",
+        "name": "Training and launch",
+        "tag": "essential",
+        "price": 500,
+        "weeks": 1,
+        "summary": "Two sessions so you and Katie can run the system, and the team uses it from day one.",
+        "deliverables": [
+          {
+            "h": "Admin session with Alex and Katie",
+            "p": "How the workspace is built, how to keep it clean, and how to add boards and teams."
+          },
+          {
+            "h": "Team session",
+            "p": "Daily use for everyone: your department's space, OKRs and meetings, and finding products and information."
+          },
+          {
+            "h": "Recordings and team guide",
+            "p": "Both sessions recorded, plus a one-page guide for new hires."
+          }
+        ],
+        "you_do": [
+          "Attend both sessions",
+          "Switch off the migrated Monday boards"
+        ]
+      }
+    ],
+    "included": [
+      "A 30-minute check-in with you and Katie every week",
+      "Questions answered async during the project",
+      "Your current Notion work kept and built on"
+    ],
+    "excluded": [
+      "AI agents per department and the Slack connection (on the roadmap, quoted after the audit)",
+      "Live syncs with Shopify, Missive or email (defined in the roadmap, subject to technical feasibility)",
+      "Moving the \"move later\" boards (the migration guide and templates show your team how)",
+      "Moving files out of Google Drive (they stay in Drive, linked from Notion)",
+      "Notion licenses"
+    ],
+    "guarantee": "One month after launch to fix issues within the delivered scope, at no extra cost."
+  },
+  "payment": {
+    "deposit_pct": 50,
+    "schedule": "50% when you accept (USD 1,550), 50% on delivery (USD 1,550). By bank transfer."
+  },
+  "next_steps": [
+    {
+      "when": "Today",
+      "h": "Accept and send the deposit",
+      "p": "Right here, below."
+    },
+    {
+      "when": "Once we receive it",
+      "h": "Kickoff and interviews",
+      "p": "We email you the kickoff link and book the interviews with your leads."
+    },
+    {
+      "when": "Week of November 30",
+      "h": "Audit starts",
+      "p": "Build through December, training the week of January 4."
+    }
+  ],
+  "closing": "We're ready to build<br><em>your Eureka moment.</em>"
+}
