@@ -30,7 +30,7 @@
       {
         "k": "Focus",
         "h": "One source of truth",
-        "p": "Departments, OKRs, products and the Monday boards that can't stop."
+        "p": "Departments, OKRs, products and the critical Monday boards."
       },
       {
         "k": "Total · USD 3,100",
@@ -90,7 +90,7 @@
   },
   "focus": {
     "title": "What success<br><em>looks like.</em>",
-    "statement": "In your words, success is launching in January with every department set up and ready to go, and a team that actually uses it. <b>Our focus: one shared place where your team and its AI tools find the same up-to-date answers, starting with the boards that can't stop, so Monday can be switched off without breaking anything.</b>",
+    "statement": "In your words, success is launching in January with every department set up and ready to go, and a team that actually uses it. <b>Our focus: one shared place where your team and its AI tools find the same up-to-date answers, starting with the critical Monday boards, so Monday can be switched off without breaking anything.</b>",
     "asked": [
       "Every department with its weekly framework, OKRs and marketing boards, ready to go",
       "Monday replaced, with the CRM kept running",
@@ -154,7 +154,7 @@
         "tag": "essential",
         "price": 2000,
         "weeks": 3,
-        "summary": "Every department set up in Notion, your product knowledge in one database, and the boards that can't stop moved from Monday.",
+        "summary": "Every department set up in Notion, your product knowledge in one database, and the critical Monday boards moved over.",
         "deliverables": [
           {
             "h": "Department teamspaces",
