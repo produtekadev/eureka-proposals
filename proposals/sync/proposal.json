@@ -234,6 +234,11 @@
     },
     {
       "when": "Once we receive it",
+      "h": "Sign the NDA",
+      "p": "We send you an NDA to sign before the kickoff, so everything we see in your workspace stays confidential."
+    },
+    {
+      "when": "After the NDA",
       "h": "Kickoff and interviews",
       "p": "We email you the kickoff link and book the interviews with your leads."
     },
