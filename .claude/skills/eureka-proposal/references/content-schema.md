@@ -41,7 +41,10 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
     "statement": "The focus sentence and why.",
     "asked": ["everything they asked for"],
     "recommend": ["what we recommend, in order"],
-    "why": "One sentence on the main trade-off."                         // optional
+    "why": "One sentence on the main trade-off.",                        // optional
+    "nav": "Goal",                                                       // optional: renames the section in the menu (default "Focus")
+    "asked_label": "Today",                                              // optional: left column label (default "What you asked for")
+    "recommend_label": "After working with us"                           // optional: right column label (default "What we recommend")
   },
 
   "proposal": {

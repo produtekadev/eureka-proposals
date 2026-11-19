@@ -14,7 +14,7 @@
     {
       "id": "build",
       "name": "Core workspace, products and migration",
-      "price": 2000,
+      "price": 2400,
       "tag": "essential"
     },
     {
@@ -69,6 +69,6 @@
   ],
   "notion_page_id": "41dc9f5c-dca8-8000-9bd5-daed37e5b4e1",
   "card_fee_pct": 4,
-  "stripe_url": "https://buy.stripe.com/eVqbJ05Y19xGggUgsN6Ri1h",
+  "stripe_url": "https://buy.stripe.com/8x29AS3PT39ie8M1xT6Ri1k",
   "url": "https://proposals.eureka.ceo/sync"
 }

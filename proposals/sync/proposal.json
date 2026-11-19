@@ -28,12 +28,12 @@
     "lede": "A three-phase plan to move SYNC Performance from Monday and scattered Drive folders into one Notion workspace that every department uses, ready for January. Based on our conversations on October 23 and November 17.",
     "glance": [
       {
-        "k": "Focus",
+        "k": "Goal",
         "h": "One source of truth",
-        "p": "Departments, OKRs, products and the critical Monday boards."
+        "p": "Every team and AI tool working from the same information."
       },
       {
-        "k": "Total · USD 3,100",
+        "k": "Total · USD 3,500",
         "h": "Audit, build and training",
         "p": "Three phases in about five weeks."
       },
@@ -89,28 +89,30 @@
     "opportunity": "You and Katie already proved Notion works for your team. <b>Peak season is the right time for us to build the rest</b>, so everyone starts January with their department set up and the training to use it."
   },
   "focus": {
-    "title": "What success<br><em>looks like.</em>",
-    "statement": "In your words, success is launching in January with every department set up and ready to go, and a team that actually uses it. <b>Our focus: one shared place where your team and its AI tools find the same up-to-date answers, starting with the critical Monday boards, so Monday can be switched off without breaking anything.</b>",
+    "title": "What changes<br><em>for your team.</em>",
+    "statement": "<b>One place where everyone on the team, and every AI tool they use, finds the same up-to-date answer.</b> No more asking on Slack for a status, product knowledge that doesn't depend on one person, and a team that starts January ready to work in Notion.",
+    "nav": "Goal",
+    "asked_label": "Today",
+    "recommend_label": "From January",
     "asked": [
-      "Every department with its weekly framework, OKRs and marketing boards, ready to go",
-      "Monday replaced, with the CRM kept running",
-      "Your Drive spreadsheets brought into one internal database",
-      "Product knowledge, like tech packs, that anyone can look up",
-      "An AI agent per department, up to speed and in Slack",
-      "Training so the team doesn't go back to old habits"
+      "Status updates are scattered across Slack threads and personal AI chats",
+      "Product questions wait on a Drive search or on your VP of product",
+      "The weekly all-hands recap depends on Katie being in",
+      "You pay for two Monday products, plus AI credits",
+      "Each AI bot only knows what its owner told it"
     ],
     "recommend": [
-      "A teamspace and weekly framework for every department, with OKRs and meetings in one place",
-      "The critical Monday boards migrated first, the CRM only once we confirm Notion is the right home for it",
-      "A Products database with your tech packs, for the team and for customer service",
-      "Key Drive sheets linked and searchable by AI, instead of copied over",
-      "Two training sessions: one for you and Katie, one for the whole team"
+      "Every department runs its OKRs, meetings and boards in one workspace",
+      "Anyone, including customer service, answers product questions from one database",
+      "Meeting notes are saved automatically, whoever runs the meeting",
+      "Your critical boards run in Notion instead of Monday",
+      "Claude and your other AI tools read the same company context"
     ],
-    "why": "Agents are only as good as the information they read. Getting every department into one clean structure first means the agents you add next start with the right context."
+    "why": "The three phases below are how we get there, in about five weeks."
   },
   "proposal": {
     "title": "What we'll build<br><em>and what it costs.</em>",
-    "intro": "Each phase has its own price and they add up to one fixed total. Under each phase you'll see what we deliver and what we need from you.",
+    "intro": "Each phase has its own price and they add up to one fixed total.",
     "currency": "USD",
     "phases": [
       {
@@ -119,27 +121,27 @@
         "tag": "essential",
         "price": 600,
         "weeks": 1,
-        "summary": "We talk to each team, find what information they need and where it lives today, and decide where it should live in Notion.",
+        "summary": "We meet each team, map the metrics they need and where they live, and design the workspace around that.",
         "deliverables": [
           {
             "h": "Team interviews",
-            "p": "Up to 6 interviews of 30 minutes with your department leads, including Katie on the CRM. Scheduled around peak season."
+            "p": "Up to 6 calls of 30 minutes with your department leads, Katie included."
           },
           {
             "h": "Data and metrics audit",
-            "p": "For each team, the metrics it needs (sales, inventory, ads, OKRs), where that information lives today across Monday, Drive, Shopify and Slack, and where it should live."
+            "p": "The metrics each team needs and where they should live."
           },
           {
             "h": "Monday board inventory",
-            "p": "Every active board marked as migrate now, move later or archive only. You approve the list before we move anything."
+            "p": "Each board marked migrate now, move later or archive. You approve the list."
           },
           {
             "h": "Workspace architecture",
-            "p": "Teamspaces, core databases and how they connect, so people and AI find things the same way."
+            "p": "How your teamspaces and databases connect."
           },
           {
             "h": "Roadmap and migration guide",
-            "p": "What comes next (agents per department, Slack, Shopify and other integrations, subject to technical feasibility) and the steps to move the remaining boards."
+            "p": "What comes next, and how to move the remaining boards."
           }
         ]
       },
@@ -147,58 +149,35 @@
         "id": "build",
         "name": "Core workspace, products and migration",
         "tag": "essential",
-        "price": 2000,
+        "price": 2400,
         "weeks": 3,
-        "summary": "Every department set up in Notion, your product knowledge in one database, and the critical Monday boards moved over.",
+        "summary": "Every department working in Notion, your product knowledge in one place, and the critical Monday boards moved over.",
         "deliverables": [
           {
             "h": "Department teamspaces",
-            "p": "One per department, with its weekly framework, marketing boards and the views each team uses."
+            "p": "One per department, with its weekly framework and boards."
           },
           {
             "h": "OKRs and weekly meetings",
-            "p": "Objectives, key results and weekly meetings in one place, with Notion AI meeting notes, so a weekly topic list can become an SOP by the end of the quarter."
+            "p": "Goals and meetings in one place, with AI meeting notes."
           },
           {
             "h": "Products database",
-            "p": "One entry per product with its tech pack, supplier, fabrics and key specs, plus a field for why something changed from last season. The team and customer service look up answers here instead of asking your VP of product."
+            "p": "Every product with its tech pack, specs and why it changed, ready for customer service."
           },
           {
             "h": "Critical boards migrated",
-            "p": "The boards marked \"migrate now\" in phase 01, up to 10, moved from Monday with their active records. The CRM is included if the audit confirms Notion is the right home for it."
+            "p": "Up to 10 boards moved from Monday with their active records. The CRM too, if the audit confirms Notion fits."
           },
           {
             "h": "Drive connected",
-            "p": "Key sheets like inventory and catalogs linked from the right databases, and Drive connected so Notion AI can search it."
+            "p": "Key sheets linked and searchable by Notion AI."
           },
           {
             "h": "Optimized operating guide",
-            "p": "Your agent operating guide rewritten for the new workspace, so Claude and any other AI tool your team uses read the same context. Your memory database, task tracker, OKR board and CRM are folded into the new structure."
+            "p": "One shared context for Claude and your other AI tools."
           }
-        ],
-        "callout": {
-          "label": "Example",
-          "title": "Your Products database",
-          "lede": "Ask about any product in plain words.",
-          "items": [
-            {
-              "q": "Why does this jacket have a different fabric this year?",
-              "a": "The reason, right in the product",
-              "icon": "purple-shape"
-            },
-            {
-              "q": "A customer is asking what this product is made of.",
-              "a": "Answers for customer service",
-              "icon": "magenta-shape"
-            },
-            {
-              "q": "Which supplier makes this style, and where is the tech pack?",
-              "a": "Supplier and specs in one place",
-              "icon": "orange-cross"
-            }
-          ],
-          "note": "Illustrative. We define the fields with your VP of product."
-        }
+        ]
       },
       {
         "id": "training",
@@ -210,15 +189,15 @@
         "deliverables": [
           {
             "h": "Admin session with Alex and Katie",
-            "p": "How the workspace is built, how to keep it clean, and how to add boards and teams."
+            "p": "How to run and grow the workspace."
           },
           {
             "h": "Team session",
-            "p": "Daily use for everyone: your department's space, OKRs and meetings, and finding products and information."
+            "p": "Daily use for everyone."
           },
           {
             "h": "Recordings and team guide",
-            "p": "Both sessions recorded, plus a one-page guide for new hires."
+            "p": "Both sessions recorded, plus a one-page guide."
           }
         ]
       }
@@ -239,8 +218,8 @@
   },
   "payment": {
     "deposit_pct": 50,
-    "schedule": "50% when you accept (USD 1,550), 50% on delivery (USD 1,550). By bank transfer, or by card through Stripe with a 4% card fee.",
-    "stripe_url": "https://buy.stripe.com/eVqbJ05Y19xGggUgsN6Ri1h"
+    "schedule": "50% when you accept (USD 1,750), 50% on delivery (USD 1,750). By bank transfer, or by card through Stripe with a 4% card fee.",
+    "stripe_url": "https://buy.stripe.com/8x29AS3PT39ie8M1xT6Ri1k"
   },
   "next_steps": [
     {

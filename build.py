@@ -160,11 +160,11 @@ def sec_focus(pg, P):
   body = f'''  <h1>{rich(f['title'])}</h1>
   <p class="lede">{rich(f['statement'])}</p>
   <div class="fx">
-    <div class="fx-c"><div class="k">{u['asked']}</div><ul>{li(f['asked'])}</ul></div>
-    <div class="fx-c on"><div class="k">{u['recommend']}</div><ul>{li(f['recommend'])}</ul></div>
+    <div class="fx-c"><div class="k">{rich(f.get('asked_label') or u['asked'])}</div><ul>{li(f['asked'])}</ul></div>
+    <div class="fx-c on"><div class="k">{rich(f.get('recommend_label') or u['recommend'])}</div><ul>{li(f['recommend'])}</ul></div>
   </div>
   {f'<p class="note" style="margin-top:18px">{rich(f["why"])}</p>' if f.get('why') else ''}'''
-  pg.add('focus', u['focus'], body)
+  pg.add('focus', f.get('nav') or u['focus'], body)
 
 def sp_body(u, ph, dl):
   # Deliverables can be plain strings (classic list) or {"h": short title, "p": detail}.
