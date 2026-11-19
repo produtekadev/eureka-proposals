@@ -21,7 +21,9 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
     "tag": "Implementation proposal",
     "headline": "One place to run<br><em>the whole</em> <span class=\"hl\">studio.</span>",
     "lede": "One or two sentences: what this plan does and the call it's based on.",
-    "glance": [ { "k": "small label", "h": "title", "p": "one line" } ]   // 3 items, optional
+    "glance": [ { "k": "small label", "h": "title", "p": "one line" } ]   // 3 items, optional,
+    "goal": { "h": "One source of truth", "p": "One line on the outcome." },  // optional, preferred: minimal cover. Shows "The goal" and "Duration & price" (weeks and total, computed) first, and moves For / Prepared by / dates to a small line below. Replaces the meta row and the glance
+    "price_note": "Audit, build and training. Starts the week of November 30."  // optional, under the duration and price
   },
 
   "context": {

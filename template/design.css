@@ -134,6 +134,15 @@ h3{font-weight:700;letter-spacing:-.015em;font-size:1.15rem;margin:0;line-height
 .glance>div{border-top:1px solid var(--ink);padding-top:14px}
 .glance .n{font-style:italic;font-weight:500;color:var(--purple);font-size:.95rem}
 .glance h3{margin-top:4px}
+.cv-key{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px}
+.cv-key>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+.cv-key .k{font-style:italic;font-weight:500;color:var(--purple);font-size:.95rem}
+.cv-key h3{margin-top:6px;font-size:1.3rem;line-height:1.25}
+.cv-key h3 em{font-style:italic;font-weight:600;color:var(--purple)}
+.cv-key p{margin-top:6px;color:var(--muted);font-size:.95rem}
+.cv-foot{margin-top:28px;padding-top:14px;border-top:1px solid var(--line);font-size:.82rem;line-height:1.6;color:var(--muted)}
+.cv-foot b{color:var(--ink);font-weight:600}
+@media (max-width:620px){.cv-key{grid-template-columns:1fr}}
 .glance p{color:var(--muted);font-size:.95rem;margin-top:6px}
 @media (max-width:760px){.glance{grid-template-columns:1fr;gap:18px}}
 

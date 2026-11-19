@@ -26,24 +26,12 @@
   "cover": {
     "tag": "Implementation proposal",
     "headline": "Everything SYNC Performance knows,<br><em>in one</em> <span class=\"hl\">place.</span>",
-    "lede": "A three-phase plan to move SYNC Performance from Monday and scattered Drive folders into one Notion workspace that every department uses, ready for January. Based on our conversations on October 23 and November 17.",
-    "glance": [
-      {
-        "k": "Goal",
-        "h": "One source of truth",
-        "p": "Every team and AI tool working from the same information."
-      },
-      {
-        "k": "Total · USD 3,500",
-        "h": "Audit, build and training",
-        "p": "Three phases in about five weeks."
-      },
-      {
-        "k": "Launch",
-        "h": "Week of January 4",
-        "p": "With training for the whole team."
-      }
-    ]
+    "lede": "A three-phase plan to move SYNC Performance from Monday and scattered Drive folders into one Notion workspace that every department uses. Based on our conversations on October 23 and November 17.",
+    "goal": {
+      "h": "One source of truth",
+      "p": "Every team and AI tool working from the same information."
+    },
+    "price_note": "Audit, build and training. Starts the week of November 30."
   },
   "context": {
     "title": "What we<br><em>heard.</em>",

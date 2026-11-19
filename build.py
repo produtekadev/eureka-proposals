@@ -26,7 +26,7 @@ UI = {
     'guarantee': 'Guarantee', 'team': 'Your team', 'clients': 'Some of our clients', 'partner': 'Notion Consulting Partner',
     'partner_text': 'Certified by Notion to design and implement workspaces.',
     'asked': 'What you asked for', 'recommend': 'What we recommend', 'next': 'Next steps',
-    'valid': 'Proposal valid until', 'starts': 'Projected start',
+    'valid': 'Proposal valid until', 'starts': 'Projected start', 'the_goal': 'The goal', 'dur_price': 'Duration & price', 'valid_short': 'valid until',
     'accepting': "You're accepting", 'accept_btn': 'Accept proposal →', 'name': 'Full name', 'email': 'Email',
     'i_accept': 'I accept this proposal and the', 'terms': 'terms and conditions', 'read_terms': 'Read the terms',
     'submit': 'Accept and see payment details', 'accepted_by': 'Accepted by', 'on': 'on',
@@ -51,7 +51,7 @@ UI = {
     'guarantee': 'Garantía', 'team': 'Tu equipo', 'clients': 'Algunos de nuestros clientes', 'partner': 'Notion Consulting Partner',
     'partner_text': 'Certificados por Notion para diseñar e implementar workspaces.',
     'asked': 'Lo que nos pidieron', 'recommend': 'Lo que recomendamos', 'next': 'Próximos pasos',
-    'valid': 'Propuesta válida hasta', 'starts': 'Inicio proyectado',
+    'valid': 'Propuesta válida hasta', 'starts': 'Inicio proyectado', 'the_goal': 'El objetivo', 'dur_price': 'Duración y precio', 'valid_short': 'válida hasta',
     'accepting': 'Estás aceptando', 'accept_btn': 'Aceptar propuesta →', 'name': 'Nombre completo', 'email': 'Email',
     'i_accept': 'Acepto esta propuesta y los', 'terms': 'términos y condiciones', 'read_terms': 'Leer los términos',
     'submit': 'Aceptar y ver datos de pago', 'accepted_by': 'Aceptada por', 'on': 'el',
@@ -126,7 +126,18 @@ def sec_cover(pg, P, team):
     <div><div class="k">{u['duration']}</div><div class="v">{rich(P.get('duration_label') or f'<em>{weeks}</em> {u["weeks"]}')}</div><div class="d">{esc(P.get('start', ''))}</div></div>
     <div><div class="k">{u['date']}</div><div class="v">{esc(fmt_date(P['date'], pg.lang))}</div><div class="d">{u['valid']} {esc(fmt_date(P['valid_until'], pg.lang))}</div></div>
   </div>'''
-  if glance:
+  if cv.get('goal'):
+    # Minimal cover: goal and duration/price first, who and when in a small footer line.
+    g = cv['goal']
+    total = sum(ph['price'] for ph in P['proposal']['phases'])
+    dur = rich(P.get('duration_label') or f'<em>{weeks}</em> {u["weeks"]}')
+    head = body.split('  <div class="meta">')[0]
+    body = head + f'''  <div class="cv-key">
+    <div><div class="k">{u['the_goal']}</div><h3>{rich(g['h'])}</h3><p>{rich(g.get('p', ''))}</p></div>
+    <div><div class="k">{u['dur_price']}</div><h3>{dur} · {esc(fmt_money(total, P['proposal'].get('currency', 'USD')))}</h3><p>{rich(cv.get('price_note', ''))}</p></div>
+  </div>
+  <p class="cv-foot">{u['for']} <b>{esc(c['company'])}</b>{' · ' + esc(c['contact']) if c.get('contact') else ''} · {u['prepared_by']} <b>{esc(prep)}</b>, Eureka · {esc(fmt_date(P['date'], pg.lang))}, {u['valid_short']} {esc(fmt_date(P['valid_until'], pg.lang))}</p>'''
+  elif glance:
     body += f'\n  <div class="sec-sm"><div class="glance">{glance}</div></div>'
   pg.add('cover', u['cover'], body)
 
