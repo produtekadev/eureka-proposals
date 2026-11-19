@@ -67,8 +67,8 @@
       ]
     }
   ],
-  "notion_page_id": "",
+  "notion_page_id": "41dc9f5c-dca8-8000-9bd5-daed37e5b4e1",
   "card_fee_pct": 4,
-  "stripe_url": null,
+  "stripe_url": "https://buy.stripe.com/eVqbJ05Y19xGggUgsN6Ri1h",
   "url": "https://proposals.eureka.ceo/sync"
 }

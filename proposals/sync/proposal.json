@@ -11,7 +11,7 @@
     "paula"
   ],
   "team": [],
-  "notion_page_id": "",
+  "notion_page_id": "41dc9f5c-dca8-8000-9bd5-daed37e5b4e1",
   "clients": [
     "henkel",
     "toggl-hire",
@@ -257,7 +257,8 @@
   },
   "payment": {
     "deposit_pct": 50,
-    "schedule": "50% when you accept (USD 1,550), 50% on delivery (USD 1,550). By bank transfer."
+    "schedule": "50% when you accept (USD 1,550), 50% on delivery (USD 1,550). By bank transfer, or by card through Stripe with a 4% card fee.",
+    "stripe_url": "https://buy.stripe.com/eVqbJ05Y19xGggUgsN6Ri1h"
   },
   "next_steps": [
     {
