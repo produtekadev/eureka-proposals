@@ -141,11 +141,6 @@
             "h": "Roadmap and migration guide",
             "p": "What comes next (agents per department, Slack, Shopify and other integrations, subject to technical feasibility) and the steps to move the remaining boards."
           }
-        ],
-        "you_do": [
-          "Give us access to Monday, Drive and your current Notion",
-          "Book the interviews with your department leads",
-          "Approve the board list and the architecture"
         ]
       },
       {
@@ -180,11 +175,6 @@
             "h": "Optimized operating guide",
             "p": "Your agent operating guide rewritten for the new workspace, so Claude and any other AI tool your team uses read the same context. Your memory database, task tracker, OKR board and CRM are folded into the new structure."
           }
-        ],
-        "you_do": [
-          "Check the migrated data on each board",
-          "Set a cutover date for each board",
-          "Your VP of product reviews the Products database and adds the reasons behind changes"
         ],
         "callout": {
           "label": "Example",
@@ -230,10 +220,6 @@
             "h": "Recordings and team guide",
             "p": "Both sessions recorded, plus a one-page guide for new hires."
           }
-        ],
-        "you_do": [
-          "Attend both sessions",
-          "Switch off the migrated Monday boards"
         ]
       }
     ],
