@@ -67,7 +67,7 @@
         "k": "Context",
         "h": "No central hub",
         "it": "\"Every little instance of communication doesn't have a central database.\"",
-        "p": "Updates live in Slack threads and personal AI chats. When Katie is out, the all-hands recap doesn't go out, and nobody can ask their AI what the rest of the team did today."
+        "p": "Updates live in Slack threads and personal AI chats. When the person who owns an update is out, it doesn't go out, and nobody can ask their AI what the rest of the team did today."
       },
       {
         "k": "Product",
