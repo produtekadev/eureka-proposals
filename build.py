@@ -157,12 +157,18 @@ def sec_context(pg, P):
 def sec_focus(pg, P):
   u, f = pg.u, P['focus']
   li = lambda xs: ''.join(f'<li>{rich(v)}</li>' for v in xs)
-  body = f'''  <h1>{rich(f['title'])}</h1>
-  <p class="lede">{rich(f['statement'])}</p>
-  <div class="fx">
+  if f.get('benefits'):
+    ico = lambda x: f'<img class="bn-i" src="{data_uri(os.path.join(T, "assets", "icons", x["icon"] + ".png"))}" alt="">' if x.get('icon') else ''
+    cards = ''.join(f'<div class="bn-c">{ico(x)}<h3>{rich(x["h"])}</h3><p>{rich(x["p"])}</p></div>' for x in f['benefits'])
+    grid = f'<div class="bn">{cards}</div>'
+  else:
+    grid = f'''<div class="fx">
     <div class="fx-c"><div class="k">{rich(f.get('asked_label') or u['asked'])}</div><ul>{li(f['asked'])}</ul></div>
     <div class="fx-c on"><div class="k">{rich(f.get('recommend_label') or u['recommend'])}</div><ul>{li(f['recommend'])}</ul></div>
-  </div>
+  </div>'''
+  body = f'''  <h1>{rich(f['title'])}</h1>
+  <p class="lede">{rich(f['statement'])}</p>
+  {grid}
   {f'<p class="note" style="margin-top:18px">{rich(f["why"])}</p>' if f.get('why') else ''}'''
   pg.add('focus', f.get('nav') or u['focus'], body)
 

@@ -90,25 +90,41 @@
   },
   "focus": {
     "title": "What changes<br><em>for your team.</em>",
-    "statement": "<b>One place where everyone on the team, and every AI tool they use, finds the same up-to-date answer.</b> No more asking on Slack for a status, product knowledge that doesn't depend on one person, and a team that starts January ready to work in Notion.",
+    "statement": "<b>One place where everyone on the team, and every AI tool they use, finds the same up-to-date answer.</b>",
     "nav": "Goal",
-    "asked_label": "Today",
-    "recommend_label": "From January",
-    "asked": [
-      "Status updates are scattered across Slack threads and personal AI chats",
-      "Product questions wait on a Drive search or on your VP of product",
-      "The weekly all-hands recap depends on Katie being in",
-      "You pay for two Monday products, plus AI credits",
-      "Each AI bot only knows what its owner told it"
-    ],
-    "recommend": [
-      "Every department runs its OKRs, meetings and boards in one workspace",
-      "Anyone, including customer service, answers product questions from one database",
-      "Meeting notes are saved automatically, whoever runs the meeting",
-      "Your critical boards run in Notion instead of Monday",
-      "Claude and your other AI tools read the same company context"
-    ],
-    "why": "The three phases below are how we get there, in about five weeks."
+    "why": "The three phases below are how we get there, in about five weeks.",
+    "benefits": [
+      {
+        "icon": "purple-shape",
+        "h": "Every team in one place",
+        "p": "Each department runs its OKRs, weekly meetings and boards in the same workspace."
+      },
+      {
+        "icon": "magenta-shape",
+        "h": "Product answers for anyone",
+        "p": "The team and customer service look up any product, its tech pack and why it changed."
+      },
+      {
+        "icon": "orange-cross",
+        "h": "Meeting notes saved for you",
+        "p": "Notes and recaps are saved after every meeting, whoever runs it."
+      },
+      {
+        "icon": "purple-shape",
+        "h": "One memory for every AI",
+        "p": "ChatGPT, Claude or Grok: whichever model each person prefers, it reads the same company context."
+      },
+      {
+        "icon": "magenta-shape",
+        "h": "No AI credits to buy",
+        "p": "You're not tied to one platform's AI. Your team connects the models it already uses."
+      },
+      {
+        "icon": "orange-cross",
+        "h": "Critical boards out of Monday",
+        "p": "The boards that run the business live in Notion instead of Monday."
+      }
+    ]
   },
   "proposal": {
     "title": "What we'll build<br><em>and what it costs.</em>",

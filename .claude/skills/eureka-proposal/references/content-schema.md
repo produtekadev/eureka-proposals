@@ -44,7 +44,8 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
     "why": "One sentence on the main trade-off.",                        // optional
     "nav": "Goal",                                                       // optional: renames the section in the menu (default "Focus")
     "asked_label": "Today",                                              // optional: left column label (default "What you asked for")
-    "recommend_label": "After working with us"                           // optional: right column label (default "What we recommend")
+    "recommend_label": "After working with us",                          // optional: right column label (default "What we recommend")
+    "benefits": [ { "icon": "purple-shape", "h": "Short benefit", "p": "One line on what changes for them." } ]   // optional: replaces the two columns with icon cards (icons: purple-shape, magenta-shape, orange-cross, heart). Use it to frame the section as the goal: what the business looks like after working with us
   },
 
   "proposal": {

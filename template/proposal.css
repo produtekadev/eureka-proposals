@@ -12,6 +12,13 @@
 .fx-c li{padding:9px 0;border-top:1px solid var(--line);font-size:.98rem}
 .fx-c.on li{border-top-color:rgba(255,255,255,.25)}
 @media (max-width:760px){.fx{grid-template-columns:1fr}}
+.bn{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.bn-c{background:#F6EEFB;border:1px solid #E7D5F3;border-radius:12px;padding:20px 22px}
+.bn-i{display:block;width:24px;height:24px;object-fit:contain}
+.bn-c h3{margin:14px 0 0;font-size:1.02rem;font-weight:800;letter-spacing:-.01em;line-height:1.3}
+.bn-c p{margin-top:6px;font-size:.92rem;line-height:1.45;color:var(--muted)}
+@media (max-width:900px){.bn{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.bn{grid-template-columns:1fr}}
 
 /* Phases and totals */
 .sps{display:grid;gap:12px;margin-top:18px}
