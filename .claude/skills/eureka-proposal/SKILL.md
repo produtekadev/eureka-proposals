@@ -87,18 +87,32 @@ Then check it in a browser with Playwright (it is installed):
 
 Show the user screenshots of the cover and the proposal section.
 
-### 6. Preview, then publish
+### 6. Card payment link (Stripe)
+
+Every proposal gets its own Stripe payment link, shown in the "Card · Stripe (+4%)" tab after the client accepts. Create it once the price is confirmed, in the live **Eureka** account (Stripe MCP, `list_available_accounts_or_orgs` gives the context):
+
+- Amount: one payment plus the card fee, `total × deposit_pct / 100 × (1 + card.fee_pct / 100)` with `fee_pct` from `data/company.json`. Example: USD 3,100 at 50% = USD 1,550, × 1.04 = USD 1,612. With a 50/50 split, the same link covers both payments. For 100% upfront, use the full amount.
+- Create a price (`PostPrices`): `unit_amount` in cents, `currency` usd, `product_data.name` "<Company>: Notion implementation (50% payment)", `metadata.proposal` = slug.
+- Create the link (`PostPaymentLinks`) with that price, quantity 1, and:
+  - `metadata.proposal` = slug, `payment_intent_data.description` "<Company> payment (50% of USD <total>)", `payment_intent_data.metadata.proposal` = slug
+  - `after_completion`: hosted confirmation "Thank you! We received your payment and will email you the next steps."
+  - `restrictions.completed_sessions.limit`: 2 for a 50/50 split (1 for a single payment), with `inactive_message` "Both payments for this project have been received. Contact team@eureka.ceo if you need help."
+- Put the link's URL in `payment.stripe_url`, add "or by card through Stripe with a 4% card fee" to `payment.schedule`, and rebuild.
+- If the total changes later, create a new link and deactivate the old one (`active: false`, `inactive_message` "This link was replaced. Please use the payment link in your proposal, or contact team@eureka.ceo.").
+
+### 7. Preview, then publish
 
 - For review, publish the built page as a private claude.ai artifact (review copy) so the team can comment section by section. Don't use Vercel branch previews: they spend the daily deploy budget.
 - Apply the user's feedback in `proposal.json` and rebuild. Never hand-edit the generated `index.html`.
 - When the user approves, merge to `main` and push. The proposal is live at `https://proposals.eureka.ceo/<slug>`. Open it and confirm it loads.
 
-### 7. Log it in Notion (before sharing the link)
+### 8. Log it in Notion (before sharing the link)
 
 The proposal lives in GitHub; its Notion row holds the metadata and is what the team's workflows run on.
 
-- In the Proposals database (data source `65eab1f5-f843-4819-a6b8-7bbfbb5a7d4d`) create the row, or update it if one exists for this client: `Name` = "Proposal <Company> + Eureka", `Status` = `Sent`, `Budget` = total, `Person` = the assigned team (`notion_user_id` from `data/team.json`), `Proposal URL` = `https://proposals.eureka.ceo/<slug>`.
+- In the Proposals database (data source `65eab1f5-f843-4819-a6b8-7bbfbb5a7d4d`) create the row, or update it if one exists for this client: `Name` = "Proposal <Company> + Eureka", `Status` = `Definition`, `Budget` = total, `Person` = the assigned team (`notion_user_id` from `data/team.json`), `Proposal URL` = `https://proposals.eureka.ceo/<slug>`.
 - Copy the row's page id into `proposal.json` as `notion_page_id`, rebuild and push. Without it, accepting on the page can't update Notion.
+- Publishing is not sending. Set `Status` = `Sent` only when the team actually sends the link to the client (ask if unsure). Accepting on the page only updates rows that are `Sent` or a Follow Up status, so remind the team to set it when they send.
 - When the client accepts, `api/accept.js` sets `Status` = `Accepted`, `Accepted on` and `Accepted by` (needs `NOTION_TOKEN` in Vercel, with the integration connected to the database). It only changes rows that are `Sent`, `Follow Up Sent` or `Follow Up Required`.
 
 Then offer to draft the send email (from the team, in the client's language): one personal line from the call, one or two lines on what the proposal covers, the link, and "accept directly on the page when you're ready".
