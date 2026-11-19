@@ -1,0 +1,74 @@
+{
+  "slug": "sync",
+  "lang": "en",
+  "company": "SYNC Performance",
+  "currency": "USD",
+  "deposit_pct": 50,
+  "phases": [
+    {
+      "id": "audit",
+      "name": "Information audit and roadmap",
+      "price": 600,
+      "tag": "essential"
+    },
+    {
+      "id": "build",
+      "name": "Core workspace, products and migration",
+      "price": 2000,
+      "tag": "essential"
+    },
+    {
+      "id": "training",
+      "name": "Training and launch",
+      "price": 500,
+      "tag": "essential"
+    }
+  ],
+  "bank_accounts": [
+    {
+      "label": "Bank transfer · USD",
+      "rows": [
+        [
+          "Beneficiary",
+          "Produteka LLC"
+        ],
+        [
+          "Beneficiary address",
+          "30 North Gould Street, Sheridan, WY 82801, USA"
+        ],
+        [
+          "Account number",
+          "783562254976660"
+        ],
+        [
+          "Account type",
+          "Checking"
+        ],
+        [
+          "Routing (ACH and wire)",
+          "121145433"
+        ],
+        [
+          "Bank",
+          "Column N.A. (Mercury's banking partner)"
+        ],
+        [
+          "Bank address",
+          "1 Letterman Drive, Building A, Suite A4-700, San Francisco, CA 94129, USA"
+        ],
+        [
+          "SWIFT (international wire)",
+          "CLNOUS66MER"
+        ],
+        [
+          "Intermediary SWIFT (international, required)",
+          "CHASUS33XXX"
+        ]
+      ]
+    }
+  ],
+  "notion_page_id": "",
+  "card_fee_pct": 4,
+  "stripe_url": null,
+  "url": "https://proposals.eureka.ceo/sync"
+}
