@@ -7,7 +7,7 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
 ```jsonc
 {
   "lang": "en",                         // "en" or "es": all labels switch with it
-  "client": { "company": "", "contact": "", "role": "", "location": "" },
+  "client": { "company": "", "contact": "", "role": "", "location": "", "logo": "clients/acme.png" },   // logo optional: path under template/assets/, shown on the cover in black (recolor white logos first)
   "prepared_by": ["paula", "mateo"],    // ids from data/team.json, shown on the cover
   "team": ["abel"],                     // extra team members shown in About us
   "notion_page_id": "",                 // the proposal's row in Notion Proposals [d]; accepting sets it to Accepted
