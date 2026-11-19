@@ -173,10 +173,6 @@
             "p": "The boards marked \"migrate now\" in phase 01, up to 10, moved from Monday with their active records. The CRM is included if the audit confirms Notion is the right home for it."
           },
           {
-            "h": "The rest of Monday",
-            "p": "The history of every board exported to one archive linked from Notion, so you keep the record without old boards in the way. The \"move later\" boards get a ready template and steps in the migration guide, so your team moves them at its own pace."
-          },
-          {
             "h": "Drive connected",
             "p": "Key sheets like inventory and catalogs linked from the right databases, and Drive connected so Notion AI can search it."
           },
@@ -249,7 +245,7 @@
     "excluded": [
       "AI agents per department and connecting Notion to Slack (on the roadmap, quoted after the audit)",
       "Live syncs with Shopify, Missive or email (defined in the roadmap, subject to technical feasibility)",
-      "Moving the \"move later\" boards (the migration guide and templates show your team how)",
+      "Moving the \"move later\" boards (the migration guide shows your team how)",
       "Moving files out of Google Drive (they stay in Drive, linked from Notion)",
       "Notion licenses"
     ],
