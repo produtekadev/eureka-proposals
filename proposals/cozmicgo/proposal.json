@@ -1,0 +1,345 @@
+{
+  "lang": "en",
+  "client": {
+    "company": "CozmicGo",
+    "contact": "Nathan Kohrs",
+    "role": "Founder",
+    "location": "Las Vegas"
+  },
+  "prepared_by": [
+    "abel",
+    "paula"
+  ],
+  "team": [],
+  "notion_page_id": "41dc9f5c-dca8-809a-90cf-d9936a05a378",
+  "clients": [
+    "daughters-for-earth",
+    "henkel",
+    "toggl-hire",
+    "bid",
+    "foton"
+  ],
+  "date": "2026-11-19",
+  "valid_until": "2026-12-03",
+  "start": "Week of November 30",
+  "cover": {
+    "tag": "Implementation proposal",
+    "headline": "An operating system for<br><em>your next</em> <span class=\"hl\">20 people.</span>",
+    "lede": "A fixed-scope plan to turn the Notion workspace you started into the place where a new teammate understands CozmicGo, knows what they own and can run a trip on their own. Based on our session on November 17.",
+    "glance": [
+      {
+        "k": "Focus",
+        "h": "Built for your next hires",
+        "p": "Ownership, SOPs and trip operations first."
+      },
+      {
+        "k": "Total · USD 2,500",
+        "h": "Four milestones, fixed fee",
+        "p": "Each one with acceptance criteria, in five weeks."
+      },
+      {
+        "k": "At the end",
+        "h": "Roadmap",
+        "p": "What to add next as the team grows."
+      }
+    ]
+  },
+  "context": {
+    "title": "What we<br><em>heard.</em>",
+    "lede": "CozmicGo builds a curated women's community through shared travel experiences. Today you and Andrea host the trips and run the business. Over the next 12 months you plan to bring in hosts, marketing, sales and technology, <b>most of them remote, and all of them needing to act without waiting for the two of you.</b>",
+    "stats": [
+      {
+        "n": "2",
+        "t": "founders running everything today"
+      },
+      {
+        "n": "10 to 20",
+        "t": "teammates over the next 12 months"
+      },
+      {
+        "n": "5",
+        "t": "teamspaces you already set up in Notion"
+      }
+    ],
+    "pains_label": "The challenge",
+    "pains_title": "Three things to solve <em>before</em> the team grows.",
+    "pains": [
+      {
+        "k": "Ownership",
+        "h": "The business lives with two people",
+        "it": "\"What they're responsible for and what they're accountable for.\"",
+        "p": "New hires need to see their role, their outcomes and how to do the work without asking a founder each time."
+      },
+      {
+        "k": "Remote team",
+        "h": "Nobody to ask down the hall",
+        "it": "\"A lot of our people are going to be all over the country.\"",
+        "p": "If the right information takes more than a couple of clicks to find, decisions wait for you."
+      },
+      {
+        "k": "Data",
+        "h": "Leads live outside the workspace",
+        "it": "\"I'm currently doing that in Google.\"",
+        "p": "Your pipeline sits in a spreadsheet, apart from the trips and the people who will work on them."
+      }
+    ],
+    "quote": {
+      "text": "We want to build for our next 20 people, not 200.",
+      "who": "Nathan Kohrs, Founder"
+    },
+    "opportunity_label": "The opportunity",
+    "opportunity": "You are about to make your first hires. Setting up roles, SOPs and trip operations now means <b>every new teammate starts with clear ownership from day one</b>, instead of learning the business by asking."
+  },
+  "focus": {
+    "title": "Where we'd<br><em>start.</em>",
+    "statement": "<b>A workspace where a new teammate understands CozmicGo, knows what they own, and can run a trip without asking the founders.</b>",
+    "asked": [
+      "An operating system for the whole company",
+      "Clear ownership and accountability for every teammate",
+      "Onboarding for new hires",
+      "SOPs and measurable outcomes",
+      "Databases linked across the organization",
+      "A leads pipeline, today in Google Sheets",
+      "AI agents to create efficiencies, later on"
+    ],
+    "recommend": [
+      "A blueprint built on the teamspaces you already have",
+      "A company home with an onboarding path",
+      "A roles database: what each role owns and how it is measured",
+      "An SOP library your team can grow",
+      "Trip operations and your leads pipeline, connected",
+      "Training, then a roadmap for finance, marketing, technology and agents"
+    ],
+    "why": "You asked what fits in a fixed fee of USD 2,500. Our recommendation is to build what your first hires will use every day, and leave finance, product and AI agents for the roadmap. A smaller system the team uses beats a complete one nobody opens."
+  },
+  "proposal": {
+    "title": "What we'll build<br><em>and what it costs.</em>",
+    "intro": "Each milestone has its own price and they add up to one fixed fee. Under each one you'll see the deliverables, the acceptance criteria tied to your three principles, and what we need from you.",
+    "currency": "USD",
+    "phases": [
+      {
+        "id": "blueprint",
+        "name": "Discovery and blueprint",
+        "tag": "essential",
+        "price": 500,
+        "weeks": 1,
+        "summary": "We learn how CozmicGo runs today, review the workspace you started and agree on the structure before building.",
+        "deliverables": [
+          {
+            "h": "Working session",
+            "p": "A session with you and Andrea to walk through how a trip runs from first lead to follow-up, and which roles you plan to hire."
+          },
+          {
+            "h": "Workspace review",
+            "p": "What to keep, change or remove in the teamspaces and pages you already created."
+          },
+          {
+            "h": "Architecture blueprint",
+            "p": "A document with the teamspaces, the databases and how they connect to each other."
+          }
+        ],
+        "callout": {
+          "label": "Acceptance criteria",
+          "title": "This milestone is done when",
+          "items": [
+            {
+              "q": "You and Andrea approve the blueprint",
+              "a": "Simplicity by design",
+              "icon": "purple-shape"
+            },
+            {
+              "q": "Every database in it has a clear purpose and owner",
+              "a": "Autonomy with accountability",
+              "icon": "magenta-shape"
+            }
+          ]
+        },
+        "you_do": [
+          "Join the working session",
+          "Give us access to the workspace and your leads sheet",
+          "Approve the blueprint"
+        ]
+      },
+      {
+        "id": "company",
+        "name": "Company home, roles and SOPs",
+        "tag": "essential",
+        "price": 700,
+        "weeks": 1,
+        "summary": "The place a new teammate lands on day one: who CozmicGo is, what their role owns and how the work gets done.",
+        "deliverables": [
+          {
+            "h": "Company home",
+            "p": "A home page for the whole team with an onboarding path for new hires."
+          },
+          {
+            "h": "Roles database",
+            "p": "Each role with what it is responsible for, the outcomes it is measured on and the SOPs it uses."
+          },
+          {
+            "h": "SOP library",
+            "p": "One database for every procedure and guide, with a template so all SOPs read the same way, organized by team and by role."
+          },
+          {
+            "h": "First SOPs",
+            "p": "The first procedures written with you in a working session, so your team has a model to follow for the rest."
+          }
+        ],
+        "callout": {
+          "label": "Acceptance criteria",
+          "title": "This milestone is done when",
+          "items": [
+            {
+              "q": "A new teammate finds their role and its SOPs in two clicks",
+              "a": "Simplicity by design",
+              "icon": "purple-shape"
+            },
+            {
+              "q": "Every role shows what it owns and how it is measured",
+              "a": "Autonomy with accountability",
+              "icon": "magenta-shape"
+            }
+          ]
+        },
+        "you_do": [
+          "Define the roles you plan to hire",
+          "Write the first SOPs with us",
+          "Review the company home"
+        ]
+      },
+      {
+        "id": "operations",
+        "name": "Trip operations and pipeline",
+        "tag": "essential",
+        "price": 1000,
+        "weeks": 2,
+        "summary": "The core of the business in connected databases: your trips, the tasks behind each one and the leads that fill them.",
+        "deliverables": [
+          {
+            "h": "Trips database",
+            "p": "Each trip with its dates, host, status and everything related to it in one page."
+          },
+          {
+            "h": "Trip tasks",
+            "p": "The tasks behind every trip, each with an owner and a due date, created from a template when a new trip is added."
+          },
+          {
+            "h": "Leads pipeline",
+            "p": "Your leads moved from Google Sheets into Notion, with stages and a link to the trip each lead is interested in."
+          },
+          {
+            "h": "Founders dashboard",
+            "p": "One page for you and Andrea with upcoming trips, open tasks by owner and the state of the pipeline."
+          },
+          {
+            "h": "Midpoint demo",
+            "p": "We show you the build halfway through and adjust it with your feedback."
+          }
+        ],
+        "callout": {
+          "label": "Acceptance criteria",
+          "title": "This milestone is done when",
+          "items": [
+            {
+              "q": "One real trip runs in the system from lead to follow-up",
+              "a": "Speed to action",
+              "icon": "orange-cross"
+            },
+            {
+              "q": "Every trip task has an owner and a due date",
+              "a": "Autonomy with accountability",
+              "icon": "magenta-shape"
+            },
+            {
+              "q": "You see trips, tasks and pipeline from one page",
+              "a": "Simplicity by design",
+              "icon": "purple-shape"
+            }
+          ]
+        },
+        "you_do": [
+          "Share your leads sheet",
+          "Load one real trip with us",
+          "Give feedback at the midpoint demo"
+        ]
+      },
+      {
+        "id": "training",
+        "name": "Training and handover",
+        "tag": "essential",
+        "price": 300,
+        "weeks": 1,
+        "summary": "You and Andrea learn to run and grow the system yourselves, and leave with a plan for what comes next.",
+        "deliverables": [
+          {
+            "h": "Live training",
+            "p": "A session with you and Andrea on using and extending the workspace. Recorded, so every new hire can watch it."
+          },
+          {
+            "h": "User guide",
+            "p": "How the team uses the workspace day to day, written inside Notion."
+          },
+          {
+            "h": "Roadmap",
+            "p": "What to add next and in what order as the team grows: finance, marketing, product and technology, and AI agents."
+          }
+        ],
+        "callout": {
+          "label": "Acceptance criteria",
+          "title": "This milestone is done when",
+          "items": [
+            {
+              "q": "You create a new SOP and a new trip without our help",
+              "a": "Autonomy with accountability",
+              "icon": "magenta-shape"
+            },
+            {
+              "q": "You have the recording, the guide and the roadmap",
+              "a": "Speed to action",
+              "icon": "orange-cross"
+            }
+          ]
+        },
+        "you_do": [
+          "Join the training",
+          "Review the roadmap with us"
+        ]
+      }
+    ],
+    "included": [
+      "One working session with you every week",
+      "A shared channel for questions during the project",
+      "Sign-off with you at the end of each milestone"
+    ],
+    "excluded": [
+      "Notion licenses",
+      "Finance, marketing and product and technology systems (ordered in the roadmap)",
+      "AI agents and integrations with other tools (defined in the roadmap, subject to technical feasibility)",
+      "Writing every SOP (your team writes them with the template, after the first ones we write together)",
+      "Ongoing support after the guarantee period"
+    ],
+    "guarantee": "Two weeks of async support after the last delivery to fix issues within the delivered scope, at no extra cost."
+  },
+  "payment": {
+    "deposit_pct": 50,
+    "schedule": "50% when you accept, 50% on delivery. By bank transfer."
+  },
+  "next_steps": [
+    {
+      "when": "Today",
+      "h": "Accept and send the deposit",
+      "p": "Right here, below."
+    },
+    {
+      "when": "Once we receive it",
+      "h": "Next steps by email",
+      "p": "We send you the link to book the kickoff."
+    },
+    {
+      "when": "Week of November 30",
+      "h": "Discovery starts",
+      "p": "Five weeks from kickoff to handover."
+    }
+  ],
+  "closing": "We're ready to build<br><em>your Eureka moment.</em>"
+}
