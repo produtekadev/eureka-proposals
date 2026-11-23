@@ -160,9 +160,9 @@ def sec_context(pg, P):
   <div class="sec">
     <div class="label">{esc(x.get('pains_label', 'The challenge' if pg.lang == 'en' else 'El reto'))}</div>
     <h2>{rich(x['pains_title'])}</h2>
+    {f'<figure class="fx-ill"><img src="{data_uri(os.path.join(T, "assets", "illustrations", x["illustration"] + ".webp"))}" alt=""></figure>' if x.get('illustration') else ''}
     <div class="cards">{pains}</div>
   </div>
-  {f'<figure class="fx-ill"><img src="{data_uri(os.path.join(T, "assets", "illustrations", x["illustration"] + ".webp"))}" alt=""></figure>' if x.get('illustration') else ''}
   {quote}
   {opp}'''
   pg.add('context', u['context'], body)

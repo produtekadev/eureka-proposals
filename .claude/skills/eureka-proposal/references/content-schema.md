@@ -36,7 +36,7 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
     "quote": { "text": "Their words.", "who": "Name, role" },           // optional
     "opportunity_label": "The opportunity",                              // optional
     "opportunity": "Why now, 2 sentences.",                              // optional
-    "illustration": "too-many-apps"                                      // optional: wide drawing after the pains (template/assets/illustrations/)
+    "illustration": "too-many-apps"                                      // optional: wide drawing between the pains title and the pain cards (template/assets/illustrations/)
   },
 
   "focus": {                            // optional: omit when ask and recommendation match
