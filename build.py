@@ -181,11 +181,22 @@ def mockups(ms, lang):
     elif t == 'progress':
       body = (f'<div class="mk-t">{rich(m["title"])}</div>' + ''.join(
         f'<div class="mk-r"><span>{rich(r["k"])}</span><span class="mk-bar"><i style="width:{int(r["v"])}%"></i></span><b>{int(r["v"])}%</b></div>' for r in m.get('rows', [])))
+    elif t == 'chat':
+      face = f'<img class="mk-face" src="{data_uri(os.path.join(T, "assets", "illustrations", "notion-ai-face.webp"))}" alt="">'
+      srcs = ''.join(f'<span class="mk-chip">{rich(x)}</span>' for x in m.get('sources', []))
+      sug = ''.join(f'<span class="mk-sug">{rich(x)}</span>' for x in m.get('suggestions', []))
+      reads = ''.join(f'<span class="mk-chip">{rich(x)}</span>' for x in m.get('reads', []))
+      rl = 'Reads from' if lang == 'en' else 'Lee desde'
+      tl = 'Try asking' if lang == 'en' else 'Prueba preguntando'
+      body = (f'<div class="mk-chat"><div class="mk-msg me">{rich(m["q"])}</div>'
+              f'<div class="mk-msg ai">{face}<div><div>{rich(m["a"])}</div>' + (f'<div class="mk-srcs">{srcs}</div>' if srcs else '') + '</div></div></div>'
+              + (f'<div class="mk-sugs"><span class="mk-k">{tl}</span>{sug}</div>' if sug else '')
+              + (f'<div class="mk-reads"><span class="mk-k">{rl}</span>{reads}</div>' if reads else ''))
     else:
       return ''
     return f'<div class="mk-w"><div class="mk-top"><i></i><i></i><i></i><span>{rich(m.get("label", ""))}</span></div><div class="mk-b">{body}</div></div>'
   cap = 'Illustrative example' if lang == 'en' else 'Ejemplo ilustrativo'
-  return f'<div class="mk">{"".join(win(m) for m in ms)}</div><p class="mk-cap">{cap}</p>'
+  return f'<div class="mk{" one" if len(ms) == 1 else ""}">{"".join(win(m) for m in ms)}</div><p class="mk-cap">{cap}</p>'
 
 def sec_focus(pg, P):
   u, f = pg.u, P['focus']

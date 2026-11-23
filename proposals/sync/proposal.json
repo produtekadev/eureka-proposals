@@ -117,39 +117,25 @@
     ],
     "mockups": [
       {
-        "type": "ask",
-        "label": "Product catalog",
+        "type": "chat",
+        "label": "Notion AI",
         "q": "Why did this jacket's fabric change from last season?",
-        "a": "The change note your product team wrote when the fabric was updated, with the tech pack linked.",
-        "source": "Answered from Product catalog and specs"
-      },
-      {
-        "type": "notes",
-        "label": "Meetings",
-        "title": "Weekly all-hands",
-        "items": [
-          "Summary saved right after the meeting",
-          "Action items, each with an owner",
-          "Shared with the whole team"
-        ]
-      },
-      {
-        "type": "progress",
-        "label": "OKRs",
-        "title": "This quarter's key results",
-        "rows": [
-          {
-            "k": "Sales",
-            "v": 70
-          },
-          {
-            "k": "E-commerce",
-            "v": 45
-          },
-          {
-            "k": "Product",
-            "v": 30
-          }
+        "a": "Here's the change note your product team wrote when the fabric was updated, with the tech pack linked.",
+        "sources": [
+          "Product catalog",
+          "Google Drive"
+        ],
+        "suggestions": [
+          "What did we decide in this week's all-hands?",
+          "How are we tracking on this quarter's OKRs?",
+          "What did the custom team work on today?"
+        ],
+        "reads": [
+          "Google Drive",
+          "Meeting notes",
+          "Product catalog",
+          "OKRs",
+          "Team boards"
         ]
       }
     ]

@@ -189,3 +189,19 @@
 .mk-r b{font-size:.78rem;text-align:right}
 .mk-cap{margin-top:8px;font-size:.72rem;font-style:italic;color:var(--muted);text-align:right}
 @media (max-width:900px){.mk{grid-template-columns:1fr}}
+
+/* Goal mockup: one Notion AI chat window */
+.mk.one{grid-template-columns:1fr;max-width:640px}
+.mk.one+.mk-cap{max-width:640px}
+.mk-chat{display:flex;flex-direction:column;gap:12px}
+.mk-msg{max-width:86%;font-size:.92rem;line-height:1.45}
+.mk-msg.me{align-self:flex-end;background:#F1F0EC;border-radius:14px 14px 4px 14px;padding:10px 14px;font-weight:500}
+.mk-msg.ai{display:flex;gap:10px;align-items:flex-start}
+.mk-face{width:30px;height:30px;flex:none;border-radius:50%}
+.mk-srcs,.mk-sugs,.mk-reads{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mk-srcs{margin-top:8px}
+.mk-chip{font-size:.74rem;background:#F6EEFB;color:var(--purple);border-radius:999px;padding:3px 10px;font-weight:600}
+.mk-sugs{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.mk-sug{font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:5px 11px;background:var(--card)}
+.mk-reads{margin-top:10px}
+.mk-k{font-size:.72rem;color:var(--muted);margin-right:2px}

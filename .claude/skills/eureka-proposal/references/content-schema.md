@@ -48,7 +48,9 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
     "nav": "Goal",                                                       // optional: renames the section in the menu (default "Focus")
     "asked_label": "Today",                                              // optional: left column label (default "What you asked for")
     "recommend_label": "After working with us",                          // optional: right column label (default "What we recommend")
-    "mockups": [                                                        // optional, recommended: 2 or 3 simple Notion-like windows in the client's context, labelled "Illustrative example"
+    "mockups": [                                                        // optional, recommended: ONE "chat" window (preferred, simplest); other types if really needed. Labelled "Illustrative example"
+      { "type": "chat", "label": "Notion AI", "q": "Their real question", "a": "How Notion answers it", "sources": ["Product catalog", "Google Drive"],
+        "suggestions": ["2 or 3 more questions in their words"], "reads": ["Google Drive", "Meeting notes", "Product catalog", "OKRs"] },   // Notion AI face avatar, what Notion reads from
       { "type": "ask", "label": "Product catalog", "q": "Their real question", "a": "Where the answer comes from", "source": "Answered from ..." },
       { "type": "notes", "label": "Meetings", "title": "Weekly all-hands", "items": ["Summary saved right after the meeting", "Action items, each with an owner"] },
       { "type": "progress", "label": "OKRs", "title": "This quarter's key results", "rows": [ { "k": "Sales", "v": 70 } ] }
