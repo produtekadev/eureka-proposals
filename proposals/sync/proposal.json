@@ -126,9 +126,18 @@
           "Google Drive"
         ],
         "suggestions": [
-          "What did we decide in this week's all-hands?",
-          "How are we tracking on this quarter's OKRs?",
-          "What did the custom team work on today?"
+          {
+            "icon": "meetings",
+            "q": "What did we decide in this week's all-hands?"
+          },
+          {
+            "icon": "goals",
+            "q": "How are we tracking on this quarter's OKRs?"
+          },
+          {
+            "icon": "team",
+            "q": "What did the custom team work on today?"
+          }
         ],
         "reads": [
           "Google Drive",

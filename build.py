@@ -167,6 +167,21 @@ def sec_context(pg, P):
   {opp}'''
   pg.add('context', u['context'], body)
 
+# Small icons for the chat mockup (sources, suggestions). Keys are lowercase source names.
+_I = lambda d: f'<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{d}</svg>'
+MK_ICONS = {
+  'google drive': '<svg viewBox="0 0 87.3 78" aria-hidden="true"><path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/><path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47"/><path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335"/><path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/><path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc"/><path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/></svg>',
+  'product catalog': _I('<path d="M3 4.5V9l7.5 7.5 6-6L9 3H4.5A1.5 1.5 0 0 0 3 4.5z" fill="#F6EEFB" stroke="#7A12B5"/><circle cx="6.5" cy="6.5" r="1.2" fill="#7A12B5" stroke="none"/>'),
+  'meeting notes': _I('<rect x="3" y="4" width="14" height="13" rx="2" fill="#FFF1E8" stroke="#E2622F"/><path d="M3 8h14M7 2.5v3M13 2.5v3" stroke="#E2622F"/>'),
+  'meetings': _I('<rect x="3" y="4" width="14" height="13" rx="2"/><path d="M3 8h14M7 2.5v3M13 2.5v3"/>'),
+  'okrs': _I('<circle cx="10" cy="10" r="7" fill="#FDEAF3" stroke="#D63384"/><circle cx="10" cy="10" r="3.5" stroke="#D63384"/><circle cx="10" cy="10" r="1" fill="#D63384" stroke="none"/>'),
+  'goals': _I('<circle cx="10" cy="10" r="7"/><circle cx="10" cy="10" r="3.5"/>'),
+  'team boards': _I('<rect x="2.5" y="3.5" width="4" height="13" rx="1" fill="#EAF2FF" stroke="#2F6FDE"/><rect x="8" y="3.5" width="4" height="9" rx="1" fill="#EAF2FF" stroke="#2F6FDE"/><rect x="13.5" y="3.5" width="4" height="11" rx="1" fill="#EAF2FF" stroke="#2F6FDE"/>'),
+  'team': _I('<circle cx="7" cy="7" r="2.6"/><circle cx="14" cy="8" r="2.1"/><path d="M2.5 16c.6-2.6 2.4-4 4.5-4s3.9 1.4 4.5 4M12 13.3c2.2-.4 4.4.8 5 2.7"/>'),
+  'ask': _I('<path d="M4 15.5 3 18l2.7-1A8 8 0 1 0 4 15.5z"/><path d="M8 9h4M8 12h2.5"/>'),
+  'doc': _I('<path d="M5 2.5h6.5L15.5 6.5v11h-10.5z"/><path d="M11.5 2.5v4h4"/>'),
+}
+
 def mockups(ms, lang):
   # Simple Notion-like windows that show what the client gets, in their context. Illustrative.
   if not ms:
@@ -183,15 +198,21 @@ def mockups(ms, lang):
         f'<div class="mk-r"><span>{rich(r["k"])}</span><span class="mk-bar"><i style="width:{int(r["v"])}%"></i></span><b>{int(r["v"])}%</b></div>' for r in m.get('rows', [])))
     elif t == 'chat':
       face = f'<img class="mk-face" src="{data_uri(os.path.join(T, "assets", "illustrations", "notion-ai-face.webp"))}" alt="">'
-      srcs = ''.join(f'<span class="mk-chip">{rich(x)}</span>' for x in m.get('sources', []))
-      sug = ''.join(f'<span class="mk-sug">{rich(x)}</span>' for x in m.get('suggestions', []))
-      reads = ''.join(f'<span class="mk-chip">{rich(x)}</span>' for x in m.get('reads', []))
+      def ico(name):
+        return f'<span class="mk-ico">{MK_ICONS.get(str(name).lower(), MK_ICONS["doc"])}</span>'
+      chip = lambda x: f'<span class="mk-chip">{ico(x)}{rich(x)}</span>'
+      srcs = ''.join(chip(x) for x in m.get('sources', []))
+      rows = ''.join(f'<div class="mk-row">{ico(x.get("icon", "ask") if isinstance(x, dict) else "ask")}<span>{rich(x["q"] if isinstance(x, dict) else x)}</span></div>' for x in m.get('suggestions', []))
+      reads = ''.join(f'<span class="mk-rd" title="{esc(x)}">{ico(x)}</span>' for x in m.get('reads', []))
+      tl = m.get('try_label') or ('Try asking' if lang == 'en' else 'Prueba preguntando')
+      ph = 'Ask Notion AI' if lang == 'en' else 'Pregúntale a Notion AI'
       rl = 'Reads from' if lang == 'en' else 'Lee desde'
-      tl = 'Try asking' if lang == 'en' else 'Prueba preguntando'
       body = (f'<div class="mk-chat"><div class="mk-msg me">{rich(m["q"])}</div>'
               f'<div class="mk-msg ai">{face}<div><div>{rich(m["a"])}</div>' + (f'<div class="mk-srcs">{srcs}</div>' if srcs else '') + '</div></div></div>'
-              + (f'<div class="mk-sugs"><span class="mk-k">{tl}</span>{sug}</div>' if sug else '')
-              + (f'<div class="mk-reads"><span class="mk-k">{rl}</span>{reads}</div>' if reads else ''))
+              + (f'<div class="mk-home"><div class="mk-home-h">{tl}</div>{rows}</div>' if rows else '')
+              + f'<div class="mk-in"><div class="mk-ph">{ph}</div><div class="mk-ibar"><span class="mk-plus">+</span>'
+              + (f'<span class="mk-rl">{rl}</span><span class="mk-rds">{reads}</span>' if reads else '')
+              + '<span class="mk-send">↑</span></div></div>')
     else:
       return ''
     return f'<div class="mk-w"><div class="mk-top"><i></i><i></i><i></i><span>{rich(m.get("label", ""))}</span></div><div class="mk-b">{body}</div></div>'

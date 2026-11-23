@@ -50,7 +50,10 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
     "recommend_label": "After working with us",                          // optional: right column label (default "What we recommend")
     "mockups": [                                                        // optional, recommended: ONE "chat" window (preferred, simplest); other types if really needed. Labelled "Illustrative example"
       { "type": "chat", "label": "Notion AI", "q": "Their real question", "a": "How Notion answers it", "sources": ["Product catalog", "Google Drive"],
-        "suggestions": ["2 or 3 more questions in their words"], "reads": ["Google Drive", "Meeting notes", "Product catalog", "OKRs"] },   // Notion AI face avatar, what Notion reads from
+        "suggestions": [ { "icon": "meetings", "q": "2 or 3 more questions in their words" } ],
+        "reads": ["Google Drive", "Meeting notes", "Product catalog", "OKRs", "Team boards"] },
+        // Centered chat: their question, the answer from the Notion AI face with source chips (with logos), a Notion-style "Try asking" list, and an "Ask Notion AI" box with the logos of what it reads.
+        // Logos for sources/reads (MK_ICONS in build.py): google drive, product catalog, meeting notes, okrs, team boards. Suggestion icons: meetings, goals, team, ask. Unknown names get a document icon; add new logos to MK_ICONS
       { "type": "ask", "label": "Product catalog", "q": "Their real question", "a": "Where the answer comes from", "source": "Answered from ..." },
       { "type": "notes", "label": "Meetings", "title": "Weekly all-hands", "items": ["Summary saved right after the meeting", "Action items, each with an owner"] },
       { "type": "progress", "label": "OKRs", "title": "This quarter's key results", "rows": [ { "k": "Sales", "v": 70 } ] }
