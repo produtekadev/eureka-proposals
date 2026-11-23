@@ -7,127 +7,78 @@ description: Turn a discovery call into a published Eureka proposal page. Use wh
 
 Turns discovery-call transcripts into a proposal page at `proposals.eureka.ceo/<slug>`, built from this repo's template.
 
-The rule that matters most: **we propose what we believe will help, not a copy of the client's wish list.** Never write the proposal before the team has confirmed the focus, the phases, the prices and the duration.
+The rule that matters most: **we propose what we believe will help, not a copy of the client's wish list.** Never write the proposal before the team has confirmed the goal, the phases, the prices and the duration.
 
-Talk to the user in the language they use with you. Write the proposal in the client's language (from the transcripts).
+Talk to the user in their language. Write the proposal in the client's language (from the transcripts).
 
-## Files you work with
+## Files
 
-- `proposals/<slug>/proposal.json`: the only file you write per proposal. Schema in `references/content-schema.md`.
-- `python3 build.py <slug>`: builds `proposals/<slug>/index.html` and the server data for the accept email.
-- `data/team.json`, `data/company.json`: shared team, bank accounts, kickoff link, terms. Don't edit per proposal.
-- `references/playbook.md`: what has worked in accepted proposals (structure, pricing, wording). Read it before step 3.
-- Never edit `proposals/federico-gonzalez/`. It was hand-built and is already shared with the client.
+- `proposals/<slug>/proposal.json`: the only file you write per proposal. Fields in `references/content-schema.md`.
+- `python3 build.py <slug>`: builds `proposals/<slug>/index.html` and the accept-email data. Never hand-edit `index.html`.
+- `references/playbook.md`: structure, design defaults, prices and wording. Read it before step 3.
+- `data/team.json`, `data/company.json`: shared team, bank accounts, terms. Don't edit per proposal.
+- Never edit `proposals/federico-gonzalez/` (hand-built, already shared).
 
 ## Workflow
 
 ### 1. Gather the discovery
 
-Ask which client, if the user hasn't said. Then:
-- Circleback: `FindProfiles` and `SearchMeetings` with the client's name, then `GetTranscriptsForMeetings` for **every** related meeting (full transcripts, not summaries).
-- If the user pasted a transcript or notes, use those too. If nothing is found, ask for it. Don't invent context.
+Ask which client if not given. In Circleback, `FindProfiles` and `SearchMeetings` with the client's name, then `GetTranscriptsForMeetings` for **every** related meeting (full transcripts). Also use anything the user pasted and the client's page in Notion. If nothing is found, ask. Don't invent context.
 
-Extract, with evidence (short quotes) from the transcripts:
-- Who: name, role, company, team size, location, language, tone.
-- Today: tools, how work flows, what's already built.
-- Pains, ranked by how often and how strongly they came up.
-- What they explicitly asked for.
-- Budget and timing signals, objections, decision-makers.
-- 1 or 2 quotable phrases in their own words.
+Extract, with short quotes: who (name, role, company, team size, location, tone), today's tools and what's already built, pains ranked by how often they came up, what they asked for, budget, timing, decision-makers, and 1 or 2 quotable phrases.
 
-### 2. Their ask vs. our criteria (stop and discuss)
+### 2. Their ask vs. our recommendation (stop and discuss)
 
-Show the user a short read, then two lists side by side:
-
-> **What they asked for** · everything they mentioned
-> **What we recommend focusing on** · our call, and why (order, dependencies, what creates value first, what to leave for later)
-
-Propose **one focus sentence** (the North Star: what this project must achieve). Ask the user to agree or adjust. This becomes the `focus` section. Skip that section only if the user says the ask and our recommendation are the same.
+Show a short read, then two lists: **what they asked for** and **what we recommend** (order, dependencies, what creates value first, what waits). Propose one goal sentence (the North Star) and let the user agree or adjust.
 
 ### 3. Scope, price and duration (stop and confirm)
 
-Using `references/playbook.md`, propose phases. For each one give the name, tag (`essential`, `recommended` or `optional`), price, weeks and 3 to 6 deliverables. Then show the total, the deposit and the payment schedule.
+Using the playbook, propose phases: name, tag (`essential`, `recommended`, `optional`), price, weeks, 3 to 6 deliverables. Show the total, deposit and payment schedule. Every phase is in one fixed total; tags only show importance.
 
-**Every proposal has one fixed price: all phases are included.** The tag only tells the client how important a phase is; they can't remove phases on the page. If the client later asks to change the scope, the team edits `proposal.json`, rebuilds and republishes.
+Don't continue until the user confirms. Then confirm: projected start, valid-until (default two weeks), deposit % (default 50), and who prepares it (`data/team.json`).
 
-> **01 · Discovery** · Essential · 1 week · USD 500
-> → …
-> **Total USD X** · deposit 50% = USD Z
-> Should we adjust anything?
+### 4. Write `proposal.json`
 
-Do not continue until the user confirms. Then confirm the details: projected start, valid-until date (default: two weeks from today), deposit % (default 50) and who prepares it (team ids from `data/team.json`).
+`slug`: short, lowercase, nothing sensitive (`acme`, `nickel-ai`). Follow the structure and defaults in the playbook. Copy rules:
 
-### 4. Write the content file
-
-- `slug`: short, lowercase, no client-sensitive words (e.g. `acme`, `nickel-ai`). Ask if unsure.
-- Create `proposals/<slug>/proposal.json` following `references/content-schema.md`.
-- Copy rules (always):
-  - No em dashes. Use commas, periods or colons.
-  - Price first, then the value explanation.
-  - Never commit to file volumes, record counts or hours, unless the user explicitly asks to include hours.
-  - Pains and quotes come from the transcripts. Use the client's own words where natural.
-  - Plain, specific, human. Nothing that sounds generated: no "seamless", "leverage", "unlock", "robust", "streamline", "elevate".
-  - Never mention other clients by name in the body (the client grid handles that).
-  - Integrations are "defined in the roadmap, subject to technical feasibility", never "included" by default.
-  - Every phase gets a `you_do` list ("Your part"): what the client must do or decide in that phase (access, approvals, testing, migrating their own files). Clients hesitate when they can't see their own commitment.
-  - Never promise to automate a client's whole process. Map it first (what Notion automates, what an agent drafts for review, what stays in their tools, what stays human), build the top items, and cap the number of agents.
-  - Deliverables are concrete things the client receives (a report, a database, a template, a guide, a training session), never qualities or goals ("privacy for your space", "a clear structure"). If something is advice or a plan, make it a deliverable document, e.g. a migration guide.
-  - Deliverable titles must be understandable on their own, without the detail behind them. See "Wording that confused clients" in `references/playbook.md`.
-  - Keep it minimal and put the important things first: minimal cover, Goal as benefits with simple mockups, phases with illustrations. Follow "Structure that closes" in `references/playbook.md`.
+- No em dashes. Plain, specific, human: no "seamless", "leverage", "unlock", "robust", "streamline", "elevate".
+- Pains and quotes come from the transcripts, in the client's words. Never single out one of their team members.
+- Price first, then the value. Never commit to file volumes, record counts or hours unless asked.
+- Deliverables are concrete things they receive (a report, a database, a guide, a session), and each title must make sense without its detail.
+- Every phase has a `you_do` list ("Your part"): what the client does or decides.
+- Integrations are "defined in the roadmap, subject to technical feasibility". Never promise to automate a whole process; map it first and cap the number of agents.
+- Never name other clients in the body (the logo grid does that).
 
 ### 5. Build and check
 
-```
-python3 build.py <slug>
-```
-
-Then check it in a browser with Playwright (it is installed):
-- No JavaScript errors, no horizontal scroll at 390 px width.
-- Every section renders.
-- The totals box matches the sum of the phases.
-- The accept flow works: the scope list shows every phase and the total; fill name and email, accept, payment details and kickoff link appear.
-
-Show the user screenshots of the cover and the proposal section.
+Run `python3 build.py <slug>`, then check with Playwright: no JS errors, no horizontal scroll at 390 px, every section renders, totals match the phases, and the accept flow shows every phase, the total, payment details and next steps. Show the user screenshots.
 
 ### 6. Card payment link (Stripe)
 
-Every proposal gets its own Stripe payment link, shown in the "Card · Stripe (+4%)" tab after the client accepts. Create it once the price is confirmed, in the live **Eureka** account (Stripe MCP, `list_available_accounts_or_orgs` gives the context):
+Once the price is confirmed, create the link in the live **Eureka** Stripe account:
 
-- Amount: one payment plus the card fee, `total × deposit_pct / 100 × (1 + card.fee_pct / 100)` with `fee_pct` from `data/company.json`. Example: USD 3,100 at 50% = USD 1,550, × 1.04 = USD 1,612. With a 50/50 split, the same link covers both payments. For 100% upfront, use the full amount.
-- Create a price (`PostPrices`): `unit_amount` in cents, `currency` usd, `product_data.name` "<Company>: Notion implementation (50% payment)", `metadata.proposal` = slug.
-- Create the link (`PostPaymentLinks`) with that price, quantity 1, and:
-  - `metadata.proposal` = slug, `payment_intent_data.description` "<Company> payment (50% of USD <total>)", `payment_intent_data.metadata.proposal` = slug
-  - `after_completion`: hosted confirmation "Thank you! We received your payment and will email you the next steps."
-  - `restrictions.completed_sessions.limit`: 2 for a 50/50 split (1 for a single payment), with `inactive_message` "Both payments for this project have been received. Contact team@eureka.ceo if you need help."
-- Put the link's URL in `payment.stripe_url`, add "or by card through Stripe with a 4% card fee" to `payment.schedule`, and rebuild.
-- If the total changes later, create a new link and deactivate the old one (`active: false`, `inactive_message` "This link was replaced. Please use the payment link in your proposal, or contact team@eureka.ceo.").
+- Amount: `total × deposit_pct / 100 × (1 + card.fee_pct / 100)` (`fee_pct` in `data/company.json`). Example: USD 3,200 at 50% = 1,600 × 1.04 = USD 1,664.
+- `PostPrices`: `unit_amount` in cents, `product_data.name` "<Company>: Notion implementation (50% payment)", `metadata.proposal` = slug.
+- `PostPaymentLinks` with that price: `metadata.proposal` = slug; `payment_intent_data.description` "<Company> payment (50% of USD <total>)"; hosted confirmation "Thank you! We received your payment and will email you the next steps."; `restrictions.completed_sessions.limit` 2 for a 50/50 split (1 for a single payment); `inactive_message` "Both payments for this project have been received. Contact team@eureka.ceo if you need help."
+- Put the URL in `payment.stripe_url` and mention the 4% card option in `payment.schedule`.
+- If the total changes: new link, and deactivate the old one (`active: false`, `inactive_message` "This link was replaced. Please use the payment link in your proposal, or contact team@eureka.ceo."). Deploy right after, or the live page points to a dead link.
 
-### 7. Preview, then publish
+### 7. Review, then publish
 
-- For review, publish the built page as a private claude.ai artifact (review copy) so the team can comment section by section. Don't use Vercel branch previews: they spend the daily deploy budget.
-- Apply the user's feedback in `proposal.json` and rebuild. Never hand-edit the generated `index.html`.
-- When the user approves, merge to `main` and push. The proposal is live at `https://proposals.eureka.ceo/<slug>`. Open it and confirm it loads.
+- Publish the built page as a private claude.ai artifact (review copy) for comments. Apply feedback in `proposal.json`, rebuild, update the copy.
+- Publish only when the user says so: push to `main`, then confirm `https://proposals.eureka.ceo/<slug>` loads with the changes.
 
-### 8. Log it in Notion (before sharing the link)
+### 8. Log it in Notion
 
-The proposal lives in GitHub; its Notion row holds the metadata and is what the team's workflows run on.
+In Proposals (data source `65eab1f5-f843-4819-a6b8-7bbfbb5a7d4d`), create or update the client's row: `Name` "Proposal <Company> + Eureka", `Status` `Definition`, `Budget` total, `Person` the team (`notion_user_id`), `Proposal URL`. Put the row's id in `notion_page_id` and rebuild.
 
-- In the Proposals database (data source `65eab1f5-f843-4819-a6b8-7bbfbb5a7d4d`) create the row, or update it if one exists for this client: `Name` = "Proposal <Company> + Eureka", `Status` = `Definition`, `Budget` = total, `Person` = the assigned team (`notion_user_id` from `data/team.json`), `Proposal URL` = `https://proposals.eureka.ceo/<slug>`.
-- Copy the row's page id into `proposal.json` as `notion_page_id`, rebuild and push. Without it, accepting on the page can't update Notion.
-- Publishing is not sending. Set `Status` = `Sent` only when the team actually sends the link to the client (ask if unsure). Accepting on the page only updates rows that are `Sent` or a Follow Up status, so remind the team to set it when they send.
-- When the client accepts, `api/accept.js` sets `Status` = `Accepted`, `Accepted on` and `Accepted by` (needs `NOTION_TOKEN` in Vercel, with the integration connected to the database). It only changes rows that are `Sent`, `Follow Up Sent` or `Follow Up Required`.
+Publishing is not sending: set `Status` = `Sent` only when the team sends the link (ask). Accepting on the page (`api/accept.js`) only updates rows in `Sent` or a Follow Up status. Then offer to draft the send email in the client's language: one personal line, what the proposal covers, the link, "accept directly on the page".
 
-Then offer to draft the send email (from the team, in the client's language): one personal line from the call, one or two lines on what the proposal covers, the link, and "accept directly on the page when you're ready".
+## Deploy budget
 
-## Deploy budget (read before pushing)
+Vercel allows 100 deploys a day for the whole team (each push to `main` builds two projects). Group changes: apply a whole review round, then push once. Pushes to `claude/*` branches don't build. A 402 "api-deployments-free-per-day" means the limit, not a bug.
 
-Vercel's free plan allows 100 deployments a day for the whole team, counted over a rolling 24 hours. On 2026-11-13 a review session hit it in one hour: one push per comment, pushed to two branches, with two Vercel projects building from this repo (4 deploys per edit).
+## Before publishing
 
-- Group changes. During a review, apply every comment locally, rebuild, and update the review copy as you go; push to `main` once per review round (or when the user asks to see it live), not once per comment.
-- Push only to `main` to publish. Pushes to `claude/*` branches don't build (see `proposals/vercel.json`).
-- If a push doesn't show up live, check the Vercel deployments list before assuming the code is wrong: a 402 "api-deployments-free-per-day" means the limit, not a bug.
-
-## Before every publish
-
-- `data/company.json` has `"demo": true` while bank accounts, kickoff link and terms are placeholders. If it's still true, tell the user the page shows demo payment data and don't publish to a real client until they confirm.
-- The accept email only sends once the Vercel project has `RESEND_API_KEY`, `EMAIL_FROM` and `TEAM_EMAIL`. If they're missing, the page still works, but say so.
+- If `data/company.json` has `"demo": true`, the page shows placeholder payment data: don't publish to a real client until the user confirms.
+- The accept email needs `RESEND_API_KEY`, `EMAIL_FROM` and `TEAM_EMAIL` in Vercel; without them the page works but sends nothing.

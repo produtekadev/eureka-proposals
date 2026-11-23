@@ -1,109 +1,86 @@
 # proposal.json
 
-One file per proposal at `proposals/<slug>/proposal.json`. `proposals/demo/proposal.json` is a complete example; copy it and replace the content.
+One file per proposal at `proposals/<slug>/proposal.json`. `proposals/sync/proposal.json` is a recent full example.
 
-Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span class="hl">` (purple highlight, for one word in the cover headline). Everything else is plain text.
+Text fields accept `<b>`, `<em>`, `<i>`, `<br>` and `<span class="hl">` (purple highlight, one word in the cover headline). Everything else is plain text. Fields marked "optional" can be left out.
 
 ```jsonc
 {
-  "lang": "en",                         // "en" or "es": all labels switch with it
-  "client": { "company": "", "contact": "", "role": "", "location": "", "logo": "clients/acme.png" },   // logo optional: path under template/assets/, shown on the cover in black (recolor white logos first)
-  "prepared_by": ["paula", "mateo"],    // ids from data/team.json, shown on the cover
-  "team": ["abel"],                     // extra team members shown in About us
-  "notion_page_id": "",                 // the proposal's row in Notion Proposals [d]; accepting sets it to Accepted
-  "clients": ["henkel", "toggl-hire"],  // client ids from data/clients.json, most relevant to this client first (logo, service, location)
-  "date": "2026-11-13",                 // proposal date (YYYY-MM-DD)
-  "valid_until": "2026-11-27",
-  "start": "Week of November 30",       // free text
-  "duration_label": null,               // optional: overrides the cover's "N weeks" (e.g. "6 months")
+  "lang": "en",                          // "en" or "es": all labels follow it
+  "client": { "company": "", "contact": "", "role": "", "location": "",
+              "logo": "clients/acme.png" },          // optional: under template/assets/, black (recolor white logos)
+  "prepared_by": ["paula", "mateo"],     // ids from data/team.json
+  "team": [],                            // extra team members in Team
+  "notion_page_id": "",                  // the row in Notion Proposals
+  "clients": ["henkel", "toggl-hire"],   // logo grid, ids from data/clients.json, most relevant first
+  "date": "2026-11-23", "valid_until": "2026-12-07", "start": "Week of November 30",
 
   "cover": {
     "tag": "Implementation proposal",
-    "headline": "One place to run<br><em>the whole</em> <span class=\"hl\">studio.</span>",
-    "lede": "One or two sentences: what this plan does and the call it's based on.",
-    "glance": [ { "k": "small label", "h": "title", "p": "one line" } ]   // 3 items, optional,
-    "goal": { "h": "One source of truth", "p": "One line on the outcome." },  // optional, preferred: minimal cover. Shows "The goal" and "Duration & price" (weeks and total, computed) first, and moves For / Prepared by / dates to a small line below. Replaces the meta row and the glance
-    "price_note": "Audit, build and training. Starts the week of November 30."  // optional, under the duration and price
+    "headline": "Everything X knows,<br><em>in one</em> <span class=\"hl\">place.</span>",
+    "lede": "One or two sentences: what the plan does and which calls it's based on.",
+    "goal": { "h": "One source of truth", "p": "One line on the outcome." },   // minimal cover (default): goal + duration & price (computed)
+    "price_note": "Audit, build and training. Starts the week of November 30."
+    // legacy alternative to "goal": "glance": [ { "k": "", "h": "", "p": "" } ] (3 items)
   },
 
   "context": {
     "title": "What we<br><em>heard.</em>",
-    "lede": "Who they are and the core problem, 2 sentences.",
-    "stats": [ { "n": "9", "t": "people, plus 4 freelancers" } ],       // 2 or 3, optional
-    "pains_label": "The challenge",                                        // optional
-    "pains_title": "Three things <em>slowing down</em> the studio.",
-    "pains": [ { "k": "Sales", "h": "No pipeline", "it": "In their words.", "p": "The consequence." } ],  // 3
-    "quote": { "text": "Their words.", "who": "Name, role" },           // optional
-    "opportunity_label": "The opportunity",                              // optional
-    "opportunity": "Why now, 2 sentences.",                              // optional
-    "illustration": "too-many-apps"                                      // optional: wide drawing between the pains title and the pain cards (template/assets/illustrations/)
+    "lede": "Who they are and the core problem.",
+    "stats": [ { "n": "9+", "t": "tools in use" } ],                   // optional, 2 or 3
+    "pains_title": "Three things <em>slowing down</em> the team.",
+    "illustration": "too-many-apps",                                     // optional: between the pains title and the cards
+    "pains": [ { "k": "Tools", "h": "Short name", "it": "\"Their words.\"", "p": "The consequence." } ],   // 3
+    "quote": { "text": "Their words.", "who": "Name" },                 // optional
+    "opportunity": "Why now, 2 sentences."                               // optional
   },
 
-  "focus": {                            // optional: omit when ask and recommendation match
-    "title": "Where we'd<br><em>start.</em>",
-    "statement": "The focus sentence and why.",
-    "asked": ["everything they asked for"],
-    "recommend": ["what we recommend, in order"],
-    "why": "One sentence on the main trade-off.",                        // optional
-    "nav": "Goal",                                                       // optional: renames the section in the menu (default "Focus")
-    "asked_label": "Today",                                              // optional: left column label (default "What you asked for")
-    "recommend_label": "After working with us",                          // optional: right column label (default "What we recommend")
-    "mockups": [                                                        // optional, recommended: ONE "chat" window (preferred, simplest); other types if really needed. Labelled "Illustrative example"
-      { "type": "chat", "label": "Notion AI", "q": "Their real question", "a": "How Notion answers it", "sources": ["Product catalog", "Google Drive"],
-        "suggestions": [ { "icon": "meetings", "q": "2 or 3 more questions in their words" } ],
-        "reads": ["Google Drive", "Meeting notes", "Product catalog", "OKRs", "Team boards"] },
-        // Centered chat: their question, the answer from the Notion AI face with source chips (with logos), a Notion-style "Try asking" list, and an "Ask Notion AI" box with the logos of what it reads.
-        // Logos for sources/reads (MK_ICONS in build.py): google drive, product catalog, meeting notes, okrs, team boards. Suggestion icons: meetings, goals, team, ask. Unknown names get a document icon; add new logos to MK_ICONS
-      { "type": "ask", "label": "Product catalog", "q": "Their real question", "a": "Where the answer comes from", "source": "Answered from ..." },
-      { "type": "notes", "label": "Meetings", "title": "Weekly all-hands", "items": ["Summary saved right after the meeting", "Action items, each with an owner"] },
-      { "type": "progress", "label": "OKRs", "title": "This quarter's key results", "rows": [ { "k": "Sales", "v": 70 } ] }
-    ],
-    "illustration": "too-many-apps",                                    // optional: wide drawing under the statement (prefer putting it in context)
-    "benefits": [ { "icon": "purple-shape", "h": "Short benefit", "p": "One line on what changes for them." } ]   // optional: replaces the two columns with icon cards (icons: purple-shape, magenta-shape, orange-cross, heart). Use it to frame the section as the goal: what the business looks like after working with us
+  "focus": {
+    "nav": "Goal",                                                       // menu name (default "Focus")
+    "title": "What changes<br><em>for your team.</em>",
+    "statement": "<b>The goal in one sentence.</b>",
+    "benefits": [ { "icon": "purple-shape", "h": "Short benefit", "p": "One line." } ],   // 6 cards; icons: purple-shape, magenta-shape, orange-cross
+    "mockups": [ {                                                       // optional, only when the team asks: one Notion AI chat
+      "type": "chat", "label": "Notion AI",
+      "q": "Their real question", "a": "How Notion answers it",
+      "sources": ["Product catalog", "Google Drive"],
+      "suggestions": [ { "icon": "meetings", "q": "Another question in their words" } ],   // icons: meetings, goals, team, ask
+      "reads": ["Google Drive", "Meeting notes", "Product catalog", "OKRs", "Team boards"]   // logos in MK_ICONS (build.py); unknown names get a document icon
+    } ],
+    "why": "One line that leads into the proposal."                      // optional
+    // legacy alternative to "benefits": "asked" / "recommend" lists (two columns)
   },
 
   "proposal": {
     "title": "What we'll build<br><em>and what it costs.</em>",
-    "intro": "One or two sentences.",
+    "intro": "Each phase has its own price and they add up to one fixed total.",
     "currency": "USD",
-    "phases": [
-      {
-        "id": "build",                  // unique, lowercase
-        "name": "Build and training",
-        "tag": "essential",             // essential | recommended | optional: a label only, every phase is in the total
-        "price": 1500,
-        "weeks": 3,                     // used for the total duration; 0 if it runs in parallel
-        "duration": "Runs in parallel", // optional text that replaces "3 weeks"
-        "summary": "One sentence.",
-        "deliverables": ["3 to 6 short items"],   // or [{"h": "Short title", "p": "One or two sentences"}]: titles show as a grid, details behind a toggle (preferred with a visual)
-        "you_do": ["what the client does in this phase"],
-        "callout": { "label": "Example", "title": "", "lede": "", "items": [ { "q": "a question in the client's words", "a": "why it matters to them" } ], "note": "" },   // optional, shown under the deliverables   // optional, shown under a divider as "Your part". Write it for every phase
-        "visual": "process-map",        // optional: illustrative SVG from template/visuals/ (process-map, agents, tasks), labelled "Illustrative view"
-        "illustration": "map"           // optional, preferred over visual: drawing on the left, deliverable ticks on the right. Files in template/assets/illustrations/ (map, build, scale, team-work, too-many-apps). Usual set: map / build / scale for audit / build / training
-      }
-    ],
-    "examples": {                       // optional: screenshots of the deliverable, shown as tilted overlapping cards after the totals
-      "label": "What the report looks like",
-      "title": "",                      // optional
-      "images": [ { "src": "examples/audit-recommendations.webp", "alt": "" } ],  // 1 to 3, paths under template/assets/. No other client's names or data in them
-      "caption": "One or two sentences."                                           // optional
-    },
+    "phases": [ {
+      "id": "audit", "name": "Information audit and roadmap",
+      "tag": "essential",                // essential | recommended | optional (label only)
+      "price": 500, "weeks": 1,          // weeks 0 if it runs in parallel; "duration" text overrides
+      "illustration": "map",             // map / build / scale
+      "summary": "One sentence.",
+      "deliverables": [ { "h": "Title that stands on its own", "p": "One short line, shown on hover" } ],
+      "you_do": ["What the client does or decides"]
+    } ],
     "included": ["…"],
     "excluded": ["…"],
-    "guarantee": "One month after delivery to fix issues within the delivered scope, at no extra cost."   // optional
+    "guarantee": "Two weeks after launch to fix issues within the delivered scope, at no extra cost."
   },
 
   "payment": {
     "deposit_pct": 50,
-    "schedule": "50% when you accept, 50% on delivery. By bank transfer, or by card through Stripe with a 4% card fee.",
-    "stripe_url": "https://buy.stripe.com/..."  // Stripe payment link for the deposit + 4% card fee (fee % lives in data/company.json "card")
+    "schedule": "50% when you accept (USD X), 50% on delivery (USD X). By bank transfer, or by card through Stripe with a 4% card fee.",
+    "stripe_url": "https://buy.stripe.com/..."   // deposit + card fee, see step 6 of SKILL.md
   },
 
   "next_steps": [ { "when": "Today", "h": "Accept and send the deposit", "p": "Right here, below." } ],
-  "closing": "We're ready to build<br><em>your Eureka moment.</em>",     // optional
-  "closing_illustration": "team-work",                                  // optional: drawing next to the closing headline
-  "about_title": "Assigned team<br><em>for this project.</em>"          // optional, this is the default
+  "closing": "We're ready to build<br><em>your Eureka moment.</em>",
+  "closing_illustration": "team-work"
 }
 ```
 
-Section order is fixed: Cover, Context, Focus (if present), Proposal, Team (assigned team, partner badge, clients), Start (next steps and accept).
+Also supported, rarely used: phase `visual` (SVG from `template/visuals/`), phase `callout`, `proposal.examples` (screenshots), other mockup types (`ask`, `notes`, `progress`), `duration_label`, `about_title`. See `build.py`.
+
+Section order is fixed: Cover, Context, Goal (if `focus`), Proposal, Team, Start.
