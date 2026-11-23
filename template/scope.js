@@ -15,6 +15,6 @@
   var s=state();
   sum.querySelector('[data-sp-total]').textContent=money(s.total);
   sum.querySelector('[data-sp-weeks]').textContent=s.weeks?s.weeks+' '+(s.weeks===1?(U.week||'week'):(U.weeks||'weeks')):'–';
-  sum.querySelector('[data-sp-dep]').textContent=money(s.deposit);
+  var dep=sum.querySelector('[data-sp-dep]'); if(dep) dep.textContent=money(s.deposit);
   window.EUREKA_SCOPE=state;
 })();

@@ -75,7 +75,8 @@
       "text": "We see the benefit potential of Notion, but we just haven't been able to allocate enough time to it.",
       "who": "Alex Leever"
     },
-    "opportunity": "You and Katie already proved Notion works for your team. <b>Peak season is the right time for us to build the rest</b>, so everyone starts January with their department set up and the training to use it."
+    "opportunity": "You and Katie already proved Notion works for your team. <b>Peak season is the right time for us to build the rest</b>, so everyone starts January with their department set up and the training to use it.",
+    "illustration": "too-many-apps"
   },
   "focus": {
     "title": "What changes<br><em>for your team.</em>",
@@ -105,8 +106,8 @@
       },
       {
         "icon": "magenta-shape",
-        "h": "No AI credits to buy",
-        "p": "You're not tied to one platform's AI. Your team connects the models it already uses."
+        "h": "One plan, everything included",
+        "p": "No paying separately for a CRM, work management and AI. One Notion plan covers what your team needs."
       },
       {
         "icon": "orange-cross",
@@ -114,7 +115,44 @@
         "p": "The boards that run the business live in Notion instead of Monday."
       }
     ],
-    "illustration": "too-many-apps"
+    "mockups": [
+      {
+        "type": "ask",
+        "label": "Product catalog",
+        "q": "Why did this jacket's fabric change from last season?",
+        "a": "The change note your product team wrote when the fabric was updated, with the tech pack linked.",
+        "source": "Answered from Product catalog and specs"
+      },
+      {
+        "type": "notes",
+        "label": "Meetings",
+        "title": "Weekly all-hands",
+        "items": [
+          "Summary saved right after the meeting",
+          "Action items, each with an owner",
+          "Shared with the whole team"
+        ]
+      },
+      {
+        "type": "progress",
+        "label": "OKRs",
+        "title": "This quarter's key results",
+        "rows": [
+          {
+            "k": "Sales",
+            "v": 70
+          },
+          {
+            "k": "E-commerce",
+            "v": 45
+          },
+          {
+            "k": "Product",
+            "v": 30
+          }
+        ]
+      }
+    ]
   },
   "proposal": {
     "title": "What we'll build<br><em>and what it costs.</em>",
@@ -125,7 +163,7 @@
         "id": "audit",
         "name": "Information audit and roadmap",
         "tag": "essential",
-        "price": 600,
+        "price": 500,
         "weeks": 1,
         "summary": "We meet each team, map the metrics they need and where they live, and design the workspace around that.",
         "deliverables": [
@@ -150,7 +188,12 @@
             "p": "What comes next, and how to move the remaining boards."
           }
         ],
-        "illustration": "map"
+        "illustration": "map",
+        "you_do": [
+          "Give us access to Monday, Drive and your current Notion",
+          "Book the interviews with your department leads",
+          "Approve the board list and the architecture"
+        ]
       },
       {
         "id": "build",
@@ -169,7 +212,7 @@
             "p": "Goals and meetings in one place, with AI meeting notes."
           },
           {
-            "h": "Products database",
+            "h": "Product catalog and specs",
             "p": "Every product with its tech pack, specs and why it changed, ready for customer service."
           },
           {
@@ -181,17 +224,22 @@
             "p": "Key sheets linked and searchable by Notion AI."
           },
           {
-            "h": "Optimized operating guide",
-            "p": "One shared context for Claude and your other AI tools."
+            "h": "Your AI tools connected",
+            "p": "Notion connected to Claude, ChatGPT or Grok, so everyone's AI reads the same context."
           }
         ],
-        "illustration": "build"
+        "illustration": "build",
+        "you_do": [
+          "Check the migrated data on each board",
+          "Set a cutover date for each board",
+          "Your VP of product reviews the Product catalog and adds the reasons behind changes"
+        ]
       },
       {
         "id": "training",
         "name": "Training and launch",
         "tag": "essential",
-        "price": 500,
+        "price": 300,
         "weeks": 1,
         "summary": "Two sessions so you and Katie can run the system, and the team uses it from day one.",
         "deliverables": [
@@ -208,7 +256,11 @@
             "p": "Both sessions recorded, plus a one-page guide."
           }
         ],
-        "illustration": "scale"
+        "illustration": "scale",
+        "you_do": [
+          "Attend both sessions",
+          "Switch off the migrated Monday boards"
+        ]
       }
     ],
     "included": [
@@ -217,18 +269,18 @@
       "Your current Notion work kept and built on"
     ],
     "excluded": [
-      "AI agents per department and connecting Notion to Slack (on the roadmap, quoted after the audit)",
+      "Additional custom AI agents (on the roadmap, quoted after the audit)",
       "Live syncs with Shopify, Missive or email (defined in the roadmap, subject to technical feasibility)",
       "Moving the \"move later\" boards (the migration guide shows your team how)",
-      "Moving files out of Google Drive (they stay in Drive, linked from Notion)",
+      "Moving media files out of Google Drive (they stay in Drive, linked from Notion)",
       "Notion licenses"
     ],
     "guarantee": "Two weeks after launch to fix issues within the delivered scope, at no extra cost."
   },
   "payment": {
     "deposit_pct": 50,
-    "schedule": "50% when you accept (USD 1,750), 50% on delivery (USD 1,750). By bank transfer, or by card through Stripe with a 4% card fee.",
-    "stripe_url": "https://buy.stripe.com/8x29AS3PT39ie8M1xT6Ri1k"
+    "schedule": "50% when you accept (USD 1,600), 50% on delivery (USD 1,600). By bank transfer, or by card through Stripe with a 4% card fee.",
+    "stripe_url": "https://buy.stripe.com/6oU3cucmp4dm9Sw7Wh6Ri1m"
   },
   "next_steps": [
     {

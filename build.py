@@ -162,9 +162,30 @@ def sec_context(pg, P):
     <h2>{rich(x['pains_title'])}</h2>
     <div class="cards">{pains}</div>
   </div>
+  {f'<figure class="fx-ill"><img src="{data_uri(os.path.join(T, "assets", "illustrations", x["illustration"] + ".webp"))}" alt=""></figure>' if x.get('illustration') else ''}
   {quote}
   {opp}'''
   pg.add('context', u['context'], body)
+
+def mockups(ms, lang):
+  # Simple Notion-like windows that show what the client gets, in their context. Illustrative.
+  if not ms:
+    return ''
+  def win(m):
+    t = m.get('type')
+    if t == 'ask':
+      body = (f'<div class="mk-q"><span class="mk-ai">✦</span>{rich(m["q"])}</div>'
+              f'<div class="mk-a">{rich(m["a"])}</div>' + (f'<div class="mk-src">{rich(m["source"])}</div>' if m.get('source') else ''))
+    elif t == 'notes':
+      body = f'<div class="mk-t">{rich(m["title"])}</div><ul class="mk-l">' + ''.join(f'<li>{rich(i)}</li>' for i in m.get('items', [])) + '</ul>'
+    elif t == 'progress':
+      body = (f'<div class="mk-t">{rich(m["title"])}</div>' + ''.join(
+        f'<div class="mk-r"><span>{rich(r["k"])}</span><span class="mk-bar"><i style="width:{int(r["v"])}%"></i></span><b>{int(r["v"])}%</b></div>' for r in m.get('rows', [])))
+    else:
+      return ''
+    return f'<div class="mk-w"><div class="mk-top"><i></i><i></i><i></i><span>{rich(m.get("label", ""))}</span></div><div class="mk-b">{body}</div></div>'
+  cap = 'Illustrative example' if lang == 'en' else 'Ejemplo ilustrativo'
+  return f'<div class="mk">{"".join(win(m) for m in ms)}</div><p class="mk-cap">{cap}</p>'
 
 def sec_focus(pg, P):
   u, f = pg.u, P['focus']
@@ -182,6 +203,7 @@ def sec_focus(pg, P):
   body = f'''  <h1>{rich(f['title'])}</h1>
   <p class="lede">{rich(f['statement'])}</p>
   {ill}
+  {mockups(f.get('mockups'), pg.lang)}
   {grid}
   {f'<p class="note" style="margin-top:18px">{rich(f["why"])}</p>' if f.get('why') else ''}'''
   pg.add('focus', f.get('nav') or u['focus'], body)
@@ -239,7 +261,6 @@ def sec_proposal(pg, P):
   summary = f'''<div class="sp-sum" data-cur="{esc(cur)}" data-pct="{pay.get('deposit_pct', 50)}" data-wk="{esc(u['weeks'])}">
       <div><div class="k">{u['total']}</div><div class="v" data-sp-total></div></div>
       <div><div class="k">{u['duration']}</div><div class="v" data-sp-weeks></div></div>
-      <div><div class="k">{u['deposit']} {u['on_accept']}</div><div class="v" data-sp-dep></div></div>
       <p>{rich(pay.get('schedule', ''))}</p>
     </div>'''
   inc = ''.join(f'<li><span class="ok">✓</span><span>{rich(v)}</span></li>' for v in pr.get('included', []))

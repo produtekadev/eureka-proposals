@@ -35,7 +35,8 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
     "pains": [ { "k": "Sales", "h": "No pipeline", "it": "In their words.", "p": "The consequence." } ],  // 3
     "quote": { "text": "Their words.", "who": "Name, role" },           // optional
     "opportunity_label": "The opportunity",                              // optional
-    "opportunity": "Why now, 2 sentences."                               // optional
+    "opportunity": "Why now, 2 sentences.",                              // optional
+    "illustration": "too-many-apps"                                      // optional: wide drawing after the pains (template/assets/illustrations/)
   },
 
   "focus": {                            // optional: omit when ask and recommendation match
@@ -47,7 +48,12 @@ Text fields may use a few inline tags: `<b>`, `<em>`, `<i>`, `<br>`, and `<span 
     "nav": "Goal",                                                       // optional: renames the section in the menu (default "Focus")
     "asked_label": "Today",                                              // optional: left column label (default "What you asked for")
     "recommend_label": "After working with us",                          // optional: right column label (default "What we recommend")
-    "illustration": "too-many-apps",                                    // optional: wide drawing under the statement
+    "mockups": [                                                        // optional, recommended: 2 or 3 simple Notion-like windows in the client's context, labelled "Illustrative example"
+      { "type": "ask", "label": "Product catalog", "q": "Their real question", "a": "Where the answer comes from", "source": "Answered from ..." },
+      { "type": "notes", "label": "Meetings", "title": "Weekly all-hands", "items": ["Summary saved right after the meeting", "Action items, each with an owner"] },
+      { "type": "progress", "label": "OKRs", "title": "This quarter's key results", "rows": [ { "k": "Sales", "v": 70 } ] }
+    ],
+    "illustration": "too-many-apps",                                    // optional: wide drawing under the statement (prefer putting it in context)
     "benefits": [ { "icon": "purple-shape", "h": "Short benefit", "p": "One line on what changes for them." } ]   // optional: replaces the two columns with icon cards (icons: purple-shape, magenta-shape, orange-cross, heart). Use it to frame the section as the goal: what the business looks like after working with us
   },
 

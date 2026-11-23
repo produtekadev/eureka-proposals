@@ -8,7 +8,7 @@
     {
       "id": "audit",
       "name": "Information audit and roadmap",
-      "price": 600,
+      "price": 500,
       "tag": "essential"
     },
     {
@@ -20,7 +20,7 @@
     {
       "id": "training",
       "name": "Training and launch",
-      "price": 500,
+      "price": 300,
       "tag": "essential"
     }
   ],
@@ -69,6 +69,6 @@
   ],
   "notion_page_id": "41dc9f5c-dca8-8000-9bd5-daed37e5b4e1",
   "card_fee_pct": 4,
-  "stripe_url": "https://buy.stripe.com/8x29AS3PT39ie8M1xT6Ri1k",
+  "stripe_url": "https://buy.stripe.com/6oU3cucmp4dm9Sw7Wh6Ri1m",
   "url": "https://proposals.eureka.ceo/sync"
 }
