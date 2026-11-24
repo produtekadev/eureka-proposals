@@ -118,7 +118,173 @@
         "h": "You run it without us",
         "p": "You create a new SOP and a new trip on your own."
       }
-    ]
+    ],
+    "dashboard": {
+      "title": "Founders dashboard",
+      "crumb": [
+        "CozmicGo",
+        "Operations"
+      ],
+      "views": [
+        {
+          "t": "Overview",
+          "icon": "dash"
+        },
+        {
+          "t": "Trips",
+          "icon": "plane"
+        },
+        {
+          "t": "Pipeline",
+          "icon": "bars"
+        },
+        {
+          "t": "Team",
+          "icon": "users"
+        }
+      ],
+      "rows": [
+        [
+          {
+            "type": "bars",
+            "title": "Leads pipeline",
+            "icon": "bars",
+            "items": [
+              [
+                "New",
+                24,
+                "purple"
+              ],
+              [
+                "Contacted",
+                15,
+                "magenta"
+              ],
+              [
+                "Call",
+                9,
+                "orange"
+              ],
+              [
+                "Deposit",
+                6,
+                "green"
+              ]
+            ]
+          },
+          {
+            "type": "donut",
+            "title": "Spots booked, next trip",
+            "icon": "donut",
+            "center": "14/20",
+            "center_label": "spots",
+            "segments": [
+              [
+                "Booked",
+                14,
+                "purple"
+              ],
+              [
+                "On hold",
+                3,
+                "magenta"
+              ],
+              [
+                "Open",
+                3,
+                "grey"
+              ]
+            ]
+          },
+          {
+            "type": "bars",
+            "title": "Trip tasks",
+            "icon": "check",
+            "items": [
+              [
+                "To do",
+                12,
+                "grey"
+              ],
+              [
+                "Doing",
+                8,
+                "amber"
+              ],
+              [
+                "Done",
+                31,
+                "purple"
+              ]
+            ]
+          }
+        ],
+        [
+          {
+            "type": "list",
+            "title": "Upcoming trips",
+            "icon": "plane",
+            "items": [
+              {
+                "t": "Tulum retreat",
+                "s": "March 12 to 16 · Host: Maya",
+                "pill": "On track",
+                "status": "ok"
+              },
+              {
+                "t": "Sedona hiking weekend",
+                "s": "April 3 to 5 · Host to assign",
+                "pill": "Needs a host",
+                "status": "pen"
+              },
+              {
+                "t": "Lisbon week",
+                "s": "May 20 to 27 · 4 of 18 spots",
+                "pill": "Planning",
+                "status": "plan"
+              }
+            ]
+          },
+          {
+            "type": "list",
+            "title": "Due this week, each with an owner",
+            "icon": "users",
+            "items": [
+              {
+                "t": "Follow up 6 new leads",
+                "s": "Sales · Today",
+                "who": "SA",
+                "color": "magenta"
+              },
+              {
+                "t": "Confirm the hotel block for Tulum",
+                "s": "Andrea · Friday",
+                "who": "AN",
+                "color": "purple"
+              },
+              {
+                "t": "Send the packing list",
+                "s": "Host: Maya · Thursday",
+                "who": "MA",
+                "color": "orange"
+              },
+              {
+                "t": "Publish the March itinerary",
+                "s": "Marketing · Wednesday",
+                "who": "MK",
+                "color": "green"
+              }
+            ]
+          }
+        ]
+      ],
+      "foot": {
+        "label": "Tulum retreat readiness",
+        "pct": 72,
+        "note": "Every task has an owner and a due date"
+      },
+      "caption": "Illustrative view. Trips, people and numbers are examples; the real dashboard is defined in the blueprint."
+    }
   },
   "proposal": {
     "title": "What we'll build<br><em>and what it costs.</em>",

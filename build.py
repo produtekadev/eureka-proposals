@@ -183,6 +183,77 @@ MK_ICONS = {
   'doc': _I('<path d="M5 2.5h6.5L15.5 6.5v11h-10.5z"/><path d="M11.5 2.5v4h4"/>'),
 }
 
+# Notion-style dashboard for the Goal section (same look as the approved Trolley cockpit). Static SVG, illustrative.
+DB_COL = {'purple': '#750FB4', 'magenta': '#EF53D4', 'orange': '#FF673E', 'amber': '#E8A317', 'grey': '#B9B6B0', 'green': '#1C7C54'}
+DB_IC = {
+  'bars': '<path d="M5 20V10M10 20V4M15 20v-7M20 20v-4"/>',
+  'donut': '<path d="M12 3a9 9 0 1 0 9 9h-9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/>',
+  'line': '<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/>',
+  'list': '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
+  'check': '<path d="M20 6 9 17l-5-5"/>',
+  'users': '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.4 3.3-5.5 6.5-5.5s5.9 2.1 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c1.9.8 3.1 2.6 3.5 5.2"/>',
+  'dash': '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 15l3-3 3 2 4-5"/>',
+  'plane': '<path d="M2 16l20-8-6 12-3-5-5-1z"/>',
+}
+def _dbi(k):
+  return f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{DB_IC.get(k, DB_IC["dash"])}</svg>'
+
+def _db_bars(w):
+  items = w['items']; W, H, L, B, T = 240, 150, 26, 124, 10
+  mx = max(v for _, v, *_ in items) or 1
+  step = 10 if mx <= 40 else 20
+  top = -(-mx // step) * step
+  g = ''
+  for v in range(0, top + 1, step):
+    y = B - v / top * (B - T)
+    g += f'<line class="gl" x1="{L}" x2="{W}" y1="{y:.1f}" y2="{y:.1f}"/><text class="ax" x="{L-6}" y="{y+3:.1f}" text-anchor="end">{v}</text>'
+  bw = (W - L) / len(items)
+  for i, it in enumerate(items):
+    lab, v = it[0], it[1]; col = DB_COL.get(it[2] if len(it) > 2 else 'purple', it[2] if len(it) > 2 else '#750FB4')
+    x = L + i * bw + bw / 2; h = v / top * (B - T)
+    g += f'<rect x="{x-10:.1f}" width="20" y="{B-h:.1f}" height="{h:.1f}" rx="3" fill="{col}"/><text class="ax" x="{x:.1f}" y="{H-6}" text-anchor="middle">{esc(lab)}</text>'
+  return f'<svg class="ch" viewBox="0 0 {W} {H}" role="img" aria-label="{esc(w["title"])}">{g}</svg>'
+
+def _db_donut(w):
+  segs = w['segments']; tot = sum(v for _, v, _ in segs) or 1; off = 0; circ = ''
+  for lab, v, c in segs:
+    pct = v / tot * 100; col = DB_COL.get(c, c)
+    circ += f'<circle cx="60" cy="60" r="46" fill="none" stroke="{col}" stroke-width="8" pathLength="100" stroke-dasharray="{pct:.2f} {100-pct:.2f}" stroke-dashoffset="{-off:.2f}" transform="rotate(-90 60 60)"/>'
+    off += pct
+  lg = ''.join(f'<span><i style="background:{DB_COL.get(c, c)}"></i>{esc(lab)}</span>' for lab, _, c in segs)
+  return (f'<svg class="ch" viewBox="0 0 120 120" style="max-width:140px;margin:4px auto 0" role="img" aria-label="{esc(w["title"])}">'
+          f'<circle cx="60" cy="60" r="46" fill="none" stroke="#F1F0EE" stroke-width="8"/>{circ}'
+          f'<text class="dn-t" x="60" y="63" text-anchor="middle">{esc(w.get("center", ""))}</text><text class="dn-s" x="60" y="79" text-anchor="middle">{esc(w.get("center_label", ""))}</text></svg>'
+          f'<div class="cp-lg">{lg}</div>')
+
+def _db_list(w):
+  pills = {'ok': 'p-ok', 'pen': 'p-pen', 'rev': 'p-rev', 'plan': 'p-plan'}
+  rows = ''
+  for it in w['items']:
+    av = f'<span class="av" style="background:{DB_COL.get(it.get("color", "purple"), it.get("color", "#750FB4"))}">{esc(it.get("who", "")[:2])}</span>' if it.get('who') else f'<span class="ic">{_dbi(it.get("icon", "plane"))}</span>'
+    pill = f'<span class="pill {pills.get(it.get("status", "ok"), "p-ok")}">{esc(it["pill"])}</span>' if it.get('pill') else ''
+    rows += f'<li>{av}<span class="t">{rich(it["t"])}<small>{rich(it.get("s", ""))}</small></span>{pill}</li>'
+  return f'<ul class="ap">{rows}</ul>'
+
+def dashboard(d, lang):
+  if not d:
+    return ''
+  def widget(w):
+    body = {'bars': _db_bars, 'donut': _db_donut, 'list': _db_list}[w['type']](w)
+    return f'<div class="cp-w"><h5>{_dbi(w.get("icon", "dash"))}{rich(w["title"])}</h5><div class="cp-c">{body}</div></div>'
+  rows = ''.join(f'<div class="cp-g {"r1" if len(r) == 3 else "r2"}">{"".join(widget(w) for w in r)}</div>' for r in d['rows'])
+  views = ''.join(f'<span class="{"on" if i == 0 else ""}">{_dbi(v.get("icon", "dash")) if isinstance(v, dict) else ""}{rich(v["t"] if isinstance(v, dict) else v)}</span>' for i, v in enumerate(d.get('views', [])))
+  crumb = ' / '.join(esc(c) for c in d.get('crumb', []))
+  foot = ''
+  if d.get('foot'):
+    f = d['foot']
+    foot = f'<div class="cp-foot"><span>{rich(f["label"])}</span><span class="cp-bar"><i style="width:{int(f["pct"])}%"></i></span><b>{int(f["pct"])}%</b><span class="cp-fn">{rich(f.get("note", ""))}</span></div>'
+  cap = d.get('caption') or ('Illustrative view.' if lang == 'en' else 'Vista ilustrativa.')
+  return (f'<div class="cp"><div class="cp-win"><div class="cp-dots"><i></i><i></i><i></i></div><div class="cp-tab">{esc(d["title"])}</div></div>'
+          f'<div class="cp-crumb">{crumb} / <b>{esc(d["title"])}</b><span class="r">···</span></div>'
+          f'<div class="cp-main"><h4 class="cp-h">{esc(d["title"])}</h4><div class="cp-views">{views}</div>{rows}</div>{foot}</div>'
+          f'<p class="cap">{rich(cap)}</p>')
+
 def mockups(ms, lang):
   # Simple Notion-like windows that show what the client gets, in their context. Illustrative.
   if not ms:
@@ -241,6 +312,7 @@ def sec_focus(pg, P):
   <p class="lede">{rich(f['statement'])}</p>
   {ill}
   {mockups(f.get('mockups'), pg.lang)}
+  {dashboard(f.get('dashboard'), pg.lang)}
   {grid}
   {f'<p class="note" style="margin-top:18px">{rich(f["why"])}</p>' if f.get('why') else ''}'''
   pg.add('focus', f.get('nav') or u['focus'], body)

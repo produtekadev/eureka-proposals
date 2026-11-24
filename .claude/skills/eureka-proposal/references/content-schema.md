@@ -50,6 +50,11 @@ Text fields accept `<b>`, `<em>`, `<i>`, `<br>` and `<span class="hl">` (purple 
       "suggestions": [ { "icon": "meetings", "q": "Another question in their words" } ],   // icons: meetings, goals, team, ask
       "reads": ["Google Drive", "Meeting notes", "Product catalog", "OKRs", "Team boards"]   // logos in MK_ICONS (build.py); unknown names get a document icon
     } ],
+    "dashboard": { "title": "Founders dashboard", "crumb": ["Client", "Area"], "views": [ { "t": "Overview", "icon": "dash" } ],   // optional, only when the team asks: a Notion-style dashboard of the goal (Trolley cockpit look)
+      "rows": [ [ { "type": "bars", "title": "", "icon": "bars", "items": [["Label", 24, "purple"]] },
+                  { "type": "donut", "title": "", "center": "14/20", "center_label": "spots", "segments": [["Booked", 14, "purple"]] } ],
+                [ { "type": "list", "title": "", "items": [ { "t": "Item", "s": "detail", "pill": "On track", "status": "ok|pen|rev|plan", "who": "AN", "color": "purple" } ] } ] ],
+      "foot": { "label": "Readiness", "pct": 72, "note": "" }, "caption": "Illustrative view. ..." },   // rows of 3 or 2 widgets; colors: purple, magenta, orange, amber, green, grey; icons: dash, bars, donut, line, list, check, users, plane
     "why": "One line that leads into the proposal."                      // optional
     // legacy alternative to "benefits": "asked" / "recommend" lists (two columns)
   },
