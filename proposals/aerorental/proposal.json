@@ -4,7 +4,9 @@
     "company": "Aerorental",
     "contact": "Andrea Castañeda",
     "role": "",
-    "location": "Bogotá"
+    "location": "Bogotá",
+    "logo": "clients/aerorental.png",
+    "logo_height": 56
   },
   "prepared_by": [
     "paula",

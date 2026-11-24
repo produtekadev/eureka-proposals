@@ -115,7 +115,7 @@ def sec_cover(pg, P, team):
   glance = ''.join(f'<div><div class="n">{rich(g["k"])}</div><h3>{rich(g["h"])}</h3><p>{rich(g["p"])}</p></div>' for g in cv.get('glance', []))
   body = f'''  <span class="ncp cv-badge" role="img" aria-label="{u['partner']}"></span>
   <div class="cv-pad">
-  {f'<img class="cv-logo" src="{data_uri(os.path.join(T, "assets", c["logo"]))}" alt="{esc(c["company"])}">' if c.get('logo') else ''}
+  {f'<img class="cv-logo"{(' style="height:' + str(int(c["logo_height"])) + 'px"') if c.get("logo_height") else ''} src="{data_uri(os.path.join(T, "assets", c["logo"]))}" alt="{esc(c["company"])}">' if c.get('logo') else ''}
   <span class="tag">{esc(cv.get('tag', ''))}</span>
   <h1>{rich(cv['headline'])}</h1>
   </div>

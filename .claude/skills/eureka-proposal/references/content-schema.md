@@ -8,7 +8,8 @@ Text fields accept `<b>`, `<em>`, `<i>`, `<br>` and `<span class="hl">` (purple 
 {
   "lang": "en",                          // "en" or "es": all labels follow it
   "client": { "company": "", "contact": "", "role": "", "location": "",
-              "logo": "clients/acme.png" },          // optional: under template/assets/, black (recolor white logos)
+              "logo": "clients/acme.png",                // optional: under template/assets/, black (recolor white logos)
+              "logo_height": 56 },                     // optional: cover logo height in px (default 26) for tall logos with a symbol above or beside the name
   "prepared_by": ["paula", "mateo"],     // ids from data/team.json
   "team": [],                            // extra team members in Team
   "notion_page_id": "",                  // the row in Notion Proposals
