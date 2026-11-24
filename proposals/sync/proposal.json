@@ -120,10 +120,20 @@
         "type": "chat",
         "label": "Notion AI",
         "q": "Why did this jacket's fabric change from last season?",
-        "a": "Here's the change note your product team wrote when the fabric was updated, with the tech pack linked.",
+        "a": "We switched to a lighter 3-layer shell. Customers said last season's jacket felt heavy on long days, and the new fabric from the same supplier is more waterproof at the same cost.",
         "sources": [
-          "Product catalog",
-          "Google Drive"
+          {
+            "t": "Alpine Jacket tech pack 2026",
+            "icon": "google drive"
+          },
+          {
+            "t": "Fabric change note",
+            "icon": "product catalog"
+          },
+          {
+            "t": "Product review, March 12",
+            "icon": "meeting notes"
+          }
         ],
         "suggestions": [
           {

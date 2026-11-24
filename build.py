@@ -200,7 +200,11 @@ def mockups(ms, lang):
       face = f'<img class="mk-face" src="{data_uri(os.path.join(T, "assets", "illustrations", "notion-ai-face.webp"))}" alt="">'
       def ico(name):
         return f'<span class="mk-ico">{MK_ICONS.get(str(name).lower(), MK_ICONS["doc"])}</span>'
-      chip = lambda x: f'<span class="mk-chip">{ico(x)}{rich(x)}</span>'
+      def chip(x):
+        # A source can be a plain name or {"t": "Document title", "icon": "google drive"}; shown as a link chip.
+        if isinstance(x, dict):
+          return f'<span class="mk-chip mk-link">{ico(x.get("icon", "doc"))}{rich(x["t"])}<span class="mk-arr">↗</span></span>'
+        return f'<span class="mk-chip">{ico(x)}{rich(x)}</span>'
       srcs = ''.join(chip(x) for x in m.get('sources', []))
       rows = ''.join(f'<div class="mk-row">{ico(x.get("icon", "ask") if isinstance(x, dict) else "ask")}<span>{rich(x["q"] if isinstance(x, dict) else x)}</span></div>' for x in m.get('suggestions', []))
       reads = ''.join(f'<span class="mk-rd" title="{esc(x)}">{ico(x)}</span>' for x in m.get('reads', []))
