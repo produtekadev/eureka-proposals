@@ -63,5 +63,18 @@
       "en": "USA",
       "es": "EE. UU."
     }
+  },
+  "skandia": {
+    "name": "Skandia",
+    "logo": "clients/skandia.png",
+    "url": "https://www.skandia.co",
+    "what": {
+      "en": "Project management in Notion",
+      "es": "Gestión de proyectos en Notion"
+    },
+    "where": {
+      "en": "Colombia",
+      "es": "Colombia"
+    }
   }
 }
