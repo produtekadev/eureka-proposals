@@ -4,7 +4,9 @@
     "company": "CozmicGo",
     "contact": "Nathan Kohrs",
     "role": "Founder",
-    "location": "Las Vegas"
+    "location": "Las Vegas",
+    "logo": "clients/cozmicgo.png",
+    "logo_height": 40
   },
   "prepared_by": [
     "abel",
@@ -13,36 +15,26 @@
   "team": [],
   "notion_page_id": "41dc9f5c-dca8-809a-90cf-d9936a05a378",
   "clients": [
+    "animalz",
+    "digital-seniority",
     "daughters-for-earth",
     "henkel",
     "toggl-hire",
     "bid",
     "foton"
   ],
-  "date": "2026-11-19",
-  "valid_until": "2026-12-03",
+  "date": "2026-11-23",
+  "valid_until": "2026-12-07",
   "start": "Week of November 30",
   "cover": {
     "tag": "Implementation proposal",
     "headline": "An operating system for<br><em>your next</em> <span class=\"hl\">20 people.</span>",
     "lede": "A fixed-scope plan to turn the Notion workspace you started into the place where a new teammate understands CozmicGo, knows what they own and can run a trip on their own. Based on our session on November 17.",
-    "glance": [
-      {
-        "k": "Focus",
-        "h": "Built for your next hires",
-        "p": "Ownership, SOPs and trip operations first."
-      },
-      {
-        "k": "Total · USD 2,500",
-        "h": "Four milestones, fixed fee",
-        "p": "Each one with acceptance criteria, in five weeks."
-      },
-      {
-        "k": "At the end",
-        "h": "Roadmap",
-        "p": "What to add next as the team grows."
-      }
-    ]
+    "goal": {
+      "h": "Ready before the team arrives",
+      "p": "Every new teammate knows what they own and how to do it."
+    },
+    "price_note": "Four milestones, fixed fee. Starts the week of November 30."
   },
   "context": {
     "title": "What we<br><em>heard.</em>",
@@ -61,14 +53,13 @@
         "t": "teamspaces you already set up in Notion"
       }
     ],
-    "pains_label": "The challenge",
     "pains_title": "Three things to solve <em>before</em> the team grows.",
     "pains": [
       {
         "k": "Ownership",
         "h": "The business lives with two people",
         "it": "\"What they're responsible for and what they're accountable for.\"",
-        "p": "New hires need to see their role, their outcomes and how to do the work without asking a founder each time."
+        "p": "New hires need to see what they own, their outcomes and how to do the work without asking a founder each time."
       },
       {
         "k": "Remote team",
@@ -87,34 +78,50 @@
       "text": "We want to build for our next 20 people, not 200.",
       "who": "Nathan Kohrs, Founder"
     },
-    "opportunity_label": "The opportunity",
-    "opportunity": "You are about to make your first hires. Setting up roles, SOPs and trip operations now means <b>every new teammate starts with clear ownership from day one</b>, instead of learning the business by asking."
+    "opportunity": "You are about to make your first hires. Setting up your team, SOPs and trip operations now means <b>every new teammate starts with clear ownership from day one</b>, instead of learning the business by asking.",
+    "illustration": "too-many-apps"
   },
   "focus": {
-    "title": "Where we'd<br><em>start.</em>",
+    "nav": "Goal",
+    "title": "What changes<br><em>for your team.</em>",
     "statement": "<b>A workspace where a new teammate understands CozmicGo, knows what they own, and can run a trip without asking the founders.</b>",
-    "asked": [
-      "An operating system for the whole company",
-      "Clear ownership and accountability for every teammate",
-      "Onboarding for new hires",
-      "SOPs and measurable outcomes",
-      "Databases linked across the organization",
-      "A leads pipeline, today in Google Sheets",
-      "AI agents to create efficiencies, later on"
-    ],
-    "recommend": [
-      "A blueprint built on the teamspaces you already have",
-      "A company home with an onboarding path",
-      "A roles database: what each role owns and how it is measured",
-      "An SOP library your team can grow",
-      "Trip operations and your leads pipeline, connected",
-      "Training, then a roadmap for finance, marketing, technology and agents"
-    ],
-    "why": "You asked what fits in a fixed fee of USD 2,500. Our recommendation is to build what your first hires will use every day, and leave finance, product and AI agents for the roadmap. A smaller system the team uses beats a complete one nobody opens."
+    "why": "These six outcomes are the acceptance criteria for the four milestones below, tied to your three principles: speed to action, simplicity by design and autonomy with accountability.",
+    "benefits": [
+      {
+        "icon": "purple-shape",
+        "h": "A structure you approve first",
+        "p": "You and Andrea sign off the blueprint before we build, and every database in it has a purpose and an owner."
+      },
+      {
+        "icon": "magenta-shape",
+        "h": "Answers in two clicks",
+        "p": "A new teammate finds what they own and the SOPs for it in two clicks."
+      },
+      {
+        "icon": "orange-cross",
+        "h": "Clear ownership",
+        "p": "Every teammate sees what they are responsible for and how it is measured."
+      },
+      {
+        "icon": "purple-shape",
+        "h": "A real trip, end to end",
+        "p": "One real trip runs in the system from lead to follow-up."
+      },
+      {
+        "icon": "magenta-shape",
+        "h": "Every task has an owner",
+        "p": "Each trip task has an owner and a due date, and you see trips, tasks and pipeline from one page."
+      },
+      {
+        "icon": "orange-cross",
+        "h": "You run it without us",
+        "p": "You create a new SOP and a new trip on your own."
+      }
+    ]
   },
   "proposal": {
     "title": "What we'll build<br><em>and what it costs.</em>",
-    "intro": "Each milestone has its own price and they add up to one fixed fee. Under each one you'll see the deliverables, the acceptance criteria tied to your three principles, and what we need from you.",
+    "intro": "Each milestone has its own price and they add up to one fixed fee. <b>Includes three months of Notion Business at no cost, on a new workspace.</b>",
     "currency": "USD",
     "phases": [
       {
@@ -138,74 +145,44 @@
             "p": "A document with the teamspaces, the databases and how they connect to each other."
           }
         ],
-        "callout": {
-          "label": "Acceptance criteria",
-          "title": "This milestone is done when",
-          "items": [
-            {
-              "q": "You and Andrea approve the blueprint",
-              "a": "Simplicity by design",
-              "icon": "purple-shape"
-            },
-            {
-              "q": "Every database in it has a clear purpose and owner",
-              "a": "Autonomy with accountability",
-              "icon": "magenta-shape"
-            }
-          ]
-        },
         "you_do": [
           "Join the working session",
           "Give us access to the workspace and your leads sheet",
           "Approve the blueprint"
-        ]
+        ],
+        "illustration": "map"
       },
       {
         "id": "company",
-        "name": "Company home, roles and SOPs",
+        "name": "Company home, team and SOPs",
         "tag": "essential",
         "price": 700,
         "weeks": 1,
-        "summary": "The place a new teammate lands on day one: who CozmicGo is, what their role owns and how the work gets done.",
+        "summary": "The place a new teammate lands on day one: who CozmicGo is, what they own and how the work gets done.",
         "deliverables": [
           {
             "h": "Company home",
             "p": "A home page for the whole team with an onboarding path for new hires."
           },
           {
-            "h": "Roles database",
-            "p": "Each role with what it is responsible for, the outcomes it is measured on and the SOPs it uses."
+            "h": "Team database",
+            "p": "Each teammate and role with what they are responsible for, the outcomes they are measured on and the SOPs they use."
           },
           {
             "h": "SOP library",
-            "p": "One database for every procedure and guide, with a template so all SOPs read the same way, organized by team and by role."
+            "p": "One database for every procedure and guide, with a template so all SOPs read the same way, organized by team."
           },
           {
             "h": "First SOPs",
             "p": "The first procedures written with you in a working session, so your team has a model to follow for the rest."
           }
         ],
-        "callout": {
-          "label": "Acceptance criteria",
-          "title": "This milestone is done when",
-          "items": [
-            {
-              "q": "A new teammate finds their role and its SOPs in two clicks",
-              "a": "Simplicity by design",
-              "icon": "purple-shape"
-            },
-            {
-              "q": "Every role shows what it owns and how it is measured",
-              "a": "Autonomy with accountability",
-              "icon": "magenta-shape"
-            }
-          ]
-        },
         "you_do": [
           "Define the roles you plan to hire",
           "Write the first SOPs with us",
           "Review the company home"
-        ]
+        ],
+        "illustration": "build"
       },
       {
         "id": "operations",
@@ -236,32 +213,12 @@
             "p": "We show you the build halfway through and adjust it with your feedback."
           }
         ],
-        "callout": {
-          "label": "Acceptance criteria",
-          "title": "This milestone is done when",
-          "items": [
-            {
-              "q": "One real trip runs in the system from lead to follow-up",
-              "a": "Speed to action",
-              "icon": "orange-cross"
-            },
-            {
-              "q": "Every trip task has an owner and a due date",
-              "a": "Autonomy with accountability",
-              "icon": "magenta-shape"
-            },
-            {
-              "q": "You see trips, tasks and pipeline from one page",
-              "a": "Simplicity by design",
-              "icon": "purple-shape"
-            }
-          ]
-        },
         "you_do": [
           "Share your leads sheet",
           "Load one real trip with us",
           "Give feedback at the midpoint demo"
-        ]
+        ],
+        "illustration": "build"
       },
       {
         "id": "training",
@@ -284,35 +241,21 @@
             "p": "What to add next and in what order as the team grows: finance, marketing, product and technology, and AI agents."
           }
         ],
-        "callout": {
-          "label": "Acceptance criteria",
-          "title": "This milestone is done when",
-          "items": [
-            {
-              "q": "You create a new SOP and a new trip without our help",
-              "a": "Autonomy with accountability",
-              "icon": "magenta-shape"
-            },
-            {
-              "q": "You have the recording, the guide and the roadmap",
-              "a": "Speed to action",
-              "icon": "orange-cross"
-            }
-          ]
-        },
         "you_do": [
           "Join the training",
           "Review the roadmap with us"
-        ]
+        ],
+        "illustration": "scale"
       }
     ],
     "included": [
+      "Three months of Notion Business at no cost, on a new workspace",
       "One working session with you every week",
       "A shared channel for questions during the project",
       "Sign-off with you at the end of each milestone"
     ],
     "excluded": [
-      "Notion licenses",
+      "Notion licenses after the three-month trial",
       "Finance, marketing and product and technology systems (ordered in the roadmap)",
       "AI agents and integrations with other tools (defined in the roadmap, subject to technical feasibility)",
       "Writing every SOP (your team writes them with the template, after the first ones we write together)",
@@ -322,7 +265,7 @@
   },
   "payment": {
     "deposit_pct": 50,
-    "schedule": "50% when you accept, 50% on delivery. By bank transfer, or by card through Stripe with a 4% card fee.",
+    "schedule": "50% when you accept (USD 1,250), 50% on delivery (USD 1,250). By bank transfer, or by card through Stripe with a 4% card fee.",
     "stripe_url": "https://buy.stripe.com/bJedR83PT4dmggUfoJ6Ri1j"
   },
   "next_steps": [
@@ -333,14 +276,20 @@
     },
     {
       "when": "Once we receive it",
-      "h": "Next steps by email",
-      "p": "We send you the link to book the kickoff."
+      "h": "Sign the NDA",
+      "p": "We send you an NDA to sign before the kickoff, so everything we see in your workspace stays confidential."
+    },
+    {
+      "when": "After the NDA",
+      "h": "Kickoff",
+      "p": "We email you the kickoff link and book the first working session."
     },
     {
       "when": "Week of November 30",
       "h": "Discovery starts",
-      "p": "Five weeks from kickoff to handover."
+      "p": "Build through December, training the week of January 4."
     }
   ],
-  "closing": "We're ready to build<br><em>your Eureka moment.</em>"
+  "closing": "We're ready to build<br><em>your Eureka moment.</em>",
+  "closing_illustration": "team-work"
 }
