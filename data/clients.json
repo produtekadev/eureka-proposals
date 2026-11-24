@@ -63,5 +63,70 @@
       "en": "USA",
       "es": "EE. UU."
     }
+  },
+  "skandia": {
+    "name": "Skandia",
+    "logo": "clients/skandia.png",
+    "url": "https://www.skandia.co",
+    "what": {
+      "en": "Project management in Notion",
+      "es": "Gestión de proyectos en Notion"
+    },
+    "where": {
+      "en": "Colombia",
+      "es": "Colombia"
+    }
+  },
+  "lili-pink": {
+    "name": "Lili Pink",
+    "logo": "clients/lili-pink.png",
+    "url": "https://www.lilipink.com",
+    "what": {
+      "en": "Creative processes in Notion",
+      "es": "Procesos creativos en Notion"
+    },
+    "where": {
+      "en": "Colombia",
+      "es": "Colombia"
+    }
+  },
+  "visible": {
+    "name": "Visible",
+    "logo": "clients/visible.png",
+    "url": "https://visible.social",
+    "what": {
+      "en": "Team operations log in Notion",
+      "es": "Registro operativo del equipo en Notion"
+    },
+    "where": {
+      "en": "Personal branding agency",
+      "es": "Agencia de marca personal"
+    }
+  },
+  "animalz": {
+    "name": "Animalz",
+    "logo": "clients/animalz.png",
+    "url": "https://www.animalz.co",
+    "what": {
+      "en": "Knowledge base and wiki in Notion",
+      "es": "Base de conocimiento y wiki en Notion"
+    },
+    "where": {
+      "en": "USA",
+      "es": "EE. UU."
+    }
+  },
+  "digital-seniority": {
+    "name": "Digital Seniority",
+    "logo": "clients/digital-seniority.png",
+    "url": "https://digitalseniority.com",
+    "what": {
+      "en": "Notion workspace audit",
+      "es": "Auditoría de workspace en Notion"
+    },
+    "where": {
+      "en": "Canada",
+      "es": "Canadá"
+    }
   }
 }

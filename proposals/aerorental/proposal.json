@@ -4,7 +4,9 @@
     "company": "Aerorental",
     "contact": "Andrea Castañeda",
     "role": "",
-    "location": "Bogotá"
+    "location": "Bogotá",
+    "logo": "clients/aerorental.png",
+    "logo_height": 56
   },
   "prepared_by": [
     "paula",
@@ -13,36 +15,27 @@
   "team": [],
   "notion_page_id": "41dc9f5c-dca8-8069-97a0-ee366dd5597e",
   "clients": [
+    "skandia",
+    "lili-pink",
+    "visible",
     "bid",
     "henkel",
     "toggl-hire",
     "foton",
     "daughters-for-earth"
   ],
-  "date": "2026-11-19",
-  "valid_until": "2026-12-03",
+  "date": "2026-11-23",
+  "valid_until": "2026-12-07",
   "start": "Semana del 30 de noviembre",
   "cover": {
     "tag": "Propuesta de diagnóstico e implementación",
     "headline": "Procesos administrativos<br><em>más ligeros</em> <span class=\"hl\">y productivos.</span>",
-    "lede": "Un mes para entender a fondo los procesos administrativos que más tiempo le quitan a tu operación, dejar el primero funcionando en Notion y salir con un plan claro para los demás. Basada en nuestra conversación del 17 de noviembre.",
-    "glance": [
-      {
-        "k": "Enfoque",
-        "h": "Primero entender, después construir",
-        "p": "Un diagnóstico a fondo y un primer flujo funcionando."
-      },
-      {
-        "k": "Total · USD 2,000",
-        "h": "Diagnóstico, primer flujo y capacitación",
-        "p": "Tres fases en cuatro semanas."
-      },
-      {
-        "k": "Al final",
-        "h": "Hoja de ruta",
-        "p": "El resto de flujos con orden, fases y precios."
-      }
-    ]
+    "lede": "Un plan en tres fases para entender a fondo los procesos administrativos que más tiempo le quitan a tu operación, dejar el primero funcionando en Notion y salir con un plan claro para los demás. Basada en nuestra conversación del 17 de noviembre.",
+    "goal": {
+      "h": "Saber qué llevar a Notion",
+      "p": "Un diagnóstico de tus procesos administrativos y el primero ya funcionando."
+    },
+    "price_note": "Diagnóstico, primer flujo y capacitación. Empieza la semana del 30 de noviembre."
   },
   "context": {
     "title": "Lo que<br><em>escuchamos.</em>",
@@ -61,7 +54,6 @@
         "t": "procesos manuales que estudiaremos a fondo"
       }
     ],
-    "pains_label": "El reto",
     "pains_title": "Tres cosas que hoy <em>le quitan tiempo</em> a la operación.",
     "pains": [
       {
@@ -87,49 +79,70 @@
       "text": "Cada máquina que está parada es una máquina que está perdiendo plata.",
       "who": "Andrea Castañeda, Aerorental"
     },
-    "opportunity_label": "La oportunidad",
-    "opportunity": "Quieres que el mismo equipo que tienes hoy sostenga el crecimiento. Para eso los procesos administrativos tienen que ser ligeros, y <b>el primer paso es saber con certeza cuáles vale la pena llevar a Notion y cuáles no.</b>"
+    "opportunity": "Quieres que el mismo equipo que tienes hoy sostenga el crecimiento. Para eso los procesos administrativos tienen que ser ligeros, y <b>el primer paso es saber con certeza cuáles vale la pena llevar a Notion y cuáles no.</b>",
+    "illustration": "too-many-apps"
   },
   "focus": {
-    "title": "Por dónde<br><em>empezaríamos.</em>",
-    "statement": "<b>Entender a fondo cómo funcionan hoy los procesos administrativos que más tiempo le quitan a la operación, y dejar funcionando en Notion el primero, sobre una base que sirva para todos los demás.</b>",
-    "asked": [
-      "Reducir el trabajo manual de nómina y gestión humana",
-      "Control de horas extras",
-      "Legalización de gastos",
-      "Control y mantenimiento de computadores",
-      "Información de desempeño y procesos disciplinarios",
-      "Seguridad industrial y administración de tecnología",
-      "Procesos centralizados y fáciles de consultar"
-    ],
-    "recommend": [
-      "Estudiar a fondo cinco flujos antes de construir",
-      "Elegir el primero con criterios claros y contigo",
-      "Construir la base del sistema y un flujo completo, sin integraciones",
-      "Capacitar al equipo sobre algo que ya funciona",
-      "Dejar la hoja de ruta de los demás flujos, con orden y precios"
-    ],
-    "why": "En la llamada dijiste que una respuesta válida es \"creemos que esto no va a funcionar\". Por eso empezamos con un diagnóstico: te decimos qué va a Notion, qué se queda en tus herramientas actuales y qué no vale la pena tocar, antes de construir todo a la vez."
+    "nav": "Objetivo",
+    "title": "Lo que cambia<br><em>para tu equipo.</em>",
+    "statement": "<b>Saber con certeza qué procesos administrativos vale la pena llevar a Notion, y tener el primero funcionando sobre una base que sirva para todos los demás.</b>",
+    "why": "En la llamada dijiste que una respuesta válida es \"creemos que esto no va a funcionar\". Por eso empezamos con un diagnóstico antes de construir.",
+    "benefits": [
+      {
+        "icon": "purple-shape",
+        "h": "Todos tus procesos en un mapa",
+        "p": "Cada proceso administrativo con su urgencia, sus herramientas y si se puede conectar a IA."
+      },
+      {
+        "icon": "magenta-shape",
+        "h": "Decisiones con criterio",
+        "p": "Sabes qué va a Notion, qué se queda en tus herramientas y qué no vale la pena tocar."
+      },
+      {
+        "icon": "orange-cross",
+        "h": "Un flujo que ya funciona",
+        "p": "Tu equipo usa el primer proceso en Notion desde la entrega."
+      },
+      {
+        "icon": "purple-shape",
+        "h": "Menos carga para la operación",
+        "p": "Técnicos y operadores envían la información desde un formulario, sin cuenta de Notion."
+      },
+      {
+        "icon": "magenta-shape",
+        "h": "Una base para crecer",
+        "p": "Cada flujo nuevo se conecta a lo que ya existe, sin empezar de cero."
+      },
+      {
+        "icon": "orange-cross",
+        "h": "Un plan para lo que sigue",
+        "p": "La hoja de ruta te sirve para continuar con tu equipo o con nosotros."
+      }
+    ]
   },
   "proposal": {
     "title": "Lo que vamos a construir<br><em>y lo que cuesta.</em>",
-    "intro": "Cada fase tiene su precio y todas suman un total fijo. En cada una ves lo que entregamos y lo que necesitamos de ti.",
+    "intro": "Cada fase tiene su precio y todas suman un total fijo. <b>Incluye tres meses de Notion Business sin costo para tu workspace nuevo.</b>",
     "currency": "USD",
     "phases": [
       {
         "id": "diagnostico",
         "name": "Diagnóstico de procesos",
         "tag": "essential",
-        "price": 1000,
+        "price": 700,
         "weeks": 2,
-        "summary": "Estudiamos a fondo cómo funcionan hoy los cinco flujos que nos contaste, con las personas que los viven en nómina y gestión humana, contabilidad y tecnología.",
+        "summary": "Ordenamos todos tus procesos administrativos en un solo lugar y estudiamos a fondo los cinco flujos que nos contaste, con las personas que los viven.",
         "deliverables": [
           {
             "h": "Entrevistas por área",
             "p": "Conversaciones con las personas que manejan cada proceso en nómina y gestión humana, contabilidad y tecnología."
           },
           {
-            "h": "Mapa de cinco flujos",
+            "h": "Inventario de procesos administrativos",
+            "p": "Todos tus procesos administrativos en una base de Notion, con su urgencia, las herramientas que usan y si se pueden conectar a IA."
+          },
+          {
+            "h": "Mapa a fondo de cinco flujos",
             "p": "Legalización de gastos, horas extras, control de computadores, desempeño y procesos disciplinarios, y documentación de procesos. Cada uno paso a paso: quién hace qué, en qué herramienta y dónde se pierde tiempo."
           },
           {
@@ -138,46 +151,26 @@
           },
           {
             "h": "Reporte de diagnóstico",
-            "p": "Un documento con los hallazgos, lo que recomendamos llevar a Notion y lo que recomendamos no tocar."
+            "p": "Los hallazgos, lo que recomendamos llevar a Notion y lo que recomendamos no tocar. Te sirve para seguir con tu equipo o con nosotros."
           },
           {
             "h": "Recomendación del primer flujo",
-            "p": "El flujo que proponemos construir primero y por qué. Tú lo apruebas antes de que empecemos."
+            "p": "El flujo que proponemos construir primero: el que más tiempo le devuelve a la operación, funciona completo dentro de Notion y se puede probar en una semana. Tú lo apruebas."
           }
         ],
-        "callout": {
-          "label": "Criterios",
-          "title": "Cómo elegimos el primer flujo",
-          "lede": "Tres preguntas que le hacemos a cada proceso.",
-          "items": [
-            {
-              "q": "¿Le devuelve tiempo a la operación?",
-              "a": "Impacto",
-              "icon": "purple-shape"
-            },
-            {
-              "q": "¿Funciona completo dentro de Notion?",
-              "a": "Sin integraciones",
-              "icon": "magenta-shape"
-            },
-            {
-              "q": "¿Se puede construir y probar en una semana?",
-              "a": "Ganancia rápida",
-              "icon": "orange-cross"
-            }
-          ]
-        },
         "you_do": [
+          "Abrir el workspace de Notion",
           "Definir a quién entrevistamos en cada área",
           "Compartir los archivos de Excel y formatos actuales",
           "Aprobar el primer flujo"
-        ]
+        ],
+        "illustration": "map"
       },
       {
         "id": "base",
         "name": "Base del sistema y primer flujo",
         "tag": "essential",
-        "price": 700,
+        "price": 500,
         "weeks": 1,
         "summary": "Montamos en Notion la base sobre la que vivirán los flujos operativos y dejamos el primero funcionando de principio a fin, sin depender de conexiones con otros software.",
         "deliverables": [
@@ -199,10 +192,11 @@
           }
         ],
         "you_do": [
-          "Abrir el workspace de Notion",
+          "Elegir quién prueba el flujo",
           "Probar el flujo con casos reales",
           "Darnos tus comentarios en la demo"
-        ]
+        ],
+        "illustration": "build"
       },
       {
         "id": "capacitacion",
@@ -228,16 +222,19 @@
         "you_do": [
           "Convocar al equipo a la capacitación",
           "Revisar la hoja de ruta con nosotros"
-        ]
+        ],
+        "illustration": "scale"
       }
     ],
     "included": [
+      "Tres meses de Notion Business sin costo, en un workspace nuevo",
+      "Acuerdo de confidencialidad (NDA) firmado antes de empezar",
       "Una sesión de trabajo contigo cada semana",
       "Un canal directo para dudas durante el proyecto",
       "Formularios para que técnicos y operadores envíen información sin necesitar una cuenta de Notion"
     ],
     "excluded": [
-      "Licencias de Notion",
+      "Licencias de Notion después de los tres meses de prueba",
       "Flujos adicionales al primero (quedan ordenados y con precio en la hoja de ruta)",
       "Integraciones con SAM, NetSuite, ABIO o Alegra (se definen en la hoja de ruta, sujetas a viabilidad técnica)",
       "El cambio del software de mantenimiento",
@@ -248,8 +245,8 @@
   },
   "payment": {
     "deposit_pct": 50,
-    "schedule": "50 % al aceptar, 50 % contra entrega. Por transferencia bancaria, o con tarjeta a través de Stripe con un cargo del 4 %.",
-    "stripe_url": "https://buy.stripe.com/6oU28qeuxeS09SwekF6Ri1i"
+    "schedule": "50 % al aceptar (USD 750), 50 % contra entrega (USD 750). Por transferencia bancaria, o con tarjeta a través de Stripe con un cargo del 4 %.",
+    "stripe_url": "https://buy.stripe.com/bJe6oGbil8tCc0E3G16Ri1n"
   },
   "next_steps": [
     {
@@ -259,14 +256,20 @@
     },
     {
       "when": "Cuando lo recibamos",
-      "h": "Siguientes pasos por correo",
-      "p": "Te enviamos el enlace para agendar el inicio."
+      "h": "Firmamos el NDA",
+      "p": "Te enviamos un acuerdo de confidencialidad para firmar antes del inicio, porque vamos a ver información de nómina y gestión humana."
+    },
+    {
+      "when": "Después del NDA",
+      "h": "Inicio y entrevistas",
+      "p": "Te enviamos el enlace para agendar el inicio y programamos las entrevistas con cada área."
     },
     {
       "when": "Semana del 30 de noviembre",
       "h": "Empieza el diagnóstico",
-      "p": "Cuatro semanas desde el inicio hasta la capacitación."
+      "p": "Diagnóstico y primer flujo en diciembre, capacitación la semana del 4 de enero."
     }
   ],
-  "closing": "Listos para construir<br><em>tu momento Eureka.</em>"
+  "closing": "Listos para construir<br><em>tu momento Eureka.</em>",
+  "closing_illustration": "team-work"
 }

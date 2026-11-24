@@ -8,13 +8,13 @@
     {
       "id": "diagnostico",
       "name": "Diagnóstico de procesos",
-      "price": 1000,
+      "price": 700,
       "tag": "essential"
     },
     {
       "id": "base",
       "name": "Base del sistema y primer flujo",
-      "price": 700,
+      "price": 500,
       "tag": "essential"
     },
     {
@@ -69,6 +69,6 @@
   ],
   "notion_page_id": "41dc9f5c-dca8-8069-97a0-ee366dd5597e",
   "card_fee_pct": 4,
-  "stripe_url": "https://buy.stripe.com/6oU28qeuxeS09SwekF6Ri1i",
+  "stripe_url": "https://buy.stripe.com/bJe6oGbil8tCc0E3G16Ri1n",
   "url": "https://proposals.eureka.ceo/aerorental"
 }
