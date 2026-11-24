@@ -76,5 +76,31 @@
       "en": "Colombia",
       "es": "Colombia"
     }
+  },
+  "lili-pink": {
+    "name": "Lili Pink",
+    "logo": "clients/lili-pink.png",
+    "url": "https://www.lilipink.com",
+    "what": {
+      "en": "Creative processes in Notion",
+      "es": "Procesos creativos en Notion"
+    },
+    "where": {
+      "en": "Colombia",
+      "es": "Colombia"
+    }
+  },
+  "visible": {
+    "name": "Visible",
+    "logo": "clients/visible.png",
+    "url": "https://visible.social",
+    "what": {
+      "en": "Team operations log in Notion",
+      "es": "Registro operativo del equipo en Notion"
+    },
+    "where": {
+      "en": "Personal branding agency",
+      "es": "Agencia de marca personal"
+    }
   }
 }
