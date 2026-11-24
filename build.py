@@ -130,11 +130,12 @@ def sec_cover(pg, P, team):
     # Minimal cover: goal and duration/price first, who and when in a small footer line.
     g = cv['goal']
     total = sum(ph['price'] for ph in P['proposal']['phases'])
+    show_price = cv.get('show_price', True)  # false for live presentations: the price first appears in the Proposal section
     dur = rich(P.get('duration_label') or f'<em>{weeks}</em> {u["weeks"]}')
     head = body.split('  <div class="meta">')[0]
     body = head + f'''  <div class="cv-key">
     <div><div class="k">{u['the_goal']}</div><h3>{rich(g['h'])}</h3><p>{rich(g.get('p', ''))}</p></div>
-    <div><div class="k">{u['dur_price']}</div><h3>{dur} · {esc(fmt_money(total, P['proposal'].get('currency', 'USD')))}</h3><p>{rich(cv.get('price_note', ''))}</p></div>
+    <div><div class="k">{u['dur_price'] if show_price else u['duration']}</div><h3>{dur}{' · ' + esc(fmt_money(total, P['proposal'].get('currency', 'USD'))) if show_price else ''}</h3><p>{rich(cv.get('price_note', ''))}</p></div>
   </div>
   <p class="cv-foot">{u['for']} <b>{esc(c['company'])}</b>{' · ' + esc(c['contact']) if c.get('contact') else ''} · {u['prepared_by']} <b>{esc(prep)}</b>, Eureka · {esc(fmt_date(P['date'], pg.lang))}, {u['valid_short']} {esc(fmt_date(P['valid_until'], pg.lang))}</p>'''
   elif glance:

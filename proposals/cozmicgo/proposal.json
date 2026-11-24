@@ -34,7 +34,8 @@
       "h": "Ready before the team arrives",
       "p": "Every new teammate knows what they own and how to do it."
     },
-    "price_note": "Four milestones, fixed fee. Starts the week of November 30."
+    "price_note": "Four milestones, fixed fee. Starts the week of November 30.",
+    "show_price": false
   },
   "context": {
     "title": "What we<br><em>heard.</em>",

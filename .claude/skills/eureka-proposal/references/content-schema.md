@@ -22,6 +22,7 @@ Text fields accept `<b>`, `<em>`, `<i>`, `<br>` and `<span class="hl">` (purple 
     "lede": "One or two sentences: what the plan does and which calls it's based on.",
     "goal": { "h": "One source of truth", "p": "One line on the outcome." },   // minimal cover (default): goal + duration & price (computed)
     "price_note": "Audit, build and training. Starts the week of November 30."
+    // "show_price": false hides the total on the cover (use it for proposals presented live; the price first shows in Proposal)
     // legacy alternative to "goal": "glance": [ { "k": "", "h": "", "p": "" } ] (3 items)
   },
 

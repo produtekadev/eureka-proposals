@@ -31,7 +31,8 @@
       "h": "One source of truth",
       "p": "Every team and AI tool working from the same information."
     },
-    "price_note": "Audit, build and training. Starts the week of November 30."
+    "price_note": "Audit, build and training. Starts the week of November 30.",
+    "show_price": false
   },
   "context": {
     "title": "What we<br><em>heard.</em>",

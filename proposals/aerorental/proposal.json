@@ -35,7 +35,8 @@
       "h": "Saber qué llevar a Notion",
       "p": "Un diagnóstico de tus procesos administrativos y el primero ya funcionando."
     },
-    "price_note": "Diagnóstico, primer flujo y capacitación. Empieza la semana del 30 de noviembre."
+    "price_note": "Diagnóstico, primer flujo y capacitación. Empieza la semana del 30 de noviembre.",
+    "show_price": false
   },
   "context": {
     "title": "Lo que<br><em>escuchamos.</em>",
