@@ -236,7 +236,7 @@
         "tag": "essential",
         "price": 300,
         "weeks": 1,
-        "summary": "Two sessions so you and Katie can run the system, and the team uses it from day one.",
+        "summary": "Two sessions so you and Katie can run the system, the team uses it from day one, and you build your first AI flow with us.",
         "deliverables": [
           {
             "h": "Admin session with Alex and Katie",
@@ -247,6 +247,14 @@
             "p": "Daily use for everyone."
           },
           {
+            "h": "AI agents and skills",
+            "p": "We teach you to create Notion AI agents and skills, so you can build your own flows."
+          },
+          {
+            "h": "Your first AI flow",
+            "p": "We build your first agent-powered flow together, on a real SYNC process."
+          },
+          {
             "h": "Recordings and team guide",
             "p": "Both sessions recorded, plus a one-page guide."
           }
@@ -254,6 +262,7 @@
         "illustration": "scale",
         "you_do": [
           "Attend both sessions",
+          "Pick the process for your first AI flow",
           "Switch off the migrated Monday boards"
         ]
       }
@@ -264,7 +273,7 @@
       "Your current Notion work kept and built on"
     ],
     "excluded": [
-      "Additional custom AI agents (on the roadmap, quoted after the audit)",
+      "External AI agents, outside Notion (on the roadmap, quoted after the audit). Notion AI agents are covered in the training",
       "Live syncs with Shopify, Missive or email (defined in the roadmap, subject to technical feasibility)",
       "Moving the \"move later\" boards (the migration guide shows your team how)",
       "Moving media files out of Google Drive (they stay in Drive, linked from Notion)",

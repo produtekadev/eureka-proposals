@@ -226,11 +226,19 @@
         "tag": "essential",
         "price": 300,
         "weeks": 1,
-        "summary": "You and Andrea learn to run and grow the system yourselves, and leave with a plan for what comes next.",
+        "summary": "You and Andrea learn to run and grow the system yourselves, build your first AI flow with us, and leave with a plan for what comes next.",
         "deliverables": [
           {
             "h": "Live training",
             "p": "A session with you and Andrea on using and extending the workspace. Recorded, so every new hire can watch it."
+          },
+          {
+            "h": "AI agents and skills workshop",
+            "p": "We teach you to create Notion AI agents and skills, so you can build your own flows and get the most out of your three months of Notion Business."
+          },
+          {
+            "h": "Your first AI flow",
+            "p": "We build your first agent-powered flow together, on a real CozmicGo process, so you have a working model for the next ones."
           },
           {
             "h": "User guide",
@@ -238,11 +246,12 @@
           },
           {
             "h": "Roadmap",
-            "p": "What to add next and in what order as the team grows: finance, marketing, product and technology, and AI agents."
+            "p": "What to add next and in what order as the team grows: finance, marketing, product and technology, and more AI flows."
           }
         ],
         "you_do": [
           "Join the training",
+          "Pick the process for your first AI flow",
           "Review the roadmap with us"
         ],
         "illustration": "scale"
@@ -257,7 +266,7 @@
     "excluded": [
       "Notion licenses after the three-month trial",
       "Finance, marketing and product and technology systems (ordered in the roadmap)",
-      "AI agents and integrations with other tools (defined in the roadmap, subject to technical feasibility)",
+      "External AI agents and integrations with other tools (defined in the roadmap, subject to technical feasibility). Notion AI agents are covered in the training",
       "Writing every SOP (your team writes them with the template, after the first ones we write together)",
       "Ongoing support after the guarantee period"
     ],
