@@ -43,8 +43,9 @@ Text fields accept `<b>`, `<em>`, `<i>`, `<br>` and `<span class="hl">` (purple 
     "benefits": [ { "icon": "purple-shape", "h": "Short benefit", "p": "One line." } ],   // 6 cards; icons: purple-shape, magenta-shape, orange-cross
     "mockups": [ {                                                       // optional, only when the team asks: one Notion AI chat
       "type": "chat", "label": "Notion AI",
-      "q": "Their real question", "a": "How Notion answers it",
-      "sources": ["Product catalog", "Google Drive"],
+      "q": "Their real question",
+      "a": "The actual answer, specific and plausible (illustrative), not a description of where it is",
+      "sources": [ { "t": "Document that supports it", "icon": "google drive" } ],   // shown as link chips; plain names also work
       "suggestions": [ { "icon": "meetings", "q": "Another question in their words" } ],   // icons: meetings, goals, team, ask
       "reads": ["Google Drive", "Meeting notes", "Product catalog", "OKRs", "Team boards"]   // logos in MK_ICONS (build.py); unknown names get a document icon
     } ],
